@@ -1,4 +1,37 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"2046 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2046:     struct {
+[s S110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S110 . LATA0 LATA1 LATA2 LATA3 LATA4 . LATA6 LATA7 ]
+"2045
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2045: typedef union {
+[u S109 `S110 1 ]
+[n S109 . . ]
+"2057
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2057: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
+[v _LATAbits `VS109 ~T0 @X0 0 e@268 ]
+"1159
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1159:     struct {
+[s S71 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1158
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1158: typedef union {
+[u S70 `S71 1 ]
+[n S70 . . ]
+"1170
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1170: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x08C)));
+[v _TRISAbits `VS70 ~T0 @X0 0 e@140 ]
+"1221
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1221:     struct {
+[s S73 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S73 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1220
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1220: typedef union {
+[u S72 `S73 1 ]
+[n S72 . . ]
+"1232
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1232: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x08D)));
+[v _TRISBbits `VS72 ~T0 @X0 0 e@141 ]
 [p mainexit ]
 "72 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
@@ -6,40 +39,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 ./snake.h
 [; ;./snake.h: 22:     void snake_initiate();
 [v _snake_initiate `(v ~T0 @X0 0 e? ]
-"53 ./ai.h
-[; ;./ai.h: 53:     void ai_initiate();
-[v _ai_initiate `(v ~T0 @X0 0 e? ]
 "26 ./ledMatrix.h
 [; ;./ledMatrix.h: 26: void initMAX7219();
 [v _initMAX7219 `(v ~T0 @X0 0 e? ]
 "24 ./snake.h
 [; ;./snake.h: 24:     uint8_t* snake_getField();
 [v _snake_getField `(*uc ~T0 @X0 0 e? ]
-"46 ./ai.h
-[; ;./ai.h: 46:     uint8_t ai_is_ai_trained_read();
-[v _ai_is_ai_trained_read `(uc ~T0 @X0 0 e? ]
-"25 ./snake.h
-[; ;./snake.h: 25:     void snake_getSurroundings(uint8_t* surroundings);
-[v _snake_getSurroundings `(v ~T0 @X0 0 ef1`*uc ]
-"54 ./ai.h
-[; ;./ai.h: 54:     uint8_t* ai_getInputField();
-[v _ai_getInputField `(*uc ~T0 @X0 0 e? ]
-"56
-[; ;./ai.h: 56:     void ai_propagate(int8_t incentive);
-[v _ai_propagate `(v ~T0 @X0 0 ef1`c ]
-"23 ./snake.h
-[; ;./snake.h: 23:     int8_t snake_move(uint8_t direction);
-[v _snake_move `(c ~T0 @X0 0 ef1`uc ]
-"55 ./ai.h
-[; ;./ai.h: 55:     uint8_t ai_run();
-[v _ai_run `(uc ~T0 @X0 0 e? ]
-"45
-[; ;./ai.h: 45:     void ai_is_ai_trained_write(uint8_t val);
-[v _ai_is_ai_trained_write `(v ~T0 @X0 0 ef1`uc ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
 "12 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
+"23 ./snake.h
+[; ;./snake.h: 23:     int8_t snake_move(uint8_t direction);
+[v _snake_move `(c ~T0 @X0 0 ef1`uc ]
 "33 ./ledMatrix.h
 [; ;./ledMatrix.h: 33: void ledSet(uint8_t l, uint8_t c);
 [v _ledSet `(v ~T0 @X0 0 ef2`uc`uc ]
@@ -553,148 +565,165 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;./ai.h: 32:     int16_t Z2[5];
 [v _Z2 `s ~T0 @X0 -> 5 `i e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"53 main.c
-[; ;main.c: 53: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+"50 main.c
+[; ;main.c: 50: void deactivateElevator(){
+[v _deactivateElevator `(v ~T0 @X0 1 ef ]
+{
+[e :U _deactivateElevator ]
+[f ]
+"51
+[; ;main.c: 51:     LATAbits.LATA3 = 0;
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+"52
+[; ;main.c: 52:     LATAbits.LATA7 = 0;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 "54
-[; ;main.c: 54: {
+[; ;main.c: 54:     TRISAbits.TRISA0 = 1;
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+"55
+[; ;main.c: 55:     TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+"56
+[; ;main.c: 56:     TRISAbits.TRISA2 = 1;
+[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
+"57
+[; ;main.c: 57:     TRISAbits.TRISA3 = 0;
+[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
+"58
+[; ;main.c: 58:     TRISAbits.TRISA4 = 1;
+[e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
+"59
+[; ;main.c: 59:     TRISAbits.TRISA7 = 0;
+[e = . . _TRISAbits 0 7 -> -> 0 `i `uc ]
+"60
+[; ;main.c: 60:     TRISBbits.TRISB0 = 1;
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
+"61
+[; ;main.c: 61:     TRISBbits.TRISB3 = 1;
+[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+"62
+[; ;main.c: 62: }
+[e :UE 358 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"67
+[; ;main.c: 67: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"68
+[; ;main.c: 68: {
 {
 [e :U _main ]
 [f ]
-"56
-[; ;main.c: 56:     SYSTEM_Initialize();
+"70
+[; ;main.c: 70:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"73
-[; ;main.c: 73:     snake_initiate();
+"87
+[; ;main.c: 87:     deactivateElevator();
+[e ( _deactivateElevator ..  ]
+"88
+[; ;main.c: 88:     snake_initiate();
 [e ( _snake_initiate ..  ]
-"74
-[; ;main.c: 74:     ai_initiate();
-[e ( _ai_initiate ..  ]
-"75
-[; ;main.c: 75:     initMAX7219();
+"90
+[; ;main.c: 90:     initMAX7219();
 [e ( _initMAX7219 ..  ]
-"77
-[; ;main.c: 77:     uint8_t* field = snake_getField();
+"92
+[; ;main.c: 92:     uint8_t* field = snake_getField();
 [v _field `*uc ~T0 @X0 1 a ]
 [e = _field ( _snake_getField ..  ]
-"79
-[; ;main.c: 79:     if(ai_is_ai_trained_read()==0){
-[e $ ! == -> ( _ai_is_ai_trained_read ..  `i -> 0 `i 359  ]
-{
-"80
-[; ;main.c: 80:         for(int i = 0; i < 1000; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 1000 `i 360  ]
-[e $U 361  ]
-[e :U 360 ]
-{
-"81
-[; ;main.c: 81:             snake_getSurroundings(ai_getInputField());
-[e ( _snake_getSurroundings (1 ( _ai_getInputField ..  ]
-"82
-[; ;main.c: 82:             ai_propagate(snake_move(ai_run()));
-[e ( _ai_propagate (1 ( _snake_move (1 ( _ai_run ..  ]
-"83
-[; ;main.c: 83:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 1000 `i 360  ]
-[e :U 361 ]
-}
-"84
-[; ;main.c: 84:         ai_is_ai_trained_write(1);
-[e ( _ai_is_ai_trained_write (1 -> -> 1 `i `uc ]
-"85
-[; ;main.c: 85:     }
-}
-[e :U 359 ]
-"87
-[; ;main.c: 87:     while (1)
-[e :U 364 ]
-"88
-[; ;main.c: 88:     {
-{
-"90
-[; ;main.c: 90:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"91
-[; ;main.c: 91:         snake_getSurroundings(ai_getInputField());
-[e ( _snake_getSurroundings (1 ( _ai_getInputField ..  ]
-"92
-[; ;main.c: 92:         ai_propagate(snake_move(ai_run()));
-[e ( _ai_propagate (1 ( _snake_move (1 ( _ai_run ..  ]
-"93
-[; ;main.c: 93:         for(uint8_t i = 0; i < 8; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 366  ]
-[e $U 367  ]
-[e :U 366 ]
-{
 "94
-[; ;main.c: 94:             for(uint8_t j = 0; j < 8; j++){
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 369  ]
-[e $U 370  ]
-[e :U 369 ]
-{
-"95
-[; ;main.c: 95:                 if(field[i+j*8]>0){
-[e $ ! > -> *U + _field * -> + -> _i `i * -> _j `i -> 8 `i `x -> -> # *U _field `i `x `i -> 0 `i 372  ]
-{
+[; ;main.c: 94:     uint8_t d = 0;
+[v _d `uc ~T0 @X0 1 a ]
+[e = _d -> -> 0 `i `uc ]
 "96
-[; ;main.c: 96:                     ledSet(i,j);
-[e ( _ledSet (2 , _i _j ]
-"97
-[; ;main.c: 97:                 } else{
-}
-[e $U 373  ]
-[e :U 372 ]
+[; ;main.c: 96:     while(1){
+[e :U 361 ]
 {
+"97
+[; ;main.c: 97:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "98
-[; ;main.c: 98:                     ledClear(i,j);
-[e ( _ledClear (2 , _i _j ]
+[; ;main.c: 98:         snake_move(d++);
+[e ( _snake_move (1 ++ _d -> -> 1 `i `uc ]
 "99
-[; ;main.c: 99:                 }
-}
-[e :U 373 ]
+[; ;main.c: 99:         if(d == 4){
+[e $ ! == -> _d `i -> 4 `i 363  ]
+{
 "100
-[; ;main.c: 100:             }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 369  ]
-[e :U 370 ]
-}
+[; ;main.c: 100:             d = 0;
+[e = _d -> -> 0 `i `uc ]
 "101
 [; ;main.c: 101:         }
 }
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 366  ]
-[e :U 367 ]
-}
+[e :U 363 ]
 "102
-[; ;main.c: 102:         uint8_t foodPosition = snake_getFoodPosition();
+[; ;main.c: 102:         for(uint8_t i = 0; i < 8; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 364  ]
+[e $U 365  ]
+[e :U 364 ]
+{
+"103
+[; ;main.c: 103:             for(uint8_t j = 0; j < 8; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 8 `i 367  ]
+[e $U 368  ]
+[e :U 367 ]
+{
+"104
+[; ;main.c: 104:                 if(field[i+j*8]>0){
+[e $ ! > -> *U + _field * -> + -> _i `i * -> _j `i -> 8 `i `x -> -> # *U _field `i `x `i -> 0 `i 370  ]
+{
+"105
+[; ;main.c: 105:                     ledSet(i,j);
+[e ( _ledSet (2 , _i _j ]
+"106
+[; ;main.c: 106:                 } else{
+}
+[e $U 371  ]
+[e :U 370 ]
+{
+"107
+[; ;main.c: 107:                     ledClear(i,j);
+[e ( _ledClear (2 , _i _j ]
+"108
+[; ;main.c: 108:                 }
+}
+[e :U 371 ]
+"109
+[; ;main.c: 109:             }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 8 `i 367  ]
+[e :U 368 ]
+}
+"110
+[; ;main.c: 110:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 364  ]
+[e :U 365 ]
+}
+"111
+[; ;main.c: 111:         uint8_t foodPosition = snake_getFoodPosition();
 [v _foodPosition `uc ~T0 @X0 1 a ]
 [e = _foodPosition ( _snake_getFoodPosition ..  ]
-"103
-[; ;main.c: 103:         ledSet(foodPosition&0x03, foodPosition>>3);
+"112
+[; ;main.c: 112:         ledSet(foodPosition&0x03, foodPosition>>3);
 [e ( _ledSet (2 , -> & -> _foodPosition `i -> 3 `i `uc -> >> -> _foodPosition `i -> 3 `i `uc ]
-"104
-[; ;main.c: 104:         sendMatrix();
+"113
+[; ;main.c: 113:         sendMatrix();
 [e ( _sendMatrix ..  ]
-"105
-[; ;main.c: 105:     }
+"114
+[; ;main.c: 114:     }
 }
-[e :U 363 ]
-[e $U 364  ]
-[e :U 365 ]
-"106
-[; ;main.c: 106: }
-[e :UE 358 ]
+[e :U 360 ]
+[e $U 361  ]
+[e :U 362 ]
+"143
+[; ;main.c: 143: }
+[e :UE 359 ]
 }

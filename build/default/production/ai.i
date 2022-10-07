@@ -4611,9 +4611,9 @@ void WDT_Initialize(void);
 const uint8_t sigmoidValues[16];
 const uint8_t de_sigmoidValues[16];
 
-uint8_t sigmoid(uint8_t z);
+uint8_t sigmoid(int8_t z);
 
-uint8_t de_sigmoid(uint8_t z);
+uint8_t de_sigmoid(int8_t z);
 # 4 "ai.c" 2
 
 
@@ -4622,6 +4622,10 @@ uint8_t Y1[10];
 uint8_t Y2[5];
 int16_t Z1[10];
 int16_t Z2[5];
+int16_t DY2[5];
+int16_t DY1[10];
+
+uint8_t choice;
 
 void weights1_write(uint8_t add1, uint8_t add2, int8_t val){
     eeprom_write(0 + 16*add1 + add2, (unsigned char)val);
@@ -4719,7 +4723,7 @@ uint8_t ai_run(){
             z /= 255;
             Z1[j] += z;
         }
-        Y1[j] = sigmoid((uint8_t)Z1[j]);
+        Y1[j] = sigmoid((int8_t)Z1[j]);
     }
     for(uint8_t j = 0; j < 5; j++){
         Z2[j] = biases2_read(j);
@@ -4729,10 +4733,10 @@ uint8_t ai_run(){
             z /= 255;
             Z2[j] += z;
         }
-        Y2[j] = sigmoid((uint8_t)Z2[j]);
+        Y2[j] = sigmoid((int8_t)Z2[j]);
     }
 
-    uint8_t choice = 0;
+    choice = 0;
     for(uint8_t i = 1; i < 5; i++){
         if(Y2[i]>Y2[choice]){
             choice = i;
@@ -4745,5 +4749,23 @@ void ai_propagate(int8_t incentive){
     if(incentive == 0){
         return;
     }
+    if(incentive == -1){
+        incentive = 0;
+    }
 
+    DY2[choice] = 2*(Y2[choice] - incentive);
+    uint8_t dz = de_sigmoid((int8_t)Z2[choice]);
+    biases2_write(choice, (int8_t)(biases2_read(choice) - DY2[choice]*dz));
+    for(uint8_t i = 0; i < 10; i++){
+        DY1[i] = dz*weights2_read(i, choice);
+        weights2_write(i, choice, (int8_t)(weights2_read(i, choice) - dz*DY2[choice]));
+    }
+
+    for(uint8_t j = 0; j < 10; j++){
+        dz = de_sigmoid((int8_t)Z1[j]);
+        biases1_write(j, (int8_t)(biases2_read(j) - DY1[j]*dz));
+        for(uint8_t i = 0; i < 16; i++){
+            weights1_write(i, j, (int8_t)(weights2_read(i, j) - dz*DY1[j]));
+        }
+    }
 }

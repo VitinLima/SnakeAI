@@ -24,6 +24,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "571
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 571: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
 [v _PIR1bits `VS37 ~T0 @X0 0 e@17 ]
+"1221
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1221:     struct {
+[s S73 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S73 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1220
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1220: typedef union {
+[u S72 `S73 1 ]
+[n S72 . . ]
+"1232
+[; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1232: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x08D)));
+[v _TRISBbits `VS72 ~T0 @X0 0 e@141 ]
 "3838
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3838:     struct {
 [s S208 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -571,83 +582,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _initMAX7219 ]
 [f ]
 "17
-[; ;ledMatrix.c: 17:     SSP1CON1bits.SSPEN = 1;
-[e = . . _SSP1CON1bits 0 5 -> -> 1 `i `uc ]
+[; ;ledMatrix.c: 17:     LATBbits.LATB1 = 1;
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 "18
-[; ;ledMatrix.c: 18:     txMAX7219(0x09,0x00);
-[e ( _txMAX7219 (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
+[; ;ledMatrix.c: 18:     TRISBbits.TRISB1 = 0;
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
 "19
-[; ;ledMatrix.c: 19:     txMAX7219(0x0A,0x00);
-[e ( _txMAX7219 (2 , -> -> 10 `i `uc -> -> 0 `i `uc ]
+[; ;ledMatrix.c: 19:     SSP1CON1bits.SSPEN = 1;
+[e = . . _SSP1CON1bits 0 5 -> -> 1 `i `uc ]
 "20
-[; ;ledMatrix.c: 20:     txMAX7219(0x0C,0x00);
-[e ( _txMAX7219 (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+[; ;ledMatrix.c: 20:     txMAX7219(0x09,0x00);
+[e ( _txMAX7219 (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
 "21
-[; ;ledMatrix.c: 21:     txMAX7219(0x0B,0x07);
-[e ( _txMAX7219 (2 , -> -> 11 `i `uc -> -> 7 `i `uc ]
+[; ;ledMatrix.c: 21:     txMAX7219(0x0A,0x00);
+[e ( _txMAX7219 (2 , -> -> 10 `i `uc -> -> 0 `i `uc ]
 "22
-[; ;ledMatrix.c: 22:     txMAX7219(0x0C,0x01);
-[e ( _txMAX7219 (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+[; ;ledMatrix.c: 22:     txMAX7219(0x0C,0x00);
+[e ( _txMAX7219 (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
 "23
-[; ;ledMatrix.c: 23:     txMAX7219(0x0F,0x01);
-[e ( _txMAX7219 (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
+[; ;ledMatrix.c: 23:     txMAX7219(0x0B,0x07);
+[e ( _txMAX7219 (2 , -> -> 11 `i `uc -> -> 7 `i `uc ]
 "24
-[; ;ledMatrix.c: 24:     _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"25
-[; ;ledMatrix.c: 25:     txMAX7219(0x0F,0x00);
-[e ( _txMAX7219 (2 , -> -> 15 `i `uc -> -> 0 `i `uc ]
-"26
-[; ;ledMatrix.c: 26:     txMAX7219(0x0C,0x01);
+[; ;ledMatrix.c: 24:     txMAX7219(0x0C,0x01);
 [e ( _txMAX7219 (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+"25
+[; ;ledMatrix.c: 25:     txMAX7219(0x0F,0x01);
+[e ( _txMAX7219 (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
+"26
+[; ;ledMatrix.c: 26:     _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "27
-[; ;ledMatrix.c: 27: }
+[; ;ledMatrix.c: 27:     txMAX7219(0x0F,0x00);
+[e ( _txMAX7219 (2 , -> -> 15 `i `uc -> -> 0 `i `uc ]
+"28
+[; ;ledMatrix.c: 28:     txMAX7219(0x0C,0x01);
+[e ( _txMAX7219 (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+"29
+[; ;ledMatrix.c: 29: }
 [e :UE 365 ]
 }
-"29
-[; ;ledMatrix.c: 29: void ledSet(uint8_t l, uint8_t c){
+"31
+[; ;ledMatrix.c: 31: void ledSet(uint8_t l, uint8_t c){
 [v _ledSet `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _ledSet ]
 [v _l `uc ~T0 @X0 1 r1 ]
 [v _c `uc ~T0 @X0 1 r2 ]
 [f ]
-"30
-[; ;ledMatrix.c: 30:     (matrix[l]) |= 1UL << (c);
+"32
+[; ;ledMatrix.c: 32:     (matrix[l]) |= 1UL << (c);
 [e =| *U + &U _matrix * -> _l `ux -> -> # *U &U _matrix `ui `ux -> << -> 1 `ul -> _c `i `uc ]
-"31
-[; ;ledMatrix.c: 31: }
+"33
+[; ;ledMatrix.c: 33: }
 [e :UE 366 ]
 }
-"33
-[; ;ledMatrix.c: 33: void ledClear(uint8_t l, uint8_t c){
+"35
+[; ;ledMatrix.c: 35: void ledClear(uint8_t l, uint8_t c){
 [v _ledClear `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _ledClear ]
 [v _l `uc ~T0 @X0 1 r1 ]
 [v _c `uc ~T0 @X0 1 r2 ]
 [f ]
-"34
-[; ;ledMatrix.c: 34:     (matrix[l]) &= ~(1UL << (c));
+"36
+[; ;ledMatrix.c: 36:     (matrix[l]) &= ~(1UL << (c));
 [e =& *U + &U _matrix * -> _l `ux -> -> # *U &U _matrix `ui `ux -> ~ << -> 1 `ul -> _c `i `uc ]
-"35
-[; ;ledMatrix.c: 35: }
+"37
+[; ;ledMatrix.c: 37: }
 [e :UE 367 ]
 }
-"37
-[; ;ledMatrix.c: 37: void sendMatrix(){
+"39
+[; ;ledMatrix.c: 39: void sendMatrix(){
 [v _sendMatrix `(v ~T0 @X0 1 ef ]
 {
 [e :U _sendMatrix ]
 [f ]
-"38
-[; ;ledMatrix.c: 38:     uint8_t b;
-[v _b `uc ~T0 @X0 1 a ]
-"39
-[; ;ledMatrix.c: 39:     uint8_t nb;
-[v _nb `uc ~T0 @X0 1 a ]
 "40
-[; ;ledMatrix.c: 40:     for(uint8_t i=0;i<8;i++){
+[; ;ledMatrix.c: 40:     uint8_t b;
+[v _b `uc ~T0 @X0 1 a ]
+"41
+[; ;ledMatrix.c: 41:     uint8_t nb;
+[v _nb `uc ~T0 @X0 1 a ]
+"42
+[; ;ledMatrix.c: 42:     for(uint8_t i=0;i<8;i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -655,14 +672,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 370  ]
 [e :U 369 ]
 {
-"44
-[; ;ledMatrix.c: 44:         b = matrix[i];
+"46
+[; ;ledMatrix.c: 46:         b = matrix[i];
 [e = _b *U + &U _matrix * -> _i `ux -> -> # *U &U _matrix `ui `ux ]
-"47
-[; ;ledMatrix.c: 47:         nb = 0x00;
+"49
+[; ;ledMatrix.c: 49:         nb = 0x00;
 [e = _nb -> -> 0 `i `uc ]
-"48
-[; ;ledMatrix.c: 48:         for(uint8_t j = 0; j < 8; j++){
+"50
+[; ;ledMatrix.c: 50:         for(uint8_t j = 0; j < 8; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
@@ -670,33 +687,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 373  ]
 [e :U 372 ]
 {
-"49
-[; ;ledMatrix.c: 49:             nb |= b&0x01;
-[e =| _nb -> & -> _b `i -> 1 `i `uc ]
-"50
-[; ;ledMatrix.c: 50:             nb <<= 1;
-[e =<< _nb -> -> 1 `i `uc ]
 "51
-[; ;ledMatrix.c: 51:             b >>= 1;
-[e =>> _b -> -> 1 `i `uc ]
+[; ;ledMatrix.c: 51:             nb |= b&0x01;
+[e =| _nb -> & -> _b `i -> 1 `i `uc ]
 "52
-[; ;ledMatrix.c: 52:         }
+[; ;ledMatrix.c: 52:             nb <<= 1;
+[e =<< _nb -> -> 1 `i `uc ]
+"53
+[; ;ledMatrix.c: 53:             b >>= 1;
+[e =>> _b -> -> 1 `i `uc ]
+"54
+[; ;ledMatrix.c: 54:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
 [e $ < -> _j `i -> 8 `i 372  ]
 [e :U 373 ]
 }
-"53
-[; ;ledMatrix.c: 53:         txMAX7219(i+1,nb);
+"55
+[; ;ledMatrix.c: 55:         txMAX7219(i+1,nb);
 [e ( _txMAX7219 (2 , -> + -> _i `i -> 1 `i `uc _nb ]
-"57
-[; ;ledMatrix.c: 57:     }
+"59
+[; ;ledMatrix.c: 59:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 369  ]
 [e :U 370 ]
 }
-"58
-[; ;ledMatrix.c: 58: }
+"60
+[; ;ledMatrix.c: 60: }
 [e :UE 368 ]
 }

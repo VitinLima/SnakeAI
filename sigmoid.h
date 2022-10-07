@@ -11,9 +11,9 @@
 const uint8_t sigmoidValues[16];
 const uint8_t de_sigmoidValues[16];
 
-uint8_t sigmoid(uint8_t z);
+uint8_t sigmoid(int8_t z);
 
-uint8_t de_sigmoid(uint8_t z);
+uint8_t de_sigmoid(int8_t z);
 
 #endif	/* SIGMOID_H */
 

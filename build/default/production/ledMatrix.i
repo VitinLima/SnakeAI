@@ -4615,6 +4615,8 @@ void txMAX7219(uint8_t addr0, uint8_t dat0){
 }
 
 void initMAX7219(){
+    LATBbits.LATB1 = 1;
+    TRISBbits.TRISB1 = 0;
     SSP1CON1bits.SSPEN = 1;
     txMAX7219(0x09,0x00);
     txMAX7219(0x0A,0x00);

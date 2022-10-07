@@ -4650,6 +4650,20 @@ void sendMatrix();
 # 48 "main.c" 2
 
 
+void deactivateElevator(){
+    LATAbits.LATA3 = 0;
+    LATAbits.LATA7 = 0;
+
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 0;
+    TRISAbits.TRISA4 = 1;
+    TRISAbits.TRISA7 = 0;
+    TRISBbits.TRISB0 = 1;
+    TRISBbits.TRISB3 = 1;
+}
+
 
 
 
@@ -4657,27 +4671,22 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 73 "main.c"
+# 87 "main.c"
+    deactivateElevator();
     snake_initiate();
-    ai_initiate();
+
     initMAX7219();
 
     uint8_t* field = snake_getField();
 
-    if(ai_is_ai_trained_read()==0){
-        for(int i = 0; i < 1000; i++){
-            snake_getSurroundings(ai_getInputField());
-            ai_propagate(snake_move(ai_run()));
-        }
-        ai_is_ai_trained_write(1);
-    }
+    uint8_t d = 0;
 
-    while (1)
-    {
-
+    while(1){
         _delay((unsigned long)((500)*(8000000/4000.0)));
-        snake_getSurroundings(ai_getInputField());
-        ai_propagate(snake_move(ai_run()));
+        snake_move(d++);
+        if(d == 4){
+            d = 0;
+        }
         for(uint8_t i = 0; i < 8; i++){
             for(uint8_t j = 0; j < 8; j++){
                 if(field[i+j*8]>0){
@@ -4691,4 +4700,5 @@ void main(void)
         ledSet(foodPosition&0x03, foodPosition>>3);
         sendMatrix();
     }
+# 143 "main.c"
 }
