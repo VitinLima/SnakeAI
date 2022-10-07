@@ -47,6 +47,20 @@
 #include "snake.h"
 #include "ai.h"
 
+void deactivateElevator(){
+    LATAbits.LATA3 = 0;
+    LATAbits.LATA7 = 0;
+    
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 0;
+    TRISAbits.TRISA4 = 1;
+    TRISAbits.TRISA7 = 0;
+    TRISBbits.TRISB0 = 1;
+    TRISBbits.TRISB3 = 1;
+}
+
 /*
                          Main application
  */
@@ -70,6 +84,7 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
+    deactivateElevator();
     snake_initiate();
     //ai_initiate();
     initMAX7219();
