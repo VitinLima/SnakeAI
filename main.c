@@ -62,7 +62,7 @@ void deactivateElevator(){
 }
 
 void test(uint8_t l, uint8_t c, uint8_t* ai_inputs){
-    snake_setHeadPosition(l,c);
+    snake_setHeadPosition(l+8*c);
     ledSet(l,c);
     snake_getSurroundings(ai_inputs);
     ai_inputs[0] == 0 ? ledClear(3,3) : ledSet(3,3);
