@@ -88,11 +88,11 @@ void snake_getSurroundings(uint8_t* surroundings){
     for(uint8_t i = 0; i < 16; i++){
         surroundings[i] = 0;
     }
-    if((headPosition&0x03) == 0){
+    if((headPosition&0x07) == 0){
 //        surroundings[0] = 1;
         surroundings[1] = 1;
 //        surroundings[2] = 1;
-    } else if((headPosition&0x03) == 7){
+    } else if((headPosition&0x07) == 7){
 //        surroundings[4] = 1;
         surroundings[5] = 1;
 //        surroundings[6] = 1;
