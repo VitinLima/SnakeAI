@@ -107,10 +107,11 @@ void main(void)
 //    uint8_t d = 0;
     
     while(1){
-        setLine(0, 0b10010110);
-        __delay_ms(200);
-        setLine(0, ~0b10010110);
-        __delay_ms(200);
+        for(uint8_t i = 0; i < 8; i++){
+            setLine(i, 0b10010110);
+            __delay_ms(200);
+            setLine(i, 0x00);
+        }
     }
     
     while(1){
