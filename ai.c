@@ -81,9 +81,9 @@ uint8_t ai_scores_read(uint8_t add){
 }
 
 void ai_initiate(){
-    if(ai_is_ai_initiated_read()){
-        return;
-    }
+//    if(ai_is_ai_initiated_read()){
+//        return;
+//    }
     for(uint8_t j = 0; j < N1; j++){
         biases1_write(j, (int8_t)rand());
         for(uint8_t i = 0; i < N0; i++){
@@ -96,7 +96,7 @@ void ai_initiate(){
             weights2_write(i,j, (int8_t)rand());
         }
     }
-    ai_is_ai_initiated_write(1);
+//    ai_is_ai_initiated_write(1);
 }
 
 uint8_t* ai_getInputField(){
@@ -184,10 +184,10 @@ void ai_propagate(int8_t incentive){
         dz *= (int16_t)DY2[k];
         dz /= 255;
         
-        DB2[k] += (int8_t)(dz>>1);
+        DB2[k] += (int8_t)dz;
         for(uint8_t j = 0; j < N1; j++){
-            DY1[j] += (int8_t)(((dz*(int16_t)weights2_read(j, k))/127)>>1);
-            DW2[j][k] += (int8_t)(((dz*(int16_t)Y1[j])/127)>>1);
+            DY1[j] += (int8_t)((dz*(int16_t)weights2_read(j, k))/127);
+            DW2[j][k] += (int8_t)((dz*(int16_t)Y1[j])/127);
         }
     }
     for(uint8_t k = 0; k < N1; k++){
@@ -195,9 +195,9 @@ void ai_propagate(int8_t incentive){
         dz *= (int16_t)DY1[k];
         dz /= 255;
         
-        DB1[k] += (int8_t)(dz>>1);
+        DB1[k] += (int8_t)dz;
         for(uint8_t j = 0; j < N0; j++){
-            DW1[j][k] += (int8_t)(((dz*(int16_t)Y0[j])/127)>>1);
+            DW1[j][k] += (int8_t)((dz*(int16_t)Y0[j])/127);
         }
     }
     

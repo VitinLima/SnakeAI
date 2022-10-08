@@ -104,56 +104,8 @@ void main(void)
     
     deactivateElevator();
     snake_initiate();
-//    ai_initiate();
+    ai_initiate();
     initMAX7219();
-    
-//    uint8_t ai_inputs[16];
-//    ledSet(4,4);
-//    while(1){
-//        uint8_t lh = 3, ch = 3;
-//        
-//        test(lh, ch, lh-1, ch-1, ai_inputs);
-//        test(lh, ch, lh-1, ch, ai_inputs);
-//        test(lh, ch, lh-1, ch+1, ai_inputs);
-//        test(lh, ch, lh, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch, ai_inputs);
-//        test(lh, ch, lh+1, ch-1, ai_inputs);
-//        test(lh, ch, lh, ch-1, ai_inputs);
-//        
-//        lh = 5, ch = 3;
-//        
-//        test(lh, ch, lh-1, ch-1, ai_inputs);
-//        test(lh, ch, lh-1, ch, ai_inputs);
-//        test(lh, ch, lh-1, ch+1, ai_inputs);
-//        test(lh, ch, lh, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch, ai_inputs);
-//        test(lh, ch, lh+1, ch-1, ai_inputs);
-//        test(lh, ch, lh, ch-1, ai_inputs);
-//        
-//        lh = 6, ch = 2;
-//        
-//        test(lh, ch, lh-1, ch-1, ai_inputs);
-//        test(lh, ch, lh-1, ch, ai_inputs);
-//        test(lh, ch, lh-1, ch+1, ai_inputs);
-//        test(lh, ch, lh, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch, ai_inputs);
-//        test(lh, ch, lh+1, ch-1, ai_inputs);
-//        test(lh, ch, lh, ch-1, ai_inputs);
-//        
-//        lh = 2, ch = 4;
-//        
-//        test(lh, ch, lh-1, ch-1, ai_inputs);
-//        test(lh, ch, lh-1, ch, ai_inputs);
-//        test(lh, ch, lh-1, ch+1, ai_inputs);
-//        test(lh, ch, lh, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch+1, ai_inputs);
-//        test(lh, ch, lh+1, ch, ai_inputs);
-//        test(lh, ch, lh+1, ch-1, ai_inputs);
-//        test(lh, ch, lh, ch-1, ai_inputs);
-//    }
     
     uint8_t* field = snake_getField();
     
@@ -170,15 +122,15 @@ void main(void)
     ledSet(foodPosition&0x03, foodPosition>>3);
     sendMatrix();
     
-    uint8_t d = 0;
-    
-//    if(ai_is_ai_trained_read()==0){
-//        for(int i = 0; i < 1000; i++){
-//            snake_getSurroundings(ai_getInputField());
-//            ai_propagate(snake_move(ai_run()));
-//        }
-//        ai_is_ai_trained_write(1);
-//    }
+    if(ai_is_ai_trained_read()==0){
+        for(int i = 0; i < 1000; i++){
+            snake_getSurroundings(ai_getInputField());
+            ai_propagate(snake_move(ai_run()));
+            setLine((uint8_t)((i%1000)/4));
+            sendMatrix();
+        }
+        ai_is_ai_trained_write(1);
+    }
     
     while (1)
     {
