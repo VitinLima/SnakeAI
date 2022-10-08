@@ -20,7 +20,7 @@ void snake_initiate(){
     }
     headPosition = ((uint8_t)rand())&0x3f;
     foodPosition = ((uint8_t)rand())&0x3f;
-    snake_size = 1;
+    snakeSize = 1;
     field[headPosition] = snakeSize;
 }
 
