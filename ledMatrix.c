@@ -29,11 +29,11 @@ void initMAX7219(){
 }
 
 void ledSet(uint8_t l, uint8_t c){
-    (matrix[l]) |= 1UL << (c);
+    (matrix[c]) |= 1UL << (l);
 }
 
 void ledClear(uint8_t l, uint8_t c){
-    (matrix[l]) &= ~(1UL << (c));
+    (matrix[c]) &= ~(1UL << (l));
 }
 
 void setColumn(uint8_t c, uint8_t val){
