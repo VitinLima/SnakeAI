@@ -73,9 +73,9 @@ void test(uint8_t l, uint8_t c, uint8_t* ai_inputs){
     ai_inputs[5] == 0 ? ledClear(5,4) : ledSet(5,4);
     ai_inputs[6] == 0 ? ledClear(5,3) : ledSet(5,3);
     ai_inputs[7] == 0 ? ledClear(4,3) : ledSet(4,3);
+    sendMatrix();
     __delay_ms(500);
     ledClear(l,c);
-    sendMatrix();
 }
 
 /*
