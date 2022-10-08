@@ -24,7 +24,9 @@ extern "C" {
     uint8_t* snake_getField();
     void snake_getSurroundings(uint8_t* surroundings);
     uint8_t snake_getHeadPosition();
+    void snake_setHeadPosition(uint8_t pos);
     uint8_t snake_getFoodPosition();
+    void snake_setFoodPosition(uint8_t pos);
 
 #ifdef	__cplusplus
 }

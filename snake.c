@@ -121,7 +121,13 @@ void snake_getSurroundings(uint8_t* surroundings){
 uint8_t snake_getHeadPosition(){
     return headPosition;
 }
+void snake_setHeadPosition(uint8_t pos){
+    headPosition = pos;
+}
 
 uint8_t snake_getFoodPosition(){
     return foodPosition;
+}
+void snake_setFoodPosition(uint8_t pos){
+    foodPosition = pos;
 }

@@ -61,6 +61,23 @@ void deactivateElevator(){
     TRISBbits.TRISB3 = 1;
 }
 
+void test(uint8_t l, uint8_t c, uint8_t* ai_inputs){
+    snake_setHeadPosition(l,c);
+    ledSet(l,c);
+    snake_getSurroundings(ai_inputs);
+    ai_inputs[0] == 0 ? ledClear(3,3) : ledSet(3,3);
+    ai_inputs[1] == 0 ? ledClear(3,4) : ledSet(3,4);
+    ai_inputs[2] == 0 ? ledClear(3,5) : ledSet(3,5);
+    ai_inputs[3] == 0 ? ledClear(4,5) : ledSet(4,5);
+    ai_inputs[4] == 0 ? ledClear(5,5) : ledSet(5,5);
+    ai_inputs[5] == 0 ? ledClear(5,4) : ledSet(5,4);
+    ai_inputs[6] == 0 ? ledClear(5,3) : ledSet(5,3);
+    ai_inputs[7] == 0 ? ledClear(4,3) : ledSet(4,3);
+    __delay_ms(500);
+    ledClear(l,c);
+    sendMatrix();
+}
+
 /*
                          Main application
  */
@@ -86,25 +103,42 @@ void main(void)
     
     deactivateElevator();
     snake_initiate();
-    ai_initiate();
+//    ai_initiate();
     initMAX7219();
     
-    uint8_t* field = snake_getField();
-    
-    for(uint8_t i = 0; i < 8; i++){
-        for(uint8_t j = 0; j < 8; j++){
-            if(field[i+j*8]>0){
-                ledSet(i,j);
-            } else{
-                ledClear(i,j);
-            }
+    uint8_t ai_inputs[16];
+    ledSet(4,4);
+    while(1){
+        for(uint8_t i = 0; i < 8; i++){
+            test(0, i);
+        }
+        for(uint8_t i = 1; i < 7; i++){
+            test(i, 7);
+        }
+        for(uint8_t i = 0; i < 8; i++){
+            test(7, 7-i);
+        }
+        for(uint8_t i = 1; i < 7; i++){
+            test(7 - i, 0);
         }
     }
-    uint8_t foodPosition = snake_getFoodPosition();
-    ledSet(foodPosition&0x03, foodPosition>>3);
-    sendMatrix();
     
-    uint8_t d = 0;
+//    uint8_t* field = snake_getField();
+    
+//    for(uint8_t i = 0; i < 8; i++){
+//        for(uint8_t j = 0; j < 8; j++){
+//            if(field[i+j*8]>0){
+//                ledSet(i,j);
+//            } else{
+//                ledClear(i,j);
+//            }
+//        }
+//    }
+//    uint8_t foodPosition = snake_getFoodPosition();
+//    ledSet(foodPosition&0x03, foodPosition>>3);
+//    sendMatrix();
+    
+//    uint8_t d = 0;
     
 //    if(ai_is_ai_trained_read()==0){
 //        for(int i = 0; i < 1000; i++){
@@ -114,25 +148,25 @@ void main(void)
 //        ai_is_ai_trained_write(1);
 //    }
     
-    while (1)
-    {
-        // Add your application code
-        __delay_ms(500);
-        snake_getSurroundings(ai_getInputField());
-        ai_propagate(snake_move(ai_run()));
-        for(uint8_t i = 0; i < 8; i++){
-            for(uint8_t j = 0; j < 8; j++){
-                if(field[i+j*8]>0){
-                    ledSet(i,j);
-                } else{
-                    ledClear(i,j);
-                }
-            }
-        }
-        uint8_t foodPosition = snake_getFoodPosition();
-        ledSet(foodPosition&0x03, foodPosition>>3);
-        sendMatrix();
-    }
+//    while (1)
+//    {
+//        // Add your application code
+//        __delay_ms(100);
+//        snake_getSurroundings(ai_getInputField());
+//        ai_propagate(snake_move(ai_run()));
+//        for(uint8_t i = 0; i < 8; i++){
+//            for(uint8_t j = 0; j < 8; j++){
+//                if(field[i+j*8]>0){
+//                    ledSet(i,j);
+//                } else{
+//                    ledClear(i,j);
+//                }
+//            }
+//        }
+//        uint8_t foodPosition = snake_getFoodPosition();
+//        ledSet(foodPosition&0x03, foodPosition>>3);
+//        sendMatrix();
+//    }
 }
 /**
  End of File
