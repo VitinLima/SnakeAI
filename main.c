@@ -75,7 +75,7 @@ void deactivateElevator(){
 //    ai_inputs[14] == 0 ? ledClear(5,3) : ledSet(5,3);
 //    ai_inputs[15] == 0 ? ledClear(4,3) : ledSet(4,3);
 //    sendMatrix();
-    __delay_ms(500);
+//    __delay_ms(500);
 //    ledClear(lf,cf);
 //}
 
