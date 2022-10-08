@@ -36,6 +36,18 @@ void ledClear(uint8_t l, uint8_t c){
     (matrix[l]) &= ~(1UL << (c));
 }
 
+void setColumn(uint8_t c, uint8_t val){
+    matrix[c] = val;
+}
+
+void setLine(uint8_t l, uint8_t val){
+    uint8_t mask = 0x80;
+    for(uint8_t i = 0; i < 8; i++){
+        matrix[l] = (val&mask) | (matrix[l]|(~mask));
+        mask >>= 1;
+    }
+}
+
 void sendMatrix(){
     uint8_t b;
     uint8_t nb;

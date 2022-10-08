@@ -32,6 +32,8 @@ void initMAX7219();
  */
 void ledSet(uint8_t l, uint8_t c);
 void ledClear(uint8_t l, uint8_t c);
+void setColumn(uint8_t c, uint8_t val);
+void setLine(uint8_t l, uint8_t val);
 /**
  * Envia matriz para os MAX7219
  */

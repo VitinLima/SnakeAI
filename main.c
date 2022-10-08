@@ -89,22 +89,29 @@ void main(void)
     //ai_initiate();
     initMAX7219();
     
-    uint8_t* field = snake_getField();
+//    uint8_t* field = snake_getField();
     
-    for(uint8_t i = 0; i < 8; i++){
-        for(uint8_t j = 0; j < 8; j++){
-            if(field[i+j*8]>0){
-                ledSet(i,j);
-            } else{
-                ledClear(i,j);
-            }
-        }
+//    for(uint8_t i = 0; i < 8; i++){
+//        for(uint8_t j = 0; j < 8; j++){
+//            if(field[i+j*8]>0){
+//                ledSet(i,j);
+//            } else{
+//                ledClear(i,j);
+//            }
+//        }
+//    }
+//    uint8_t foodPosition = snake_getFoodPosition();
+//    ledSet(foodPosition&0x03, foodPosition>>3);
+//    sendMatrix();
+    
+//    uint8_t d = 0;
+    
+    while(1){
+        setLine(0, 0b10010110);
+        __delay_ms(200);
+        setLine(0, ~0b10010110);
+        __delay_ms(200);
     }
-    uint8_t foodPosition = snake_getFoodPosition();
-    ledSet(foodPosition&0x03, foodPosition>>3);
-    sendMatrix();
-    
-    uint8_t d = 0;
     
     while(1){
 //        __delay_ms(500);
