@@ -89,22 +89,22 @@ void snake_getSurroundings(uint8_t* surroundings){
         surroundings[i] = 0;
     }
     if((headPosition&0x03) == 0){
-        surroundings[0] = 1;
+//        surroundings[0] = 1;
         surroundings[1] = 1;
-        surroundings[2] = 1;
+//        surroundings[2] = 1;
     } else if((headPosition&0x03) == 7){
-        surroundings[4] = 1;
+//        surroundings[4] = 1;
         surroundings[5] = 1;
-        surroundings[6] = 1;
+//        surroundings[6] = 1;
     }
     if((headPosition>>3) == 0){
-        surroundings[2] = 1;
+//        surroundings[2] = 1;
         surroundings[3] = 1;
-        surroundings[4] = 1;
+//        surroundings[4] = 1;
     } else if((headPosition>>3) == 7){
-        surroundings[6] = 1;
+//        surroundings[6] = 1;
         surroundings[7] = 1;
-        surroundings[0] = 1;
+//        surroundings[0] = 1;
     }
 //    uint8_t p;
 //    for(uint8_t i = 0; i < 8; i++){
