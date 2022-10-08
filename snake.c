@@ -34,14 +34,14 @@ int8_t snake_move(uint8_t direction){
     direction &= 0x03;
     switch(direction){
         case UP:
-            if((headPosition&0x03) == 0){
+            if((headPosition&0x07) == 0){
                 incentive = KILL;
             } else{
                 headPosition--;
             }
             break;
         case DOWN:
-            if((headPosition&0x03) == 7){
+            if((headPosition&0x07) == 7){
                 incentive = KILL;
             } else{
                 headPosition++;
