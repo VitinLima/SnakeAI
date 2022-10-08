@@ -110,16 +110,16 @@ void main(void)
     ledSet(4,4);
     while(1){
         for(uint8_t i = 0; i < 8; i++){
-            test(0, i);
+            test(0, i, ai_inputs);
         }
         for(uint8_t i = 1; i < 7; i++){
-            test(i, 7);
+            test(i, 7, ai_inputs);
         }
         for(uint8_t i = 0; i < 8; i++){
-            test(7, 7-i);
+            test(7, 7-i, ai_inputs);
         }
         for(uint8_t i = 1; i < 7; i++){
-            test(7 - i, 0);
+            test(7 - i, 0, ai_inputs);
         }
     }
     
