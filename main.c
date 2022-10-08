@@ -86,7 +86,7 @@ void main(void)
     
     deactivateElevator();
     snake_initiate();
-    //ai_initiate();
+    ai_initiate();
     initMAX7219();
     
     uint8_t* field = snake_getField();
@@ -106,33 +106,13 @@ void main(void)
     
     uint8_t d = 0;
     
-    while(1){
-        __delay_ms(500);
-        snake_move(d++);
-        if(d == 4){
-            d = 0;
-        }
-        for(uint8_t i = 0; i < 8; i++){
-            for(uint8_t j = 0; j < 8; j++){
-                if(field[i+j*8]>0){
-                    ledSet(i,j);
-                } else{
-                    ledClear(i,j);
-                }
-            }
-        }
-        uint8_t foodPosition = snake_getFoodPosition();
-        ledSet(foodPosition&0x03, foodPosition>>3);
-        sendMatrix();
-    }
-    
-    /*if(ai_is_ai_trained_read()==0){
-        for(int i = 0; i < 1000; i++){
-            snake_getSurroundings(ai_getInputField());
-            ai_propagate(snake_move(ai_run()));
-        }
-        ai_is_ai_trained_write(1);
-    }
+//    if(ai_is_ai_trained_read()==0){
+//        for(int i = 0; i < 1000; i++){
+//            snake_getSurroundings(ai_getInputField());
+//            ai_propagate(snake_move(ai_run()));
+//        }
+//        ai_is_ai_trained_write(1);
+//    }
     
     while (1)
     {
@@ -152,7 +132,7 @@ void main(void)
         uint8_t foodPosition = snake_getFoodPosition();
         ledSet(foodPosition&0x03, foodPosition>>3);
         sendMatrix();
-    }*/
+    }
 }
 /**
  End of File
