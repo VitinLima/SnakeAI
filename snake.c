@@ -106,16 +106,16 @@ void snake_getSurroundings(uint8_t* surroundings){
         surroundings[7] = 1;
         surroundings[0] = 1;
     }
-    uint8_t p;
-    for(uint8_t i = 0; i < 8; i++){
-        p = (headPosition+mapping[i])&0x3f;
-        if(p==foodPosition){
-            surroundings[i+8] = 1;
-        }
-        if(field[p] > 0){
-            surroundings[i] = 1;
-        }
-    }
+//    uint8_t p;
+//    for(uint8_t i = 0; i < 8; i++){
+//        p = (headPosition+mapping[i])&0x3f;
+//        if(p==foodPosition){
+//            surroundings[i+8] = 1;
+//        }
+//        if(field[p] > 0){
+//            surroundings[i] = 1;
+//        }
+//    }
 }
 
 uint8_t snake_getHeadPosition(){
