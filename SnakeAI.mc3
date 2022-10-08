@@ -60,7 +60,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudRateComboBox"/>
-         <value>9600</value>
+         <value>19200</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudRateErrorLabel"/>
@@ -260,7 +260,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="SPBRGL"/>
-         <value>207</value>
+         <value>103</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="TXREG"/>
@@ -344,7 +344,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="SPBRGL" settingAlias="SPBRGL"/>
-         <value>207</value>
+         <value>103</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXI" settingAlias="enable"/>
@@ -3331,7 +3331,19 @@
          <value>OFF</value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.TreeMap">
+   <generatedFileHashHistoryMap class="java.util.HashMap">
+      <entry>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>37941bda4992f6bbc4e0bdcd44fc1f6b384d8336ed085f2a21f173c7dc9723b7</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\device_config.h</file>
+         <hash>161a907092cc1af142bdf5a1178f1afdb1aa40672f1c118681e4b541145e339f</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\memory.c</file>
+         <hash>9b06ee9fff3b169e58bd27a47f151a693ef75123b53cf8c18aa63c1906d7b62e</hash>
+      </entry>
       <entry>
          <file>main.c</file>
          <hash>d4e8bcbcb679cb955632857da55ad0b3066ef3bbbe4442d3a9a3b768ccea7ca7</hash>
@@ -3341,12 +3353,24 @@
          <hash>42f5de9d140a2b1a569f5b4d8b040d709a1f9df6a0d06374bfe0155fe86af9de</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\device_config.h</file>
-         <hash>161a907092cc1af142bdf5a1178f1afdb1aa40672f1c118681e4b541145e339f</hash>
+         <file>mcc_generated_files\pin_manager.h</file>
+         <hash>b26cc9a0db962b7548f43a0dfa06afc58f2db66bcf7e56a7230f77edf7f8a68b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi1.h</file>
+         <hash>81849a04e9194693a953840c262df08841d6dff5e2982ecbbf5f55a67079edcd</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\eusart.c</file>
-         <hash>573dba07bcc221a44cd56fdcea83e60427ad6938443ef5f77205e62c88fe630a</hash>
+         <hash>fcfddddfdb389949eebef57194906aa4e3be32c28041ec0db1e5766c799de8ae</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pin_manager.c</file>
+         <hash>f98f96084a7245dca1a7eaeaa6ea66907eccaee9615a3eefc3a2a5507b3a4d2d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi1.c</file>
+         <hash>ab0b895c22577472f837e08b5ed7b9ee7fccd6dd7ada0467187281c0aba683b5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\eusart.h</file>
@@ -3357,32 +3381,8 @@
          <hash>cf5ef5bae67a70edfe0decad038a756c825ceb486d050a53724a3e8bd269b764</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>37941bda4992f6bbc4e0bdcd44fc1f6b384d8336ed085f2a21f173c7dc9723b7</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\memory.c</file>
-         <hash>9b06ee9fff3b169e58bd27a47f151a693ef75123b53cf8c18aa63c1906d7b62e</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\memory.h</file>
          <hash>c65331586b5b6b800be95557620c84b02b2e585a47da1ffb5df2952f68421837</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\pin_manager.c</file>
-         <hash>f98f96084a7245dca1a7eaeaa6ea66907eccaee9615a3eefc3a2a5507b3a4d2d</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\pin_manager.h</file>
-         <hash>b26cc9a0db962b7548f43a0dfa06afc58f2db66bcf7e56a7230f77edf7f8a68b</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\spi1.c</file>
-         <hash>ab0b895c22577472f837e08b5ed7b9ee7fccd6dd7ada0467187281c0aba683b5</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\spi1.h</file>
-         <hash>81849a04e9194693a953840c262df08841d6dff5e2982ecbbf5f55a67079edcd</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
