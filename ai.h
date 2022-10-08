@@ -28,14 +28,16 @@ extern "C" {
     uint8_t Y0[N0];
     uint8_t Y1[N1];
     uint8_t Y2[N2];
-    int16_t Z1[N1];
-    int16_t Z2[N2];
-    int16_t DY2[N2];
-    int16_t DY1[N1];
+    int8_t Z1[N1];
+    int8_t Z2[N2];
+    int8_t DY2[N2];
+    int8_t DY1[N1];
     int8_t DW1[N0][N1];
     int8_t DB1[N1];
     int8_t DW2[N1][N2];
     int8_t DB2[N2];
+    
+    uint8_t choice;
     
     void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
     void biases1_write(uint8_t add, int8_t val);

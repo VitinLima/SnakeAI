@@ -498,17 +498,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ai.h: 30:     uint8_t Y2[4];
 [v _Y2 `uc ~T0 @X0 -> 4 `i e ]
 "31
-[; ;./ai.h: 31:     int16_t Z1[7];
-[v _Z1 `s ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 31:     int8_t Z1[7];
+[v _Z1 `c ~T0 @X0 -> 7 `i e ]
 "32
-[; ;./ai.h: 32:     int16_t Z2[4];
-[v _Z2 `s ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 32:     int8_t Z2[4];
+[v _Z2 `c ~T0 @X0 -> 4 `i e ]
 "33
-[; ;./ai.h: 33:     int16_t DY2[4];
-[v _DY2 `s ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 33:     int8_t DY2[4];
+[v _DY2 `c ~T0 @X0 -> 4 `i e ]
 "34
-[; ;./ai.h: 34:     int16_t DY1[7];
-[v _DY1 `s ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 34:     int8_t DY1[7];
+[v _DY1 `c ~T0 @X0 -> 7 `i e ]
 [v F2877 `c ~T0 @X0 -> 7 `i t ]
 "35
 [; ;./ai.h: 35:     int8_t DW1[16][7];
@@ -523,6 +523,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;./ai.h: 38:     int8_t DB2[4];
 [v _DB2 `c ~T0 @X0 -> 4 `i e ]
+"40
+[; ;./ai.h: 40:     uint8_t choice;
+[v _choice `uc ~T0 @X0 1 e ]
 "11 ./sigmoid.h
 [; ;./sigmoid.h: 11: const uint8_t sigmoidValues[16];
 [v _sigmoidValues `Cuc ~T0 @X0 -> 16 `i e ]
@@ -579,28 +582,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 8: uint8_t Y2[4];
 [v _Y2 `uc ~T0 @X0 -> 4 `i e ]
 "9
-[; ;ai.c: 9: int16_t Z1[7];
-[v _Z1 `s ~T0 @X0 -> 7 `i e ]
+[; ;ai.c: 9: int8_t Z1[7];
+[v _Z1 `c ~T0 @X0 -> 7 `i e ]
 "10
-[; ;ai.c: 10: int16_t Z2[4];
-[v _Z2 `s ~T0 @X0 -> 4 `i e ]
+[; ;ai.c: 10: int8_t Z2[4];
+[v _Z2 `c ~T0 @X0 -> 4 `i e ]
 "11
-[; ;ai.c: 11: int16_t DY2[4];
-[v _DY2 `s ~T0 @X0 -> 4 `i e ]
+[; ;ai.c: 11: int8_t DY2[4];
+[v _DY2 `c ~T0 @X0 -> 4 `i e ]
 "12
-[; ;ai.c: 12: int16_t DY1[7];
-[v _DY1 `s ~T0 @X0 -> 7 `i e ]
-[v F2939 `c ~T0 @X0 -> 7 `i t ]
+[; ;ai.c: 12: int8_t DY1[7];
+[v _DY1 `c ~T0 @X0 -> 7 `i e ]
+[v F2940 `c ~T0 @X0 -> 7 `i t ]
 "13
 [; ;ai.c: 13: int8_t DW1[16][7];
-[v _DW1 `F2939 ~T0 @X0 -> 16 `i e ]
+[v _DW1 `F2940 ~T0 @X0 -> 16 `i e ]
 "14
 [; ;ai.c: 14: int8_t DB1[7];
 [v _DB1 `c ~T0 @X0 -> 7 `i e ]
-[v F2942 `c ~T0 @X0 -> 4 `i t ]
+[v F2943 `c ~T0 @X0 -> 4 `i t ]
 "15
 [; ;ai.c: 15: int8_t DW2[7][4];
-[v _DW2 `F2942 ~T0 @X0 -> 7 `i e ]
+[v _DW2 `F2943 ~T0 @X0 -> 7 `i e ]
 "16
 [; ;ai.c: 16: int8_t DB2[4];
 [v _DB2 `c ~T0 @X0 -> 4 `i e ]
@@ -1014,478 +1017,522 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ai_run ]
 [f ]
 "107
-[; ;ai.c: 107:     int16_t z;
-[v _z `s ~T0 @X0 1 a ]
-"108
-[; ;ai.c: 108:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 107:     for(uint8_t i = 0; i < 16; i++){
 {
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 394  ]
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 394  ]
 [e $U 395  ]
 [e :U 394 ]
 {
+"108
+[; ;ai.c: 108:         if(Y0[i]> 0){
+[e $ ! > -> *U + &U _Y0 * -> _i `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 397  ]
+{
 "109
-[; ;ai.c: 109:         Z1[j] = biases1_read(j);
-[e = *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux -> ( _biases1_read (1 _j `s ]
+[; ;ai.c: 109:             Y0[i] = 255u;
+[e = *U + &U _Y0 * -> _i `ux -> -> # *U &U _Y0 `ui `ux -> -> 255 `ui `uc ]
 "110
-[; ;ai.c: 110:         for(uint8_t i = 0; i < 16; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 397  ]
-[e $U 398  ]
+[; ;ai.c: 110:         }
+}
 [e :U 397 ]
-{
 "111
-[; ;ai.c: 111:             z = (int16_t)Y0[i];
-[e = _z -> *U + &U _Y0 * -> _i `ux -> -> # *U &U _Y0 `ui `ux `s ]
-"112
-[; ;ai.c: 112:             z *= weights1_read(i,j);
-[e =* _z -> ( _weights1_read (2 , _i _j `s ]
-"113
-[; ;ai.c: 113:             z /= 255;
-[e =/ _z -> 255 `i ]
-"114
-[; ;ai.c: 114:             Z1[j] += z;
-[e =+ *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux -> _z `s ]
-"115
-[; ;ai.c: 115:         }
+[; ;ai.c: 111:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 397  ]
-[e :U 398 ]
-}
-"116
-[; ;ai.c: 116:         Y1[j] = sigmoid((int8_t)Z1[j]);
-[e = *U + &U _Y1 * -> _j `ux -> -> # *U &U _Y1 `ui `ux ( _sigmoid (1 -> *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux `c ]
-"117
-[; ;ai.c: 117:     }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 394  ]
+[e $ < -> _i `i -> 16 `i 394  ]
 [e :U 395 ]
 }
-"118
-[; ;ai.c: 118:     for(uint8_t j = 0; j < 4; j++){
+"113
+[; ;ai.c: 113:     int16_t z;
+[v _z `s ~T0 @X0 1 a ]
+"114
+[; ;ai.c: 114:     for(uint8_t j = 0; j < 7; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 400  ]
-[e $U 401  ]
-[e :U 400 ]
+[e $ < -> _j `i -> 7 `i 398  ]
+[e $U 399  ]
+[e :U 398 ]
 {
-"119
-[; ;ai.c: 119:         Z2[j] = biases2_read(j);
-[e = *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux -> ( _biases2_read (1 _j `s ]
-"120
-[; ;ai.c: 120:         for(uint8_t i = 0; i < 7; i++){
+"115
+[; ;ai.c: 115:         Z1[j] = biases1_read(j);
+[e = *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux ( _biases1_read (1 _j ]
+"116
+[; ;ai.c: 116:         for(uint8_t i = 0; i < 16; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 403  ]
-[e $U 404  ]
-[e :U 403 ]
+[e $ < -> _i `i -> 16 `i 401  ]
+[e $U 402  ]
+[e :U 401 ]
 {
-"121
-[; ;ai.c: 121:             z = (int16_t)Y1[i];
-[e = _z -> *U + &U _Y1 * -> _i `ux -> -> # *U &U _Y1 `ui `ux `s ]
-"122
-[; ;ai.c: 122:             z *= weights2_read(i,j);
-[e =* _z -> ( _weights2_read (2 , _i _j `s ]
-"123
-[; ;ai.c: 123:             z /= 255;
+"117
+[; ;ai.c: 117:             z = (int16_t)Y0[i];
+[e = _z -> *U + &U _Y0 * -> _i `ux -> -> # *U &U _Y0 `ui `ux `s ]
+"118
+[; ;ai.c: 118:             z *= weights1_read(i,j);
+[e =* _z -> ( _weights1_read (2 , _i _j `s ]
+"119
+[; ;ai.c: 119:             z /= 255;
 [e =/ _z -> 255 `i ]
-"124
-[; ;ai.c: 124:             Z2[j] += z;
-[e =+ *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux -> _z `s ]
-"125
-[; ;ai.c: 125:         }
+"120
+[; ;ai.c: 120:             Z1[j] += z;
+[e =+ *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux -> _z `c ]
+"121
+[; ;ai.c: 121:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 403  ]
-[e :U 404 ]
+[e $ < -> _i `i -> 16 `i 401  ]
+[e :U 402 ]
 }
-"126
-[; ;ai.c: 126:         Y2[j] = sigmoid((int8_t)Z2[j]);
-[e = *U + &U _Y2 * -> _j `ux -> -> # *U &U _Y2 `ui `ux ( _sigmoid (1 -> *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux `c ]
-"127
-[; ;ai.c: 127:     }
+"122
+[; ;ai.c: 122:         Y1[j] = sigmoid(Z1[j]);
+[e = *U + &U _Y1 * -> _j `ux -> -> # *U &U _Y1 `ui `ux ( _sigmoid (1 *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux ]
+"123
+[; ;ai.c: 123:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 400  ]
-[e :U 401 ]
+[e $ < -> _j `i -> 7 `i 398  ]
+[e :U 399 ]
 }
+"124
+[; ;ai.c: 124:     for(uint8_t j = 0; j < 4; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 4 `i 404  ]
+[e $U 405  ]
+[e :U 404 ]
+{
+"125
+[; ;ai.c: 125:         Z2[j] = biases2_read(j);
+[e = *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux ( _biases2_read (1 _j ]
+"126
+[; ;ai.c: 126:         for(uint8_t i = 0; i < 7; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 7 `i 407  ]
+[e $U 408  ]
+[e :U 407 ]
+{
+"127
+[; ;ai.c: 127:             z = (int16_t)Y1[i];
+[e = _z -> *U + &U _Y1 * -> _i `ux -> -> # *U &U _Y1 `ui `ux `s ]
+"128
+[; ;ai.c: 128:             z *= weights2_read(i,j);
+[e =* _z -> ( _weights2_read (2 , _i _j `s ]
 "129
-[; ;ai.c: 129:     choice = 0;
-[e = _choice -> -> 0 `i `uc ]
+[; ;ai.c: 129:             z /= 255;
+[e =/ _z -> 255 `i ]
 "130
-[; ;ai.c: 130:     for(uint8_t i = 1; i < 4; i++){
+[; ;ai.c: 130:             Z2[j] += z;
+[e =+ *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux -> _z `c ]
+"131
+[; ;ai.c: 131:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 7 `i 407  ]
+[e :U 408 ]
+}
+"132
+[; ;ai.c: 132:         Y2[j] = sigmoid(Z2[j]);
+[e = *U + &U _Y2 * -> _j `ux -> -> # *U &U _Y2 `ui `ux ( _sigmoid (1 *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux ]
+"133
+[; ;ai.c: 133:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 4 `i 404  ]
+[e :U 405 ]
+}
+"135
+[; ;ai.c: 135:     choice = 0;
+[e = _choice -> -> 0 `i `uc ]
+"136
+[; ;ai.c: 136:     for(uint8_t i = 1; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 406  ]
-[e $U 407  ]
-[e :U 406 ]
+[e $ < -> _i `i -> 4 `i 410  ]
+[e $U 411  ]
+[e :U 410 ]
 {
-"131
-[; ;ai.c: 131:         if(Y2[i]>Y2[choice]){
-[e $ ! > -> *U + &U _Y2 * -> _i `ux -> -> # *U &U _Y2 `ui `ux `i -> *U + &U _Y2 * -> _choice `ux -> -> # *U &U _Y2 `ui `ux `i 409  ]
+"137
+[; ;ai.c: 137:         if(Y2[i]>Y2[choice]){
+[e $ ! > -> *U + &U _Y2 * -> _i `ux -> -> # *U &U _Y2 `ui `ux `i -> *U + &U _Y2 * -> _choice `ux -> -> # *U &U _Y2 `ui `ux `i 413  ]
 {
-"132
-[; ;ai.c: 132:             choice = i;
+"138
+[; ;ai.c: 138:             choice = i;
 [e = _choice _i ]
-"133
-[; ;ai.c: 133:         }
+"139
+[; ;ai.c: 139:         }
 }
-[e :U 409 ]
-"134
-[; ;ai.c: 134:     }
+[e :U 413 ]
+"140
+[; ;ai.c: 140:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 406  ]
-[e :U 407 ]
+[e $ < -> _i `i -> 4 `i 410  ]
+[e :U 411 ]
 }
-"135
-[; ;ai.c: 135:     return choice;
+"141
+[; ;ai.c: 141:     return choice;
 [e ) _choice ]
 [e $UE 393  ]
-"136
-[; ;ai.c: 136: }
+"142
+[; ;ai.c: 142: }
 [e :UE 393 ]
 }
-"138
-[; ;ai.c: 138: void ai_propagate(int8_t incentive){
+"144
+[; ;ai.c: 144: void ai_propagate(int8_t incentive){
 [v _ai_propagate `(v ~T0 @X0 1 ef1`c ]
 {
 [e :U _ai_propagate ]
 [v _incentive `c ~T0 @X0 1 r1 ]
 [f ]
-"139
-[; ;ai.c: 139:     if(incentive == 0){
-[e $ ! == -> _incentive `i -> 0 `i 411  ]
-{
-"140
-[; ;ai.c: 140:         return;
-[e $UE 410  ]
-"141
-[; ;ai.c: 141:     }
-}
-[e :U 411 ]
-"143
-[; ;ai.c: 143:     if(incentive == -1){
-[e $ ! == -> _incentive `i -U -> 1 `i 412  ]
-{
-"144
-[; ;ai.c: 144:         incentive = 0;
-[e = _incentive -> -> 0 `i `c ]
 "145
-[; ;ai.c: 145:     }
-}
-[e :U 412 ]
+[; ;ai.c: 145:     if(incentive == 0){
+[e $ ! == -> _incentive `i -> 0 `i 415  ]
+{
+"146
+[; ;ai.c: 146:         return;
+[e $UE 414  ]
 "147
-[; ;ai.c: 147:     uint8_t S[4];
-[v _S `uc ~T0 @X0 -> 4 `i a ]
-"148
-[; ;ai.c: 148:     for(uint8_t j = 0; j < 7; j++){
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 413  ]
-[e $U 414  ]
-[e :U 413 ]
-{
+[; ;ai.c: 147:     }
+}
+[e :U 415 ]
 "149
-[; ;ai.c: 149:         DB1[j] = 0;
-[e = *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux -> -> 0 `i `c ]
+[; ;ai.c: 149:     if(incentive == -1){
+[e $ ! == -> _incentive `i -U -> 1 `i 416  ]
+{
 "150
-[; ;ai.c: 150:         for(uint8_t i = 0; i < 16; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 416  ]
-[e $U 417  ]
-[e :U 416 ]
-{
+[; ;ai.c: 150:         incentive = 0;
+[e = _incentive -> -> 0 `i `c ]
 "151
-[; ;ai.c: 151:             DW1[i][j] = 0;
-[e = *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux -> -> 0 `i `c ]
-"152
-[; ;ai.c: 152:         }
+[; ;ai.c: 151:     }
 }
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 416  ]
-[e :U 417 ]
-}
+[e :U 416 ]
 "153
-[; ;ai.c: 153:     }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 413  ]
-[e :U 414 ]
-}
+[; ;ai.c: 153:     uint8_t S[4];
+[v _S `uc ~T0 @X0 -> 4 `i a ]
 "154
-[; ;ai.c: 154:     for(uint8_t j = 0; j < 4; j++){
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 419  ]
-[e $U 420  ]
-[e :U 419 ]
+[; ;ai.c: 154:     if(incentive == 0){
+[e $ ! == -> _incentive `i -> 0 `i 417  ]
 {
 "155
-[; ;ai.c: 155:         DB2[j] = 0;
-[e = *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux -> -> 0 `i `c ]
-"156
-[; ;ai.c: 156:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 155:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 422  ]
+[e $ < -> _i `i -> 4 `i 418  ]
+[e $U 419  ]
+[e :U 418 ]
+{
+"156
+[; ;ai.c: 156:             S[i] = 255u;
+[e = *U + &U _S * -> _i `ux -> -> # *U &U _S `ui `ux -> -> 255 `ui `uc ]
+"157
+[; ;ai.c: 157:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 418  ]
+[e :U 419 ]
+}
+"158
+[; ;ai.c: 158:         S[choice] = 0;
+[e = *U + &U _S * -> _choice `ux -> -> # *U &U _S `ui `ux -> -> 0 `i `uc ]
+"159
+[; ;ai.c: 159:     } else{
+}
+[e $U 421  ]
+[e :U 417 ]
+{
+"160
+[; ;ai.c: 160:         for(uint8_t i = 0; i < 4; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 422  ]
 [e $U 423  ]
 [e :U 422 ]
 {
-"157
-[; ;ai.c: 157:             DW2[i][j] = 0;
-[e = *U + &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux `ui `ux -> -> 0 `i `c ]
-"158
-[; ;ai.c: 158:         }
+"161
+[; ;ai.c: 161:             S[i] = 0;
+[e = *U + &U _S * -> _i `ux -> -> # *U &U _S `ui `ux -> -> 0 `i `uc ]
+"162
+[; ;ai.c: 162:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 422  ]
+[e $ < -> _i `i -> 4 `i 422  ]
 [e :U 423 ]
 }
-"159
-[; ;ai.c: 159:     }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 419  ]
-[e :U 420 ]
-}
-"160
-[; ;ai.c: 160:     if(incentive == 0){
-[e $ ! == -> _incentive `i -> 0 `i 425  ]
-{
-"161
-[; ;ai.c: 161:         for(uint8_t i = 0; i < 4; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 426  ]
-[e $U 427  ]
-[e :U 426 ]
-{
-"162
-[; ;ai.c: 162:             S[i] = 1;
-[e = *U + &U _S * -> _i `ux -> -> # *U &U _S `ui `ux -> -> 1 `i `uc ]
 "163
-[; ;ai.c: 163:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 426  ]
-[e :U 427 ]
-}
+[; ;ai.c: 163:         S[choice] = 255u;
+[e = *U + &U _S * -> _choice `ux -> -> # *U &U _S `ui `ux -> -> 255 `ui `uc ]
 "164
-[; ;ai.c: 164:         S[choice] = 0;
-[e = *U + &U _S * -> _choice `ux -> -> # *U &U _S `ui `ux -> -> 0 `i `uc ]
-"165
-[; ;ai.c: 165:     } else{
+[; ;ai.c: 164:     }
 }
-[e $U 429  ]
+[e :U 421 ]
+"166
+[; ;ai.c: 166:     for(uint8_t j = 0; j < 7; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 7 `i 425  ]
+[e $U 426  ]
 [e :U 425 ]
 {
-"166
-[; ;ai.c: 166:         for(uint8_t i = 0; i < 4; i++){
+"167
+[; ;ai.c: 167:         DY1[j] = 0;
+[e = *U + &U _DY1 * -> _j `ux -> -> # *U &U _DY1 `ui `ux -> -> 0 `i `c ]
+"168
+[; ;ai.c: 168:         DB1[j] = 0;
+[e = *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux -> -> 0 `i `c ]
+"169
+[; ;ai.c: 169:         for(uint8_t i = 0; i < 16; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 430  ]
-[e $U 431  ]
-[e :U 430 ]
+[e $ < -> _i `i -> 16 `i 428  ]
+[e $U 429  ]
+[e :U 428 ]
 {
-"167
-[; ;ai.c: 167:             S[i] = 0;
-[e = *U + &U _S * -> _i `ux -> -> # *U &U _S `ui `ux -> -> 0 `i `uc ]
-"168
-[; ;ai.c: 168:         }
+"170
+[; ;ai.c: 170:             DW1[i][j] = 0;
+[e = *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux -> -> 0 `i `c ]
+"171
+[; ;ai.c: 171:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 430  ]
-[e :U 431 ]
-}
-"169
-[; ;ai.c: 169:         S[choice] = 1;
-[e = *U + &U _S * -> _choice `ux -> -> # *U &U _S `ui `ux -> -> 1 `i `uc ]
-"170
-[; ;ai.c: 170:     }
-}
+[e $ < -> _i `i -> 16 `i 428  ]
 [e :U 429 ]
+}
 "172
-[; ;ai.c: 172:     for(uint8_t k = 0; k < 4; k++){
-{
-[v _k `uc ~T0 @X0 1 a ]
-[e = _k -> -> 0 `i `uc ]
-[e $ < -> _k `i -> 4 `i 433  ]
-[e $U 434  ]
-[e :U 433 ]
-{
+[; ;ai.c: 172:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 7 `i 425  ]
+[e :U 426 ]
+}
 "173
-[; ;ai.c: 173:         DY2[k] = 2*(Y2[k] - S[k]);
-[e = *U + &U _DY2 * -> _k `ux -> -> # *U &U _DY2 `ui `ux -> * -> 2 `i - -> *U + &U _Y2 * -> _k `ux -> -> # *U &U _Y2 `ui `ux `i -> *U + &U _S * -> _k `ux -> -> # *U &U _S `ui `ux `i `s ]
+[; ;ai.c: 173:     for(uint8_t j = 0; j < 4; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 4 `i 431  ]
+[e $U 432  ]
+[e :U 431 ]
+{
 "174
-[; ;ai.c: 174:         uint8_t dz = de_sigmoid((int8_t)Z2[k]);
-[v _dz `uc ~T0 @X0 1 a ]
-[e = _dz ( _de_sigmoid (1 -> *U + &U _Z2 * -> _k `ux -> -> # *U &U _Z2 `ui `ux `c ]
+[; ;ai.c: 174:         DY2[j] = (int8_t)(((int16_t)Y2[j] - (int16_t)S[j])>>1);
+[e = *U + &U _DY2 * -> _j `ux -> -> # *U &U _DY2 `ui `ux -> >> - -> -> *U + &U _Y2 * -> _j `ux -> -> # *U &U _Y2 `ui `ux `s `i -> -> *U + &U _S * -> _j `ux -> -> # *U &U _S `ui `ux `s `i -> 1 `i `c ]
 "175
-[; ;ai.c: 175:         DB2[k] += DY2[k]*dz;
-[e =+ *U + &U _DB2 * -> _k `ux -> -> # *U &U _DB2 `ui `ux -> * -> *U + &U _DY2 * -> _k `ux -> -> # *U &U _DY2 `ui `ux `i -> _dz `i `c ]
+[; ;ai.c: 175:         DB2[j] = 0;
+[e = *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux -> -> 0 `i `c ]
 "176
 [; ;ai.c: 176:         for(uint8_t i = 0; i < 7; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 436  ]
-[e $U 437  ]
-[e :U 436 ]
+[e $ < -> _i `i -> 7 `i 434  ]
+[e $U 435  ]
+[e :U 434 ]
 {
 "177
-[; ;ai.c: 177:             DY1[i] = dz*weights2_read(i, k);
-[e = *U + &U _DY1 * -> _i `ux -> -> # *U &U _DY1 `ui `ux -> * -> _dz `i -> ( _weights2_read (2 , _i _k `i `s ]
+[; ;ai.c: 177:             DW2[i][j] = 0;
+[e = *U + &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux `ui `ux -> -> 0 `i `c ]
 "178
-[; ;ai.c: 178:             DW2[i][k] += dz*DY2[k];
-[e =+ *U + &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux * -> _k `ux -> -> # *U &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux `ui `ux -> * -> _dz `i -> *U + &U _DY2 * -> _k `ux -> -> # *U &U _DY2 `ui `ux `i `c ]
-"179
-[; ;ai.c: 179:         }
+[; ;ai.c: 178:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 436  ]
-[e :U 437 ]
+[e $ < -> _i `i -> 7 `i 434  ]
+[e :U 435 ]
+}
+"179
+[; ;ai.c: 179:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 4 `i 431  ]
+[e :U 432 ]
 }
 "181
-[; ;ai.c: 181:         for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 181:     int16_t dz;
+[v _dz `s ~T0 @X0 1 a ]
+"182
+[; ;ai.c: 182:     for(uint8_t k = 0; k < 4; k++){
+{
+[v _k `uc ~T0 @X0 1 a ]
+[e = _k -> -> 0 `i `uc ]
+[e $ < -> _k `i -> 4 `i 437  ]
+[e $U 438  ]
+[e :U 437 ]
+{
+"183
+[; ;ai.c: 183:         dz = (int16_t)de_sigmoid(Z2[k]);
+[e = _dz -> ( _de_sigmoid (1 *U + &U _Z2 * -> _k `ux -> -> # *U &U _Z2 `ui `ux `s ]
+"184
+[; ;ai.c: 184:         dz *= (int16_t)DY2[k];
+[e =* _dz -> -> *U + &U _DY2 * -> _k `ux -> -> # *U &U _DY2 `ui `ux `s `s ]
+"185
+[; ;ai.c: 185:         dz /= 255;
+[e =/ _dz -> 255 `i ]
+"187
+[; ;ai.c: 187:         DB2[k] += (int8_t)(dz>>1);
+[e =+ *U + &U _DB2 * -> _k `ux -> -> # *U &U _DB2 `ui `ux -> -> >> -> _dz `i -> 1 `i `c `c ]
+"188
+[; ;ai.c: 188:         for(uint8_t j = 0; j < 7; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 439  ]
-[e $U 440  ]
-[e :U 439 ]
+[e $ < -> _j `i -> 7 `i 440  ]
+[e $U 441  ]
+[e :U 440 ]
 {
-"182
-[; ;ai.c: 182:             dz = de_sigmoid((int8_t)Z1[j]);
-[e = _dz ( _de_sigmoid (1 -> *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux `c ]
-"183
-[; ;ai.c: 183:             DB1[j] += DY1[j]*dz;
-[e =+ *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux -> * -> *U + &U _DY1 * -> _j `ux -> -> # *U &U _DY1 `ui `ux `i -> _dz `i `c ]
-"184
-[; ;ai.c: 184:             for(uint8_t i = 0; i < 16; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 442  ]
-[e $U 443  ]
-[e :U 442 ]
-{
-"185
-[; ;ai.c: 185:                 DW1[i][j] += dz*DY1[j];
-[e =+ *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux -> * -> _dz `i -> *U + &U _DY1 * -> _j `ux -> -> # *U &U _DY1 `ui `ux `i `c ]
-"186
-[; ;ai.c: 186:             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 442  ]
-[e :U 443 ]
-}
-"187
-[; ;ai.c: 187:         }
+"189
+[; ;ai.c: 189:             DY1[j] += (int8_t)(((dz*(int16_t)weights2_read(j, k))/127)>>1);
+[e =+ *U + &U _DY1 * -> _j `ux -> -> # *U &U _DY1 `ui `ux -> -> >> / * -> _dz `i -> -> ( _weights2_read (2 , _j _k `s `i -> 127 `i -> 1 `i `c `c ]
+"190
+[; ;ai.c: 190:             DW2[j][k] += (int8_t)(((dz*(int16_t)Y1[j])/127)>>1);
+[e =+ *U + &U *U + &U _DW2 * -> _j `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux * -> _k `ux -> -> # *U &U *U + &U _DW2 * -> _j `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux `ui `ux -> -> >> / * -> _dz `i -> -> *U + &U _Y1 * -> _j `ux -> -> # *U &U _Y1 `ui `ux `s `i -> 127 `i -> 1 `i `c `c ]
+"191
+[; ;ai.c: 191:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 439  ]
-[e :U 440 ]
+[e $ < -> _j `i -> 7 `i 440  ]
+[e :U 441 ]
 }
-"188
-[; ;ai.c: 188:     }
+"192
+[; ;ai.c: 192:     }
 }
 [e ++ _k -> -> 1 `i `uc ]
-[e $ < -> _k `i -> 4 `i 433  ]
-[e :U 434 ]
+[e $ < -> _k `i -> 4 `i 437  ]
+[e :U 438 ]
 }
-"190
-[; ;ai.c: 190:     for(uint8_t j = 0; j < 4; j++){
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 445  ]
-[e $U 446  ]
-[e :U 445 ]
-{
-"191
-[; ;ai.c: 191:         biases2_write(j, (int8_t)(biases2_read(j) - DB2[j]));
-[e ( _biases2_write (2 , _j -> - -> ( _biases2_read (1 _j `i -> *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux `i `c ]
-"192
-[; ;ai.c: 192:         for(uint8_t i = 0; i < 7; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 448  ]
-[e $U 449  ]
-[e :U 448 ]
-{
 "193
-[; ;ai.c: 193:             weights2_write(i,j, (int8_t)(weights2_read(i,j) - DW2[i][j]));
-[e ( _weights2_write (3 , , _i _j -> - -> ( _weights2_read (2 , _i _j `i -> *U + &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux `ui `ux `i `c ]
+[; ;ai.c: 193:     for(uint8_t k = 0; k < 7; k++){
+{
+[v _k `uc ~T0 @X0 1 a ]
+[e = _k -> -> 0 `i `uc ]
+[e $ < -> _k `i -> 7 `i 443  ]
+[e $U 444  ]
+[e :U 443 ]
+{
 "194
-[; ;ai.c: 194:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 448  ]
-[e :U 449 ]
-}
+[; ;ai.c: 194:         dz = (int16_t)de_sigmoid(Z1[k]);
+[e = _dz -> ( _de_sigmoid (1 *U + &U _Z1 * -> _k `ux -> -> # *U &U _Z1 `ui `ux `s ]
 "195
-[; ;ai.c: 195:     }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 445  ]
-[e :U 446 ]
-}
+[; ;ai.c: 195:         dz *= (int16_t)DY1[k];
+[e =* _dz -> -> *U + &U _DY1 * -> _k `ux -> -> # *U &U _DY1 `ui `ux `s `s ]
 "196
-[; ;ai.c: 196:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 196:         dz /= 255;
+[e =/ _dz -> 255 `i ]
+"198
+[; ;ai.c: 198:         DB1[k] += (int8_t)(dz>>1);
+[e =+ *U + &U _DB1 * -> _k `ux -> -> # *U &U _DB1 `ui `ux -> -> >> -> _dz `i -> 1 `i `c `c ]
+"199
+[; ;ai.c: 199:         for(uint8_t j = 0; j < 16; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 451  ]
-[e $U 452  ]
-[e :U 451 ]
+[e $ < -> _j `i -> 16 `i 446  ]
+[e $U 447  ]
+[e :U 446 ]
 {
-"197
-[; ;ai.c: 197:         biases1_write(j, (int8_t)(biases2_read(j) - DB1[j]));
-[e ( _biases1_write (2 , _j -> - -> ( _biases2_read (1 _j `i -> *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux `i `c ]
-"198
-[; ;ai.c: 198:         for(uint8_t i = 0; i < 16; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 454  ]
-[e $U 455  ]
-[e :U 454 ]
-{
-"199
-[; ;ai.c: 199:             weights1_write(i,j, (int8_t)(weights2_read(i,j) - DW1[i][j]));
-[e ( _weights1_write (3 , , _i _j -> - -> ( _weights2_read (2 , _i _j `i -> *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux `i `c ]
 "200
-[; ;ai.c: 200:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 454  ]
-[e :U 455 ]
-}
+[; ;ai.c: 200:             DW1[j][k] += (int8_t)(((dz*(int16_t)Y0[j])/127)>>1);
+[e =+ *U + &U *U + &U _DW1 * -> _j `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _k `ux -> -> # *U &U *U + &U _DW1 * -> _j `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux -> -> >> / * -> _dz `i -> -> *U + &U _Y0 * -> _j `ux -> -> # *U &U _Y0 `ui `ux `s `i -> 127 `i -> 1 `i `c `c ]
 "201
-[; ;ai.c: 201:     }
+[; ;ai.c: 201:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 451  ]
-[e :U 452 ]
+[e $ < -> _j `i -> 16 `i 446  ]
+[e :U 447 ]
 }
 "202
-[; ;ai.c: 202: }
-[e :UE 410 ]
+[; ;ai.c: 202:     }
+}
+[e ++ _k -> -> 1 `i `uc ]
+[e $ < -> _k `i -> 7 `i 443  ]
+[e :U 444 ]
+}
+"204
+[; ;ai.c: 204:     for(uint8_t j = 0; j < 4; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 4 `i 449  ]
+[e $U 450  ]
+[e :U 449 ]
+{
+"205
+[; ;ai.c: 205:         biases2_write(j, biases2_read(j) - DB2[j]);
+[e ( _biases2_write (2 , _j -> - -> ( _biases2_read (1 _j `i -> *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux `i `c ]
+"206
+[; ;ai.c: 206:         for(uint8_t i = 0; i < 7; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 7 `i 452  ]
+[e $U 453  ]
+[e :U 452 ]
+{
+"207
+[; ;ai.c: 207:             weights2_write(i,j, weights2_read(i,j) - DW2[i][j]);
+[e ( _weights2_write (3 , , _i _j -> - -> ( _weights2_read (2 , _i _j `i -> *U + &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW2 * -> _i `ux -> * -> # *U &U *U &U _DW2 `ui -> -> 4 `i `ui `ux `ui `ux `i `c ]
+"208
+[; ;ai.c: 208:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 7 `i 452  ]
+[e :U 453 ]
+}
+"209
+[; ;ai.c: 209:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 4 `i 449  ]
+[e :U 450 ]
+}
+"210
+[; ;ai.c: 210:     for(uint8_t j = 0; j < 7; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 7 `i 455  ]
+[e $U 456  ]
+[e :U 455 ]
+{
+"211
+[; ;ai.c: 211:         biases1_write(j, biases1_read(j) - DB1[j]);
+[e ( _biases1_write (2 , _j -> - -> ( _biases1_read (1 _j `i -> *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux `i `c ]
+"212
+[; ;ai.c: 212:         for(uint8_t i = 0; i < 16; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 458  ]
+[e $U 459  ]
+[e :U 458 ]
+{
+"213
+[; ;ai.c: 213:             weights1_write(i,j, weights1_read(i,j) - DW1[i][j]);
+[e ( _weights1_write (3 , , _i _j -> - -> ( _weights1_read (2 , _i _j `i -> *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux `i `c ]
+"214
+[; ;ai.c: 214:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 458  ]
+[e :U 459 ]
+}
+"215
+[; ;ai.c: 215:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 7 `i 455  ]
+[e :U 456 ]
+}
+"216
+[; ;ai.c: 216: }
+[e :UE 414 ]
 }

@@ -64,17 +64,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25 ./snake.h
 [; ;./snake.h: 25:     void snake_getSurroundings(uint8_t* surroundings);
 [v _snake_getSurroundings `(v ~T0 @X0 0 ef1`*uc ]
-"60 ./ai.h
-[; ;./ai.h: 60:     uint8_t* ai_getInputField();
+"62 ./ai.h
+[; ;./ai.h: 62:     uint8_t* ai_getInputField();
 [v _ai_getInputField `(*uc ~T0 @X0 0 e? ]
-"62
-[; ;./ai.h: 62:     void ai_propagate(int8_t incentive);
+"64
+[; ;./ai.h: 64:     void ai_propagate(int8_t incentive);
 [v _ai_propagate `(v ~T0 @X0 0 ef1`c ]
 "23 ./snake.h
 [; ;./snake.h: 23:     int8_t snake_move(uint8_t direction);
 [v _snake_move `(c ~T0 @X0 0 ef1`uc ]
-"61 ./ai.h
-[; ;./ai.h: 61:     uint8_t ai_run();
+"63 ./ai.h
+[; ;./ai.h: 63:     uint8_t ai_run();
 [v _ai_run `(uc ~T0 @X0 0 e? ]
 "55 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
@@ -572,17 +572,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ai.h: 30:     uint8_t Y2[4];
 [v _Y2 `uc ~T0 @X0 -> 4 `i e ]
 "31
-[; ;./ai.h: 31:     int16_t Z1[7];
-[v _Z1 `s ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 31:     int8_t Z1[7];
+[v _Z1 `c ~T0 @X0 -> 7 `i e ]
 "32
-[; ;./ai.h: 32:     int16_t Z2[4];
-[v _Z2 `s ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 32:     int8_t Z2[4];
+[v _Z2 `c ~T0 @X0 -> 4 `i e ]
 "33
-[; ;./ai.h: 33:     int16_t DY2[4];
-[v _DY2 `s ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 33:     int8_t DY2[4];
+[v _DY2 `c ~T0 @X0 -> 4 `i e ]
 "34
-[; ;./ai.h: 34:     int16_t DY1[7];
-[v _DY1 `s ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 34:     int8_t DY1[7];
+[v _DY1 `c ~T0 @X0 -> 7 `i e ]
 [v F2910 `c ~T0 @X0 -> 7 `i t ]
 "35
 [; ;./ai.h: 35:     int8_t DW1[16][7];
@@ -597,6 +597,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;./ai.h: 38:     int8_t DB2[4];
 [v _DB2 `c ~T0 @X0 -> 4 `i e ]
+"40
+[; ;./ai.h: 40:     uint8_t choice;
+[v _choice `uc ~T0 @X0 1 e ]
 "50 main.c
 [; ;main.c: 50: void deactivateElevator(){
 [v _deactivateElevator `(v ~T0 @X0 1 ef ]

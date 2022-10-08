@@ -3,9 +3,9 @@
 #include "ai.h"
 #include "sigmoid.h"
 
-int8_t Y0[N0];
-int8_t Y1[N1];
-int8_t Y2[N2];
+uint8_t Y0[N0];
+uint8_t Y1[N1];
+uint8_t Y2[N2];
 int8_t Z1[N1];
 int8_t Z2[N2];
 int8_t DY2[N2];
@@ -15,7 +15,7 @@ int8_t DB1[N1];
 int8_t DW2[N1][N2];
 int8_t DB2[N2];
 
-int8_t choice;
+uint8_t choice;
 
 void weights1_write(uint8_t add1, uint8_t add2, int8_t val){
     eeprom_write(ADD_W1 + N0*add1 + add2, (unsigned char)val);
@@ -106,7 +106,7 @@ uint8_t* ai_getInputField(){
 uint8_t ai_run(){
     for(uint8_t i = 0; i < N0; i++){
         if(Y0[i]> 0){
-            Y0[i] = 127;
+            Y0[i] = 255u;
         }
     }
     
@@ -114,9 +114,9 @@ uint8_t ai_run(){
     for(uint8_t j = 0; j < N1; j++){
         Z1[j] = biases1_read(j);
         for(uint8_t i = 0; i < N0; i++){
-            z = Y0[i];
+            z = (int16_t)Y0[i];
             z *= weights1_read(i,j);
-            z /= 127;
+            z /= 255;
             Z1[j] += z;
         }
         Y1[j] = sigmoid(Z1[j]);
@@ -124,9 +124,9 @@ uint8_t ai_run(){
     for(uint8_t j = 0; j < N2; j++){
         Z2[j] = biases2_read(j);
         for(uint8_t i = 0; i < N1; i++){
-            z = Y1[i];
+            z = (int16_t)Y1[i];
             z *= weights2_read(i,j);
-            z /= 127;
+            z /= 255;
             Z2[j] += z;
         }
         Y2[j] = sigmoid(Z2[j]);
@@ -150,17 +150,17 @@ void ai_propagate(int8_t incentive){
         incentive = 0;
     }
     
-    int8_t S[N2];
+    uint8_t S[N2];
     if(incentive == 0){
         for(uint8_t i = 0; i < N2; i++){
-            S[i] = 127;
+            S[i] = 255u;
         }
         S[choice] = 0;
     } else{
         for(uint8_t i = 0; i < N2; i++){
             S[i] = 0;
         }
-        S[choice] = 127;
+        S[choice] = 255u;
     }
     
     for(uint8_t j = 0; j < N1; j++){
@@ -171,7 +171,7 @@ void ai_propagate(int8_t incentive){
         }
     }
     for(uint8_t j = 0; j < N2; j++){
-        DY2[j] = 2*(Y2[j] - S[j]);
+        DY2[j] = (int8_t)(((int16_t)Y2[j] - (int16_t)S[j])>>1);
         DB2[j] = 0;
         for(uint8_t i = 0; i < N1; i++){
             DW2[i][j] = 0;
@@ -180,24 +180,24 @@ void ai_propagate(int8_t incentive){
     
     int16_t dz;
     for(uint8_t k = 0; k < N2; k++){
-        dz = de_sigmoid(Z2[k]);
-        dz *= DY2[k];
-        dz /= 127;
+        dz = (int16_t)de_sigmoid(Z2[k]);
+        dz *= (int16_t)DY2[k];
+        dz /= 255;
         
-        DB2[k] += (int8_t)dz;
+        DB2[k] += (int8_t)(dz>>1);
         for(uint8_t j = 0; j < N1; j++){
-            DY1[j] += (int8_t)((dz*(int16_t)weights2_read(j, k))/127);
-            DW2[j][k] += (int8_t)((dz*(int16_t)Y1[j])/127);
+            DY1[j] += (int8_t)(((dz*(int16_t)weights2_read(j, k))/127)>>1);
+            DW2[j][k] += (int8_t)(((dz*(int16_t)Y1[j])/127)>>1);
         }
     }
     for(uint8_t k = 0; k < N1; k++){
-        dz = de_sigmoid(Z1[k]);
-        dz *= DY1[k];
-        dz /= 127;
+        dz = (int16_t)de_sigmoid(Z1[k]);
+        dz *= (int16_t)DY1[k];
+        dz /= 255;
         
-        DB1[k] += (int8_t)dz;
+        DB1[k] += (int8_t)(dz>>1);
         for(uint8_t j = 0; j < N0; j++){
-            DW1[j][k] += (int8_t)((dz*(int16_t)Y0[j])/127);
+            DW1[j][k] += (int8_t)(((dz*(int16_t)Y0[j])/127)>>1);
         }
     }
     

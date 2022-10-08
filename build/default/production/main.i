@@ -4625,14 +4625,16 @@ void sendMatrix();
     uint8_t Y0[16];
     uint8_t Y1[7];
     uint8_t Y2[4];
-    int16_t Z1[7];
-    int16_t Z2[4];
-    int16_t DY2[4];
-    int16_t DY1[7];
+    int8_t Z1[7];
+    int8_t Z2[4];
+    int8_t DY2[4];
+    int8_t DY1[7];
     int8_t DW1[16][7];
     int8_t DB1[7];
     int8_t DW2[7][4];
     int8_t DB2[4];
+
+    uint8_t choice;
 
     void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
     void biases1_write(uint8_t add, int8_t val);
