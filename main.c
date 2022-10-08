@@ -108,10 +108,10 @@ void main(void)
     
     while(1){
         for(uint8_t i = 0; i < 8; i++){
-            setLine(i, 0b10010110);
+            setColumn(i, 0b10010110);
             sendMatrix();
             __delay_ms(200);
-            setLine(i, 0x00);
+            setColumn(i, 0x00);
         }
     }
     

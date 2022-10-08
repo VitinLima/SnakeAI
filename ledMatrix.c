@@ -60,8 +60,8 @@ void sendMatrix(){
 #if VERTICAL_FLIP==1
         nb = 0x00;
         for(uint8_t j = 0; j < 8; j++){
-            nb |= b&0x01;
             nb <<= 1;
+            nb |= b&0x01;
             b >>= 1;
         }
         txMAX7219(i+1,nb);
