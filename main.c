@@ -61,21 +61,22 @@ void deactivateElevator(){
     TRISBbits.TRISB3 = 1;
 }
 
-void test(uint8_t l, uint8_t c, uint8_t* ai_inputs){
-    snake_setHeadPosition(l+8*c);
-    ledSet(l,c);
+void test(uint8_t lh, uint8_t ch, uint8_t lf, uint8_t cf, uint8_t* ai_inputs){
+    snake_setHeadPosition(lh+8*ch);
+    snake_setFoodPosition(lf+8*cf);
+//    ledSet(lf,cf);
     snake_getSurroundings(ai_inputs);
-    ai_inputs[0] == 0 ? ledClear(3,3) : ledSet(3,3);
-    ai_inputs[1] == 0 ? ledClear(3,4) : ledSet(3,4);
-    ai_inputs[2] == 0 ? ledClear(3,5) : ledSet(3,5);
-    ai_inputs[3] == 0 ? ledClear(4,5) : ledSet(4,5);
-    ai_inputs[4] == 0 ? ledClear(5,5) : ledSet(5,5);
-    ai_inputs[5] == 0 ? ledClear(5,4) : ledSet(5,4);
-    ai_inputs[6] == 0 ? ledClear(5,3) : ledSet(5,3);
-    ai_inputs[7] == 0 ? ledClear(4,3) : ledSet(4,3);
+    ai_inputs[8] == 0 ? ledClear(3,3) : ledSet(3,3);
+    ai_inputs[9] == 0 ? ledClear(3,4) : ledSet(3,4);
+    ai_inputs[10] == 0 ? ledClear(3,5) : ledSet(3,5);
+    ai_inputs[11] == 0 ? ledClear(4,5) : ledSet(4,5);
+    ai_inputs[12] == 0 ? ledClear(5,5) : ledSet(5,5);
+    ai_inputs[13] == 0 ? ledClear(5,4) : ledSet(5,4);
+    ai_inputs[14] == 0 ? ledClear(5,3) : ledSet(5,3);
+    ai_inputs[15] == 0 ? ledClear(4,3) : ledSet(4,3);
     sendMatrix();
     __delay_ms(500);
-    ledClear(l,c);
+//    ledClear(lf,cf);
 }
 
 /*
@@ -109,18 +110,49 @@ void main(void)
     uint8_t ai_inputs[16];
     ledSet(4,4);
     while(1){
-        for(uint8_t i = 0; i < 8; i++){
-            test(0, i, ai_inputs);
-        }
-        for(uint8_t i = 1; i < 7; i++){
-            test(i, 7, ai_inputs);
-        }
-        for(uint8_t i = 0; i < 8; i++){
-            test(7, 7-i, ai_inputs);
-        }
-        for(uint8_t i = 1; i < 7; i++){
-            test(7 - i, 0, ai_inputs);
-        }
+        uint8_t lh = 3, ch = 3;
+        
+        test(lh, ch, lh-1, ch-1, ai_inputs);
+        test(lh, ch, lh-1, ch, ai_inputs);
+        test(lh, ch, lh-1, ch+1, ai_inputs);
+        test(lh, ch, lh, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch, ai_inputs);
+        test(lh, ch, lh+1, ch-1, ai_inputs);
+        test(lh, ch, lh, ch-1, ai_inputs);
+        
+        lh = 5, ch = 3;
+        
+        test(lh, ch, lh-1, ch-1, ai_inputs);
+        test(lh, ch, lh-1, ch, ai_inputs);
+        test(lh, ch, lh-1, ch+1, ai_inputs);
+        test(lh, ch, lh, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch, ai_inputs);
+        test(lh, ch, lh+1, ch-1, ai_inputs);
+        test(lh, ch, lh, ch-1, ai_inputs);
+        
+        lh = 6, ch = 2;
+        
+        test(lh, ch, lh-1, ch-1, ai_inputs);
+        test(lh, ch, lh-1, ch, ai_inputs);
+        test(lh, ch, lh-1, ch+1, ai_inputs);
+        test(lh, ch, lh, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch, ai_inputs);
+        test(lh, ch, lh+1, ch-1, ai_inputs);
+        test(lh, ch, lh, ch-1, ai_inputs);
+        
+        lh = 2, ch = 4;
+        
+        test(lh, ch, lh-1, ch-1, ai_inputs);
+        test(lh, ch, lh-1, ch, ai_inputs);
+        test(lh, ch, lh-1, ch+1, ai_inputs);
+        test(lh, ch, lh, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch+1, ai_inputs);
+        test(lh, ch, lh+1, ch, ai_inputs);
+        test(lh, ch, lh+1, ch-1, ai_inputs);
+        test(lh, ch, lh, ch-1, ai_inputs);
     }
     
 //    uint8_t* field = snake_getField();
