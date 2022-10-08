@@ -61,24 +61,6 @@ void deactivateElevator(){
     TRISBbits.TRISB3 = 1;
 }
 
-//void test(uint8_t lh, uint8_t ch, uint8_t lf, uint8_t cf, uint8_t* ai_inputs){
-//    snake_setHeadPosition(lh+8*ch);
-//    snake_setFoodPosition(lf+8*cf);
-//    ledSet(lf,cf);
-//    snake_getSurroundings(ai_inputs);
-//    ai_inputs[8] == 0 ? ledClear(3,3) : ledSet(3,3);
-//    ai_inputs[9] == 0 ? ledClear(3,4) : ledSet(3,4);
-//    ai_inputs[10] == 0 ? ledClear(3,5) : ledSet(3,5);
-//    ai_inputs[11] == 0 ? ledClear(4,5) : ledSet(4,5);
-//    ai_inputs[12] == 0 ? ledClear(5,5) : ledSet(5,5);
-//    ai_inputs[13] == 0 ? ledClear(5,4) : ledSet(5,4);
-//    ai_inputs[14] == 0 ? ledClear(5,3) : ledSet(5,3);
-//    ai_inputs[15] == 0 ? ledClear(4,3) : ledSet(4,3);
-//    sendMatrix();
-//    __delay_ms(500);
-//    ledClear(lf,cf);
-//}
-
 /*
                          Main application
  */

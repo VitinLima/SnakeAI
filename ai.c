@@ -179,25 +179,25 @@ void ai_propagate(int8_t incentive){
     }
     
     int16_t dz;
-    for(uint8_t k = 0; k < N2; k++){
-        dz = (int16_t)de_sigmoid(Z2[k]);
-        dz *= (int16_t)DY2[k];
+    for(uint8_t j = 0; j < N2; j++){
+        dz = (int16_t)de_sigmoid(Z2[j]);
+        dz *= (int16_t)DY2[j];
         dz /= 255;
         
-        DB2[k] += (int8_t)dz;
-        for(uint8_t j = 0; j < N1; j++){
-            DY1[j] += (int8_t)((dz*(int16_t)weights2_read(j, k))/127);
-            DW2[j][k] += (int8_t)((dz*(int16_t)Y1[j])/127);
+        DB2[j] += (int8_t)dz;
+        for(uint8_t i = 0; i < N1; i++){
+            DY1[i] += (int8_t)((dz*(int16_t)weights2_read(i, j))/127);
+            DW2[i][j] += (int8_t)(((dz*(int16_t)Y1[i])/127)>>1);
         }
     }
-    for(uint8_t k = 0; k < N1; k++){
-        dz = (int16_t)de_sigmoid(Z1[k]);
-        dz *= (int16_t)DY1[k];
+    for(uint8_t j = 0; j < N1; j++){
+        dz = (int16_t)de_sigmoid(Z1[j]);
+        dz *= (int16_t)DY1[j];
         dz /= 255;
         
-        DB1[k] += (int8_t)dz;
-        for(uint8_t j = 0; j < N0; j++){
-            DW1[j][k] += (int8_t)((dz*(int16_t)Y0[j])/127);
+        DB1[j] += (int8_t)dz;
+        for(uint8_t i = 0; i < N0; i++){
+            DW1[i][j] += (int8_t)(((dz*(int16_t)Y0[i])/127)>>1);
         }
     }
     
@@ -211,6 +211,16 @@ void ai_propagate(int8_t incentive){
         biases1_write(j, biases1_read(j) - DB1[j]);
         for(uint8_t i = 0; i < N0; i++){
             weights1_write(i,j, weights1_read(i,j) - DW1[i][j]);
+        }
+    }
+}
+
+void printAI(){
+    for(uint8_t j = 0; j < N2; j++){
+        EUSART_Write(Y2[j]);
+        EUSART_Write((uint8_t)biases2_read(j));
+        for(uint8_t i = 0; i < N1; i++){
+            EUSART_Write((uint8_t)weights2_read(i,j));
         }
     }
 }
