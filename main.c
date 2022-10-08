@@ -107,23 +107,23 @@ void main(void)
     uint8_t d = 0;
     
     while(1){
-//        __delay_ms(500);
-//        snake_move(d++);
-//        if(d == 4){
-//            d = 0;
-//        }
-//        for(uint8_t i = 0; i < 8; i++){
-//            for(uint8_t j = 0; j < 8; j++){
-//                if(field[i+j*8]>0){
-//                    ledSet(i,j);
-//                } else{
-//                    ledClear(i,j);
-//                }
-//            }
-//        }
-//        uint8_t foodPosition = snake_getFoodPosition();
-//        ledSet(foodPosition&0x03, foodPosition>>3);
-//        sendMatrix();
+        __delay_ms(500);
+        snake_move(d++);
+        if(d == 4){
+            d = 0;
+        }
+        for(uint8_t i = 0; i < 8; i++){
+            for(uint8_t j = 0; j < 8; j++){
+                if(field[i+j*8]>0){
+                    ledSet(i,j);
+                } else{
+                    ledClear(i,j);
+                }
+            }
+        }
+        uint8_t foodPosition = snake_getFoodPosition();
+        ledSet(foodPosition&0x03, foodPosition>>3);
+        sendMatrix();
     }
     
     /*if(ai_is_ai_trained_read()==0){
