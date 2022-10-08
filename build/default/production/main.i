@@ -4597,6 +4597,8 @@ void initMAX7219();
 
 void ledSet(uint8_t l, uint8_t c);
 void ledClear(uint8_t l, uint8_t c);
+void setColumn(uint8_t c, uint8_t val);
+void setLine(uint8_t l, uint8_t val);
 
 
 
@@ -4613,16 +4615,24 @@ void sendMatrix();
     uint8_t* snake_getField();
     void snake_getSurroundings(uint8_t* surroundings);
     uint8_t snake_getHeadPosition();
+    void snake_setHeadPosition(uint8_t pos);
     uint8_t snake_getFoodPosition();
+    void snake_setFoodPosition(uint8_t pos);
 # 47 "main.c" 2
 
 # 1 "./ai.h" 1
 # 28 "./ai.h"
     uint8_t Y0[16];
-    uint8_t Y1[10];
-    uint8_t Y2[5];
-    int16_t Z1[10];
-    int16_t Z2[5];
+    uint8_t Y1[7];
+    uint8_t Y2[4];
+    int16_t Z1[7];
+    int16_t Z2[4];
+    int16_t DY2[4];
+    int16_t DY1[7];
+    int8_t DW1[16][7];
+    int8_t DB1[7];
+    int8_t DW2[7][4];
+    int8_t DB2[4];
 
     void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
     void biases1_write(uint8_t add, int8_t val);
@@ -4663,30 +4673,40 @@ void deactivateElevator(){
     TRISBbits.TRISB0 = 1;
     TRISBbits.TRISB3 = 1;
 }
-
-
-
-
+# 85 "main.c"
 void main(void)
 {
 
     SYSTEM_Initialize();
-# 87 "main.c"
+# 105 "main.c"
     deactivateElevator();
     snake_initiate();
 
     initMAX7219();
-
+# 158 "main.c"
     uint8_t* field = snake_getField();
 
-    uint8_t d = 0;
-
-    while(1){
-        _delay((unsigned long)((500)*(8000000/4000.0)));
-        snake_move(d++);
-        if(d == 4){
-            d = 0;
+    for(uint8_t i = 0; i < 8; i++){
+        for(uint8_t j = 0; j < 8; j++){
+            if(field[i+j*8]>0){
+                ledSet(i,j);
+            } else{
+                ledClear(i,j);
+            }
         }
+    }
+    uint8_t foodPosition = snake_getFoodPosition();
+    ledSet(foodPosition&0x03, foodPosition>>3);
+    sendMatrix();
+
+    uint8_t d = 0;
+# 183 "main.c"
+    while (1)
+    {
+
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        snake_getSurroundings(ai_getInputField());
+        ai_propagate(snake_move(ai_run()));
         for(uint8_t i = 0; i < 8; i++){
             for(uint8_t j = 0; j < 8; j++){
                 if(field[i+j*8]>0){
@@ -4700,5 +4720,4 @@ void main(void)
         ledSet(foodPosition&0x03, foodPosition>>3);
         sendMatrix();
     }
-# 143 "main.c"
 }

@@ -4583,7 +4583,9 @@ void WDT_Initialize(void);
     uint8_t* snake_getField();
     void snake_getSurroundings(uint8_t* surroundings);
     uint8_t snake_getHeadPosition();
+    void snake_setHeadPosition(uint8_t pos);
     uint8_t snake_getFoodPosition();
+    void snake_setFoodPosition(uint8_t pos);
 # 3 "snake.c" 2
 
 # 1 "./ledMatrix.h" 1
@@ -4609,6 +4611,8 @@ void initMAX7219();
 
 void ledSet(uint8_t l, uint8_t c);
 void ledClear(uint8_t l, uint8_t c);
+void setColumn(uint8_t c, uint8_t val);
+void setLine(uint8_t l, uint8_t val);
 
 
 
@@ -4622,8 +4626,8 @@ void sendMatrix();
 
 
 uint8_t field[64];
-uint8_t mapping[8] = {55, 56, 57, 1, 9, 8, 7, 63};
-uint8_t snakeSize = 1;
+uint8_t mapping[8] = {55, 63, 7, 8, 9, 1, 57, 56};
+uint8_t snakeSize;
 uint8_t headPosition;
 uint8_t foodPosition;
 
@@ -4633,6 +4637,7 @@ void snake_initiate(){
     }
     headPosition = ((uint8_t)rand())&0x3f;
     foodPosition = ((uint8_t)rand())&0x3f;
+    snakeSize = 1;
     field[headPosition] = snakeSize;
 }
 
@@ -4646,28 +4651,28 @@ int8_t snake_move(uint8_t direction){
     direction &= 0x03;
     switch(direction){
         case 0:
-            if((headPosition&0x03) == 0){
+            if((headPosition&0x07) == 0){
                 incentive = -1;
             } else{
                 headPosition--;
             }
             break;
         case 1:
-            if((headPosition&0x03) == 7){
+            if((headPosition&0x07) == 7){
                 incentive = -1;
             } else{
                 headPosition++;
             }
             break;
         case 2:
-            if((headPosition>>3) == 7){
+            if((headPosition>>3) == 0){
                 incentive = -1;
             } else{
                 headPosition -= 8;
             }
             break;
         case 3:
-            if((headPosition>>3) == 0){
+            if((headPosition>>3) == 7){
                 incentive = -1;
             } else{
                 headPosition += 8;
@@ -4700,23 +4705,23 @@ void snake_getSurroundings(uint8_t* surroundings){
     for(uint8_t i = 0; i < 16; i++){
         surroundings[i] = 0;
     }
-    if((headPosition&0x03) == 0){
+    if((headPosition&0x07) == 0){
         surroundings[0] = 1;
         surroundings[1] = 1;
         surroundings[2] = 1;
-    } else if((headPosition&0x03) == 7){
+    } else if((headPosition&0x07) == 7){
         surroundings[4] = 1;
         surroundings[5] = 1;
         surroundings[6] = 1;
     }
     if((headPosition>>3) == 0){
-        surroundings[2] = 1;
-        surroundings[3] = 1;
-        surroundings[4] = 1;
-    } else if((headPosition>>3) == 7){
         surroundings[6] = 1;
         surroundings[7] = 1;
         surroundings[0] = 1;
+    } else if((headPosition>>3) == 7){
+        surroundings[2] = 1;
+        surroundings[3] = 1;
+        surroundings[4] = 1;
     }
     uint8_t p;
     for(uint8_t i = 0; i < 8; i++){
@@ -4733,7 +4738,13 @@ void snake_getSurroundings(uint8_t* surroundings){
 uint8_t snake_getHeadPosition(){
     return headPosition;
 }
+void snake_setHeadPosition(uint8_t pos){
+    headPosition = pos;
+}
 
 uint8_t snake_getFoodPosition(){
     return foodPosition;
+}
+void snake_setFoodPosition(uint8_t pos){
+    foodPosition = pos;
 }

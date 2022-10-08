@@ -630,8 +630,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _c `uc ~T0 @X0 1 r2 ]
 [f ]
 "32
-[; ;ledMatrix.c: 32:     (matrix[l]) |= 1UL << (c);
-[e =| *U + &U _matrix * -> _l `ux -> -> # *U &U _matrix `ui `ux -> << -> 1 `ul -> _c `i `uc ]
+[; ;ledMatrix.c: 32:     (matrix[c]) |= 1UL << (l);
+[e =| *U + &U _matrix * -> _c `ux -> -> # *U &U _matrix `ui `ux -> << -> 1 `ul -> _l `i `uc ]
 "33
 [; ;ledMatrix.c: 33: }
 [e :UE 366 ]
@@ -645,75 +645,128 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _c `uc ~T0 @X0 1 r2 ]
 [f ]
 "36
-[; ;ledMatrix.c: 36:     (matrix[l]) &= ~(1UL << (c));
-[e =& *U + &U _matrix * -> _l `ux -> -> # *U &U _matrix `ui `ux -> ~ << -> 1 `ul -> _c `i `uc ]
+[; ;ledMatrix.c: 36:     (matrix[c]) &= ~(1UL << (l));
+[e =& *U + &U _matrix * -> _c `ux -> -> # *U &U _matrix `ui `ux -> ~ << -> 1 `ul -> _l `i `uc ]
 "37
 [; ;ledMatrix.c: 37: }
 [e :UE 367 ]
 }
 "39
-[; ;ledMatrix.c: 39: void sendMatrix(){
+[; ;ledMatrix.c: 39: void setColumn(uint8_t c, uint8_t val){
+[v _setColumn `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _setColumn ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[v _val `uc ~T0 @X0 1 r2 ]
+[f ]
+"40
+[; ;ledMatrix.c: 40:     matrix[c] = val;
+[e = *U + &U _matrix * -> _c `ux -> -> # *U &U _matrix `ui `ux _val ]
+"41
+[; ;ledMatrix.c: 41: }
+[e :UE 368 ]
+}
+"43
+[; ;ledMatrix.c: 43: void setLine(uint8_t l, uint8_t val){
+[v _setLine `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _setLine ]
+[v _l `uc ~T0 @X0 1 r1 ]
+[v _val `uc ~T0 @X0 1 r2 ]
+[f ]
+"44
+[; ;ledMatrix.c: 44:     uint8_t mask = 0x80;
+[v _mask `uc ~T0 @X0 1 a ]
+[e = _mask -> -> 128 `i `uc ]
+"45
+[; ;ledMatrix.c: 45:     for(uint8_t i = 0; i < 8; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 370  ]
+[e $U 371  ]
+[e :U 370 ]
+{
+"46
+[; ;ledMatrix.c: 46:         matrix[l] = (val&mask) | (matrix[l]|(~mask));
+[e = *U + &U _matrix * -> _l `ux -> -> # *U &U _matrix `ui `ux -> | & -> _val `i -> _mask `i | -> *U + &U _matrix * -> _l `ux -> -> # *U &U _matrix `ui `ux `i ~ -> _mask `i `uc ]
+"47
+[; ;ledMatrix.c: 47:         mask >>= 1;
+[e =>> _mask -> -> 1 `i `uc ]
+"48
+[; ;ledMatrix.c: 48:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 370  ]
+[e :U 371 ]
+}
+"49
+[; ;ledMatrix.c: 49: }
+[e :UE 369 ]
+}
+"51
+[; ;ledMatrix.c: 51: void sendMatrix(){
 [v _sendMatrix `(v ~T0 @X0 1 ef ]
 {
 [e :U _sendMatrix ]
 [f ]
-"40
-[; ;ledMatrix.c: 40:     uint8_t b;
+"52
+[; ;ledMatrix.c: 52:     uint8_t b;
 [v _b `uc ~T0 @X0 1 a ]
-"41
-[; ;ledMatrix.c: 41:     uint8_t nb;
+"53
+[; ;ledMatrix.c: 53:     uint8_t nb;
 [v _nb `uc ~T0 @X0 1 a ]
-"42
-[; ;ledMatrix.c: 42:     for(uint8_t i=0;i<8;i++){
+"54
+[; ;ledMatrix.c: 54:     for(uint8_t i=0;i<8;i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 369  ]
-[e $U 370  ]
-[e :U 369 ]
+[e $ < -> _i `i -> 8 `i 374  ]
+[e $U 375  ]
+[e :U 374 ]
 {
-"46
-[; ;ledMatrix.c: 46:         b = matrix[i];
+"58
+[; ;ledMatrix.c: 58:         b = matrix[i];
 [e = _b *U + &U _matrix * -> _i `ux -> -> # *U &U _matrix `ui `ux ]
-"49
-[; ;ledMatrix.c: 49:         nb = 0x00;
+"61
+[; ;ledMatrix.c: 61:         nb = 0x00;
 [e = _nb -> -> 0 `i `uc ]
-"50
-[; ;ledMatrix.c: 50:         for(uint8_t j = 0; j < 8; j++){
+"62
+[; ;ledMatrix.c: 62:         for(uint8_t j = 0; j < 8; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 372  ]
-[e $U 373  ]
-[e :U 372 ]
+[e $ < -> _j `i -> 8 `i 377  ]
+[e $U 378  ]
+[e :U 377 ]
 {
-"51
-[; ;ledMatrix.c: 51:             nb |= b&0x01;
-[e =| _nb -> & -> _b `i -> 1 `i `uc ]
-"52
-[; ;ledMatrix.c: 52:             nb <<= 1;
+"63
+[; ;ledMatrix.c: 63:             nb <<= 1;
 [e =<< _nb -> -> 1 `i `uc ]
-"53
-[; ;ledMatrix.c: 53:             b >>= 1;
+"64
+[; ;ledMatrix.c: 64:             nb |= b&0x01;
+[e =| _nb -> & -> _b `i -> 1 `i `uc ]
+"65
+[; ;ledMatrix.c: 65:             b >>= 1;
 [e =>> _b -> -> 1 `i `uc ]
-"54
-[; ;ledMatrix.c: 54:         }
+"66
+[; ;ledMatrix.c: 66:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 372  ]
-[e :U 373 ]
+[e $ < -> _j `i -> 8 `i 377  ]
+[e :U 378 ]
 }
-"55
-[; ;ledMatrix.c: 55:         txMAX7219(i+1,nb);
+"67
+[; ;ledMatrix.c: 67:         txMAX7219(i+1,nb);
 [e ( _txMAX7219 (2 , -> + -> _i `i -> 1 `i `uc _nb ]
-"59
-[; ;ledMatrix.c: 59:     }
+"71
+[; ;ledMatrix.c: 71:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 369  ]
-[e :U 370 ]
+[e $ < -> _i `i -> 8 `i 374  ]
+[e :U 375 ]
 }
-"60
-[; ;ledMatrix.c: 60: }
-[e :UE 368 ]
+"72
+[; ;ledMatrix.c: 72: }
+[e :UE 373 ]
 }

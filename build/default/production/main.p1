@@ -45,25 +45,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24 ./snake.h
 [; ;./snake.h: 24:     uint8_t* snake_getField();
 [v _snake_getField `(*uc ~T0 @X0 0 e? ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"23 ./snake.h
-[; ;./snake.h: 23:     int8_t snake_move(uint8_t direction);
-[v _snake_move `(c ~T0 @X0 0 ef1`uc ]
 "33 ./ledMatrix.h
 [; ;./ledMatrix.h: 33: void ledSet(uint8_t l, uint8_t c);
 [v _ledSet `(v ~T0 @X0 0 ef2`uc`uc ]
 "34
 [; ;./ledMatrix.h: 34: void ledClear(uint8_t l, uint8_t c);
 [v _ledClear `(v ~T0 @X0 0 ef2`uc`uc ]
-"27 ./snake.h
-[; ;./snake.h: 27:     uint8_t snake_getFoodPosition();
+"28 ./snake.h
+[; ;./snake.h: 28:     uint8_t snake_getFoodPosition();
 [v _snake_getFoodPosition `(uc ~T0 @X0 0 e? ]
-"38 ./ledMatrix.h
-[; ;./ledMatrix.h: 38: void sendMatrix();
+"40 ./ledMatrix.h
+[; ;./ledMatrix.h: 40: void sendMatrix();
 [v _sendMatrix `(v ~T0 @X0 0 e? ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+"25 ./snake.h
+[; ;./snake.h: 25:     void snake_getSurroundings(uint8_t* surroundings);
+[v _snake_getSurroundings `(v ~T0 @X0 0 ef1`*uc ]
+"60 ./ai.h
+[; ;./ai.h: 60:     uint8_t* ai_getInputField();
+[v _ai_getInputField `(*uc ~T0 @X0 0 e? ]
+"62
+[; ;./ai.h: 62:     void ai_propagate(int8_t incentive);
+[v _ai_propagate `(v ~T0 @X0 0 ef1`c ]
+"23 ./snake.h
+[; ;./snake.h: 23:     int8_t snake_move(uint8_t direction);
+[v _snake_move `(c ~T0 @X0 0 ef1`uc ]
+"61 ./ai.h
+[; ;./ai.h: 61:     uint8_t ai_run();
+[v _ai_run `(uc ~T0 @X0 0 e? ]
 "55 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -554,17 +566,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ai.h: 28:     uint8_t Y0[16];
 [v _Y0 `uc ~T0 @X0 -> 16 `i e ]
 "29
-[; ;./ai.h: 29:     uint8_t Y1[10];
-[v _Y1 `uc ~T0 @X0 -> 10 `i e ]
+[; ;./ai.h: 29:     uint8_t Y1[7];
+[v _Y1 `uc ~T0 @X0 -> 7 `i e ]
 "30
-[; ;./ai.h: 30:     uint8_t Y2[5];
-[v _Y2 `uc ~T0 @X0 -> 5 `i e ]
+[; ;./ai.h: 30:     uint8_t Y2[4];
+[v _Y2 `uc ~T0 @X0 -> 4 `i e ]
 "31
-[; ;./ai.h: 31:     int16_t Z1[10];
-[v _Z1 `s ~T0 @X0 -> 10 `i e ]
+[; ;./ai.h: 31:     int16_t Z1[7];
+[v _Z1 `s ~T0 @X0 -> 7 `i e ]
 "32
-[; ;./ai.h: 32:     int16_t Z2[5];
-[v _Z2 `s ~T0 @X0 -> 5 `i e ]
+[; ;./ai.h: 32:     int16_t Z2[4];
+[v _Z2 `s ~T0 @X0 -> 4 `i e ]
+"33
+[; ;./ai.h: 33:     int16_t DY2[4];
+[v _DY2 `s ~T0 @X0 -> 4 `i e ]
+"34
+[; ;./ai.h: 34:     int16_t DY1[7];
+[v _DY1 `s ~T0 @X0 -> 7 `i e ]
+[v F2910 `c ~T0 @X0 -> 7 `i t ]
+"35
+[; ;./ai.h: 35:     int8_t DW1[16][7];
+[v _DW1 `F2910 ~T0 @X0 -> 16 `i e ]
+"36
+[; ;./ai.h: 36:     int8_t DB1[7];
+[v _DB1 `c ~T0 @X0 -> 7 `i e ]
+[v F2913 `c ~T0 @X0 -> 4 `i t ]
+"37
+[; ;./ai.h: 37:     int8_t DW2[7][4];
+[v _DW2 `F2913 ~T0 @X0 -> 7 `i e ]
+"38
+[; ;./ai.h: 38:     int8_t DB2[4];
+[v _DB2 `c ~T0 @X0 -> 4 `i e ]
 "50 main.c
 [; ;main.c: 50: void deactivateElevator(){
 [v _deactivateElevator `(v ~T0 @X0 1 ef ]
@@ -606,124 +638,180 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 358 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"67
-[; ;main.c: 67: void main(void)
+"85
+[; ;main.c: 85: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"68
-[; ;main.c: 68: {
+"86
+[; ;main.c: 86: {
 {
 [e :U _main ]
 [f ]
-"70
-[; ;main.c: 70:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"87
-[; ;main.c: 87:     deactivateElevator();
-[e ( _deactivateElevator ..  ]
 "88
-[; ;main.c: 88:     snake_initiate();
+[; ;main.c: 88:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"105
+[; ;main.c: 105:     deactivateElevator();
+[e ( _deactivateElevator ..  ]
+"106
+[; ;main.c: 106:     snake_initiate();
 [e ( _snake_initiate ..  ]
-"90
-[; ;main.c: 90:     initMAX7219();
+"108
+[; ;main.c: 108:     initMAX7219();
 [e ( _initMAX7219 ..  ]
-"92
-[; ;main.c: 92:     uint8_t* field = snake_getField();
+"158
+[; ;main.c: 158:     uint8_t* field = snake_getField();
 [v _field `*uc ~T0 @X0 1 a ]
 [e = _field ( _snake_getField ..  ]
-"94
-[; ;main.c: 94:     uint8_t d = 0;
-[v _d `uc ~T0 @X0 1 a ]
-[e = _d -> -> 0 `i `uc ]
-"96
-[; ;main.c: 96:     while(1){
-[e :U 361 ]
-{
-"97
-[; ;main.c: 97:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"98
-[; ;main.c: 98:         snake_move(d++);
-[e ( _snake_move (1 ++ _d -> -> 1 `i `uc ]
-"99
-[; ;main.c: 99:         if(d == 4){
-[e $ ! == -> _d `i -> 4 `i 363  ]
-{
-"100
-[; ;main.c: 100:             d = 0;
-[e = _d -> -> 0 `i `uc ]
-"101
-[; ;main.c: 101:         }
-}
-[e :U 363 ]
-"102
-[; ;main.c: 102:         for(uint8_t i = 0; i < 8; i++){
+"160
+[; ;main.c: 160:     for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 364  ]
-[e $U 365  ]
-[e :U 364 ]
+[e $ < -> _i `i -> 8 `i 360  ]
+[e $U 361  ]
+[e :U 360 ]
 {
-"103
-[; ;main.c: 103:             for(uint8_t j = 0; j < 8; j++){
+"161
+[; ;main.c: 161:         for(uint8_t j = 0; j < 8; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 367  ]
-[e $U 368  ]
-[e :U 367 ]
+[e $ < -> _j `i -> 8 `i 363  ]
+[e $U 364  ]
+[e :U 363 ]
 {
-"104
-[; ;main.c: 104:                 if(field[i+j*8]>0){
-[e $ ! > -> *U + _field * -> + -> _i `i * -> _j `i -> 8 `i `x -> -> # *U _field `i `x `i -> 0 `i 370  ]
+"162
+[; ;main.c: 162:             if(field[i+j*8]>0){
+[e $ ! > -> *U + _field * -> + -> _i `i * -> _j `i -> 8 `i `x -> -> # *U _field `i `x `i -> 0 `i 366  ]
 {
-"105
-[; ;main.c: 105:                     ledSet(i,j);
+"163
+[; ;main.c: 163:                 ledSet(i,j);
 [e ( _ledSet (2 , _i _j ]
-"106
-[; ;main.c: 106:                 } else{
+"164
+[; ;main.c: 164:             } else{
 }
-[e $U 371  ]
-[e :U 370 ]
+[e $U 367  ]
+[e :U 366 ]
 {
-"107
-[; ;main.c: 107:                     ledClear(i,j);
+"165
+[; ;main.c: 165:                 ledClear(i,j);
 [e ( _ledClear (2 , _i _j ]
-"108
-[; ;main.c: 108:                 }
+"166
+[; ;main.c: 166:             }
 }
-[e :U 371 ]
-"109
-[; ;main.c: 109:             }
+[e :U 367 ]
+"167
+[; ;main.c: 167:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 367  ]
-[e :U 368 ]
+[e $ < -> _j `i -> 8 `i 363  ]
+[e :U 364 ]
 }
-"110
-[; ;main.c: 110:         }
+"168
+[; ;main.c: 168:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 364  ]
-[e :U 365 ]
+[e $ < -> _i `i -> 8 `i 360  ]
+[e :U 361 ]
 }
-"111
-[; ;main.c: 111:         uint8_t foodPosition = snake_getFoodPosition();
+"169
+[; ;main.c: 169:     uint8_t foodPosition = snake_getFoodPosition();
 [v _foodPosition `uc ~T0 @X0 1 a ]
 [e = _foodPosition ( _snake_getFoodPosition ..  ]
-"112
-[; ;main.c: 112:         ledSet(foodPosition&0x03, foodPosition>>3);
+"170
+[; ;main.c: 170:     ledSet(foodPosition&0x03, foodPosition>>3);
 [e ( _ledSet (2 , -> & -> _foodPosition `i -> 3 `i `uc -> >> -> _foodPosition `i -> 3 `i `uc ]
-"113
-[; ;main.c: 113:         sendMatrix();
+"171
+[; ;main.c: 171:     sendMatrix();
 [e ( _sendMatrix ..  ]
-"114
-[; ;main.c: 114:     }
+"173
+[; ;main.c: 173:     uint8_t d = 0;
+[v _d `uc ~T0 @X0 1 a ]
+[e = _d -> -> 0 `i `uc ]
+"183
+[; ;main.c: 183:     while (1)
+[e :U 369 ]
+"184
+[; ;main.c: 184:     {
+{
+"186
+[; ;main.c: 186:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"187
+[; ;main.c: 187:         snake_getSurroundings(ai_getInputField());
+[e ( _snake_getSurroundings (1 ( _ai_getInputField ..  ]
+"188
+[; ;main.c: 188:         ai_propagate(snake_move(ai_run()));
+[e ( _ai_propagate (1 ( _snake_move (1 ( _ai_run ..  ]
+"189
+[; ;main.c: 189:         for(uint8_t i = 0; i < 8; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 371  ]
+[e $U 372  ]
+[e :U 371 ]
+{
+"190
+[; ;main.c: 190:             for(uint8_t j = 0; j < 8; j++){
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 8 `i 374  ]
+[e $U 375  ]
+[e :U 374 ]
+{
+"191
+[; ;main.c: 191:                 if(field[i+j*8]>0){
+[e $ ! > -> *U + _field * -> + -> _i `i * -> _j `i -> 8 `i `x -> -> # *U _field `i `x `i -> 0 `i 377  ]
+{
+"192
+[; ;main.c: 192:                     ledSet(i,j);
+[e ( _ledSet (2 , _i _j ]
+"193
+[; ;main.c: 193:                 } else{
 }
-[e :U 360 ]
-[e $U 361  ]
-[e :U 362 ]
-"143
-[; ;main.c: 143: }
+[e $U 378  ]
+[e :U 377 ]
+{
+"194
+[; ;main.c: 194:                     ledClear(i,j);
+[e ( _ledClear (2 , _i _j ]
+"195
+[; ;main.c: 195:                 }
+}
+[e :U 378 ]
+"196
+[; ;main.c: 196:             }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 8 `i 374  ]
+[e :U 375 ]
+}
+"197
+[; ;main.c: 197:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 371  ]
+[e :U 372 ]
+}
+"198
+[; ;main.c: 198:         uint8_t foodPosition = snake_getFoodPosition();
+[v _foodPosition `uc ~T0 @X0 1 a ]
+[e = _foodPosition ( _snake_getFoodPosition ..  ]
+"199
+[; ;main.c: 199:         ledSet(foodPosition&0x03, foodPosition>>3);
+[e ( _ledSet (2 , -> & -> _foodPosition `i -> 3 `i `uc -> >> -> _foodPosition `i -> 3 `i `uc ]
+"200
+[; ;main.c: 200:         sendMatrix();
+[e ( _sendMatrix ..  ]
+"201
+[; ;main.c: 201:     }
+}
+[e :U 368 ]
+[e $U 369  ]
+[e :U 370 ]
+"202
+[; ;main.c: 202: }
 [e :UE 359 ]
 }

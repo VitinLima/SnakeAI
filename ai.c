@@ -10,6 +10,10 @@ int16_t Z1[N1];
 int16_t Z2[N2];
 int16_t DY2[N2];
 int16_t DY1[N1];
+int8_t DW1[N0][N1];
+int8_t DB1[N1];
+int8_t DW2[N1][N2];
+int8_t DB2[N2];
 
 uint8_t choice;
 
@@ -135,23 +139,64 @@ void ai_propagate(int8_t incentive){
     if(incentive == 0){
         return;
     }
+    
     if(incentive == -1){
         incentive = 0;
     }
     
-    DY2[choice] = 2*(Y2[choice] - incentive);
-    uint8_t dz = de_sigmoid((int8_t)Z2[choice]);
-    biases2_write(choice, (int8_t)(biases2_read(choice) - DY2[choice]*dz));
-    for(uint8_t i = 0; i < N1; i++){
-        DY1[i] = dz*weights2_read(i, choice);
-        weights2_write(i, choice, (int8_t)(weights2_read(i, choice) - dz*DY2[choice]));
+    uint8_t S[N2];
+    for(uint8_t j = 0; j < N1; j++){
+        DB1[j] = 0;
+        for(uint8_t i = 0; i < N0; i++){
+            DW1[i][j] = 0;
+        }
+    }
+    for(uint8_t j = 0; j < N2; j++){
+        DB2[j] = 0;
+        for(uint8_t i = 0; i < N1; i++){
+            DW2[i][j] = 0;
+        }
+    }
+    if(incentive == 0){
+        for(uint8_t i = 0; i < N2; i++){
+            S[i] = 1;
+        }
+        S[choice] = 0;
+    } else{
+        for(uint8_t i = 0; i < N2; i++){
+            S[i] = 0;
+        }
+        S[choice] = 1;
     }
     
+    for(uint8_t k = 0; k < N2; k++){
+        DY2[k] = 2*(Y2[k] - S[k]);
+        uint8_t dz = de_sigmoid((int8_t)Z2[k]);
+        DB2[k] += DY2[k]*dz;
+        for(uint8_t i = 0; i < N1; i++){
+            DY1[i] = dz*weights2_read(i, k);
+            DW2[i][k] += dz*DY2[k];
+        }
+
+        for(uint8_t j = 0; j < N1; j++){
+            dz = de_sigmoid((int8_t)Z1[j]);
+            DB1[j] += DY1[j]*dz;
+            for(uint8_t i = 0; i < N0; i++){
+                DW1[i][j] += dz*DY1[j];
+            }
+        }
+    }
+    
+    for(uint8_t j = 0; j < N2; j++){
+        biases2_write(j, (int8_t)(biases2_read(j) - DB2[j]));
+        for(uint8_t i = 0; i < N1; i++){
+            weights2_write(i,j, (int8_t)(weights2_read(i,j) - DW2[i][j]));
+        }
+    }
     for(uint8_t j = 0; j < N1; j++){
-        dz = de_sigmoid((int8_t)Z1[j]);
-        biases1_write(j, (int8_t)(biases2_read(j) - DY1[j]*dz));
+        biases1_write(j, (int8_t)(biases2_read(j) - DB1[j]));
         for(uint8_t i = 0; i < N0; i++){
-            weights1_write(i, j, (int8_t)(weights2_read(i, j) - dz*DY1[j]));
+            weights1_write(i,j, (int8_t)(weights2_read(i,j) - DW1[i][j]));
         }
     }
 }

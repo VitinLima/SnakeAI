@@ -11,50 +11,70 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
+$C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
 idloc IDLOC 5 8000 8000 4 2 1
 reset_vec CODE 0 0 0 2 2 1
 end_init CODE 0 2 2 2 2 1
 config CONFIG 4 8007 8007 2 2 1
 $dist/default/production\SnakeAI.production.o
-cinit CODE 0 7D9 7D9 27 2 1
+cinit CODE 0 7B4 7B4 4C 2 1
 idloc IDLOC 5 8000 8000 4 2 1
-text1 CODE 0 72C 72C AD 2 1
-text2 CODE 0 5AE 5AE 28 2 1
-text3 CODE 0 637 637 35 2 1
-text4 CODE 0 604 604 33 2 1
-text5 CODE 0 4D4 4D4 3 2 1
-text6 CODE 0 4D2 4D2 2 2 1
-text7 CODE 0 5D6 5D6 2E 2 1
-text8 CODE 0 537 537 11 2 1
-text9 CODE 0 548 548 12 2 1
-text10 CODE 0 66C 66C 3E 2 1
-text11 CODE 0 572 572 1A 2 1
-text12 CODE 0 4DB 4DB 5 2 1
-text13 CODE 0 51A 51A D 2 1
-text14 CODE 0 527 527 10 2 1
-text15 CODE 0 4D7 4D7 4 2 1
-text16 CODE 0 50E 50E C 2 1
-text17 CODE 0 55A 55A 18 2 1
-text18 CODE 0 4FE 4FE 7 2 1
-text19 CODE 0 58C 58C 22 2 1
-text20 CODE 0 4EC 4EC 6 2 1
-text21 CODE 0 4E6 4E6 6 2 1
-text22 CODE 0 4E0 4E0 6 2 1
-nvBANK1 BANK1 1 D8 D8 6 1 1
-maintext CODE 0 6AA 6AA 82 2 1
+text1 CODE 0 22C 22C AE 2 1
+text2 CODE 0 A7 A7 28 2 1
+text3 CODE 0 15A 15A 35 2 1
+text4 CODE 0 127 127 33 2 1
+text5 CODE 0 2DA 2DA B6 2 1
+text6 CODE 0 F06 F06 3 2 1
+text7 CODE 0 F04 F04 2 2 1
+text8 CODE 0 F9 F9 2E 2 1
+text9 CODE 0 FDD FDD 11 2 1
+text10 CODE 0 FEE FEE 12 2 1
+text11 CODE 0 18F 18F 3E 2 1
+text12 CODE 0 4C 4C 1A 2 1
+text13 CODE 0 F0D F0D 5 2 1
+text14 CODE 0 F72 F72 D 2 1
+text15 CODE 0 45D 45D 107 2 1
+text16 CODE 0 F7F F7F E 2 1
+text17 CODE 0 FBC FBC 10 2 1
+text18 CODE 0 F2C F2C 7 2 1
+text19 CODE 0 1CD 1CD 5F 2 1
+text20 CODE 0 564 564 250 2 1
+text21 CODE 0 F8D F8D F 2 1
+text22 CODE 0 F65 F65 D 2 1
+text23 CODE 0 1F 1F 15 2 1
+text24 CODE 0 FCC FCC 11 2 1
+text25 CODE 0 FAC FAC 10 2 1
+text26 CODE 0 F44 F44 9 2 1
+text27 CODE 0 F25 F25 7 2 1
+text28 CODE 0 A A 15 2 1
+text29 CODE 0 F3B F3B 9 2 1
+text30 CODE 0 CF CF 2A 2 1
+text31 CODE 0 66 66 1F 2 1
+text32 CODE 0 F02 F02 2 2 1
+text33 CODE 0 F9C F9C 10 2 1
+text34 CODE 0 F09 F09 4 2 1
+text35 CODE 0 F4D F4D C 2 1
+text36 CODE 0 34 34 18 2 1
+text37 CODE 0 F1E F1E 7 2 1
+text38 CODE 0 85 85 22 2 1
+text39 CODE 0 4 4 6 2 1
+text40 CODE 0 F18 F18 6 2 1
+text41 CODE 0 F12 F12 6 2 1
+nvBANK0 BANK0 1 6B 6B 4 1 1
+nvBANK3 BANK3 1 1A7 1A7 2 1 1
+maintext CODE 0 390 390 CD 2 1
 cstackCOMMON COMMON 1 70 70 E 1 1
-cstackBANK0 BANK0 1 53 53 13 1 1
-inittext CODE 0 4F8 4F8 6 2 1
+cstackBANK0 BANK0 1 20 20 2A 1 1
 stringtext1 STRCODE 0 800 800 10 2 1
 stringtext2 STRCODE 0 810 810 10 2 1
 stringtext3 STRCODE 0 820 820 4 2 1
-bssBANK0 BANK0 1 20 20 33 1 1
-bssBANK1 BANK1 1 A0 A0 38 1 1
-bssBANK2 BANK2 1 120 120 40 1 1
-idataBANK0 CODE 0 505 505 9 2 1
-dataBANK0 BANK0 1 66 66 9 1 1
-clrtext CODE 0 4F2 4F2 6 2 1
+bssBANK0 BANK0 1 4A 4A 21 1 1
+bssBANK1 BANK1 1 A0 A0 50 1 1
+bssBANK2 BANK2 1 120 120 47 1 1
+bssBANK3 BANK3 1 1A0 1A0 7 1 1
+idataBANK2 CODE 0 F33 F33 8 2 1
+dataBANK2 BANK2 1 167 167 8 1 1
+clrtext CODE 0 F59 F59 C 2 1
 config CONFIG 4 8007 8007 2 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -63,19 +83,13 @@ config CONFIG 4 8007 8007 2 2 1
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
 RAM 6F-6F 1
-RAM DE-EF 1
-RAM 160-16F 1
-RAM 1A0-1EF 1
-RAM 220-24F 1
+RAM 16F-16F 1
+RAM 1A9-1AF 1
 BANK0 6F-6F 1
-BANK1 DE-EF 1
-BANK2 160-16F 1
-BANK3 1A0-1EF 1
-BANK4 220-24F 1
-CONST 4-4D1 2
-CONST 824-FFF 2
-ENTRY 4-4D1 2
-ENTRY 824-FFF 2
+BANK2 16F-16F 1
+BANK3 1A9-1AF 1
+CONST 824-F01 2
+ENTRY 824-F01 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
 SFR12 600-66F 1
@@ -98,8 +112,7 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-CODE 4-4D1 2
-CODE 824-FFF 2
+CODE 824-F01 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -112,10 +125,8 @@ SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-216F 1
 EEDATA F000-F0FF 2
-STRCODE 4-4D1 2
-STRCODE 824-FFF 2
-STRING 4-4D1 2
-STRING 824-FFF 2
+STRCODE 824-F01 2
+STRING 824-F01 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -130,261 +141,540 @@ STRING 824-FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SnakeAI.production.o
-7D9 cinit CODE >4471:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7D9 cinit CODE >4474:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7D9 cinit CODE >4555:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7DA cinit CODE >4556:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7DB cinit CODE >4557:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7DC cinit CODE >4558:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7DD cinit CODE >4559:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7DE cinit CODE >4560:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7DF cinit CODE >4561:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E0 cinit CODE >4562:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E1 cinit CODE >4563:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E2 cinit CODE >4564:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E5 cinit CODE >4581:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E6 cinit CODE >4582:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E7 cinit CODE >4583:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E8 cinit CODE >4584:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7E9 cinit CODE >4585:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7EA cinit CODE >4586:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7ED cinit CODE >4590:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7EE cinit CODE >4591:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7EF cinit CODE >4592:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F0 cinit CODE >4593:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F1 cinit CODE >4594:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F2 cinit CODE >4595:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F5 cinit CODE >4599:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F6 cinit CODE >4600:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F7 cinit CODE >4601:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F8 cinit CODE >4602:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7F9 cinit CODE >4603:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7FA cinit CODE >4604:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7FD cinit CODE >4610:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7FD cinit CODE >4612:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-7FE cinit CODE >4613:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4E0 text22 CODE >165:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4E0 text22 CODE >166:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4E5 text22 CODE >167:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4E6 text21 CODE >157:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4E6 text21 CODE >158:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4EB text21 CODE >159:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4EC text20 CODE >161:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4EC text20 CODE >162:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4F1 text20 CODE >163:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-58C text19 CODE >66:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-58C text19 CODE >71:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-58F text19 CODE >74:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-591 text19 CODE >77:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-593 text19 CODE >80:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-595 text19 CODE >83:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-596 text19 CODE >86:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-59D text19 CODE >87:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-5A4 text19 CODE >88:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-5AB text19 CODE >90:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-5AD text19 CODE >92:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
-4FE text18 CODE >60:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-4FE text18 CODE >63:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-501 text18 CODE >65:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-502 text18 CODE >67:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-504 text18 CODE >68:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-55A text17 CODE >55:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-55A text17 CODE >60:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-55C text17 CODE >61:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-55D text17 CODE >66:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-560 text17 CODE >67:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-562 text17 CODE >72:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-565 text17 CODE >73:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-567 text17 CODE >78:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-569 text17 CODE >79:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-56A text17 CODE >80:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-56C text17 CODE >86:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-56F text17 CODE >87:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-571 text17 CODE >94:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
-50E text16 CODE >62:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-50E text16 CODE >65:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-511 text16 CODE >66:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-513 text16 CODE >67:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-515 text16 CODE >68:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-517 text16 CODE >69:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-519 text16 CODE >70:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-4D7 text15 CODE >70:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-4D7 text15 CODE >73:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-4DA text15 CODE >74:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-527 text14 CODE >50:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-527 text14 CODE >53:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-52A text14 CODE >54:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-52D text14 CODE >55:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-530 text14 CODE >56:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-533 text14 CODE >57:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-536 text14 CODE >58:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
-51A text13 CODE >50:D:\WS\GitHub\SnakeAI\main.c
-51A text13 CODE >51:D:\WS\GitHub\SnakeAI\main.c
-51C text13 CODE >52:D:\WS\GitHub\SnakeAI\main.c
-51D text13 CODE >54:D:\WS\GitHub\SnakeAI\main.c
-51F text13 CODE >55:D:\WS\GitHub\SnakeAI\main.c
-520 text13 CODE >56:D:\WS\GitHub\SnakeAI\main.c
-521 text13 CODE >57:D:\WS\GitHub\SnakeAI\main.c
-522 text13 CODE >58:D:\WS\GitHub\SnakeAI\main.c
-523 text13 CODE >59:D:\WS\GitHub\SnakeAI\main.c
-524 text13 CODE >60:D:\WS\GitHub\SnakeAI\main.c
-525 text13 CODE >61:D:\WS\GitHub\SnakeAI\main.c
-526 text13 CODE >62:D:\WS\GitHub\SnakeAI\main.c
-4DB text12 CODE >131:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-4DC text12 CODE >133:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-4DF text12 CODE >134:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
-572 text11 CODE >5:D:\WS\GitHub\SnakeAI\ledMatrix.c
-573 text11 CODE >6:D:\WS\GitHub\SnakeAI\ledMatrix.c
-575 text11 CODE >7:D:\WS\GitHub\SnakeAI\ledMatrix.c
-579 text11 CODE >8:D:\WS\GitHub\SnakeAI\ledMatrix.c
-57E text11 CODE >9:D:\WS\GitHub\SnakeAI\ledMatrix.c
-57F text11 CODE >10:D:\WS\GitHub\SnakeAI\ledMatrix.c
-583 text11 CODE >11:D:\WS\GitHub\SnakeAI\ledMatrix.c
-588 text11 CODE >12:D:\WS\GitHub\SnakeAI\ledMatrix.c
-589 text11 CODE >13:D:\WS\GitHub\SnakeAI\ledMatrix.c
-58B text11 CODE >14:D:\WS\GitHub\SnakeAI\ledMatrix.c
-66C text10 CODE >16:D:\WS\GitHub\SnakeAI\ledMatrix.c
-66C text10 CODE >17:D:\WS\GitHub\SnakeAI\ledMatrix.c
-66E text10 CODE >18:D:\WS\GitHub\SnakeAI\ledMatrix.c
-670 text10 CODE >19:D:\WS\GitHub\SnakeAI\ledMatrix.c
-672 text10 CODE >20:D:\WS\GitHub\SnakeAI\ledMatrix.c
-677 text10 CODE >21:D:\WS\GitHub\SnakeAI\ledMatrix.c
-67C text10 CODE >22:D:\WS\GitHub\SnakeAI\ledMatrix.c
-681 text10 CODE >23:D:\WS\GitHub\SnakeAI\ledMatrix.c
-687 text10 CODE >24:D:\WS\GitHub\SnakeAI\ledMatrix.c
-68D text10 CODE >25:D:\WS\GitHub\SnakeAI\ledMatrix.c
-693 text10 CODE >26:D:\WS\GitHub\SnakeAI\ledMatrix.c
-69E text10 CODE >27:D:\WS\GitHub\SnakeAI\ledMatrix.c
-6A3 text10 CODE >28:D:\WS\GitHub\SnakeAI\ledMatrix.c
-6A9 text10 CODE >29:D:\WS\GitHub\SnakeAI\ledMatrix.c
-548 text9 CODE >35:D:\WS\GitHub\SnakeAI\ledMatrix.c
-549 text9 CODE >36:D:\WS\GitHub\SnakeAI\ledMatrix.c
-559 text9 CODE >37:D:\WS\GitHub\SnakeAI\ledMatrix.c
-537 text8 CODE >31:D:\WS\GitHub\SnakeAI\ledMatrix.c
-538 text8 CODE >32:D:\WS\GitHub\SnakeAI\ledMatrix.c
-547 text8 CODE >33:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5D6 text7 CODE >39:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5D6 text7 CODE >42:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5D7 text7 CODE >46:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5DD text7 CODE >49:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5DE text7 CODE >50:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5DF text7 CODE >51:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5E4 text7 CODE >52:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5E6 text7 CODE >53:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5E8 text7 CODE >54:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5EE text7 CODE >54:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5F2 text7 CODE >55:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5F9 text7 CODE >59:D:\WS\GitHub\SnakeAI\ledMatrix.c
-5FF text7 CODE >59:D:\WS\GitHub\SnakeAI\ledMatrix.c
-603 text7 CODE >60:D:\WS\GitHub\SnakeAI\ledMatrix.c
-4D2 text6 CODE >82:D:\WS\GitHub\SnakeAI\snake.c
-4D2 text6 CODE >83:D:\WS\GitHub\SnakeAI\snake.c
-4D3 text6 CODE >84:D:\WS\GitHub\SnakeAI\snake.c
-4D4 text5 CODE >124:D:\WS\GitHub\SnakeAI\snake.c
-4D4 text5 CODE >125:D:\WS\GitHub\SnakeAI\snake.c
-4D6 text5 CODE >126:D:\WS\GitHub\SnakeAI\snake.c
-604 text4 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-604 text4 CODE >119:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-60C text4 CODE >121:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-610 text4 CODE >122:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-618 text4 CODE >123:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-61F text4 CODE >124:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-626 text4 CODE >125:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-62A text4 CODE >125:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-62E text4 CODE >128:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-636 text4 CODE >129:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
-637 text3 CODE >11:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
-637 text3 CODE >13:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
-658 text3 CODE >14:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
-66B text3 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
-5AE text2 CODE >17:D:\WS\GitHub\SnakeAI\snake.c
-5AE text2 CODE >18:D:\WS\GitHub\SnakeAI\snake.c
-5B0 text2 CODE >19:D:\WS\GitHub\SnakeAI\snake.c
-5B6 text2 CODE >20:D:\WS\GitHub\SnakeAI\snake.c
-5BC text2 CODE >20:D:\WS\GitHub\SnakeAI\snake.c
-5C0 text2 CODE >21:D:\WS\GitHub\SnakeAI\snake.c
-5C7 text2 CODE >22:D:\WS\GitHub\SnakeAI\snake.c
-5CE text2 CODE >23:D:\WS\GitHub\SnakeAI\snake.c
-5D5 text2 CODE >24:D:\WS\GitHub\SnakeAI\snake.c
-72C text1 CODE >26:D:\WS\GitHub\SnakeAI\snake.c
-72E text1 CODE >27:D:\WS\GitHub\SnakeAI\snake.c
-72F text1 CODE >28:D:\WS\GitHub\SnakeAI\snake.c
-739 text1 CODE >29:D:\WS\GitHub\SnakeAI\snake.c
-740 text1 CODE >31:D:\WS\GitHub\SnakeAI\snake.c
-746 text1 CODE >31:D:\WS\GitHub\SnakeAI\snake.c
-74A text1 CODE >32:D:\WS\GitHub\SnakeAI\snake.c
-74B text1 CODE >33:D:\WS\GitHub\SnakeAI\snake.c
-74F text1 CODE >34:D:\WS\GitHub\SnakeAI\snake.c
-750 text1 CODE >36:D:\WS\GitHub\SnakeAI\snake.c
-756 text1 CODE >37:D:\WS\GitHub\SnakeAI\snake.c
-758 text1 CODE >38:D:\WS\GitHub\SnakeAI\snake.c
-759 text1 CODE >39:D:\WS\GitHub\SnakeAI\snake.c
-75C text1 CODE >43:D:\WS\GitHub\SnakeAI\snake.c
-766 text1 CODE >46:D:\WS\GitHub\SnakeAI\snake.c
-76B text1 CODE >50:D:\WS\GitHub\SnakeAI\snake.c
-778 text1 CODE >53:D:\WS\GitHub\SnakeAI\snake.c
-77B text1 CODE >57:D:\WS\GitHub\SnakeAI\snake.c
-787 text1 CODE >60:D:\WS\GitHub\SnakeAI\snake.c
-78C text1 CODE >63:D:\WS\GitHub\SnakeAI\snake.c
-791 text1 CODE >63:D:\WS\GitHub\SnakeAI\snake.c
-796 text1 CODE >63:D:\WS\GitHub\SnakeAI\snake.c
-799 text1 CODE >63:D:\WS\GitHub\SnakeAI\snake.c
-79C text1 CODE >63:D:\WS\GitHub\SnakeAI\snake.c
-79F text1 CODE >63:D:\WS\GitHub\SnakeAI\snake.c
-7A2 text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
-7A7 text1 CODE >65:D:\WS\GitHub\SnakeAI\snake.c
-7AA text1 CODE >66:D:\WS\GitHub\SnakeAI\snake.c
-7B5 text1 CODE >67:D:\WS\GitHub\SnakeAI\snake.c
-7B6 text1 CODE >70:D:\WS\GitHub\SnakeAI\snake.c
-7B8 text1 CODE >70:D:\WS\GitHub\SnakeAI\snake.c
-7BC text1 CODE >71:D:\WS\GitHub\SnakeAI\snake.c
-7BC text1 CODE >72:D:\WS\GitHub\SnakeAI\snake.c
-7C0 text1 CODE >74:D:\WS\GitHub\SnakeAI\snake.c
-7C7 text1 CODE >75:D:\WS\GitHub\SnakeAI\snake.c
-7D1 text1 CODE >77:D:\WS\GitHub\SnakeAI\snake.c
-7D8 text1 CODE >80:D:\WS\GitHub\SnakeAI\snake.c
-6AA maintext CODE >67:D:\WS\GitHub\SnakeAI\main.c
-6AA maintext CODE >70:D:\WS\GitHub\SnakeAI\main.c
-6AD maintext CODE >87:D:\WS\GitHub\SnakeAI\main.c
-6B0 maintext CODE >88:D:\WS\GitHub\SnakeAI\main.c
-6B3 maintext CODE >90:D:\WS\GitHub\SnakeAI\main.c
-6B6 maintext CODE >92:D:\WS\GitHub\SnakeAI\main.c
-6BB maintext CODE >94:D:\WS\GitHub\SnakeAI\main.c
-6BC maintext CODE >97:D:\WS\GitHub\SnakeAI\main.c
-6C9 maintext CODE >98:D:\WS\GitHub\SnakeAI\main.c
-6D3 maintext CODE >99:D:\WS\GitHub\SnakeAI\main.c
-6D9 maintext CODE >100:D:\WS\GitHub\SnakeAI\main.c
-6DA maintext CODE >101:D:\WS\GitHub\SnakeAI\main.c
-6DA maintext CODE >102:D:\WS\GitHub\SnakeAI\main.c
-6DB maintext CODE >103:D:\WS\GitHub\SnakeAI\main.c
-6DC maintext CODE >104:D:\WS\GitHub\SnakeAI\main.c
-6E1 maintext CODE >104:D:\WS\GitHub\SnakeAI\main.c
-6F2 maintext CODE >105:D:\WS\GitHub\SnakeAI\main.c
-6F8 maintext CODE >106:D:\WS\GitHub\SnakeAI\main.c
-6F9 maintext CODE >107:D:\WS\GitHub\SnakeAI\main.c
-6FF maintext CODE >109:D:\WS\GitHub\SnakeAI\main.c
-706 maintext CODE >109:D:\WS\GitHub\SnakeAI\main.c
-70A maintext CODE >110:D:\WS\GitHub\SnakeAI\main.c
-710 maintext CODE >110:D:\WS\GitHub\SnakeAI\main.c
-714 maintext CODE >111:D:\WS\GitHub\SnakeAI\main.c
-719 maintext CODE >112:D:\WS\GitHub\SnakeAI\main.c
-726 maintext CODE >113:D:\WS\GitHub\SnakeAI\main.c
-4F2 clrtext CODE >4570:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F2 clrtext CODE >4571:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F3 clrtext CODE >4572:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F3 clrtext CODE >4573:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F4 clrtext CODE >4574:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F5 clrtext CODE >4575:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F6 clrtext CODE >4576:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F7 clrtext CODE >4577:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F8 inittext CODE >4544:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F8 inittext CODE >4545:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F9 inittext CODE >4546:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4F9 inittext CODE >4547:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4FA inittext CODE >4548:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4FB inittext CODE >4549:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4FC inittext CODE >4550:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
-4FD inittext CODE >4551:C:\Users\160047~1\AppData\Local\Temp\xcAs4og.s
+7B4 cinit CODE >4506:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B4 cinit CODE >4509:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B4 cinit CODE >4590:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B5 cinit CODE >4591:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B6 cinit CODE >4592:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B7 cinit CODE >4593:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B8 cinit CODE >4594:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7B9 cinit CODE >4595:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7BA cinit CODE >4596:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7BB cinit CODE >4597:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7BC cinit CODE >4598:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7BD cinit CODE >4599:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7BE cinit CODE >4600:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7BF cinit CODE >4601:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C0 cinit CODE >4602:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C1 cinit CODE >4603:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C2 cinit CODE >4604:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C3 cinit CODE >4605:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C4 cinit CODE >4606:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C5 cinit CODE >4607:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C6 cinit CODE >4608:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C7 cinit CODE >4609:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C8 cinit CODE >4610:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7C9 cinit CODE >4633:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7CA cinit CODE >4634:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7CB cinit CODE >4635:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7CC cinit CODE >4636:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7CD cinit CODE >4637:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7CE cinit CODE >4638:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7CF cinit CODE >4639:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D0 cinit CODE >4640:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D1 cinit CODE >4641:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D4 cinit CODE >4645:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D5 cinit CODE >4646:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D6 cinit CODE >4647:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D7 cinit CODE >4648:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D8 cinit CODE >4649:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7D9 cinit CODE >4650:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7DA cinit CODE >4651:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7DB cinit CODE >4652:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7DC cinit CODE >4653:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7DF cinit CODE >4657:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E0 cinit CODE >4658:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E1 cinit CODE >4659:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E2 cinit CODE >4660:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E3 cinit CODE >4661:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E4 cinit CODE >4662:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E5 cinit CODE >4663:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E6 cinit CODE >4664:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7E7 cinit CODE >4665:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7EA cinit CODE >4669:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7EB cinit CODE >4670:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7EC cinit CODE >4671:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7ED cinit CODE >4672:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7EE cinit CODE >4673:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7EF cinit CODE >4674:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F0 cinit CODE >4675:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F1 cinit CODE >4676:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F2 cinit CODE >4677:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F5 cinit CODE >4681:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F6 cinit CODE >4682:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F7 cinit CODE >4683:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F8 cinit CODE >4684:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7F9 cinit CODE >4685:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7FA cinit CODE >4686:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7FB cinit CODE >4687:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7FC cinit CODE >4688:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7FD cinit CODE >4694:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7FD cinit CODE >4696:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+7FE cinit CODE >4697:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F12 text41 CODE >165:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+F12 text41 CODE >166:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+F17 text41 CODE >167:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+F18 text40 CODE >157:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+F18 text40 CODE >158:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+F1D text40 CODE >159:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+4 text39 CODE >161:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+4 text39 CODE >162:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+9 text39 CODE >163:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+85 text38 CODE >66:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+85 text38 CODE >71:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+88 text38 CODE >74:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+8A text38 CODE >77:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+8C text38 CODE >80:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+8E text38 CODE >83:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+8F text38 CODE >86:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+96 text38 CODE >87:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+9D text38 CODE >88:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+A4 text38 CODE >90:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+A6 text38 CODE >92:D:\WS\GitHub\SnakeAI\mcc_generated_files/eusart.c
+F1E text37 CODE >60:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F1E text37 CODE >63:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F21 text37 CODE >65:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F22 text37 CODE >67:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F24 text37 CODE >68:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+34 text36 CODE >55:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+34 text36 CODE >60:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+36 text36 CODE >61:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+37 text36 CODE >66:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+3A text36 CODE >67:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+3C text36 CODE >72:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+3F text36 CODE >73:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+41 text36 CODE >78:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+43 text36 CODE >79:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+44 text36 CODE >80:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+46 text36 CODE >86:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+49 text36 CODE >87:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+4B text36 CODE >94:D:\WS\GitHub\SnakeAI\mcc_generated_files/pin_manager.c
+F4D text35 CODE >62:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F4D text35 CODE >65:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F50 text35 CODE >66:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F52 text35 CODE >67:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F54 text35 CODE >68:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F56 text35 CODE >69:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F58 text35 CODE >70:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F09 text34 CODE >70:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F09 text34 CODE >73:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F0C text34 CODE >74:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F9C text33 CODE >50:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F9C text33 CODE >53:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F9F text33 CODE >54:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+FA2 text33 CODE >55:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+FA5 text33 CODE >56:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+FA8 text33 CODE >57:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+FAB text33 CODE >58:D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
+F02 text32 CODE >102:D:\WS\GitHub\SnakeAI\ai.c
+F02 text32 CODE >103:D:\WS\GitHub\SnakeAI\ai.c
+F03 text32 CODE >104:D:\WS\GitHub\SnakeAI\ai.c
+66 text31 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+66 text31 CODE >43:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+68 text31 CODE >45:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+6C text31 CODE >46:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+70 text31 CODE >47:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+75 text31 CODE >48:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+7A text31 CODE >49:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+80 text31 CODE >52:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+84 text31 CODE >53:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+CF text30 CODE >6:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eewrite.c
+D0 text30 CODE >8:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eewrite.c
+F8 text30 CODE >9:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eewrite.c
+F3B text29 CODE >23:D:\WS\GitHub\SnakeAI\ai.c
+F3C text29 CODE >24:D:\WS\GitHub\SnakeAI\ai.c
+F43 text29 CODE >25:D:\WS\GitHub\SnakeAI\ai.c
+A text28 CODE >6:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
+B text28 CODE >8:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
+B text28 CODE >9:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
+11 text28 CODE >18:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
+1E text28 CODE >19:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
+F25 text27 CODE >41:D:\WS\GitHub\SnakeAI\ai.c
+F26 text27 CODE >42:D:\WS\GitHub\SnakeAI\ai.c
+F2B text27 CODE >43:D:\WS\GitHub\SnakeAI\ai.c
+F44 text26 CODE >29:D:\WS\GitHub\SnakeAI\ai.c
+F45 text26 CODE >30:D:\WS\GitHub\SnakeAI\ai.c
+F4C text26 CODE >31:D:\WS\GitHub\SnakeAI\ai.c
+FAC text25 CODE >12:D:\WS\GitHub\SnakeAI\sigmoid.c
+FAD text25 CODE >13:D:\WS\GitHub\SnakeAI\sigmoid.c
+FB7 text25 CODE >13:D:\WS\GitHub\SnakeAI\sigmoid.c
+FBB text25 CODE >14:D:\WS\GitHub\SnakeAI\sigmoid.c
+FCC text24 CODE >20:D:\WS\GitHub\SnakeAI\ai.c
+FCE text24 CODE >21:D:\WS\GitHub\SnakeAI\ai.c
+FD5 text24 CODE >21:D:\WS\GitHub\SnakeAI\ai.c
+FDC text24 CODE >22:D:\WS\GitHub\SnakeAI\ai.c
+1F text23 CODE >4:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+20 text23 CODE >6:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+21 text23 CODE >43:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+25 text23 CODE >44:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+29 text23 CODE >45:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+2B text23 CODE >46:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+2D text23 CODE >47:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+32 text23 CODE >50:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+33 text23 CODE >51:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
+F65 text22 CODE >38:D:\WS\GitHub\SnakeAI\ai.c
+F66 text22 CODE >39:D:\WS\GitHub\SnakeAI\ai.c
+F71 text22 CODE >40:D:\WS\GitHub\SnakeAI\ai.c
+F8D text21 CODE >26:D:\WS\GitHub\SnakeAI\ai.c
+F8E text21 CODE >27:D:\WS\GitHub\SnakeAI\ai.c
+F9B text21 CODE >28:D:\WS\GitHub\SnakeAI\ai.c
+564 text20 CODE >138:D:\WS\GitHub\SnakeAI\ai.c
+566 text20 CODE >139:D:\WS\GitHub\SnakeAI\ai.c
+56C text20 CODE >143:D:\WS\GitHub\SnakeAI\ai.c
+571 text20 CODE >144:D:\WS\GitHub\SnakeAI\ai.c
+572 text20 CODE >145:D:\WS\GitHub\SnakeAI\ai.c
+572 text20 CODE >148:D:\WS\GitHub\SnakeAI\ai.c
+573 text20 CODE >149:D:\WS\GitHub\SnakeAI\ai.c
+579 text20 CODE >150:D:\WS\GitHub\SnakeAI\ai.c
+57A text20 CODE >151:D:\WS\GitHub\SnakeAI\ai.c
+59D text20 CODE >152:D:\WS\GitHub\SnakeAI\ai.c
+5A3 text20 CODE >152:D:\WS\GitHub\SnakeAI\ai.c
+5A7 text20 CODE >153:D:\WS\GitHub\SnakeAI\ai.c
+5AD text20 CODE >153:D:\WS\GitHub\SnakeAI\ai.c
+5B1 text20 CODE >154:D:\WS\GitHub\SnakeAI\ai.c
+5B2 text20 CODE >155:D:\WS\GitHub\SnakeAI\ai.c
+5B7 text20 CODE >156:D:\WS\GitHub\SnakeAI\ai.c
+5B8 text20 CODE >157:D:\WS\GitHub\SnakeAI\ai.c
+5C9 text20 CODE >158:D:\WS\GitHub\SnakeAI\ai.c
+5CF text20 CODE >158:D:\WS\GitHub\SnakeAI\ai.c
+5D3 text20 CODE >159:D:\WS\GitHub\SnakeAI\ai.c
+5D9 text20 CODE >159:D:\WS\GitHub\SnakeAI\ai.c
+5DD text20 CODE >160:D:\WS\GitHub\SnakeAI\ai.c
+5E2 text20 CODE >161:D:\WS\GitHub\SnakeAI\ai.c
+5E3 text20 CODE >162:D:\WS\GitHub\SnakeAI\ai.c
+5E9 text20 CODE >163:D:\WS\GitHub\SnakeAI\ai.c
+5EF text20 CODE >163:D:\WS\GitHub\SnakeAI\ai.c
+5F3 text20 CODE >164:D:\WS\GitHub\SnakeAI\ai.c
+5F8 text20 CODE >165:D:\WS\GitHub\SnakeAI\ai.c
+5F9 text20 CODE >166:D:\WS\GitHub\SnakeAI\ai.c
+5FA text20 CODE >167:D:\WS\GitHub\SnakeAI\ai.c
+5FF text20 CODE >168:D:\WS\GitHub\SnakeAI\ai.c
+605 text20 CODE >168:D:\WS\GitHub\SnakeAI\ai.c
+609 text20 CODE >169:D:\WS\GitHub\SnakeAI\ai.c
+60F text20 CODE >172:D:\WS\GitHub\SnakeAI\ai.c
+610 text20 CODE >173:D:\WS\GitHub\SnakeAI\ai.c
+620 text20 CODE >173:D:\WS\GitHub\SnakeAI\ai.c
+62D text20 CODE >174:D:\WS\GitHub\SnakeAI\ai.c
+637 text20 CODE >175:D:\WS\GitHub\SnakeAI\ai.c
+64A text20 CODE >176:D:\WS\GitHub\SnakeAI\ai.c
+64B text20 CODE >177:D:\WS\GitHub\SnakeAI\ai.c
+669 text20 CODE >178:D:\WS\GitHub\SnakeAI\ai.c
+688 text20 CODE >179:D:\WS\GitHub\SnakeAI\ai.c
+68E text20 CODE >179:D:\WS\GitHub\SnakeAI\ai.c
+692 text20 CODE >181:D:\WS\GitHub\SnakeAI\ai.c
+693 text20 CODE >182:D:\WS\GitHub\SnakeAI\ai.c
+69E text20 CODE >183:D:\WS\GitHub\SnakeAI\ai.c
+6B2 text20 CODE >184:D:\WS\GitHub\SnakeAI\ai.c
+6B5 text20 CODE >184:D:\WS\GitHub\SnakeAI\ai.c
+6BA text20 CODE >185:D:\WS\GitHub\SnakeAI\ai.c
+6EB text20 CODE >186:D:\WS\GitHub\SnakeAI\ai.c
+6F0 text20 CODE >187:D:\WS\GitHub\SnakeAI\ai.c
+6F6 text20 CODE >187:D:\WS\GitHub\SnakeAI\ai.c
+6FA text20 CODE >188:D:\WS\GitHub\SnakeAI\ai.c
+700 text20 CODE >188:D:\WS\GitHub\SnakeAI\ai.c
+704 text20 CODE >190:D:\WS\GitHub\SnakeAI\ai.c
+707 text20 CODE >190:D:\WS\GitHub\SnakeAI\ai.c
+70C text20 CODE >191:D:\WS\GitHub\SnakeAI\ai.c
+71D text20 CODE >192:D:\WS\GitHub\SnakeAI\ai.c
+721 text20 CODE >192:D:\WS\GitHub\SnakeAI\ai.c
+726 text20 CODE >193:D:\WS\GitHub\SnakeAI\ai.c
+747 text20 CODE >194:D:\WS\GitHub\SnakeAI\ai.c
+74D text20 CODE >195:D:\WS\GitHub\SnakeAI\ai.c
+752 text20 CODE >196:D:\WS\GitHub\SnakeAI\ai.c
+755 text20 CODE >196:D:\WS\GitHub\SnakeAI\ai.c
+75A text20 CODE >197:D:\WS\GitHub\SnakeAI\ai.c
+76C text20 CODE >198:D:\WS\GitHub\SnakeAI\ai.c
+770 text20 CODE >198:D:\WS\GitHub\SnakeAI\ai.c
+775 text20 CODE >199:D:\WS\GitHub\SnakeAI\ai.c
+7A8 text20 CODE >200:D:\WS\GitHub\SnakeAI\ai.c
+7AE text20 CODE >201:D:\WS\GitHub\SnakeAI\ai.c
+7B3 text20 CODE >202:D:\WS\GitHub\SnakeAI\ai.c
+1CD text19 CODE >5:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1CD text19 CODE >13:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1CE text19 CODE >14:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1D2 text19 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1D5 text19 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1D7 text19 CODE >16:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1D9 text19 CODE >18:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1DD text19 CODE >19:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1E0 text19 CODE >19:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1E2 text19 CODE >20:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1E6 text19 CODE >22:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1E8 text19 CODE >23:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1EE text19 CODE >24:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1F0 text19 CODE >25:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1F1 text19 CODE >26:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1F6 text19 CODE >27:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1FA text19 CODE >25:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+1FE text19 CODE >30:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+203 text19 CODE >31:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+205 text19 CODE >31:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+209 text19 CODE >31:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+20D text19 CODE >32:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+211 text19 CODE >33:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+212 text19 CODE >35:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+217 text19 CODE >36:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+21D text19 CODE >38:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+222 text19 CODE >39:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+225 text19 CODE >39:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+227 text19 CODE >40:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+22B text19 CODE >41:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+F2C text18 CODE >35:D:\WS\GitHub\SnakeAI\ai.c
+F2D text18 CODE >36:D:\WS\GitHub\SnakeAI\ai.c
+F32 text18 CODE >37:D:\WS\GitHub\SnakeAI\ai.c
+FBC text17 CODE >8:D:\WS\GitHub\SnakeAI\sigmoid.c
+FBD text17 CODE >9:D:\WS\GitHub\SnakeAI\sigmoid.c
+FC7 text17 CODE >9:D:\WS\GitHub\SnakeAI\sigmoid.c
+FCB text17 CODE >10:D:\WS\GitHub\SnakeAI\sigmoid.c
+F7F text16 CODE >32:D:\WS\GitHub\SnakeAI\ai.c
+F80 text16 CODE >33:D:\WS\GitHub\SnakeAI\ai.c
+F85 text16 CODE >33:D:\WS\GitHub\SnakeAI\ai.c
+F8C text16 CODE >34:D:\WS\GitHub\SnakeAI\ai.c
+45D text15 CODE >106:D:\WS\GitHub\SnakeAI\ai.c
+45D text15 CODE >108:D:\WS\GitHub\SnakeAI\ai.c
+45F text15 CODE >109:D:\WS\GitHub\SnakeAI\ai.c
+471 text15 CODE >110:D:\WS\GitHub\SnakeAI\ai.c
+472 text15 CODE >111:D:\WS\GitHub\SnakeAI\ai.c
+47D text15 CODE >112:D:\WS\GitHub\SnakeAI\ai.c
+494 text15 CODE >113:D:\WS\GitHub\SnakeAI\ai.c
+4A4 text15 CODE >114:D:\WS\GitHub\SnakeAI\ai.c
+4AF text15 CODE >115:D:\WS\GitHub\SnakeAI\ai.c
+4B5 text15 CODE >115:D:\WS\GitHub\SnakeAI\ai.c
+4B9 text15 CODE >116:D:\WS\GitHub\SnakeAI\ai.c
+4C8 text15 CODE >117:D:\WS\GitHub\SnakeAI\ai.c
+4CF text15 CODE >117:D:\WS\GitHub\SnakeAI\ai.c
+4D3 text15 CODE >118:D:\WS\GitHub\SnakeAI\ai.c
+4D4 text15 CODE >119:D:\WS\GitHub\SnakeAI\ai.c
+4E5 text15 CODE >120:D:\WS\GitHub\SnakeAI\ai.c
+4E6 text15 CODE >121:D:\WS\GitHub\SnakeAI\ai.c
+4F2 text15 CODE >122:D:\WS\GitHub\SnakeAI\ai.c
+509 text15 CODE >123:D:\WS\GitHub\SnakeAI\ai.c
+519 text15 CODE >124:D:\WS\GitHub\SnakeAI\ai.c
+523 text15 CODE >125:D:\WS\GitHub\SnakeAI\ai.c
+529 text15 CODE >125:D:\WS\GitHub\SnakeAI\ai.c
+52D text15 CODE >126:D:\WS\GitHub\SnakeAI\ai.c
+53A text15 CODE >127:D:\WS\GitHub\SnakeAI\ai.c
+541 text15 CODE >127:D:\WS\GitHub\SnakeAI\ai.c
+545 text15 CODE >129:D:\WS\GitHub\SnakeAI\ai.c
+546 text15 CODE >130:D:\WS\GitHub\SnakeAI\ai.c
+548 text15 CODE >131:D:\WS\GitHub\SnakeAI\ai.c
+552 text15 CODE >131:D:\WS\GitHub\SnakeAI\ai.c
+556 text15 CODE >132:D:\WS\GitHub\SnakeAI\ai.c
+558 text15 CODE >134:D:\WS\GitHub\SnakeAI\ai.c
+55E text15 CODE >134:D:\WS\GitHub\SnakeAI\ai.c
+562 text15 CODE >135:D:\WS\GitHub\SnakeAI\ai.c
+563 text15 CODE >136:D:\WS\GitHub\SnakeAI\ai.c
+F72 text14 CODE >50:D:\WS\GitHub\SnakeAI\main.c
+F72 text14 CODE >51:D:\WS\GitHub\SnakeAI\main.c
+F74 text14 CODE >52:D:\WS\GitHub\SnakeAI\main.c
+F75 text14 CODE >54:D:\WS\GitHub\SnakeAI\main.c
+F77 text14 CODE >55:D:\WS\GitHub\SnakeAI\main.c
+F78 text14 CODE >56:D:\WS\GitHub\SnakeAI\main.c
+F79 text14 CODE >57:D:\WS\GitHub\SnakeAI\main.c
+F7A text14 CODE >58:D:\WS\GitHub\SnakeAI\main.c
+F7B text14 CODE >59:D:\WS\GitHub\SnakeAI\main.c
+F7C text14 CODE >60:D:\WS\GitHub\SnakeAI\main.c
+F7D text14 CODE >61:D:\WS\GitHub\SnakeAI\main.c
+F7E text14 CODE >62:D:\WS\GitHub\SnakeAI\main.c
+F0D text13 CODE >131:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F0E text13 CODE >133:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+F11 text13 CODE >134:D:\WS\GitHub\SnakeAI\mcc_generated_files/spi1.c
+4C text12 CODE >5:D:\WS\GitHub\SnakeAI\ledMatrix.c
+4D text12 CODE >6:D:\WS\GitHub\SnakeAI\ledMatrix.c
+4F text12 CODE >7:D:\WS\GitHub\SnakeAI\ledMatrix.c
+53 text12 CODE >8:D:\WS\GitHub\SnakeAI\ledMatrix.c
+58 text12 CODE >9:D:\WS\GitHub\SnakeAI\ledMatrix.c
+59 text12 CODE >10:D:\WS\GitHub\SnakeAI\ledMatrix.c
+5D text12 CODE >11:D:\WS\GitHub\SnakeAI\ledMatrix.c
+62 text12 CODE >12:D:\WS\GitHub\SnakeAI\ledMatrix.c
+63 text12 CODE >13:D:\WS\GitHub\SnakeAI\ledMatrix.c
+65 text12 CODE >14:D:\WS\GitHub\SnakeAI\ledMatrix.c
+18F text11 CODE >16:D:\WS\GitHub\SnakeAI\ledMatrix.c
+18F text11 CODE >17:D:\WS\GitHub\SnakeAI\ledMatrix.c
+191 text11 CODE >18:D:\WS\GitHub\SnakeAI\ledMatrix.c
+193 text11 CODE >19:D:\WS\GitHub\SnakeAI\ledMatrix.c
+195 text11 CODE >20:D:\WS\GitHub\SnakeAI\ledMatrix.c
+19A text11 CODE >21:D:\WS\GitHub\SnakeAI\ledMatrix.c
+19F text11 CODE >22:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1A4 text11 CODE >23:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1AA text11 CODE >24:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1B0 text11 CODE >25:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1B6 text11 CODE >26:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1C1 text11 CODE >27:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1C6 text11 CODE >28:D:\WS\GitHub\SnakeAI\ledMatrix.c
+1CC text11 CODE >29:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FEE text10 CODE >35:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FEF text10 CODE >36:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FFF text10 CODE >37:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FDD text9 CODE >31:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FDE text9 CODE >32:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FED text9 CODE >33:D:\WS\GitHub\SnakeAI\ledMatrix.c
+F9 text8 CODE >51:D:\WS\GitHub\SnakeAI\ledMatrix.c
+F9 text8 CODE >54:D:\WS\GitHub\SnakeAI\ledMatrix.c
+FA text8 CODE >58:D:\WS\GitHub\SnakeAI\ledMatrix.c
+100 text8 CODE >61:D:\WS\GitHub\SnakeAI\ledMatrix.c
+101 text8 CODE >62:D:\WS\GitHub\SnakeAI\ledMatrix.c
+102 text8 CODE >63:D:\WS\GitHub\SnakeAI\ledMatrix.c
+104 text8 CODE >64:D:\WS\GitHub\SnakeAI\ledMatrix.c
+109 text8 CODE >65:D:\WS\GitHub\SnakeAI\ledMatrix.c
+10B text8 CODE >66:D:\WS\GitHub\SnakeAI\ledMatrix.c
+111 text8 CODE >66:D:\WS\GitHub\SnakeAI\ledMatrix.c
+115 text8 CODE >67:D:\WS\GitHub\SnakeAI\ledMatrix.c
+11C text8 CODE >71:D:\WS\GitHub\SnakeAI\ledMatrix.c
+122 text8 CODE >71:D:\WS\GitHub\SnakeAI\ledMatrix.c
+126 text8 CODE >72:D:\WS\GitHub\SnakeAI\ledMatrix.c
+F04 text7 CODE >83:D:\WS\GitHub\SnakeAI\snake.c
+F04 text7 CODE >84:D:\WS\GitHub\SnakeAI\snake.c
+F05 text7 CODE >85:D:\WS\GitHub\SnakeAI\snake.c
+F06 text6 CODE >128:D:\WS\GitHub\SnakeAI\snake.c
+F06 text6 CODE >129:D:\WS\GitHub\SnakeAI\snake.c
+F08 text6 CODE >130:D:\WS\GitHub\SnakeAI\snake.c
+2DA text5 CODE >87:D:\WS\GitHub\SnakeAI\snake.c
+2DB text5 CODE >88:D:\WS\GitHub\SnakeAI\snake.c
+2DC text5 CODE >89:D:\WS\GitHub\SnakeAI\snake.c
+2E3 text5 CODE >90:D:\WS\GitHub\SnakeAI\snake.c
+2E9 text5 CODE >90:D:\WS\GitHub\SnakeAI\snake.c
+2ED text5 CODE >91:D:\WS\GitHub\SnakeAI\snake.c
+2F4 text5 CODE >92:D:\WS\GitHub\SnakeAI\snake.c
+2F9 text5 CODE >93:D:\WS\GitHub\SnakeAI\snake.c
+2FE text5 CODE >94:D:\WS\GitHub\SnakeAI\snake.c
+304 text5 CODE >95:D:\WS\GitHub\SnakeAI\snake.c
+30E text5 CODE >96:D:\WS\GitHub\SnakeAI\snake.c
+314 text5 CODE >97:D:\WS\GitHub\SnakeAI\snake.c
+31A text5 CODE >98:D:\WS\GitHub\SnakeAI\snake.c
+320 text5 CODE >100:D:\WS\GitHub\SnakeAI\snake.c
+32B text5 CODE >101:D:\WS\GitHub\SnakeAI\snake.c
+331 text5 CODE >102:D:\WS\GitHub\SnakeAI\snake.c
+337 text5 CODE >103:D:\WS\GitHub\SnakeAI\snake.c
+33C text5 CODE >104:D:\WS\GitHub\SnakeAI\snake.c
+349 text5 CODE >105:D:\WS\GitHub\SnakeAI\snake.c
+34F text5 CODE >106:D:\WS\GitHub\SnakeAI\snake.c
+355 text5 CODE >107:D:\WS\GitHub\SnakeAI\snake.c
+35B text5 CODE >110:D:\WS\GitHub\SnakeAI\snake.c
+35C text5 CODE >111:D:\WS\GitHub\SnakeAI\snake.c
+365 text5 CODE >112:D:\WS\GitHub\SnakeAI\snake.c
+367 text5 CODE >112:D:\WS\GitHub\SnakeAI\snake.c
+36B text5 CODE >113:D:\WS\GitHub\SnakeAI\snake.c
+374 text5 CODE >114:D:\WS\GitHub\SnakeAI\snake.c
+374 text5 CODE >115:D:\WS\GitHub\SnakeAI\snake.c
+37D text5 CODE >116:D:\WS\GitHub\SnakeAI\snake.c
+385 text5 CODE >118:D:\WS\GitHub\SnakeAI\snake.c
+38B text5 CODE >118:D:\WS\GitHub\SnakeAI\snake.c
+38F text5 CODE >119:D:\WS\GitHub\SnakeAI\snake.c
+127 text4 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+127 text4 CODE >119:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+12F text4 CODE >121:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+133 text4 CODE >122:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+13B text4 CODE >123:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+142 text4 CODE >124:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+149 text4 CODE >125:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+14D text4 CODE >125:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+151 text4 CODE >128:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+159 text4 CODE >129:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+15A text3 CODE >11:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+15A text3 CODE >13:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+17B text3 CODE >14:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+18E text3 CODE >15:D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+A7 text2 CODE >17:D:\WS\GitHub\SnakeAI\snake.c
+A7 text2 CODE >18:D:\WS\GitHub\SnakeAI\snake.c
+A9 text2 CODE >19:D:\WS\GitHub\SnakeAI\snake.c
+AE text2 CODE >20:D:\WS\GitHub\SnakeAI\snake.c
+B4 text2 CODE >20:D:\WS\GitHub\SnakeAI\snake.c
+B8 text2 CODE >21:D:\WS\GitHub\SnakeAI\snake.c
+BF text2 CODE >22:D:\WS\GitHub\SnakeAI\snake.c
+C6 text2 CODE >23:D:\WS\GitHub\SnakeAI\snake.c
+C8 text2 CODE >24:D:\WS\GitHub\SnakeAI\snake.c
+CE text2 CODE >25:D:\WS\GitHub\SnakeAI\snake.c
+22C text1 CODE >27:D:\WS\GitHub\SnakeAI\snake.c
+22E text1 CODE >28:D:\WS\GitHub\SnakeAI\snake.c
+22F text1 CODE >29:D:\WS\GitHub\SnakeAI\snake.c
+238 text1 CODE >30:D:\WS\GitHub\SnakeAI\snake.c
+23E text1 CODE >32:D:\WS\GitHub\SnakeAI\snake.c
+244 text1 CODE >32:D:\WS\GitHub\SnakeAI\snake.c
+248 text1 CODE >33:D:\WS\GitHub\SnakeAI\snake.c
+249 text1 CODE >34:D:\WS\GitHub\SnakeAI\snake.c
+24D text1 CODE >35:D:\WS\GitHub\SnakeAI\snake.c
+24E text1 CODE >37:D:\WS\GitHub\SnakeAI\snake.c
+254 text1 CODE >38:D:\WS\GitHub\SnakeAI\snake.c
+256 text1 CODE >39:D:\WS\GitHub\SnakeAI\snake.c
+257 text1 CODE >40:D:\WS\GitHub\SnakeAI\snake.c
+25A text1 CODE >44:D:\WS\GitHub\SnakeAI\snake.c
+264 text1 CODE >47:D:\WS\GitHub\SnakeAI\snake.c
+269 text1 CODE >51:D:\WS\GitHub\SnakeAI\snake.c
+275 text1 CODE >54:D:\WS\GitHub\SnakeAI\snake.c
+278 text1 CODE >58:D:\WS\GitHub\SnakeAI\snake.c
+285 text1 CODE >61:D:\WS\GitHub\SnakeAI\snake.c
+28A text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
+28F text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
+294 text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
+297 text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
+29A text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
+29D text1 CODE >64:D:\WS\GitHub\SnakeAI\snake.c
+2A0 text1 CODE >65:D:\WS\GitHub\SnakeAI\snake.c
+2A5 text1 CODE >66:D:\WS\GitHub\SnakeAI\snake.c
+2A8 text1 CODE >67:D:\WS\GitHub\SnakeAI\snake.c
+2B2 text1 CODE >68:D:\WS\GitHub\SnakeAI\snake.c
+2B5 text1 CODE >71:D:\WS\GitHub\SnakeAI\snake.c
+2B7 text1 CODE >71:D:\WS\GitHub\SnakeAI\snake.c
+2BB text1 CODE >72:D:\WS\GitHub\SnakeAI\snake.c
+2BD text1 CODE >73:D:\WS\GitHub\SnakeAI\snake.c
+2C1 text1 CODE >75:D:\WS\GitHub\SnakeAI\snake.c
+2C8 text1 CODE >76:D:\WS\GitHub\SnakeAI\snake.c
+2D1 text1 CODE >78:D:\WS\GitHub\SnakeAI\snake.c
+2D7 text1 CODE >80:D:\WS\GitHub\SnakeAI\snake.c
+2D9 text1 CODE >81:D:\WS\GitHub\SnakeAI\snake.c
+390 maintext CODE >85:D:\WS\GitHub\SnakeAI\main.c
+390 maintext CODE >88:D:\WS\GitHub\SnakeAI\main.c
+393 maintext CODE >105:D:\WS\GitHub\SnakeAI\main.c
+396 maintext CODE >106:D:\WS\GitHub\SnakeAI\main.c
+399 maintext CODE >108:D:\WS\GitHub\SnakeAI\main.c
+39C maintext CODE >158:D:\WS\GitHub\SnakeAI\main.c
+3A1 maintext CODE >160:D:\WS\GitHub\SnakeAI\main.c
+3A2 maintext CODE >161:D:\WS\GitHub\SnakeAI\main.c
+3A3 maintext CODE >162:D:\WS\GitHub\SnakeAI\main.c
+3A8 maintext CODE >162:D:\WS\GitHub\SnakeAI\main.c
+3B8 maintext CODE >163:D:\WS\GitHub\SnakeAI\main.c
+3BE maintext CODE >164:D:\WS\GitHub\SnakeAI\main.c
+3BF maintext CODE >165:D:\WS\GitHub\SnakeAI\main.c
+3C5 maintext CODE >167:D:\WS\GitHub\SnakeAI\main.c
+3CC maintext CODE >167:D:\WS\GitHub\SnakeAI\main.c
+3D0 maintext CODE >168:D:\WS\GitHub\SnakeAI\main.c
+3D6 maintext CODE >168:D:\WS\GitHub\SnakeAI\main.c
+3DA maintext CODE >169:D:\WS\GitHub\SnakeAI\main.c
+3DF maintext CODE >170:D:\WS\GitHub\SnakeAI\main.c
+3EC maintext CODE >171:D:\WS\GitHub\SnakeAI\main.c
+3EF maintext CODE >173:D:\WS\GitHub\SnakeAI\main.c
+3EF maintext CODE >186:D:\WS\GitHub\SnakeAI\main.c
+3FC maintext CODE >187:D:\WS\GitHub\SnakeAI\main.c
+402 maintext CODE >188:D:\WS\GitHub\SnakeAI\main.c
+40B maintext CODE >189:D:\WS\GitHub\SnakeAI\main.c
+40D maintext CODE >190:D:\WS\GitHub\SnakeAI\main.c
+40E maintext CODE >191:D:\WS\GitHub\SnakeAI\main.c
+413 maintext CODE >191:D:\WS\GitHub\SnakeAI\main.c
+423 maintext CODE >192:D:\WS\GitHub\SnakeAI\main.c
+429 maintext CODE >193:D:\WS\GitHub\SnakeAI\main.c
+42A maintext CODE >194:D:\WS\GitHub\SnakeAI\main.c
+430 maintext CODE >196:D:\WS\GitHub\SnakeAI\main.c
+437 maintext CODE >196:D:\WS\GitHub\SnakeAI\main.c
+43B maintext CODE >197:D:\WS\GitHub\SnakeAI\main.c
+441 maintext CODE >197:D:\WS\GitHub\SnakeAI\main.c
+445 maintext CODE >198:D:\WS\GitHub\SnakeAI\main.c
+44A maintext CODE >199:D:\WS\GitHub\SnakeAI\main.c
+457 maintext CODE >200:D:\WS\GitHub\SnakeAI\main.c
+F59 clrtext CODE >4616:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F59 clrtext CODE >4617:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5A clrtext CODE >4618:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5A clrtext CODE >4619:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5B clrtext CODE >4620:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5C clrtext CODE >4621:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5D clrtext CODE >4622:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5E clrtext CODE >4623:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F5F clrtext CODE >4624:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F60 clrtext CODE >4625:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F61 clrtext CODE >4626:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F62 clrtext CODE >4627:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F63 clrtext CODE >4628:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
+F64 clrtext CODE >4629:C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -398,68 +688,91 @@ $dist/default/production\SnakeAI.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 1 0 ABS 0 - dist/default/production\SnakeAI.production.o
-__LdataBANK0 0 0 ABS 0 dataBANK0 -
-_txMAX7219 AE4 0 CODE 0 text11 dist/default/production\SnakeAI.production.o
-__Hspace_0 824 0 ABS 0 - -
-__Hspace_1 160 0 ABS 0 - -
+___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__LdataBANK2 0 0 ABS 0 dataBANK2 -
+_txMAX7219 98 0 CODE 0 text12 dist/default/production\SnakeAI.production.o
+_weights2_read 1ECA 0 CODE 0 text22 dist/default/production\SnakeAI.production.o
+__Hspace_0 1000 0 ABS 0 - -
+__Hspace_1 1A9 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10010 0 ABS 0 - -
-__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK2 0 0 ABS 0 idataBANK2 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_Y0 C8 0 BANK1 1 bssBANK1 dist/default/production\SnakeAI.production.o
-_Y1 34 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
-_Y2 4A 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
-_Z1 B4 0 BANK1 1 bssBANK1 dist/default/production\SnakeAI.production.o
-_Z2 2A 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
-__end_of_WDT_Initialize 9B6 0 CODE 0 text15 dist/default/production\SnakeAI.production.o
-main@d 63 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
-main@i 64 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
-main@j 65 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
-__end_of_snake_move FB2 0 CODE 0 text1 dist/default/production\SnakeAI.production.o
+biases2_write@add 79 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+biases2_write@val 78 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+_Y0 E0 0 BANK1 1 bssBANK1 dist/default/production\SnakeAI.production.o
+_Y1 160 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
+_Y2 67 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_Z1 14A 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
+_Z2 4A 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_ai_getInputField 1E04 0 CODE 0 text32 dist/default/production\SnakeAI.production.o
+__end_of_WDT_Initialize 1E1A 0 CODE 0 text34 dist/default/production\SnakeAI.production.o
+main@i 46 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+main@j 47 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+__end_of_snake_move 5B4 0 CODE 0 text1 dist/default/production\SnakeAI.production.o
 __Hstrings 0 0 ABS 0 strings -
 _LATA 10C 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _LATB 10D 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\SnakeAI.production.o
-___sp 0 0 STACK 2 stack C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-_main D54 0 CODE 0 maintext dist/default/production\SnakeAI.production.o
-_rand C6E 0 CODE 0 text3 dist/default/production\SnakeAI.production.o
-_seed 4F 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+___sp 0 0 STACK 2 stack C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+_main 720 0 CODE 0 maintext dist/default/production\SnakeAI.production.o
+_rand 2B4 0 CODE 0 text3 dist/default/production\SnakeAI.production.o
+_seed 63 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SnakeAI.production.o
-start 4 0 CODE 0 init C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-__end_of_SPI1_Initialize A34 0 CODE 0 text16 dist/default/production\SnakeAI.production.o
-__end_of_EUSART_SetFramingErrorHandler 9D8 0 CODE 0 text21 dist/default/production\SnakeAI.production.o
-__end_of_EUSART_SetOverrunErrorHandler 9E4 0 CODE 0 text20 dist/default/production\SnakeAI.production.o
+start 4 0 CODE 0 init C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+snake_getSurroundings@surroundings 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of_SPI1_Initialize 1EB2 0 CODE 0 text35 dist/default/production\SnakeAI.production.o
+__end_of_EUSART_SetFramingErrorHandler 1E3C 0 CODE 0 text40 dist/default/production\SnakeAI.production.o
+__end_of_EUSART_SetOverrunErrorHandler 14 0 CODE 0 text39 dist/default/production\SnakeAI.production.o
 ?___lmul 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+?___wmul 77 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\SnakeAI.production.o
+__end_of_weights1_write 1FBA 0 CODE 0 text24 dist/default/production\SnakeAI.production.o
 txMAX7219@addr0 72 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-__LidataBANK0 0 0 ABS 0 idataBANK0 -
-__end_of_EUSART_Initialize B5C 0 CODE 0 text19 dist/default/production\SnakeAI.production.o
+__LidataBANK2 0 0 ABS 0 idataBANK2 -
+__end_of_EUSART_Initialize 14E 0 CODE 0 text38 dist/default/production\SnakeAI.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_snake_initiate BAC 0 CODE 0 text2 dist/default/production\SnakeAI.production.o
+__end_of_snake_initiate 19E 0 CODE 0 text2 dist/default/production\SnakeAI.production.o
 __end_of_spi1_configuration 1048 0 STRCODE 0 stringtext3 dist/default/production\SnakeAI.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-_ledClear A90 0 CODE 0 text9 dist/default/production\SnakeAI.production.o
+__end_of_snake_getSurroundings 720 0 CODE 0 text5 dist/default/production\SnakeAI.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+___bmul@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of_biases2_write 1E9A 0 CODE 0 text26 dist/default/production\SnakeAI.production.o
+_ledClear 1FDC 0 CODE 0 text10 dist/default/production\SnakeAI.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\SnakeAI.production.o
+ai_propagate@dz 38 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 _EUSART_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _EUSART_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production\SnakeAI.production.o
+_snake_getSurroundings 5B4 0 CODE 0 text5 dist/default/production\SnakeAI.production.o
+___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_ledClear AB4 0 CODE 0 text9 dist/default/production\SnakeAI.production.o
-_SPI1_Initialize A1C 0 CODE 0 text16 dist/default/production\SnakeAI.production.o
+sigmoid@z 71 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of_ledClear 2000 0 CODE 0 text10 dist/default/production\SnakeAI.production.o
+_de_sigmoid 1F58 0 CODE 0 text25 dist/default/production\SnakeAI.production.o
+___wmul@multiplicand 79 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+_SPI1_Initialize 1E9A 0 CODE 0 text35 dist/default/production\SnakeAI.production.o
 _spi1_configuration 1040 0 STRCODE 0 stringtext3 dist/default/production\SnakeAI.production.o
-snake_move@incentive 5C 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+snake_move@incentive 29 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 _ANSELA 18C 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _ANSELB 18D 0 ABS 0 - dist/default/production\SnakeAI.production.o
+___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+biases1_read@add 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _EECON1bits 195 0 ABS 0 - dist/default/production\SnakeAI.production.o
-__end_of___lmul C6E 0 CODE 0 text4 dist/default/production\SnakeAI.production.o
+biases2_read@add 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of___bmul 68 0 CODE 0 text23 dist/default/production\SnakeAI.production.o
+__end_of___lmul 2B4 0 CODE 0 text4 dist/default/production\SnakeAI.production.o
+__end_of___wmul 10A 0 CODE 0 text31 dist/default/production\SnakeAI.production.o
+_ai_propagate AC8 0 CODE 0 text20 dist/default/production\SnakeAI.production.o
+__end_of_ai_getInputField 1E08 0 CODE 0 text32 dist/default/production\SnakeAI.production.o
 _EEADRH 192 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _EEADRL 191 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _EECON1 195 0 ABS 0 - dist/default/production\SnakeAI.production.o
@@ -468,28 +781,59 @@ _EEDATA 193 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _EEDATH 194 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _EEDATL 193 0 ABS 0 - dist/default/production\SnakeAI.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__LnvBANK1 0 0 ABS 0 nvBANK1 -
-___stackhi 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-___stacklo 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-_EUSART_Initialize B18 0 CODE 0 text19 dist/default/production\SnakeAI.production.o
-snake_initiate@i 58 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
-_PIN_MANAGER_Initialize AB4 0 CODE 0 text17 dist/default/production\SnakeAI.production.o
-start_initialization FB2 0 CODE 0 cinit dist/default/production\SnakeAI.production.o
+__end_of_ai_run AC8 0 CODE 0 text15 dist/default/production\SnakeAI.production.o
+__LnvBANK0 0 0 ABS 0 nvBANK0 -
+__LnvBANK3 0 0 ABS 0 nvBANK3 -
+___bmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of___awdiv 458 0 CODE 0 text19 dist/default/production\SnakeAI.production.o
+eeprom_write@addr 77 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+weights2_write@val 79 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+_weights2_write 1F1A 0 CODE 0 text21 dist/default/production\SnakeAI.production.o
+___stackhi 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+___stacklo 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+__end_of_weights1_read 1F1A 0 CODE 0 text16 dist/default/production\SnakeAI.production.o
+__end_of_weights2_read 1EE4 0 CODE 0 text22 dist/default/production\SnakeAI.production.o
+_EUSART_Initialize 10A 0 CODE 0 text38 dist/default/production\SnakeAI.production.o
+snake_initiate@i 25 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+_eeprom_read 14 0 CODE 0 text28 dist/default/production\SnakeAI.production.o
+_PIN_MANAGER_Initialize 68 0 CODE 0 text36 dist/default/production\SnakeAI.production.o
+start_initialization F68 0 CODE 0 cinit dist/default/production\SnakeAI.production.o
+__end_of_de_sigmoid 1F78 0 CODE 0 text25 dist/default/production\SnakeAI.production.o
 ledClear@c 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 ledClear@l 73 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-_EUSART_SetErrorHandler 9C0 0 CODE 0 text22 dist/default/production\SnakeAI.production.o
+_EUSART_SetErrorHandler 1E24 0 CODE 0 text41 dist/default/production\SnakeAI.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\SnakeAI.production.o
+ai_propagate@i_909 32 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i_910 33 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i_911 34 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i_914 39 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i_916 35 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i_918 3A 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i_920 3B 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@j_908 37 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@j_915 3C 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@j_917 3D 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@j_919 3E 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 _TRISAbits 8C 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _TRISBbits 8D 0 ABS 0 - dist/default/production\SnakeAI.production.o
 EUSART_SetOverrunErrorHandler@interruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-__end_of_ledSet A90 0 CODE 0 text8 dist/default/production\SnakeAI.production.o
-__end_of_SYSTEM_Initialize A6E 0 CODE 0 text14 dist/default/production\SnakeAI.production.o
-clear_ram0 9E4 0 CODE 0 clrtext dist/default/production\SnakeAI.production.o
+__end_of_ledSet 1FDC 0 CODE 0 text9 dist/default/production\SnakeAI.production.o
+__end_of_SYSTEM_Initialize 1F58 0 CODE 0 text33 dist/default/production\SnakeAI.production.o
+clear_ram0 1EB2 0 CODE 0 clrtext dist/default/production\SnakeAI.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production\SnakeAI.production.o
-__pcstackBANK0 53 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+__end_of_sigmoid 1F98 0 CODE 0 text17 dist/default/production\SnakeAI.production.o
+ai_propagate@S 2C 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@i 31 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@j 36 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_propagate@k 3F 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+snake_getSurroundings@i_782 73 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of_ai_propagate F68 0 CODE 0 text20 dist/default/production\SnakeAI.production.o
+__end_of_weights2_write 1F38 0 CODE 0 text21 dist/default/production\SnakeAI.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production\SnakeAI.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
+___int_sp 0 0 STACK 2 stack C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -551,7 +895,10 @@ __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 4 config -
+weights2_read@add1 75 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+weights2_read@add2 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 _sigmoidValues 1020 0 STRCODE 0 stringtext2 dist/default/production\SnakeAI.production.o
+_biases1_read 1E58 0 CODE 0 text18 dist/default/production\SnakeAI.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -562,7 +909,7 @@ __Lbank6 0 0 BANK6 1 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit FB2 0 CODE 0 cinit -
+__Lcinit F68 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 EUSART_SetErrorHandler@interruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 __Lsfr10 0 0 ABS 0 sfr10 -
@@ -588,12 +935,11 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
+_biases2_read 1E4A 0 CODE 0 text27 dist/default/production\SnakeAI.production.o
 _APFCON0 11D 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _APFCON1 11E 0 ABS 0 - dist/default/production\SnakeAI.production.o
-init_ram 9F0 0 CODE 0 inittext dist/default/production\SnakeAI.production.o
 ledSet@c 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 ledSet@l 73 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-__Linittext 0 0 ABS 0 inittext -
 _INTCONbits B 0 ABS 0 - dist/default/production\SnakeAI.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -628,56 +974,97 @@ __Ltext 0 0 ABS 0 text -
 __pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production\SnakeAI.production.o
 __pstringtext2 1020 0 STRCODE 0 stringtext2 dist/default/production\SnakeAI.production.o
 __pstringtext3 1040 0 STRCODE 0 stringtext3 dist/default/production\SnakeAI.production.o
-__pnvBANK1 D8 0 BANK1 1 nvBANK1 dist/default/production\SnakeAI.production.o
+__pnvBANK0 6B 0 BANK0 1 nvBANK0 dist/default/production\SnakeAI.production.o
+__pnvBANK3 1A7 0 BANK3 1 nvBANK3 dist/default/production\SnakeAI.production.o
 _SSP1CON1 215 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _SSP1CON2 216 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _SSP1STAT 214 0 ABS 0 - dist/default/production\SnakeAI.production.o
-___lmul C08 0 CODE 0 text4 dist/default/production\SnakeAI.production.o
+___bmul 3E 0 CODE 0 text23 dist/default/production\SnakeAI.production.o
+___lmul 24E 0 CODE 0 text4 dist/default/production\SnakeAI.production.o
+___wmul CC 0 CODE 0 text31 dist/default/production\SnakeAI.production.o
+ai_run@i 22 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_run@j 27 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_run@z 25 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_DY1 A0 0 BANK1 1 bssBANK1 dist/default/production\SnakeAI.production.o
-_DY2 20 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
-__S0 824 0 ABS 0 - -
-__S1 160 0 ABS 0 - -
+_DB1 1A0 0 BANK3 1 bssBANK3 dist/default/production\SnakeAI.production.o
+_DB2 5A 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_DW1 2100 0 ABS 1 - dist/default/production\SnakeAI.production.o
+_DW2 120 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
+_DY1 13C 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
+_DY2 158 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
+__S0 1000 0 ABS 0 - -
+__S1 1A9 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_sendMatrix BAC 0 CODE 0 text7 dist/default/production\SnakeAI.production.o
+_ai_run 8BA 0 CODE 0 text15 dist/default/production\SnakeAI.production.o
+_sendMatrix 1F2 0 CODE 0 text8 dist/default/production\SnakeAI.production.o
 sendMatrix@b 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 sendMatrix@i 77 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 sendMatrix@j 76 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-_choice 46 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_choice 5E 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+biases1_write@add 79 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+biases1_write@val 78 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 txMAX7219@dat0 71 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-_snake_getField 9A4 0 CODE 0 text6 dist/default/production\SnakeAI.production.o
-_SYSTEM_Initialize A4E 0 CODE 0 text14 dist/default/production\SnakeAI.production.o
+_snake_getField 1E08 0 CODE 0 text7 dist/default/production\SnakeAI.production.o
+main@foodPosition_660 45 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+_SYSTEM_Initialize 1F38 0 CODE 0 text33 dist/default/production\SnakeAI.production.o
 _de_sigmoidValues 1000 0 STRCODE 0 stringtext1 dist/default/production\SnakeAI.production.o
-_initMAX7219 CD8 0 CODE 0 text10 dist/default/production\SnakeAI.production.o
-__HnvBANK1 0 0 ABS 0 nvBANK1 -
+_initMAX7219 31E 0 CODE 0 text11 dist/default/production\SnakeAI.production.o
+eeprom_write@value 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__HnvBANK0 0 0 ABS 0 nvBANK0 -
+__HnvBANK3 0 0 ABS 0 nvBANK3 -
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-__pdataBANK0 66 0 BANK0 1 dataBANK0 dist/default/production\SnakeAI.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+_eeprom_write 19E 0 CODE 0 text30 dist/default/production\SnakeAI.production.o
+_biases1_write 1E76 0 CODE 0 text29 dist/default/production\SnakeAI.production.o
+__pdataBANK2 167 0 BANK2 1 dataBANK2 dist/default/production\SnakeAI.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
+__LbssBANK3 0 0 ABS 0 bssBANK3 -
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
 __Lstringtext3 0 0 ABS 0 stringtext3 -
-_ledSet A6E 0 CODE 0 text8 dist/default/production\SnakeAI.production.o
+_ledSet 1FBA 0 CODE 0 text9 dist/default/production\SnakeAI.production.o
 _RCSTAbits 19D 0 ABS 0 - dist/default/production\SnakeAI.production.o
-_matrix 3E 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+__end_of_biases1_read 1E66 0 CODE 0 text18 dist/default/production\SnakeAI.production.o
+_matrix 52 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
 EUSART_SetFramingErrorHandler@interruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-__ptext10 CD8 0 CODE 0 text10 dist/default/production\SnakeAI.production.o
-__ptext11 AE4 0 CODE 0 text11 dist/default/production\SnakeAI.production.o
-__ptext12 9B6 0 CODE 0 text12 dist/default/production\SnakeAI.production.o
-__ptext13 A34 0 CODE 0 text13 dist/default/production\SnakeAI.production.o
-__ptext14 A4E 0 CODE 0 text14 dist/default/production\SnakeAI.production.o
-__ptext15 9AE 0 CODE 0 text15 dist/default/production\SnakeAI.production.o
-__ptext16 A1C 0 CODE 0 text16 dist/default/production\SnakeAI.production.o
-__ptext17 AB4 0 CODE 0 text17 dist/default/production\SnakeAI.production.o
-__ptext18 9FC 0 CODE 0 text18 dist/default/production\SnakeAI.production.o
-__ptext19 B18 0 CODE 0 text19 dist/default/production\SnakeAI.production.o
-__ptext20 9D8 0 CODE 0 text20 dist/default/production\SnakeAI.production.o
-__ptext21 9CC 0 CODE 0 text21 dist/default/production\SnakeAI.production.o
-__ptext22 9C0 0 CODE 0 text22 dist/default/production\SnakeAI.production.o
-__end_of_PIN_MANAGER_Initialize AE4 0 CODE 0 text17 dist/default/production\SnakeAI.production.o
+__ptext10 1FDC 0 CODE 0 text10 dist/default/production\SnakeAI.production.o
+__ptext11 31E 0 CODE 0 text11 dist/default/production\SnakeAI.production.o
+__ptext12 98 0 CODE 0 text12 dist/default/production\SnakeAI.production.o
+__ptext13 1E1A 0 CODE 0 text13 dist/default/production\SnakeAI.production.o
+__ptext14 1EE4 0 CODE 0 text14 dist/default/production\SnakeAI.production.o
+__ptext15 8BA 0 CODE 0 text15 dist/default/production\SnakeAI.production.o
+__ptext16 1EFE 0 CODE 0 text16 dist/default/production\SnakeAI.production.o
+__ptext17 1F78 0 CODE 0 text17 dist/default/production\SnakeAI.production.o
+__ptext18 1E58 0 CODE 0 text18 dist/default/production\SnakeAI.production.o
+__ptext19 39A 0 CODE 0 text19 dist/default/production\SnakeAI.production.o
+__ptext20 AC8 0 CODE 0 text20 dist/default/production\SnakeAI.production.o
+__ptext21 1F1A 0 CODE 0 text21 dist/default/production\SnakeAI.production.o
+__ptext22 1ECA 0 CODE 0 text22 dist/default/production\SnakeAI.production.o
+__ptext23 3E 0 CODE 0 text23 dist/default/production\SnakeAI.production.o
+__ptext24 1F98 0 CODE 0 text24 dist/default/production\SnakeAI.production.o
+__ptext25 1F58 0 CODE 0 text25 dist/default/production\SnakeAI.production.o
+__ptext26 1E88 0 CODE 0 text26 dist/default/production\SnakeAI.production.o
+__ptext27 1E4A 0 CODE 0 text27 dist/default/production\SnakeAI.production.o
+__ptext28 14 0 CODE 0 text28 dist/default/production\SnakeAI.production.o
+__ptext29 1E76 0 CODE 0 text29 dist/default/production\SnakeAI.production.o
+__ptext30 19E 0 CODE 0 text30 dist/default/production\SnakeAI.production.o
+__ptext31 CC 0 CODE 0 text31 dist/default/production\SnakeAI.production.o
+__ptext32 1E04 0 CODE 0 text32 dist/default/production\SnakeAI.production.o
+__ptext33 1F38 0 CODE 0 text33 dist/default/production\SnakeAI.production.o
+__ptext34 1E12 0 CODE 0 text34 dist/default/production\SnakeAI.production.o
+__ptext35 1E9A 0 CODE 0 text35 dist/default/production\SnakeAI.production.o
+__ptext36 68 0 CODE 0 text36 dist/default/production\SnakeAI.production.o
+__ptext37 1E3C 0 CODE 0 text37 dist/default/production\SnakeAI.production.o
+__ptext38 10A 0 CODE 0 text38 dist/default/production\SnakeAI.production.o
+__ptext39 8 0 CODE 0 text39 dist/default/production\SnakeAI.production.o
+__ptext40 1E30 0 CODE 0 text40 dist/default/production\SnakeAI.production.o
+__ptext41 1E24 0 CODE 0 text41 dist/default/production\SnakeAI.production.o
+__end_of_biases2_read 1E58 0 CODE 0 text27 dist/default/production\SnakeAI.production.o
+__end_of_PIN_MANAGER_Initialize 98 0 CODE 0 text36 dist/default/production\SnakeAI.production.o
+___awdiv 39A 0 CODE 0 text19 dist/default/production\SnakeAI.production.o
 _BAUDCON 19F 0 ABS 0 - dist/default/production\SnakeAI.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
@@ -701,26 +1088,37 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext D54 0 CODE 0 maintext dist/default/production\SnakeAI.production.o
+__pmaintext 720 0 CODE 0 maintext dist/default/production\SnakeAI.production.o
 __Lbigram 0 0 ABS 0 bigram -
 ___lmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-__end_of_EUSART_SetErrorHandler 9CC 0 CODE 0 text22 dist/default/production\SnakeAI.production.o
-__end_of_sendMatrix C08 0 CODE 0 text7 dist/default/production\SnakeAI.production.o
+__end_of_EUSART_SetErrorHandler 1E30 0 CODE 0 text41 dist/default/production\SnakeAI.production.o
+__end_of_sendMatrix 24E 0 CODE 0 text8 dist/default/production\SnakeAI.production.o
+ai_run@i_900 23 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+ai_run@i_902 24 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 ?_rand 7C 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+ai_run@j_898 28 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-__Hinittext 0 0 ABS 0 inittext -
+___wmul@multiplier 77 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 _LATAbits 10C 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _LATBbits 10D 0 ABS 0 - dist/default/production\SnakeAI.production.o
-_SPI1_WriteByte 9B6 0 CODE 0 text12 dist/default/production\SnakeAI.production.o
-__end_of_snake_getField 9A8 0 CODE 0 text6 dist/default/production\SnakeAI.production.o
-main@field 61 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
-snake_move@i 5D 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
-_EUSART_FramingErrorHandler DC 0 BANK1 1 nvBANK1 dist/default/production\SnakeAI.production.o
-_EUSART_OverrunErrorHandler DA 0 BANK1 1 nvBANK1 dist/default/production\SnakeAI.production.o
+_SPI1_WriteByte 1E1A 0 CODE 0 text13 dist/default/production\SnakeAI.production.o
+__end_of_snake_getField 1E0C 0 CODE 0 text7 dist/default/production\SnakeAI.production.o
+weights1_write@add1 22 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+weights1_write@add2 20 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+main@field 43 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+main@i_658 48 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+main@j_659 49 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+snake_move@i 2A 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+_EUSART_FramingErrorHandler 6D 0 BANK0 1 nvBANK0 dist/default/production\SnakeAI.production.o
+_EUSART_OverrunErrorHandler 6B 0 BANK0 1 nvBANK0 dist/default/production\SnakeAI.production.o
 _OSCTUNE 98 0 ABS 0 - dist/default/production\SnakeAI.production.o
-_EUSART_ErrorHandler D8 0 BANK1 1 nvBANK1 dist/default/production\SnakeAI.production.o
-_headPosition 48 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+__end_of_eeprom_read 3E 0 CODE 0 text28 dist/default/production\SnakeAI.production.o
+snake_getSurroundings@i 72 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+snake_getSurroundings@p 71 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__pbssBIGRAM 2100 0 ABS 0 - dist/default/production\SnakeAI.production.o
+_EUSART_ErrorHandler 1A7 0 BANK3 1 nvBANK3 dist/default/production\SnakeAI.production.o
+_headPosition 60 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -732,49 +1130,61 @@ __end_of_de_sigmoidValues 1020 0 STRCODE 0 stringtext1 dist/default/production\S
 _PIR1bits 11 0 ABS 0 - dist/default/production\SnakeAI.production.o
 __Lend_init 4 0 CODE 0 end_init -
 _EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\SnakeAI.production.o
-__end_of_snake_getFoodPosition 9AE 0 CODE 0 text5 dist/default/production\SnakeAI.production.o
+__end_of_snake_getFoodPosition 1E12 0 CODE 0 text6 dist/default/production\SnakeAI.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_snakeSize 6E 0 BANK0 1 dataBANK0 dist/default/production\SnakeAI.production.o
-_EUSART_SetFramingErrorHandler 9CC 0 CODE 0 text21 dist/default/production\SnakeAI.production.o
-_EUSART_SetOverrunErrorHandler 9D8 0 CODE 0 text20 dist/default/production\SnakeAI.production.o
+_sigmoid 1F78 0 CODE 0 text17 dist/default/production\SnakeAI.production.o
+__end_of_eeprom_write 1F2 0 CODE 0 text30 dist/default/production\SnakeAI.production.o
+_snakeSize 61 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_EUSART_SetFramingErrorHandler 1E30 0 CODE 0 text40 dist/default/production\SnakeAI.production.o
+_EUSART_SetOverrunErrorHandler 8 0 CODE 0 text39 dist/default/production\SnakeAI.production.o
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\SnakeAI.production.o
 __Hintentry 4 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
-_foodPosition 47 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+weights1_write@val 21 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+_foodPosition 5F 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
-main@foodPosition 62 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+main@foodPosition 44 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK2 0 0 ABS 0 bssBANK2 -
-__end_of_SPI1_WriteByte 9C0 0 CODE 0 text12 dist/default/production\SnakeAI.production.o
-_snake_getFoodPosition 9A8 0 CODE 0 text5 dist/default/production\SnakeAI.production.o
-__ptext1 E58 0 CODE 0 text1 dist/default/production\SnakeAI.production.o
-__ptext2 B5C 0 CODE 0 text2 dist/default/production\SnakeAI.production.o
-__ptext3 C6E 0 CODE 0 text3 dist/default/production\SnakeAI.production.o
-__ptext4 C08 0 CODE 0 text4 dist/default/production\SnakeAI.production.o
-__ptext5 9A8 0 CODE 0 text5 dist/default/production\SnakeAI.production.o
-__ptext6 9A4 0 CODE 0 text6 dist/default/production\SnakeAI.production.o
-__ptext7 BAC 0 CODE 0 text7 dist/default/production\SnakeAI.production.o
-__ptext8 A6E 0 CODE 0 text8 dist/default/production\SnakeAI.production.o
-__ptext9 A90 0 CODE 0 text9 dist/default/production\SnakeAI.production.o
+__HbssBANK3 0 0 ABS 0 bssBANK3 -
+__end_of_SPI1_WriteByte 1E24 0 CODE 0 text13 dist/default/production\SnakeAI.production.o
+_snake_getFoodPosition 1E0C 0 CODE 0 text6 dist/default/production\SnakeAI.production.o
+ai_propagate@incentive 30 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+__ptext1 458 0 CODE 0 text1 dist/default/production\SnakeAI.production.o
+__ptext2 14E 0 CODE 0 text2 dist/default/production\SnakeAI.production.o
+__ptext3 2B4 0 CODE 0 text3 dist/default/production\SnakeAI.production.o
+__ptext4 24E 0 CODE 0 text4 dist/default/production\SnakeAI.production.o
+__ptext5 5B4 0 CODE 0 text5 dist/default/production\SnakeAI.production.o
+__ptext6 1E0C 0 CODE 0 text6 dist/default/production\SnakeAI.production.o
+__ptext7 1E08 0 CODE 0 text7 dist/default/production\SnakeAI.production.o
+__ptext8 1F2 0 CODE 0 text8 dist/default/production\SnakeAI.production.o
+__ptext9 1FBA 0 CODE 0 text9 dist/default/production\SnakeAI.production.o
 sendMatrix@nb 75 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-snake_move@direction 5B 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
+de_sigmoid@z 71 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+snake_move@direction 28 0 BANK0 1 cstackBANK0 dist/default/production\SnakeAI.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
 __Hstringtext3 0 0 ABS 0 stringtext3 -
-___heap_hi 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
-___heap_lo 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs4og.o
+___heap_hi 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
+___heap_lo 0 0 ABS 0 - C:\Users\160047~1\AppData\Local\Temp\xcAs8gs.o
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/production\SnakeAI.production.o
+__end_of_biases1_write 1E88 0 CODE 0 text29 dist/default/production\SnakeAI.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__end_of_deactivateElevator A4E 0 CODE 0 text13 dist/default/production\SnakeAI.production.o
-_mapping 66 0 BANK0 1 dataBANK0 dist/default/production\SnakeAI.production.o
+weights2_write@add1 7A 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+weights2_write@add2 78 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__end_of_deactivateElevator 1EFE 0 CODE 0 text14 dist/default/production\SnakeAI.production.o
+_mapping 167 0 BANK2 1 dataBANK2 dist/default/production\SnakeAI.production.o
 SPI1_WriteByte@byte 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
-__pidataBANK0 A0A 0 CODE 0 idataBANK0 dist/default/production\SnakeAI.production.o
+__pidataBANK2 1E66 0 CODE 0 idataBANK2 dist/default/production\SnakeAI.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 215 0 ABS 0 - dist/default/production\SnakeAI.production.o
+_biases2_write 1E88 0 CODE 0 text26 dist/default/production\SnakeAI.production.o
 ___lmul@product 78 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 ___lmul@multiplicand 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
@@ -782,10 +1192,12 @@ _TXSTAbits 19E 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _SSP1ADD 212 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _SSP1BUF 211 0 ABS 0 - dist/default/production\SnakeAI.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_main E58 0 CODE 0 maintext dist/default/production\SnakeAI.production.o
-__end_of_rand CD8 0 CODE 0 text3 dist/default/production\SnakeAI.production.o
+__end_of_main 8BA 0 CODE 0 maintext dist/default/production\SnakeAI.production.o
+__end_of_rand 31E 0 CODE 0 text3 dist/default/production\SnakeAI.production.o
+weights1_read@add1 76 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+weights1_read@add2 74 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 _EEADR 191 0 ABS 0 - dist/default/production\SnakeAI.production.o
-_snake_move E58 0 CODE 0 text1 dist/default/production\SnakeAI.production.o
+_snake_move 458 0 CODE 0 text1 dist/default/production\SnakeAI.production.o
 _RCREG 199 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _RCSTA 19D 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\SnakeAI.production.o
@@ -794,21 +1206,27 @@ _TXREG 19A 0 ABS 0 - dist/default/production\SnakeAI.production.o
 _TXSTA 19E 0 ABS 0 - dist/default/production\SnakeAI.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_field 120 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
-_deactivateElevator A34 0 CODE 0 text13 dist/default/production\SnakeAI.production.o
-_eusartRxLastError 49 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
-_WDT_Initialize 9AE 0 CODE 0 text15 dist/default/production\SnakeAI.production.o
-__HdataBANK0 0 0 ABS 0 dataBANK0 -
-__end_of_OSCILLATOR_Initialize A0A 0 CODE 0 text18 dist/default/production\SnakeAI.production.o
-__end_of_initMAX7219 D54 0 CODE 0 text10 dist/default/production\SnakeAI.production.o
-__end_of_txMAX7219 B18 0 CODE 0 text11 dist/default/production\SnakeAI.production.o
-__initialization FB2 0 CODE 0 cinit dist/default/production\SnakeAI.production.o
-__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_field A0 0 BANK1 1 bssBANK1 dist/default/production\SnakeAI.production.o
+eeprom_read@addr 73 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+_deactivateElevator 1EE4 0 CODE 0 text14 dist/default/production\SnakeAI.production.o
+_eusartRxLastError 62 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
+_WDT_Initialize 1E12 0 CODE 0 text34 dist/default/production\SnakeAI.production.o
+__HdataBANK2 0 0 ABS 0 dataBANK2 -
+__end_of_OSCILLATOR_Initialize 1E4A 0 CODE 0 text37 dist/default/production\SnakeAI.production.o
+__end_of_initMAX7219 39A 0 CODE 0 text11 dist/default/production\SnakeAI.production.o
+__end_of_txMAX7219 CC 0 CODE 0 text12 dist/default/production\SnakeAI.production.o
+__initialization F68 0 CODE 0 cinit dist/default/production\SnakeAI.production.o
+___bmul@product 72 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
+__pbssBANK0 4A 0 BANK0 1 bssBANK0 dist/default/production\SnakeAI.production.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\SnakeAI.production.o
 __pbssBANK2 120 0 BANK2 1 bssBANK2 dist/default/production\SnakeAI.production.o
+__pbssBANK3 1A0 0 BANK3 1 bssBANK3 dist/default/production\SnakeAI.production.o
+_weights1_write 1F98 0 CODE 0 text24 dist/default/production\SnakeAI.production.o
+___wmul@product 7B 0 COMMON 1 cstackCOMMON dist/default/production\SnakeAI.production.o
 _STATUSbits 3 0 ABS 0 - dist/default/production\SnakeAI.production.o
-_snake_initiate B5C 0 CODE 0 text2 dist/default/production\SnakeAI.production.o
-_OSCILLATOR_Initialize 9FC 0 CODE 0 text18 dist/default/production\SnakeAI.production.o
+_snake_initiate 14E 0 CODE 0 text2 dist/default/production\SnakeAI.production.o
+_OSCILLATOR_Initialize 1E3C 0 CODE 0 text37 dist/default/production\SnakeAI.production.o
+_weights1_read 1EFE 0 CODE 0 text16 dist/default/production\SnakeAI.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -825,6 +1243,9 @@ _OSCILLATOR_Initialize 9FC 0 CODE 0 text18 dist/default/production\SnakeAI.produ
 # otherwise name will be "-".  The <space> number is in decimal.
 # <address> and <size> are in byte units as unqaulified hexadecimal
 %DABS
+_DW1 1 2100 0
+- 1 220 30
+- 1 1B0 40
 - 1 7E 2
 # %SEGMENTS Section
 # This sections enumerates the segments of the program.  Each segment
@@ -834,39 +1255,57 @@ _OSCILLATOR_Initialize 9FC 0 CODE 0 text18 dist/default/production\SnakeAI.produ
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7D9 FB2 27 2
-text1 0 72C E58 AD 2
-text2 0 5AE B5C 28 2
-text3 0 637 C6E 35 2
-text4 0 604 C08 33 2
-text5 0 4D4 9A8 3 2
-text6 0 4D2 9A4 2 2
-text7 0 5D6 BAC 2E 2
-text8 0 537 A6E 11 2
-text9 0 548 A90 12 2
-text10 0 66C CD8 3E 2
-text11 0 572 AE4 1A 2
-text12 0 4DB 9B6 5 2
-text13 0 51A A34 D 2
-text14 0 527 A4E 10 2
-text15 0 4D7 9AE 4 2
-text16 0 50E A1C C 2
-text17 0 55A AB4 18 2
-text18 0 4FE 9FC 7 2
-text19 0 58C B18 22 2
-text20 0 4EC 9D8 6 2
-text21 0 4E6 9CC 6 2
-text22 0 4E0 9C0 6 2
-maintext 0 6AA D54 82 2
+cinit 0 7B4 F68 4C 2
+text1 0 22C 458 AE 2
+text2 0 A7 14E 28 2
+text3 0 15A 2B4 35 2
+text4 0 127 24E 33 2
+text5 0 2DA 5B4 B6 2
+text6 0 F06 1E0C 3 2
+text7 0 F04 1E08 2 2
+text8 0 F9 1F2 2E 2
+text9 0 FDD 1FBA 11 2
+text10 0 FEE 1FDC 12 2
+text11 0 18F 31E 3E 2
+text12 0 4C 98 1A 2
+text13 0 F0D 1E1A 5 2
+text14 0 F72 1EE4 D 2
+text15 0 45D 8BA 107 2
+text16 0 F7F 1EFE E 2
+text17 0 FBC 1F78 10 2
+text18 0 F2C 1E58 7 2
+text19 0 1CD 39A 5F 2
+text20 0 564 AC8 250 2
+text21 0 F8D 1F1A F 2
+text22 0 F65 1ECA D 2
+text23 0 1F 3E 15 2
+text24 0 FCC 1F98 11 2
+text25 0 FAC 1F58 10 2
+text26 0 F44 1E88 9 2
+text27 0 F25 1E4A 7 2
+text28 0 A 14 15 2
+text29 0 F3B 1E76 9 2
+text30 0 CF 19E 2A 2
+text31 0 66 CC 1F 2
+text32 0 F02 1E04 2 2
+text33 0 F9C 1F38 10 2
+text34 0 F09 1E12 4 2
+text35 0 F4D 1E9A C 2
+text36 0 34 68 18 2
+text37 0 F1E 1E3C 7 2
+text38 0 85 10A 22 2
+text40 0 F18 1E30 6 2
+text41 0 F12 1E24 6 2
+maintext 0 390 720 CD 2
 cstackCOMMON 1 70 70 E 1
-inittext 0 4F8 9F0 6 2
+cstackBANK0 1 20 20 4F 1
 stringtext1 0 800 1000 24 2
-reset_vec 0 0 0 4 2
-bssBANK0 1 20 20 4F 1
-bssBANK1 1 A0 A0 3E 1
-bssBANK2 1 120 120 40 1
-idataBANK0 0 505 A0A 9 2
-clrtext 0 4F2 9E4 6 2
+reset_vec 0 0 0 A 2
+bssBANK1 1 A0 A0 50 1
+bssBANK2 1 120 120 4F 1
+bssBANK3 1 1A0 1A0 9 1
+idataBANK2 0 F33 1E66 8 2
+clrtext 0 F59 1EB2 C 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

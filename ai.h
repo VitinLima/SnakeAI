@@ -13,8 +13,8 @@ extern "C" {
 #endif
 
 #define N0 16
-#define N1 10
-#define N2 5
+#define N1 7
+#define N2 4
 
 #define ADD_W1 0
 #define ADD_B1 ADD_W1+N0*N1
@@ -30,6 +30,12 @@ extern "C" {
     uint8_t Y2[N2];
     int16_t Z1[N1];
     int16_t Z2[N2];
+    int16_t DY2[N2];
+    int16_t DY1[N1];
+    int8_t DW1[N0][N1];
+    int8_t DB1[N1];
+    int8_t DW2[N1][N2];
+    int8_t DB2[N2];
     
     void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
     void biases1_write(uint8_t add, int8_t val);

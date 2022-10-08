@@ -4596,6 +4596,8 @@ void initMAX7219();
 
 void ledSet(uint8_t l, uint8_t c);
 void ledClear(uint8_t l, uint8_t c);
+void setColumn(uint8_t c, uint8_t val);
+void setLine(uint8_t l, uint8_t val);
 
 
 
@@ -4630,11 +4632,23 @@ void initMAX7219(){
 }
 
 void ledSet(uint8_t l, uint8_t c){
-    (matrix[l]) |= 1UL << (c);
+    (matrix[c]) |= 1UL << (l);
 }
 
 void ledClear(uint8_t l, uint8_t c){
-    (matrix[l]) &= ~(1UL << (c));
+    (matrix[c]) &= ~(1UL << (l));
+}
+
+void setColumn(uint8_t c, uint8_t val){
+    matrix[c] = val;
+}
+
+void setLine(uint8_t l, uint8_t val){
+    uint8_t mask = 0x80;
+    for(uint8_t i = 0; i < 8; i++){
+        matrix[l] = (val&mask) | (matrix[l]|(~mask));
+        mask >>= 1;
+    }
 }
 
 void sendMatrix(){
@@ -4649,8 +4663,8 @@ void sendMatrix(){
 
         nb = 0x00;
         for(uint8_t j = 0; j < 8; j++){
-            nb |= b&0x01;
             nb <<= 1;
+            nb |= b&0x01;
             b >>= 1;
         }
         txMAX7219(i+1,nb);
