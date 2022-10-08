@@ -21,6 +21,10 @@ void snake_initiate(){
     headPosition = ((uint8_t)rand())&0x3f;
     foodPosition = ((uint8_t)rand())&0x3f;
     field[headPosition] = snakeSize;
+    
+    EUSART_Write(headPosition);
+    EUSART_Write(snakeSize);
+    EUSART_Write(field[headPosition]);
 }
 
 int8_t snake_move(uint8_t direction){

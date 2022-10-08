@@ -91,8 +91,6 @@ void main(void)
     
     uint8_t* field = snake_getField();
     
-    EUSART_Write(snake_getHeadPosition());
-    
     for(uint8_t i = 0; i < 8; i++){
         for(uint8_t j = 0; j < 8; j++){
             if(field[i+j*8]>0){
