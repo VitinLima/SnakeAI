@@ -9,7 +9,7 @@
 #define RIGHT 3
 
 uint8_t field[64];
-uint8_t mapping[8] = {55, 56, 57, 1, 9, 8, 7, 63};
+uint8_t mapping[8] = {55, 63, 7, 8, 9, 1, 57, 56};
 uint8_t snakeSize;
 uint8_t headPosition;
 uint8_t foodPosition;
