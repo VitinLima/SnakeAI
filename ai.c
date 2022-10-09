@@ -189,7 +189,7 @@ void ai_propagate(int8_t incentive){
         for(uint8_t i = 0; i < N1; i++){
             DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y1[i])/127)/64;
             DC_DY1[i] += ((int)DC_DZ2[j]*(int)W2[i][j])/127;
-//            EUSART_Write(DC_DW2[i][j]);
+            EUSART_Write(DC_DW2[i][j]);
         }
     }
     for(uint8_t j = 0; j < N1; j++){
