@@ -22,8 +22,8 @@ void snake_initiate(){
     for(uint8_t i = 0; i < BOARD_LENGTH; i++){
         field[i] = 0;
     }
-    headPosition = (uint8_t)(rand()%BOARD_LENGTH);
-    foodPosition = (uint8_t)(rand()%BOARD_LENGTH);
+    headPosition = rand()%BOARD_LENGTH;
+    foodPosition = rand()%BOARD_LENGTH;
     snakeSize = 1;
     remainingMoves = MOVES_RECHARGE;
     field[headPosition] = snakeSize;
@@ -79,7 +79,7 @@ int8_t snake_move(uint8_t direction){
             incentive = FOOD;
             snakeSize++;
             do{
-                foodPosition = (uint8_t)(rand()%BOARD_LENGTH);
+                foodPosition = rand()%BOARD_LENGTH;
             }while(field[foodPosition] > 0);
         }
         field[headPosition] = snakeSize;
