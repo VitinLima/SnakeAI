@@ -131,6 +131,20 @@ void main(void)
                 }
             }
         }
+        for(uint8_t i = 0; i < 4; i++){
+            if(Y0[i]==1){
+                ledSet(5,i);
+            } else{
+                ledClear(5,i);
+            }
+        }
+        for(uint8_t i = 5; i < 8; i++){
+            if(Y0[i]==1){
+                ledSet(5,i);
+            } else{
+                ledClear(5,i);
+            }
+        }
         uint8_t foodPosition = snake_getFoodPosition();
         ledSet(foodPosition%BOARD_SIZE, foodPosition/BOARD_SIZE);
         sendMatrix();
