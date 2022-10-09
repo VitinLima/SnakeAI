@@ -4641,7 +4641,7 @@ void sendMatrix();
     uint8_t choice;
 # 65 "./ai.h"
     void ai_initiate();
-    uint8_t* ai_getInputField();
+    int8_t* ai_getInputField();
     uint8_t ai_run();
     void ai_propagate(int8_t incentive);
 # 48 "main.c" 2
@@ -4693,9 +4693,10 @@ void main(void)
     while (1)
     {
 
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((500)*(8000000/4000.0)));
         snake_getSurroundings(ai_getInputField());
-        int8_t incentive = snake_move(ai_run());
+        uint8_t choice = ai_run();
+        int8_t incentive = snake_move(choice);
         ai_propagate(incentive);
         for(uint8_t i = 0; i < 4; i++){
             for(uint8_t j = 0; j < 4; j++){
@@ -4714,6 +4715,10 @@ void main(void)
         ledClear(6,6);
         ledClear(5,5);
         ledClear(5,7);
+        ledClear(4,1);
+        ledClear(6,1);
+        ledClear(5,0);
+        ledClear(5,2);
         if(Y0[0]>0){
             ledSet(0,6);
         } else if(Y0[1]>0){
@@ -4733,6 +4738,20 @@ void main(void)
             ledSet(5,5);
         } else if(Y0[7]>0){
             ledSet(5,7);
+        }
+        switch(choice){
+            case 0:
+                ledSet(4,1);
+                break;
+            case 1:
+                ledSet(6,1);
+                break;
+            case 2:
+                ledSet(5,0);
+                break;
+            case 3:
+                ledSet(5,2);
+                break;
         }
         ledClear(7,0);
         ledClear(7,1);

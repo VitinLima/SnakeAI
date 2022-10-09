@@ -63,7 +63,7 @@ extern "C" {
 //    uint8_t ai_scores_read(uint8_t add);
     
     void ai_initiate();
-    uint8_t* ai_getInputField();
+    int8_t* ai_getInputField();
     uint8_t ai_run();
     void ai_propagate(int8_t incentive);
 //    void ai_propagate(uint8_t* answer);

@@ -68,15 +68,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./snake.h: 35:     void snake_getSurroundings(int8_t* surroundings);
 [v _snake_getSurroundings `(v ~T0 @X0 0 ef1`*c ]
 "66 ./ai.h
-[; ;./ai.h: 66:     uint8_t* ai_getInputField();
-[v _ai_getInputField `(*uc ~T0 @X0 0 e? ]
+[; ;./ai.h: 66:     int8_t* ai_getInputField();
+[v _ai_getInputField `(*c ~T0 @X0 0 e? ]
+"67
+[; ;./ai.h: 67:     uint8_t ai_run();
+[v _ai_run `(uc ~T0 @X0 0 e? ]
 "33 ./snake.h
 [; ;./snake.h: 33:     int8_t snake_move(uint8_t direction);
 [v _snake_move `(c ~T0 @X0 0 ef1`uc ]
-"67 ./ai.h
-[; ;./ai.h: 67:     uint8_t ai_run();
-[v _ai_run `(uc ~T0 @X0 0 e? ]
-"68
+"68 ./ai.h
 [; ;./ai.h: 68:     void ai_propagate(int8_t incentive);
 [v _ai_propagate `(v ~T0 @X0 0 ef1`c ]
 "55 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
@@ -754,20 +754,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 120:     {
 {
 "122
-[; ;main.c: 122:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 122:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "123
 [; ;main.c: 123:         snake_getSurroundings(ai_getInputField());
-[e ( _snake_getSurroundings (1 -> ( _ai_getInputField ..  `*c ]
+[e ( _snake_getSurroundings (1 ( _ai_getInputField ..  ]
 "124
-[; ;main.c: 124:         int8_t incentive = snake_move(ai_run());
-[v _incentive `c ~T0 @X0 1 a ]
-[e = _incentive ( _snake_move (1 ( _ai_run ..  ]
+[; ;main.c: 124:         uint8_t choice = ai_run();
+[v _choice `uc ~T0 @X0 1 a ]
+[e = _choice ( _ai_run ..  ]
 "125
-[; ;main.c: 125:         ai_propagate(incentive);
-[e ( _ai_propagate (1 _incentive ]
+[; ;main.c: 125:         int8_t incentive = snake_move(choice);
+[v _incentive `c ~T0 @X0 1 a ]
+[e = _incentive ( _snake_move (1 _choice ]
 "126
-[; ;main.c: 126:         for(uint8_t i = 0; i < 4; i++){
+[; ;main.c: 126:         ai_propagate(incentive);
+[e ( _ai_propagate (1 _incentive ]
+"127
+[; ;main.c: 127:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -775,8 +779,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 372  ]
 [e :U 371 ]
 {
-"127
-[; ;main.c: 127:             for(uint8_t j = 0; j < 4; j++){
+"128
+[; ;main.c: 128:             for(uint8_t j = 0; j < 4; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
@@ -784,197 +788,260 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 375  ]
 [e :U 374 ]
 {
-"128
-[; ;main.c: 128:                 if(field[i+j*4]>0){
+"129
+[; ;main.c: 129:                 if(field[i+j*4]>0){
 [e $ ! > -> *U + _field * -> + -> _i `i * -> _j `i -> 4 `i `x -> -> # *U _field `i `x `i -> 0 `i 377  ]
 {
-"129
-[; ;main.c: 129:                     ledSet(i,j);
-[e ( _ledSet (2 , _i _j ]
 "130
-[; ;main.c: 130:                 } else{
+[; ;main.c: 130:                     ledSet(i,j);
+[e ( _ledSet (2 , _i _j ]
+"131
+[; ;main.c: 131:                 } else{
 }
 [e $U 378  ]
 [e :U 377 ]
 {
-"131
-[; ;main.c: 131:                     ledClear(i,j);
-[e ( _ledClear (2 , _i _j ]
 "132
-[; ;main.c: 132:                 }
+[; ;main.c: 132:                     ledClear(i,j);
+[e ( _ledClear (2 , _i _j ]
+"133
+[; ;main.c: 133:                 }
 }
 [e :U 378 ]
-"133
-[; ;main.c: 133:             }
+"134
+[; ;main.c: 134:             }
 }
 [e ++ _j -> -> 1 `i `uc ]
 [e $ < -> _j `i -> 4 `i 374  ]
 [e :U 375 ]
 }
-"134
-[; ;main.c: 134:         }
+"135
+[; ;main.c: 135:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 371  ]
 [e :U 372 ]
 }
-"135
-[; ;main.c: 135:         ledClear(0,6);
-[e ( _ledClear (2 , -> -> 0 `i `uc -> -> 6 `i `uc ]
 "136
-[; ;main.c: 136:         ledClear(2,6);
-[e ( _ledClear (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 136:         ledClear(0,6);
+[e ( _ledClear (2 , -> -> 0 `i `uc -> -> 6 `i `uc ]
 "137
-[; ;main.c: 137:         ledClear(1,5);
-[e ( _ledClear (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 137:         ledClear(2,6);
+[e ( _ledClear (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
 "138
-[; ;main.c: 138:         ledClear(1,7);
-[e ( _ledClear (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+[; ;main.c: 138:         ledClear(1,5);
+[e ( _ledClear (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
 "139
-[; ;main.c: 139:         ledClear(4,6);
-[e ( _ledClear (2 , -> -> 4 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 139:         ledClear(1,7);
+[e ( _ledClear (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
 "140
-[; ;main.c: 140:         ledClear(6,6);
-[e ( _ledClear (2 , -> -> 6 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 140:         ledClear(4,6);
+[e ( _ledClear (2 , -> -> 4 `i `uc -> -> 6 `i `uc ]
 "141
-[; ;main.c: 141:         ledClear(5,5);
-[e ( _ledClear (2 , -> -> 5 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 141:         ledClear(6,6);
+[e ( _ledClear (2 , -> -> 6 `i `uc -> -> 6 `i `uc ]
 "142
-[; ;main.c: 142:         ledClear(5,7);
-[e ( _ledClear (2 , -> -> 5 `i `uc -> -> 7 `i `uc ]
+[; ;main.c: 142:         ledClear(5,5);
+[e ( _ledClear (2 , -> -> 5 `i `uc -> -> 5 `i `uc ]
 "143
-[; ;main.c: 143:         if(Y0[0]>0){
+[; ;main.c: 143:         ledClear(5,7);
+[e ( _ledClear (2 , -> -> 5 `i `uc -> -> 7 `i `uc ]
+"144
+[; ;main.c: 144:         ledClear(4,1);
+[e ( _ledClear (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
+"145
+[; ;main.c: 145:         ledClear(6,1);
+[e ( _ledClear (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
+"146
+[; ;main.c: 146:         ledClear(5,0);
+[e ( _ledClear (2 , -> -> 5 `i `uc -> -> 0 `i `uc ]
+"147
+[; ;main.c: 147:         ledClear(5,2);
+[e ( _ledClear (2 , -> -> 5 `i `uc -> -> 2 `i `uc ]
+"148
+[; ;main.c: 148:         if(Y0[0]>0){
 [e $ ! > -> *U + &U _Y0 * -> -> -> 0 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 379  ]
 {
-"144
-[; ;main.c: 144:             ledSet(0,6);
+"149
+[; ;main.c: 149:             ledSet(0,6);
 [e ( _ledSet (2 , -> -> 0 `i `uc -> -> 6 `i `uc ]
-"145
-[; ;main.c: 145:         } else if(Y0[1]>0){
+"150
+[; ;main.c: 150:         } else if(Y0[1]>0){
 }
 [e $U 380  ]
 [e :U 379 ]
 [e $ ! > -> *U + &U _Y0 * -> -> -> 1 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 381  ]
 {
-"146
-[; ;main.c: 146:             ledSet(2,6);
+"151
+[; ;main.c: 151:             ledSet(2,6);
 [e ( _ledSet (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
-"147
-[; ;main.c: 147:         }
+"152
+[; ;main.c: 152:         }
 }
 [e :U 381 ]
 [e :U 380 ]
-"148
-[; ;main.c: 148:         if(Y0[2]>0){
+"153
+[; ;main.c: 153:         if(Y0[2]>0){
 [e $ ! > -> *U + &U _Y0 * -> -> -> 2 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 382  ]
 {
-"149
-[; ;main.c: 149:             ledSet(1,5);
+"154
+[; ;main.c: 154:             ledSet(1,5);
 [e ( _ledSet (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-"150
-[; ;main.c: 150:         } else if(Y0[3]>0){
+"155
+[; ;main.c: 155:         } else if(Y0[3]>0){
 }
 [e $U 383  ]
 [e :U 382 ]
 [e $ ! > -> *U + &U _Y0 * -> -> -> 3 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 384  ]
 {
-"151
-[; ;main.c: 151:             ledSet(1,7);
+"156
+[; ;main.c: 156:             ledSet(1,7);
 [e ( _ledSet (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
-"152
-[; ;main.c: 152:         }
+"157
+[; ;main.c: 157:         }
 }
 [e :U 384 ]
 [e :U 383 ]
-"153
-[; ;main.c: 153:         if(Y0[4]>0){
+"158
+[; ;main.c: 158:         if(Y0[4]>0){
 [e $ ! > -> *U + &U _Y0 * -> -> -> 4 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 385  ]
 {
-"154
-[; ;main.c: 154:             ledSet(4,6);
+"159
+[; ;main.c: 159:             ledSet(4,6);
 [e ( _ledSet (2 , -> -> 4 `i `uc -> -> 6 `i `uc ]
-"155
-[; ;main.c: 155:         } else if(Y0[5]>0){
+"160
+[; ;main.c: 160:         } else if(Y0[5]>0){
 }
 [e $U 386  ]
 [e :U 385 ]
 [e $ ! > -> *U + &U _Y0 * -> -> -> 5 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 387  ]
 {
-"156
-[; ;main.c: 156:             ledSet(6,6);
+"161
+[; ;main.c: 161:             ledSet(6,6);
 [e ( _ledSet (2 , -> -> 6 `i `uc -> -> 6 `i `uc ]
-"157
-[; ;main.c: 157:         }
+"162
+[; ;main.c: 162:         }
 }
 [e :U 387 ]
 [e :U 386 ]
-"158
-[; ;main.c: 158:         if(Y0[6]>0){
+"163
+[; ;main.c: 163:         if(Y0[6]>0){
 [e $ ! > -> *U + &U _Y0 * -> -> -> 6 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 388  ]
 {
-"159
-[; ;main.c: 159:             ledSet(5,5);
+"164
+[; ;main.c: 164:             ledSet(5,5);
 [e ( _ledSet (2 , -> -> 5 `i `uc -> -> 5 `i `uc ]
-"160
-[; ;main.c: 160:         } else if(Y0[7]>0){
+"165
+[; ;main.c: 165:         } else if(Y0[7]>0){
 }
 [e $U 389  ]
 [e :U 388 ]
 [e $ ! > -> *U + &U _Y0 * -> -> -> 7 `i `ui `ux -> -> # *U &U _Y0 `ui `ux `i -> 0 `i 390  ]
 {
-"161
-[; ;main.c: 161:             ledSet(5,7);
+"166
+[; ;main.c: 166:             ledSet(5,7);
 [e ( _ledSet (2 , -> -> 5 `i `uc -> -> 7 `i `uc ]
-"162
-[; ;main.c: 162:         }
+"167
+[; ;main.c: 167:         }
 }
 [e :U 390 ]
 [e :U 389 ]
-"163
-[; ;main.c: 163:         ledClear(7,0);
-[e ( _ledClear (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
-"164
-[; ;main.c: 164:         ledClear(7,1);
-[e ( _ledClear (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
-"165
-[; ;main.c: 165:         if(incentive == -1){
-[e $ ! == -> _incentive `i -U -> 1 `i 391  ]
-{
-"166
-[; ;main.c: 166:             ledSet(7,0);
-[e ( _ledSet (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
-"167
-[; ;main.c: 167:         } else if(incentive == 1){
-}
-[e $U 392  ]
-[e :U 391 ]
-[e $ ! == -> _incentive `i -> 1 `i 393  ]
-{
 "168
-[; ;main.c: 168:             ledSet(7,1);
-[e ( _ledSet (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 168:         switch(choice){
+[e $U 392  ]
+{
 "169
-[; ;main.c: 169:         }
-}
+[; ;main.c: 169:             case 0:
 [e :U 393 ]
-[e :U 392 ]
 "170
-[; ;main.c: 170:         uint8_t foodPosition = snake_getFoodPosition();
+[; ;main.c: 170:                 ledSet(4,1);
+[e ( _ledSet (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
+"171
+[; ;main.c: 171:                 break;
+[e $U 391  ]
+"172
+[; ;main.c: 172:             case 1:
+[e :U 394 ]
+"173
+[; ;main.c: 173:                 ledSet(6,1);
+[e ( _ledSet (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
+"174
+[; ;main.c: 174:                 break;
+[e $U 391  ]
+"175
+[; ;main.c: 175:             case 2:
+[e :U 395 ]
+"176
+[; ;main.c: 176:                 ledSet(5,0);
+[e ( _ledSet (2 , -> -> 5 `i `uc -> -> 0 `i `uc ]
+"177
+[; ;main.c: 177:                 break;
+[e $U 391  ]
+"178
+[; ;main.c: 178:             case 3:
+[e :U 396 ]
+"179
+[; ;main.c: 179:                 ledSet(5,2);
+[e ( _ledSet (2 , -> -> 5 `i `uc -> -> 2 `i `uc ]
+"180
+[; ;main.c: 180:                 break;
+[e $U 391  ]
+"181
+[; ;main.c: 181:         }
+}
+[e $U 391  ]
+[e :U 392 ]
+[e [\ -> _choice `i , $ -> 0 `i 393
+ , $ -> 1 `i 394
+ , $ -> 2 `i 395
+ , $ -> 3 `i 396
+ 391 ]
+[e :U 391 ]
+"182
+[; ;main.c: 182:         ledClear(7,0);
+[e ( _ledClear (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
+"183
+[; ;main.c: 183:         ledClear(7,1);
+[e ( _ledClear (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
+"184
+[; ;main.c: 184:         if(incentive == -1){
+[e $ ! == -> _incentive `i -U -> 1 `i 397  ]
+{
+"185
+[; ;main.c: 185:             ledSet(7,0);
+[e ( _ledSet (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
+"186
+[; ;main.c: 186:         } else if(incentive == 1){
+}
+[e $U 398  ]
+[e :U 397 ]
+[e $ ! == -> _incentive `i -> 1 `i 399  ]
+{
+"187
+[; ;main.c: 187:             ledSet(7,1);
+[e ( _ledSet (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
+"188
+[; ;main.c: 188:         }
+}
+[e :U 399 ]
+[e :U 398 ]
+"189
+[; ;main.c: 189:         uint8_t foodPosition = snake_getFoodPosition();
 [v _foodPosition `uc ~T0 @X0 1 a ]
 [e = _foodPosition ( _snake_getFoodPosition ..  ]
-"171
-[; ;main.c: 171:         ledSet(foodPosition%4, foodPosition/4);
+"190
+[; ;main.c: 190:         ledSet(foodPosition%4, foodPosition/4);
 [e ( _ledSet (2 , -> % -> _foodPosition `i -> 4 `i `uc -> / -> _foodPosition `i -> 4 `i `uc ]
-"172
-[; ;main.c: 172:         sendMatrix();
+"191
+[; ;main.c: 191:         sendMatrix();
 [e ( _sendMatrix ..  ]
-"173
-[; ;main.c: 173:     }
+"192
+[; ;main.c: 192:     }
 }
 [e :U 368 ]
 [e $U 369  ]
 [e :U 370 ]
-"174
-[; ;main.c: 174: }
+"193
+[; ;main.c: 193: }
 [e :UE 359 ]
 }

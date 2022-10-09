@@ -110,7 +110,7 @@ void ai_initiate(){
 //    ai_is_ai_initiated_write(1);
 }
 
-uint8_t* ai_getInputField(){
+int8_t* ai_getInputField(){
     return Y0;
 }
 
@@ -176,20 +176,10 @@ void ai_propagate(int8_t incentive){
     
     for(uint8_t j = 0; j < N2; j++){
         DC_DY2[j] = Y2[j] - S[j];
-        DC_DZ2[j] = 0;
-        DC_DB2[j] = 0;
-        for(uint8_t i = 0; i < N1; i++){
-            DC_DW2[i][j] = 0;
-        }
     }
     
     for(uint8_t j = 0; j < N1; j++){
         DC_DY1[j] = 0;
-        DC_DZ1[j] = 0;
-        DC_DB1[j] = 0;
-        for(uint8_t i = 0; i < N0; i++){
-            DC_DW1[i][j] = 0;
-        }
     }
     
     int dz;
@@ -199,6 +189,7 @@ void ai_propagate(int8_t incentive){
         for(uint8_t i = 0; i < N1; i++){
             DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y1[i])/127)/64;
             DC_DY1[i] += ((int)DC_DZ2[j]*(int)W2[i][j])/127;
+//            EUSART_Write(DC_DW2[i][j]);
         }
     }
     for(uint8_t j = 0; j < N1; j++){
