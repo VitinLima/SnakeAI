@@ -57,14 +57,14 @@ int8_t snake_move(uint8_t direction){
             if((headPosition/BOARD_SIZE) == 0){
                 incentive = KILL;
             } else{
-                headPosition -= 8;
+                headPosition -= BOARD_SIZE;
             }
             break;
         case RIGHT:
             if((headPosition/BOARD_SIZE) == (BOARD_SIZE-1)){
                 incentive = KILL;
             } else{
-                headPosition += 8;
+                headPosition += BOARD_SIZE;
             }
             break;
     }

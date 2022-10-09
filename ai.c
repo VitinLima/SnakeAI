@@ -109,7 +109,7 @@ uint8_t* ai_getInputField(){
 
 uint8_t ai_run(){
     for(uint8_t i = 0; i < N0; i++){
-        if(Y0[i]> 0){
+        if(Y0[i] > 0){
             Y0[i] = 255u;
         }
     }
