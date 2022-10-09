@@ -121,17 +121,6 @@ void main(void)
         // Add your application code
         __delay_ms(100);
         snake_getSurroundings(ai_getInputField());
-        int8_t incentive = snake_move(ai_run());
-        ai_propagate(incentive);
-        for(uint8_t i = 0; i < BOARD_SIZE; i++){
-            for(uint8_t j = 0; j < BOARD_SIZE; j++){
-                if(field[i+j*BOARD_SIZE]>0){
-                    ledSet(i,j);
-                } else{
-                    ledClear(i,j);
-                }
-            }
-        }
         ledClear(0,6);
         ledClear(2,6);
         ledClear(1,5);
@@ -162,10 +151,21 @@ void main(void)
         }
         ledClear(7,0);
         ledClear(7,1);
+        }
+        int8_t incentive = snake_move(ai_run());
         if(incentive == -1){
             ledSet(7,0);
         } else if(incentive == 1){
             ledSet(7,1);
+        ai_propagate(incentive);
+        for(uint8_t i = 0; i < BOARD_SIZE; i++){
+            for(uint8_t j = 0; j < BOARD_SIZE; j++){
+                if(field[i+j*BOARD_SIZE]>0){
+                    ledSet(i,j);
+                } else{
+                    ledClear(i,j);
+                }
+            }
         }
         uint8_t foodPosition = snake_getFoodPosition();
         ledSet(foodPosition%BOARD_SIZE, foodPosition/BOARD_SIZE);
