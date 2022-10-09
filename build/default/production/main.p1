@@ -39,8 +39,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 ./snake.h
 [; ;./snake.h: 32:     void snake_initiate();
 [v _snake_initiate `(v ~T0 @X0 0 e? ]
-"65 ./ai.h
-[; ;./ai.h: 65:     void ai_initiate();
+"72 ./ai.h
+[; ;./ai.h: 72:     void ai_initiate();
 [v _ai_initiate `(v ~T0 @X0 0 e? ]
 "26 ./ledMatrix.h
 [; ;./ledMatrix.h: 26: void initMAX7219();
@@ -67,17 +67,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 ./snake.h
 [; ;./snake.h: 35:     void snake_getSurroundings(int8_t* surroundings);
 [v _snake_getSurroundings `(v ~T0 @X0 0 ef1`*c ]
-"66 ./ai.h
-[; ;./ai.h: 66:     int8_t* ai_getInputField();
+"73 ./ai.h
+[; ;./ai.h: 73:     int8_t* ai_getInputField();
 [v _ai_getInputField `(*c ~T0 @X0 0 e? ]
-"67
-[; ;./ai.h: 67:     uint8_t ai_run();
+"74
+[; ;./ai.h: 74:     uint8_t ai_run();
 [v _ai_run `(uc ~T0 @X0 0 e? ]
 "33 ./snake.h
 [; ;./snake.h: 33:     int8_t snake_move(uint8_t direction);
 [v _snake_move `(c ~T0 @X0 0 ef1`uc ]
-"68 ./ai.h
-[; ;./ai.h: 68:     void ai_propagate(int8_t incentive);
+"75 ./ai.h
+[; ;./ai.h: 75:     void ai_propagate(int8_t incentive);
 [v _ai_propagate `(v ~T0 @X0 0 ef1`c ]
 "55 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
@@ -574,48 +574,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [; ;./ai.h: 30:     int8_t Y2[4];
 [v _Y2 `c ~T0 @X0 -> 4 `i e ]
-[v F2906 `c ~T0 @X0 -> 4 `i t ]
 "31
-[; ;./ai.h: 31:     int8_t W1[8][4];
-[v _W1 `F2906 ~T0 @X0 -> 8 `i e ]
+[; ;./ai.h: 31:     int Z1[4];
+[v _Z1 `i ~T0 @X0 -> 4 `i e ]
 "32
-[; ;./ai.h: 32:     int8_t B1[4];
-[v _B1 `c ~T0 @X0 -> 4 `i e ]
-[v F2909 `c ~T0 @X0 -> 4 `i t ]
+[; ;./ai.h: 32:     int Z2[4];
+[v _Z2 `i ~T0 @X0 -> 4 `i e ]
+[v F2908 `c ~T0 @X0 -> 4 `i t ]
 "33
-[; ;./ai.h: 33:     int8_t W2[4][4];
-[v _W2 `F2909 ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 33:     int8_t W1[8][4];
+[v _W1 `F2908 ~T0 @X0 -> 8 `i e ]
 "34
-[; ;./ai.h: 34:     int8_t B2[4];
-[v _B2 `c ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 34:     int8_t B1[4];
+[v _B1 `c ~T0 @X0 -> 4 `i e ]
+[v F2911 `c ~T0 @X0 -> 4 `i t ]
 "35
-[; ;./ai.h: 35:     int8_t Z1[4];
-[v _Z1 `c ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 35:     int8_t W2[4][4];
+[v _W2 `F2911 ~T0 @X0 -> 4 `i e ]
 "36
-[; ;./ai.h: 36:     int8_t Z2[4];
-[v _Z2 `c ~T0 @X0 -> 4 `i e ]
-"37
-[; ;./ai.h: 37:     int8_t DC_DY2[4];
-[v _DC_DY2 `c ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 36:     int8_t B2[4];
+[v _B2 `c ~T0 @X0 -> 4 `i e ]
 "38
-[; ;./ai.h: 38:     int8_t DZ2_DY1[4];
-[v _DZ2_DY1 `c ~T0 @X0 -> 4 `i e ]
-[v F2916 `c ~T0 @X0 -> 4 `i t ]
-"39
-[; ;./ai.h: 39:     int8_t DZ1_DW1[8][4];
-[v _DZ1_DW1 `F2916 ~T0 @X0 -> 8 `i e ]
+[; ;./ai.h: 38:     int8_t DC_DY2[4];
+[v _DC_DY2 `c ~T0 @X0 -> 4 `i e ]
 "40
-[; ;./ai.h: 40:     int8_t DZ1_DB1[4];
-[v _DZ1_DB1 `c ~T0 @X0 -> 4 `i e ]
-[v F2919 `c ~T0 @X0 -> 4 `i t ]
-"41
-[; ;./ai.h: 41:     int8_t DZ2_DW2[4][4];
-[v _DZ2_DW2 `F2919 ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 40:     int DC_DZ2[4];
+[v _DC_DZ2 `i ~T0 @X0 -> 4 `i e ]
 "42
-[; ;./ai.h: 42:     int8_t DZ2_DB2[4];
-[v _DZ2_DB2 `c ~T0 @X0 -> 4 `i e ]
+[; ;./ai.h: 42:     int8_t DC_DB2[4];
+[v _DC_DB2 `c ~T0 @X0 -> 4 `i e ]
+[v F2917 `c ~T0 @X0 -> 4 `i t ]
+"43
+[; ;./ai.h: 43:     int8_t DC_DW2[4][4];
+[v _DC_DW2 `F2917 ~T0 @X0 -> 4 `i e ]
 "44
-[; ;./ai.h: 44:     uint8_t choice;
+[; ;./ai.h: 44:     int8_t DC_DY1[4];
+[v _DC_DY1 `c ~T0 @X0 -> 4 `i e ]
+"46
+[; ;./ai.h: 46:     int DC_DZ1[4];
+[v _DC_DZ1 `i ~T0 @X0 -> 4 `i e ]
+"48
+[; ;./ai.h: 48:     int8_t DC_DB1[4];
+[v _DC_DB1 `c ~T0 @X0 -> 4 `i e ]
+[v F2922 `c ~T0 @X0 -> 4 `i t ]
+"49
+[; ;./ai.h: 49:     int8_t DC_DW1[8][4];
+[v _DC_DW1 `F2922 ~T0 @X0 -> 8 `i e ]
+"51
+[; ;./ai.h: 51:     uint8_t choice;
 [v _choice `uc ~T0 @X0 1 e ]
 "50 main.c
 [; ;main.c: 50: void deactivateElevator(){

@@ -4625,21 +4625,28 @@ void sendMatrix();
     int8_t Y0[8];
     int8_t Y1[4];
     int8_t Y2[4];
+    int Z1[4];
+    int Z2[4];
     int8_t W1[8][4];
     int8_t B1[4];
     int8_t W2[4][4];
     int8_t B2[4];
-    int8_t Z1[4];
-    int8_t Z2[4];
+
     int8_t DC_DY2[4];
-    int8_t DZ2_DY1[4];
-    int8_t DZ1_DW1[8][4];
-    int8_t DZ1_DB1[4];
-    int8_t DZ2_DW2[4][4];
-    int8_t DZ2_DB2[4];
+
+    int DC_DZ2[4];
+
+    int8_t DC_DB2[4];
+    int8_t DC_DW2[4][4];
+    int8_t DC_DY1[4];
+
+    int DC_DZ1[4];
+
+    int8_t DC_DB1[4];
+    int8_t DC_DW1[8][4];
 
     uint8_t choice;
-# 65 "./ai.h"
+# 72 "./ai.h"
     void ai_initiate();
     int8_t* ai_getInputField();
     uint8_t ai_run();
