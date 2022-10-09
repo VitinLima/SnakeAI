@@ -120,8 +120,9 @@ void main(void)
     {
         // Add your application code
 //        __delay_ms(100);
-        snake_getSurroundings(ai_getInputField());
-        ai_propagate(snake_move(ai_run()));
+//        snake_getSurroundings(ai_getInputField());
+//        ai_propagate(snake_move(ai_run()));
+        snake_move(3);
         for(uint8_t i = 0; i < BOARD_SIZE; i++){
             for(uint8_t j = 0; j < BOARD_SIZE; j++){
                 if(field[i+j*BOARD_SIZE]>0){
@@ -133,6 +134,7 @@ void main(void)
         }
         uint8_t foodPosition = snake_getFoodPosition();
         ledSet(foodPosition%BOARD_SIZE, foodPosition/BOARD_SIZE);
+        setLine(5, foodPosition);
         sendMatrix();
     }
 }
