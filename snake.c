@@ -22,6 +22,7 @@ void snake_initiate(){
     for(uint8_t i = 0; i < BOARD_LENGTH; i++){
         field[i] = 0;
     }
+    srand(0);
     headPosition = rand()%BOARD_LENGTH;
     foodPosition = rand()%BOARD_LENGTH;
     snakeSize = 3;
