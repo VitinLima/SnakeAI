@@ -24,7 +24,7 @@ void snake_initiate(){
     }
     headPosition = rand()%BOARD_LENGTH;
     foodPosition = rand()%BOARD_LENGTH;
-    snakeSize = 1;
+    snakeSize = 3;
     remainingMoves = MOVES_RECHARGE;
     field[headPosition] = snakeSize;
 }
