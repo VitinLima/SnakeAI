@@ -96,7 +96,7 @@ uint8_t* snake_getField(){
 }
 
 void snake_getSurroundings(uint8_t* surroundings){
-    for(uint8_t i = 0; i < 12; i++){
+    for(uint8_t i = 0; i < 8; i++){
         surroundings[i] = 0;
     }
     uint8_t lh = headPosition%BOARD_SIZE;
@@ -105,38 +105,30 @@ void snake_getSurroundings(uint8_t* surroundings){
     uint8_t cf = foodPosition/BOARD_SIZE;
     if(lh == 0){
         surroundings[0] = 1;
-        surroundings[1] = 1;
-        surroundings[2] = 1;
     } else if(lh == 7){
-        surroundings[4] = 1;
-        surroundings[5] = 1;
-        surroundings[6] = 1;
+        surroundings[1] = 1;
     }
     if(ch == 0){
-        surroundings[6] = 1;
-        surroundings[7] = 1;
-        surroundings[0] = 1;
-    } else if(ch == 7){
         surroundings[2] = 1;
+    } else if(ch == 7){
         surroundings[3] = 1;
-        surroundings[4] = 1;
     }
     uint8_t p;
-    for(uint8_t i = 0; i < 8; i++){
+    for(uint8_t i = 0; i < 4; i++){
         p = (headPosition+mapping[i])%BOARD_LENGTH;
         if(field[p] > 0){
             surroundings[i] = 1;
         }
     }
     if(lf<lh){
-        surroundings[8] = 1;
+        surroundings[4] = 1;
     } else if(lf>lh){
-        surroundings[9] = 1;
+        surroundings[5] = 1;
     }
     if(cf<ch){
-        surroundings[10] = 1;
+        surroundings[6] = 1;
     } else if(cf>ch){
-        surroundings[11] = 1;
+        surroundings[7] = 1;
     }
 }
 

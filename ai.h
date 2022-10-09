@@ -12,8 +12,8 @@
 extern "C" {
 #endif
 
-#define N0 12
-#define N1 7
+#define N0 8
+#define N1 4
 #define N2 4
 
 #define ADD_W1 0

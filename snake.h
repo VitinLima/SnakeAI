@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#define BOARD_SIZE 8
+#define BOARD_SIZE 4
 #define BOARD_LENGTH BOARD_SIZE*BOARD_SIZE
     
 #define NOTHING 0

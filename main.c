@@ -102,9 +102,9 @@ void main(void)
     
     uint8_t* field = snake_getField();
     
-    for(uint8_t i = 0; i < 8; i++){
-        for(uint8_t j = 0; j < 8; j++){
-            if(field[i+j*8]>0){
+    for(uint8_t i = 0; i < BOARD_SIZE; i++){
+        for(uint8_t j = 0; j < BOARD_SIZE; j++){
+            if(field[i+j*BOARD_SIZE]>0){
                 ledSet(i,j);
             } else{
                 ledClear(i,j);
@@ -113,7 +113,7 @@ void main(void)
     }
     
     uint8_t foodPosition = snake_getFoodPosition();
-    ledSet(foodPosition&0x03, foodPosition>>3);
+    ledSet(foodPosition%BOARD_SIZE, foodPosition/BOARD_SIZE);
     sendMatrix();
     
     while (1)
@@ -122,9 +122,9 @@ void main(void)
 //        __delay_ms(100);
         snake_getSurroundings(ai_getInputField());
         ai_propagate(snake_move(ai_run()));
-        for(uint8_t i = 0; i < 8; i++){
-            for(uint8_t j = 0; j < 8; j++){
-                if(field[i+j*8]>0){
+        for(uint8_t i = 0; i < BOARD_SIZE; i++){
+            for(uint8_t j = 0; j < BOARD_SIZE; j++){
+                if(field[i+j*BOARD_SIZE]>0){
                     ledSet(i,j);
                 } else{
                     ledClear(i,j);
@@ -132,7 +132,7 @@ void main(void)
             }
         }
         uint8_t foodPosition = snake_getFoodPosition();
-        ledSet(foodPosition&0x03, foodPosition>>3);
+        ledSet(foodPosition%BOARD_SIZE, foodPosition/BOARD_SIZE);
         sendMatrix();
     }
 }
