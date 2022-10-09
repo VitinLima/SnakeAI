@@ -32,7 +32,7 @@ extern "C" {
     void snake_initiate();
     int8_t snake_move(uint8_t direction);
     uint8_t* snake_getField();
-    void snake_getSurroundings(uint8_t* surroundings);
+    void snake_getSurroundings(int8_t* surroundings);
     uint8_t snake_getHeadPosition();
     void snake_setHeadPosition(uint8_t pos);
     uint8_t snake_getFoodPosition();

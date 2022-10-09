@@ -3,21 +3,28 @@
 #include "ai.h"
 #include "sigmoid.h"
 
-uint8_t Y0[N0];
-uint8_t Y1[N1];
-uint8_t Y2[N2];
+int8_t Y0[N0];
+int8_t Y1[N1];
+int8_t Y2[N2];
+int8_t Z1[N1];
+int8_t Z2[N2];
 int8_t W1[N0][N1];
 int8_t B1[N1];
 int8_t W2[N1][N2];
 int8_t B2[N2];
-int8_t Z1[N1];
-int8_t Z2[N2];
-int8_t DY2[N2];
-int8_t DY1[N1];
-int8_t DW1[N0][N1];
-int8_t DB1[N1];
-int8_t DW2[N1][N2];
-int8_t DB2[N2];
+
+int8_t DC_DY2[N2];
+
+int8_t DC_DZ2[N2];
+
+int8_t DC_DB2[N2];
+int8_t DC_DW2[N1][N2];
+int8_t DC_DY1[N1];
+
+int8_t DC_DZ1[N1];
+
+int8_t DC_DB1[N1];
+int8_t DC_DW1[N0][N1];
 
 uint8_t choice;
 
@@ -89,15 +96,15 @@ void ai_initiate(){
 //        return;
 //    }
     for(uint8_t j = 0; j < N1; j++){
-        B1[j] = (int8_t)rand();
+        B1[j] = rand();
         for(uint8_t i = 0; i < N0; i++){
-            W1[i][j] = (int8_t)rand();
+            W1[i][j] = rand();
         }
     }
     for(uint8_t j = 0; j < N2; j++){
-        B2[j] = (int8_t)rand();
+        B2[j] = rand();
         for(uint8_t i = 0; i < N1; i++){
-            W2[i][j] = (int8_t)rand();
+            W2[i][j] = rand();
         }
     }
 //    ai_is_ai_initiated_write(1);
@@ -114,26 +121,26 @@ uint8_t ai_run(){
         }
     }
     
-    int16_t z;
+    int z;
     for(uint8_t j = 0; j < N1; j++){
         Z1[j] = B1[j];
         for(uint8_t i = 0; i < N0; i++){
-            z = (int16_t)Y0[i];
+            z = Y0[i];
             z *= W1[i][j];
             z /= 255;
             Z1[j] += z;
         }
-        Y1[j] = sigmoid(Z1[j]);
+        Y1[j] = sigmoid(Z1[j])>>1;
     }
     for(uint8_t j = 0; j < N2; j++){
         Z2[j] = B2[j];
         for(uint8_t i = 0; i < N1; i++){
-            z = (int16_t)Y1[i];
+            z = Y1[i];
             z *= W2[i][j];
             z /= 255;
             Z2[j] += z;
         }
-        Y2[j] = sigmoid(Z2[j]);
+        Y2[j] = sigmoid(Z2[j])>>1;
     }
     
     choice = 0;
@@ -154,67 +161,64 @@ void ai_propagate(int8_t incentive){
         incentive = 0;
     }
     
-    uint8_t S[N2];
+    int8_t S[N2];
     if(incentive == 0){
         for(uint8_t i = 0; i < N2; i++){
-            S[i] = 255u;
+            S[i] = 127;
         }
         S[choice] = 0;
     } else{
         for(uint8_t i = 0; i < N2; i++){
             S[i] = 0;
         }
-        S[choice] = 255u;
+        S[choice] = 127;
+    }
+    
+    for(uint8_t j = 0; j < N2; j++){
+        DC_DY2[j] = Y2[j] - S[j];
+        DC_DZ2[j] = 0;
+        DC_DB2[j] = 0;
+        for(uint8_t i = 0; i < N1; i++){
+            DC_DW2[i][j] = 0;
+        }
     }
     
     for(uint8_t j = 0; j < N1; j++){
-        DY1[j] = 0;
-        DB1[j] = 0;
+        DC_DY1[j] = 0;
+        DC_DZ1[j] = 0;
+        DC_DB1[j] = 0;
         for(uint8_t i = 0; i < N0; i++){
-            DW1[i][j] = 0;
-        }
-    }
-    for(uint8_t j = 0; j < N2; j++){
-        DY2[j] = (int8_t)(((int16_t)Y2[j] - (int16_t)S[j])>>1);
-        DB2[j] = 0;
-        for(uint8_t i = 0; i < N1; i++){
-            DW2[i][j] = 0;
+            DC_DW1[i][j] = 0;
         }
     }
     
-    int16_t dz;
+    int dz;
     for(uint8_t j = 0; j < N2; j++){
-        dz = (int16_t)de_sigmoid(Z2[j]);
-        dz *= (int16_t)DY2[j];
-        dz /= 255;
-        
-        DB2[j] += (int8_t)dz;
+        DC_DZ2[j] = ((int)DC_DY2[j]*(int)(de_sigmoid(Z2[j])>>1))/127;
+        DC_DB2[j] = DC_DZ2[j]>>6;
         for(uint8_t i = 0; i < N1; i++){
-            DY1[i] += (int8_t)((dz*(int16_t)W2[i][j])/127);
-            DW2[i][j] += (int8_t)(((dz*(int16_t)Y1[i])/127)>>1);
+            DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y1[i])/127)>>6;
+            DC_DY1[i] += ((int)DC_DZ2[j]*(int)W2[i][j])/127;
         }
     }
     for(uint8_t j = 0; j < N1; j++){
-        dz = (int16_t)de_sigmoid(Z1[j]);
-        dz *= (int16_t)DY1[j];
-        dz /= 255;
-        
-        DB1[j] += (int8_t)dz;
+        DC_DZ1[j] = ((int)DC_DY1[j]*(int)(de_sigmoid(Z1[j])>>1))/127;
+        DC_DB1[j] = DC_DZ1[j]>>6;
         for(uint8_t i = 0; i < N0; i++){
-            DW1[i][j] += (int8_t)(((dz*(int16_t)Y0[i])/127)>>1);
+            DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y0[i])/127)>>6;
         }
     }
     
     for(uint8_t j = 0; j < N2; j++){
-        B2[j] -= DB2[j];
+        B2[j] -= DC_DB2[j];
         for(uint8_t i = 0; i < N1; i++){
-            W2[i][j] -= DW2[i][j];
+            W2[i][j] -= DC_DW2[i][j];
         }
     }
     for(uint8_t j = 0; j < N1; j++){
-        B1[j] -= DB1[j];
+        B1[j] -= DC_DB1[j];
         for(uint8_t i = 0; i < N0; i++){
-            W1[i][j] -= DW1[i][j];
+            W1[i][j] -= DC_DW1[i][j];
         }
     }
 }

@@ -96,7 +96,7 @@ uint8_t* snake_getField(){
     return field;
 }
 
-void snake_getSurroundings(uint8_t* surroundings){
+void snake_getSurroundings(int8_t* surroundings){
     for(uint8_t i = 0; i < 8; i++){
         surroundings[i] = 0;
     }

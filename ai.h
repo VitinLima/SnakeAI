@@ -25,21 +25,21 @@ extern "C" {
 #define ADD_MAX_SCORE ADD_IS_AI_INITIATED+1
 #define ADD_SCORES ADD_MAX_SCORE+1
     
-    uint8_t Y0[N0];
-    uint8_t Y1[N1];
-    uint8_t Y2[N2];
+    int8_t Y0[N0];
+    int8_t Y1[N1];
+    int8_t Y2[N2];
     int8_t W1[N0][N1];
     int8_t B1[N1];
     int8_t W2[N1][N2];
     int8_t B2[N2];
     int8_t Z1[N1];
     int8_t Z2[N2];
-    int8_t DY2[N2];
-    int8_t DY1[N1];
-    int8_t DW1[N0][N1];
-    int8_t DB1[N1];
-    int8_t DW2[N1][N2];
-    int8_t DB2[N2];
+    int8_t DC_DY2[N2];
+    int8_t DZ2_DY1[N1];
+    int8_t DZ1_DW1[N0][N1];
+    int8_t DZ1_DB1[N1];
+    int8_t DZ2_DW2[N1][N2];
+    int8_t DZ2_DB2[N2];
     
     uint8_t choice;
     
