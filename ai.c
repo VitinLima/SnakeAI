@@ -117,7 +117,7 @@ uint8_t* ai_getInputField(){
 uint8_t ai_run(){
     for(uint8_t i = 0; i < N0; i++){
         if(Y0[i] > 0){
-            Y0[i] = 255u;
+            Y0[i] = 127;
         }
     }
     
@@ -127,20 +127,20 @@ uint8_t ai_run(){
         for(uint8_t i = 0; i < N0; i++){
             z = Y0[i];
             z *= W1[i][j];
-            z /= 255;
+            z /= 127;
             Z1[j] += z;
         }
-        Y1[j] = sigmoid(Z1[j])>>1;
+        Y1[j] = sigmoid(Z1[j])/2;
     }
     for(uint8_t j = 0; j < N2; j++){
         Z2[j] = B2[j];
         for(uint8_t i = 0; i < N1; i++){
             z = Y1[i];
             z *= W2[i][j];
-            z /= 255;
+            z /= 127;
             Z2[j] += z;
         }
-        Y2[j] = sigmoid(Z2[j])>>1;
+        Y2[j] = sigmoid(Z2[j])/2;
     }
     
     choice = 0;
