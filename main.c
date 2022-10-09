@@ -119,7 +119,7 @@ void main(void)
     while (1)
     {
         // Add your application code
-        __delay_ms(500);
+        __delay_ms(100);
         snake_getSurroundings(ai_getInputField());
         ai_propagate(snake_move(ai_run()));
         for(uint8_t i = 0; i < BOARD_SIZE; i++){
