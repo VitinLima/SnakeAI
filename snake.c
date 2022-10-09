@@ -93,23 +93,27 @@ uint8_t* snake_getField(){
 }
 
 void snake_getSurroundings(uint8_t* surroundings){
-    for(uint8_t i = 0; i < 16; i++){
+    for(uint8_t i = 0; i < 12; i++){
         surroundings[i] = 0;
     }
-    if((headPosition&0x07) == 0){
+    uint8_t lh = headPosition&0x07;
+    uint8_t ch = headPosition>>3;
+    uint8_t lf = foodPosition&0x07;
+    uint8_t cf = foodPosition>>3;
+    if(lh == 0){
         surroundings[0] = 1;
         surroundings[1] = 1;
         surroundings[2] = 1;
-    } else if((headPosition&0x07) == 7){
+    } else if(lh == 7){
         surroundings[4] = 1;
         surroundings[5] = 1;
         surroundings[6] = 1;
     }
-    if((headPosition>>3) == 0){
+    if(ch == 0){
         surroundings[6] = 1;
         surroundings[7] = 1;
         surroundings[0] = 1;
-    } else if((headPosition>>3) == 7){
+    } else if(ch == 7){
         surroundings[2] = 1;
         surroundings[3] = 1;
         surroundings[4] = 1;
@@ -117,12 +121,19 @@ void snake_getSurroundings(uint8_t* surroundings){
     uint8_t p;
     for(uint8_t i = 0; i < 8; i++){
         p = (headPosition+mapping[i])&0x3f;
-        if(p==foodPosition){
-            surroundings[i+8] = 1;
-        }
         if(field[p] > 0){
             surroundings[i] = 1;
         }
+    }
+    if(lf<lh){
+        surroundings[8] = 1;
+    } else if(lf>lh){
+        surroundings[9] = 1;
+    }
+    if(cf<ch){
+        surroundings[10] = 1;
+    } else if(cf>ch){
+        surroundings[11] = 1;
     }
 }
 

@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#define N0 16
+#define N0 12
 #define N1 7
 #define N2 4
 
