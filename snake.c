@@ -47,7 +47,7 @@ int8_t snake_move(uint8_t direction){
             }
             break;
         case DOWN:
-            if((headPosition%BOARD_SIZE) == 7){
+            if((headPosition%BOARD_SIZE) == (BOARD_SIZE-1)){
                 incentive = KILL;
             } else{
                 headPosition++;
@@ -61,7 +61,7 @@ int8_t snake_move(uint8_t direction){
             }
             break;
         case RIGHT:
-            if((headPosition/BOARD_SIZE) == 7){
+            if((headPosition/BOARD_SIZE) == (BOARD_SIZE-1)){
                 incentive = KILL;
             } else{
                 headPosition += 8;
@@ -105,12 +105,12 @@ void snake_getSurroundings(uint8_t* surroundings){
     uint8_t cf = foodPosition/BOARD_SIZE;
     if(lh == 0){
         surroundings[0] = 1;
-    } else if(lh == 7){
+    } else if(lh == (BOARD_SIZE-1)){
         surroundings[1] = 1;
     }
     if(ch == 0){
         surroundings[2] = 1;
-    } else if(ch == 7){
+    } else if(ch == (BOARD_SIZE-1)){
         surroundings[3] = 1;
     }
     uint8_t p;
