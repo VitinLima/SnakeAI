@@ -119,7 +119,7 @@ void main(void)
     while (1)
     {
         // Add your application code
-//        __delay_ms(100);
+        __delay_ms(500);
         snake_getSurroundings(ai_getInputField());
         ai_propagate(snake_move(ai_run()));
         for(uint8_t i = 0; i < BOARD_SIZE; i++){
@@ -132,14 +132,14 @@ void main(void)
             }
         }
         for(uint8_t i = 0; i < 4; i++){
-            if(Y0[i]==1){
+            if(Y0[i]>0){
                 ledSet(5,i);
             } else{
                 ledClear(5,i);
             }
         }
         for(uint8_t i = 4; i < 8; i++){
-            if(Y0[i]==1){
+            if(Y0[i]>0){
                 ledSet(5,i-4);
             } else{
                 ledClear(5,i-4);
