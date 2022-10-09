@@ -219,15 +219,15 @@ void ai_propagate(int8_t incentive){
     }
 }
 
-void printAI(){
-    for(uint8_t j = 0; j < N2; j++){
-        EUSART_Write(Y2[j]);
-        EUSART_Write((uint8_t)biases2_read(j));
-        for(uint8_t i = 0; i < N1; i++){
-            EUSART_Write((uint8_t)weights2_read(i,j));
-        }
-    }
-}
+//void printAI(){
+//    for(uint8_t j = 0; j < N2; j++){
+//        EUSART_Write(Y2[j]);
+//        EUSART_Write((uint8_t)biases2_read(j));
+//        for(uint8_t i = 0; i < N1; i++){
+//            EUSART_Write((uint8_t)weights2_read(i,j));
+//        }
+//    }
+//}
 
 //void ai_propagate(uint8_t* answer){
 //    

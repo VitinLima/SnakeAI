@@ -4625,6 +4625,10 @@ void sendMatrix();
     uint8_t Y0[8];
     uint8_t Y1[4];
     uint8_t Y2[4];
+    int8_t W1[8][4];
+    int8_t B1[4];
+    int8_t W2[4][4];
+    int8_t B2[4];
     int8_t Z1[4];
     int8_t Z2[4];
     int8_t DY2[4];
@@ -4635,26 +4639,7 @@ void sendMatrix();
     int8_t DB2[4];
 
     uint8_t choice;
-
-    void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
-    void biases1_write(uint8_t add, int8_t val);
-    void weights2_write(uint8_t add1, uint8_t add2, int8_t val);
-    void biases2_write(uint8_t add, int8_t val);
-    int8_t weights1_read(uint8_t add1, uint8_t add2);
-    int8_t biases1_read(uint8_t add);
-    int8_t weights2_read(uint8_t add1, uint8_t add2);
-    int8_t biases2_read(uint8_t add);
-
-    void ai_is_ai_initiated_write(uint8_t val);
-    uint8_t ai_is_ai_initiated_read();
-    void ai_is_ai_trained_write(uint8_t val);
-    uint8_t ai_is_ai_trained_read();
-
-    void ai_maxScore_write(int8_t val);
-    uint8_t ai_maxScore_read();
-    void ai_scores_write(uint8_t add, int8_t val);
-    uint8_t ai_scores_read(uint8_t add);
-
+# 65 "./ai.h"
     void ai_initiate();
     uint8_t* ai_getInputField();
     uint8_t ai_run();
@@ -4688,18 +4673,7 @@ void main(void)
     snake_initiate();
     ai_initiate();
     initMAX7219();
-
-
-        for(uint16_t i = 0; i < 1000; i++){
-            snake_getSurroundings(ai_getInputField());
-            ai_propagate(snake_move(ai_run()));
-            setLine(0,(uint8_t)(i>>2));
-            setLine(1,(uint8_t)(i&0x03));
-            sendMatrix();
-        }
-
-
-
+# 103 "main.c"
     uint8_t* field = snake_getField();
 
     for(uint8_t i = 0; i < 4; i++){
