@@ -13,6 +13,7 @@ uint8_t mapping[8] = {55, 63, 7, 8, 9, 1, 57, 56};
 uint8_t snakeSize;
 uint8_t headPosition;
 uint8_t foodPosition;
+uint8_t remainingMoves;
 
 void snake_initiate(){
     for(uint8_t i = 0; i < 64; i++){
@@ -21,10 +22,12 @@ void snake_initiate(){
     headPosition = ((uint8_t)rand())&0x3f;
     foodPosition = ((uint8_t)rand())&0x3f;
     snakeSize = 1;
+    remainingMoves = MOVES_RECHARGE;
     field[headPosition] = snakeSize;
 }
 
 int8_t snake_move(uint8_t direction){
+    remainingMoves--;
     for(uint8_t i = 0; i < 64; i++){
         if(field[i] > 0){
             field[i]--;
@@ -69,6 +72,7 @@ int8_t snake_move(uint8_t direction){
         snake_initiate();
     } else{
         if(headPosition == foodPosition){
+            remainingMoves = MOVES_RECHARGE;
             incentive = FOOD;
             snakeSize++;
             do{
@@ -76,6 +80,10 @@ int8_t snake_move(uint8_t direction){
             }while(field[foodPosition] > 0);
         }
         field[headPosition] = snakeSize;
+    }
+    if(remainingMoves == 0){
+        incentive = KILL;
+        snake_initiate();
     }
     return incentive;
 }

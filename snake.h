@@ -15,6 +15,7 @@ extern "C" {
 #define NOTHING 0
 #define KILL -1
 #define FOOD 1
+#define MOVES_RECHARGE 40
     
     uint8_t field[64];
     uint8_t mapping[8];
