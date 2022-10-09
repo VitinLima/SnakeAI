@@ -28,6 +28,10 @@ extern "C" {
     uint8_t Y0[N0];
     uint8_t Y1[N1];
     uint8_t Y2[N2];
+    int8_t W1[N0][N1];
+    int8_t B1[N1];
+    int8_t W2[N1][N2];
+    int8_t B2[N2];
     int8_t Z1[N1];
     int8_t Z2[N2];
     int8_t DY2[N2];
@@ -39,24 +43,24 @@ extern "C" {
     
     uint8_t choice;
     
-    void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
-    void biases1_write(uint8_t add, int8_t val);
-    void weights2_write(uint8_t add1, uint8_t add2, int8_t val);
-    void biases2_write(uint8_t add, int8_t val);
-    int8_t weights1_read(uint8_t add1, uint8_t add2);
-    int8_t biases1_read(uint8_t add);
-    int8_t weights2_read(uint8_t add1, uint8_t add2);
-    int8_t biases2_read(uint8_t add);
-    
-    void ai_is_ai_initiated_write(uint8_t val);
-    uint8_t ai_is_ai_initiated_read();
-    void ai_is_ai_trained_write(uint8_t val);
-    uint8_t ai_is_ai_trained_read();
-    
-    void ai_maxScore_write(int8_t val);
-    uint8_t ai_maxScore_read();
-    void ai_scores_write(uint8_t add, int8_t val);
-    uint8_t ai_scores_read(uint8_t add);
+//    void weights1_write(uint8_t add1, uint8_t add2, int8_t val);
+//    void biases1_write(uint8_t add, int8_t val);
+//    void weights2_write(uint8_t add1, uint8_t add2, int8_t val);
+//    void biases2_write(uint8_t add, int8_t val);
+//    int8_t weights1_read(uint8_t add1, uint8_t add2);
+//    int8_t biases1_read(uint8_t add);
+//    int8_t weights2_read(uint8_t add1, uint8_t add2);
+//    int8_t biases2_read(uint8_t add);
+//    
+//    void ai_is_ai_initiated_write(uint8_t val);
+//    uint8_t ai_is_ai_initiated_read();
+//    void ai_is_ai_trained_write(uint8_t val);
+//    uint8_t ai_is_ai_trained_read();
+//    
+//    void ai_maxScore_write(int8_t val);
+//    uint8_t ai_maxScore_read();
+//    void ai_scores_write(uint8_t add, int8_t val);
+//    uint8_t ai_scores_read(uint8_t add);
     
     void ai_initiate();
     uint8_t* ai_getInputField();

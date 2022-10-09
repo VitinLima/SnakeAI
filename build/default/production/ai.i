@@ -4575,16 +4575,16 @@ void WDT_Initialize(void);
 
 # 1 "./ai.h" 1
 # 28 "./ai.h"
-    uint8_t Y0[16];
-    uint8_t Y1[7];
+    uint8_t Y0[8];
+    uint8_t Y1[4];
     uint8_t Y2[4];
-    int8_t Z1[7];
+    int8_t Z1[4];
     int8_t Z2[4];
     int8_t DY2[4];
-    int8_t DY1[7];
-    int8_t DW1[16][7];
-    int8_t DB1[7];
-    int8_t DW2[7][4];
+    int8_t DY1[4];
+    int8_t DW1[8][4];
+    int8_t DB1[4];
+    int8_t DW2[4][4];
     int8_t DB2[4];
 
     uint8_t choice;
@@ -4625,96 +4625,96 @@ uint8_t de_sigmoid(int8_t z);
 # 4 "ai.c" 2
 
 
-uint8_t Y0[16];
-uint8_t Y1[7];
+uint8_t Y0[8];
+uint8_t Y1[4];
 uint8_t Y2[4];
-int8_t Z1[7];
+int8_t Z1[4];
 int8_t Z2[4];
 int8_t DY2[4];
-int8_t DY1[7];
-int8_t DW1[16][7];
-int8_t DB1[7];
-int8_t DW2[7][4];
+int8_t DY1[4];
+int8_t DW1[8][4];
+int8_t DB1[4];
+int8_t DW2[4][4];
 int8_t DB2[4];
 
 uint8_t choice;
 
 void weights1_write(uint8_t add1, uint8_t add2, int8_t val){
-    eeprom_write(0 + 16*add1 + add2, (unsigned char)val);
+    eeprom_write(0 + 8*add1 + add2, (unsigned char)val);
 }
 void biases1_write(uint8_t add, int8_t val){
-    eeprom_write(0 +16*7 + add, (unsigned char)val);
+    eeprom_write(0 +8*4 + add, (unsigned char)val);
 }
 void weights2_write(uint8_t add1, uint8_t add2, int8_t val){
-    eeprom_write(0 +16*7 +7 + 7*add1 + add2, (unsigned char)val);
+    eeprom_write(0 +8*4 +4 + 4*add1 + add2, (unsigned char)val);
 }
 void biases2_write(uint8_t add, int8_t val){
-    eeprom_write(0 +16*7 +7 +4*7 + add, (unsigned char)val);
+    eeprom_write(0 +8*4 +4 +4*4 + add, (unsigned char)val);
 }
 int8_t weights1_read(uint8_t add1, uint8_t add2){
-    return (int8_t)eeprom_read(0 + add1*16 + add2);
+    return (int8_t)eeprom_read(0 + add1*8 + add2);
 }
 int8_t biases1_read(uint8_t add){
-    return (int8_t)eeprom_read(0 +16*7 + add);
+    return (int8_t)eeprom_read(0 +8*4 + add);
 }
 int8_t weights2_read(uint8_t add1, uint8_t add2){
-    return (int8_t)eeprom_read(0 +16*7 +7 + add1*7 + add2);
+    return (int8_t)eeprom_read(0 +8*4 +4 + add1*4 + add2);
 }
 int8_t biases2_read(uint8_t add){
-    return (int8_t)eeprom_read(0 +16*7 +7 +4*7 + add);
+    return (int8_t)eeprom_read(0 +8*4 +4 +4*4 + add);
 }
 
 void ai_is_ai_initiated_write(uint8_t val){
-    unsigned char c = eeprom_read(0 +16*7 +7 +4*7 +4);
+    unsigned char c = eeprom_read(0 +8*4 +4 +4*4 +4);
     if(val){
         (c) |= 1UL << (0);
     } else{
         (c) &= ~(1UL << (0));
     }
-    eeprom_write(0 +16*7 +7 +4*7 +4, c);
+    eeprom_write(0 +8*4 +4 +4*4 +4, c);
 }
 uint8_t ai_is_ai_initiated_read(){
-    return (uint8_t)(eeprom_read(0 +16*7 +7 +4*7 +4)&0x01);
+    return (uint8_t)(eeprom_read(0 +8*4 +4 +4*4 +4)&0x01);
 }
 void ai_is_ai_trained_write(uint8_t val){
-    unsigned char c = eeprom_read(0 +16*7 +7 +4*7 +4);
+    unsigned char c = eeprom_read(0 +8*4 +4 +4*4 +4);
     if(val){
         (c) |= 1UL << (1);
     } else{
         (c) &= ~(1UL << (1));
     }
-    eeprom_write(0 +16*7 +7 +4*7 +4, c);
+    eeprom_write(0 +8*4 +4 +4*4 +4, c);
 }
 uint8_t ai_is_ai_trained_read(){
-    return (uint8_t)(eeprom_read(0 +16*7 +7 +4*7 +4)&0x02);
+    return (uint8_t)(eeprom_read(0 +8*4 +4 +4*4 +4)&0x02);
 }
 
 void ai_maxScore_write(int8_t val){
-    eeprom_write(0 +16*7 +7 +4*7 +4 +1, (unsigned char)val);
+    eeprom_write(0 +8*4 +4 +4*4 +4 +1, (unsigned char)val);
 }
 uint8_t ai_maxScore_read(){
-    return (uint8_t)eeprom_read(0 +16*7 +7 +4*7 +4 +1);
+    return (uint8_t)eeprom_read(0 +8*4 +4 +4*4 +4 +1);
 }
 void ai_scores_write(uint8_t add, int8_t val){
-    eeprom_write(0 +16*7 +7 +4*7 +4 +1 +1, (unsigned char)val);
+    eeprom_write(0 +8*4 +4 +4*4 +4 +1 +1, (unsigned char)val);
 }
 uint8_t ai_scores_read(uint8_t add){
-    return (uint8_t)eeprom_read(0 +16*7 +7 +4*7 +4 +1 +1);
+    return (uint8_t)eeprom_read(0 +8*4 +4 +4*4 +4 +1 +1);
 }
 
 void ai_initiate(){
 
 
 
-    for(uint8_t j = 0; j < 7; j++){
+    for(uint8_t j = 0; j < 4; j++){
         biases1_write(j, (int8_t)rand());
-        for(uint8_t i = 0; i < 16; i++){
+        for(uint8_t i = 0; i < 8; i++){
             weights1_write(i,j, (int8_t)rand());
         }
     }
     for(uint8_t j = 0; j < 4; j++){
         biases2_write(j, (int8_t)rand());
-        for(uint8_t i = 0; i < 7; i++){
+        for(uint8_t i = 0; i < 4; i++){
             weights2_write(i,j, (int8_t)rand());
         }
     }
@@ -4726,16 +4726,16 @@ uint8_t* ai_getInputField(){
 }
 
 uint8_t ai_run(){
-    for(uint8_t i = 0; i < 16; i++){
+    for(uint8_t i = 0; i < 8; i++){
         if(Y0[i]> 0){
             Y0[i] = 255u;
         }
     }
 
     int16_t z;
-    for(uint8_t j = 0; j < 7; j++){
+    for(uint8_t j = 0; j < 4; j++){
         Z1[j] = biases1_read(j);
-        for(uint8_t i = 0; i < 16; i++){
+        for(uint8_t i = 0; i < 8; i++){
             z = (int16_t)Y0[i];
             z *= weights1_read(i,j);
             z /= 255;
@@ -4745,7 +4745,7 @@ uint8_t ai_run(){
     }
     for(uint8_t j = 0; j < 4; j++){
         Z2[j] = biases2_read(j);
-        for(uint8_t i = 0; i < 7; i++){
+        for(uint8_t i = 0; i < 4; i++){
             z = (int16_t)Y1[i];
             z *= weights2_read(i,j);
             z /= 255;
@@ -4785,17 +4785,17 @@ void ai_propagate(int8_t incentive){
         S[choice] = 255u;
     }
 
-    for(uint8_t j = 0; j < 7; j++){
+    for(uint8_t j = 0; j < 4; j++){
         DY1[j] = 0;
         DB1[j] = 0;
-        for(uint8_t i = 0; i < 16; i++){
+        for(uint8_t i = 0; i < 8; i++){
             DW1[i][j] = 0;
         }
     }
     for(uint8_t j = 0; j < 4; j++){
         DY2[j] = (int8_t)(((int16_t)Y2[j] - (int16_t)S[j])>>1);
         DB2[j] = 0;
-        for(uint8_t i = 0; i < 7; i++){
+        for(uint8_t i = 0; i < 4; i++){
             DW2[i][j] = 0;
         }
     }
@@ -4807,31 +4807,31 @@ void ai_propagate(int8_t incentive){
         dz /= 255;
 
         DB2[j] += (int8_t)dz;
-        for(uint8_t i = 0; i < 7; i++){
+        for(uint8_t i = 0; i < 4; i++){
             DY1[i] += (int8_t)((dz*(int16_t)weights2_read(i, j))/127);
             DW2[i][j] += (int8_t)(((dz*(int16_t)Y1[i])/127)>>1);
         }
     }
-    for(uint8_t j = 0; j < 7; j++){
+    for(uint8_t j = 0; j < 4; j++){
         dz = (int16_t)de_sigmoid(Z1[j]);
         dz *= (int16_t)DY1[j];
         dz /= 255;
 
         DB1[j] += (int8_t)dz;
-        for(uint8_t i = 0; i < 16; i++){
+        for(uint8_t i = 0; i < 8; i++){
             DW1[i][j] += (int8_t)(((dz*(int16_t)Y0[i])/127)>>1);
         }
     }
 
     for(uint8_t j = 0; j < 4; j++){
         biases2_write(j, biases2_read(j) - DB2[j]);
-        for(uint8_t i = 0; i < 7; i++){
+        for(uint8_t i = 0; i < 4; i++){
             weights2_write(i,j, weights2_read(i,j) - DW2[i][j]);
         }
     }
-    for(uint8_t j = 0; j < 7; j++){
+    for(uint8_t j = 0; j < 4; j++){
         biases1_write(j, biases1_read(j) - DB1[j]);
-        for(uint8_t i = 0; i < 16; i++){
+        for(uint8_t i = 0; i < 8; i++){
             weights1_write(i,j, weights1_read(i,j) - DW1[i][j]);
         }
     }
@@ -4841,7 +4841,7 @@ void printAI(){
     for(uint8_t j = 0; j < 4; j++){
         EUSART_Write(Y2[j]);
         EUSART_Write((uint8_t)biases2_read(j));
-        for(uint8_t i = 0; i < 7; i++){
+        for(uint8_t i = 0; i < 4; i++){
             EUSART_Write((uint8_t)weights2_read(i,j));
         }
     }

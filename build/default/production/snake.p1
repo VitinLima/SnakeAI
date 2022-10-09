@@ -476,237 +476,246 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6749
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6749: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"19 ./snake.h
-[; ;./snake.h: 19:     uint8_t field[64];
-[v _field `uc ~T0 @X0 -> 64 `i e ]
-"20
-[; ;./snake.h: 20:     uint8_t mapping[8];
+"29 ./snake.h
+[; ;./snake.h: 29:     uint8_t field[4*4];
+[v _field `uc ~T0 @X0 -> 16 `i e ]
+"30
+[; ;./snake.h: 30:     uint8_t mapping[8];
 [v _mapping `uc ~T0 @X0 -> 8 `i e ]
-"21
-[; ;./snake.h: 21:     uint8_t snakeSize;
+"31
+[; ;./snake.h: 31:     uint8_t snakeSize;
 [v _snakeSize `uc ~T0 @X0 1 e ]
 "14 ./ledMatrix.h
 [; ;./ledMatrix.h: 14: uint8_t matrix[8];
 [v _matrix `uc ~T0 @X0 -> 8 `i e ]
-"11 snake.c
-[; ;snake.c: 11: uint8_t field[64];
-[v _field `uc ~T0 @X0 -> 64 `i e ]
-"12
-[; ;snake.c: 12: uint8_t mapping[8] = {55, 63, 7, 8, 9, 1, 57, 56};
+"6 snake.c
+[; ;snake.c: 6: uint8_t field[4*4];
+[v _field `uc ~T0 @X0 -> 16 `i e ]
+"7
+[; ;snake.c: 7: uint8_t mapping[8] = {
 [v _mapping `uc ~T0 @X0 -> 8 `i e ]
 [i _mapping
 :U ..
--> -> 55 `i `uc
--> -> 63 `i `uc
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
+-> - - * -> 4 `i -> 4 `i -> 4 `i -> 1 `i `uc
+-> - * -> 4 `i -> 4 `i -> 1 `i `uc
+-> - -> 4 `i -> 1 `i `uc
+-> -> 4 `i `uc
+-> + -> 4 `i -> 1 `i `uc
 -> -> 1 `i `uc
--> -> 57 `i `uc
--> -> 56 `i `uc
+-> + - * -> 4 `i -> 4 `i -> 4 `i -> 1 `i `uc
+-> - * -> 4 `i -> 4 `i -> 4 `i `uc
 ..
 ]
-"13
-[; ;snake.c: 13: uint8_t snakeSize;
+"16
+[; ;snake.c: 16: uint8_t snakeSize;
 [v _snakeSize `uc ~T0 @X0 1 e ]
-"14
-[; ;snake.c: 14: uint8_t headPosition;
-[v _headPosition `uc ~T0 @X0 1 e ]
-"15
-[; ;snake.c: 15: uint8_t foodPosition;
-[v _foodPosition `uc ~T0 @X0 1 e ]
 "17
-[; ;snake.c: 17: void snake_initiate(){
+[; ;snake.c: 17: uint8_t headPosition;
+[v _headPosition `uc ~T0 @X0 1 e ]
+"18
+[; ;snake.c: 18: uint8_t foodPosition;
+[v _foodPosition `uc ~T0 @X0 1 e ]
+"19
+[; ;snake.c: 19: uint8_t remainingMoves;
+[v _remainingMoves `uc ~T0 @X0 1 e ]
+"21
+[; ;snake.c: 21: void snake_initiate(){
 [v _snake_initiate `(v ~T0 @X0 1 ef ]
 {
 [e :U _snake_initiate ]
 [f ]
-"18
-[; ;snake.c: 18:     for(uint8_t i = 0; i < 64; i++){
+"22
+[; ;snake.c: 22:     for(uint8_t i = 0; i < 4*4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 64 `i 359  ]
+[e $ < -> _i `i * -> 4 `i -> 4 `i 359  ]
 [e $U 360  ]
 [e :U 359 ]
 {
-"19
-[; ;snake.c: 19:         field[i] = 0;
+"23
+[; ;snake.c: 23:         field[i] = 0;
 [e = *U + &U _field * -> _i `ux -> -> # *U &U _field `ui `ux -> -> 0 `i `uc ]
-"20
-[; ;snake.c: 20:     }
+"24
+[; ;snake.c: 24:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 64 `i 359  ]
+[e $ < -> _i `i * -> 4 `i -> 4 `i 359  ]
 [e :U 360 ]
 }
-"21
-[; ;snake.c: 21:     headPosition = ((uint8_t)rand())&0x3f;
-[e = _headPosition -> & -> -> ( _rand ..  `uc `i -> 63 `i `uc ]
-"22
-[; ;snake.c: 22:     foodPosition = ((uint8_t)rand())&0x3f;
-[e = _foodPosition -> & -> -> ( _rand ..  `uc `i -> 63 `i `uc ]
-"23
-[; ;snake.c: 23:     snakeSize = 1;
-[e = _snakeSize -> -> 1 `i `uc ]
-"24
-[; ;snake.c: 24:     field[headPosition] = snakeSize;
-[e = *U + &U _field * -> _headPosition `ux -> -> # *U &U _field `ui `ux _snakeSize ]
 "25
-[; ;snake.c: 25: }
+[; ;snake.c: 25:     headPosition = ((uint8_t)rand())%4*4;
+[e = _headPosition -> * % -> -> ( _rand ..  `uc `i -> 4 `i -> 4 `i `uc ]
+"26
+[; ;snake.c: 26:     foodPosition = ((uint8_t)rand())%4*4;
+[e = _foodPosition -> * % -> -> ( _rand ..  `uc `i -> 4 `i -> 4 `i `uc ]
+"27
+[; ;snake.c: 27:     snakeSize = 1;
+[e = _snakeSize -> -> 1 `i `uc ]
+"28
+[; ;snake.c: 28:     remainingMoves = 40;
+[e = _remainingMoves -> -> 40 `i `uc ]
+"29
+[; ;snake.c: 29:     field[headPosition] = snakeSize;
+[e = *U + &U _field * -> _headPosition `ux -> -> # *U &U _field `ui `ux _snakeSize ]
+"30
+[; ;snake.c: 30: }
 [e :UE 358 ]
 }
-"27
-[; ;snake.c: 27: int8_t snake_move(uint8_t direction){
+"32
+[; ;snake.c: 32: int8_t snake_move(uint8_t direction){
 [v _snake_move `(c ~T0 @X0 1 ef1`uc ]
 {
 [e :U _snake_move ]
 [v _direction `uc ~T0 @X0 1 r1 ]
 [f ]
-"28
-[; ;snake.c: 28:     for(uint8_t i = 0; i < 64; i++){
+"33
+[; ;snake.c: 33:     remainingMoves--;
+[e -- _remainingMoves -> -> 1 `i `uc ]
+"34
+[; ;snake.c: 34:     for(uint8_t i = 0; i < 4*4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 64 `i 363  ]
+[e $ < -> _i `i * -> 4 `i -> 4 `i 363  ]
 [e $U 364  ]
 [e :U 363 ]
 {
-"29
-[; ;snake.c: 29:         if(field[i] > 0){
+"35
+[; ;snake.c: 35:         if(field[i] > 0){
 [e $ ! > -> *U + &U _field * -> _i `ux -> -> # *U &U _field `ui `ux `i -> 0 `i 366  ]
 {
-"30
-[; ;snake.c: 30:             field[i]--;
+"36
+[; ;snake.c: 36:             field[i]--;
 [e -- *U + &U _field * -> _i `ux -> -> # *U &U _field `ui `ux -> -> 1 `i `uc ]
-"31
-[; ;snake.c: 31:         }
+"37
+[; ;snake.c: 37:         }
 }
 [e :U 366 ]
-"32
-[; ;snake.c: 32:     }
+"38
+[; ;snake.c: 38:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 64 `i 363  ]
+[e $ < -> _i `i * -> 4 `i -> 4 `i 363  ]
 [e :U 364 ]
 }
-"33
-[; ;snake.c: 33:     int8_t incentive = 0;
+"39
+[; ;snake.c: 39:     int8_t incentive = 0;
 [v _incentive `c ~T0 @X0 1 a ]
 [e = _incentive -> -> 0 `i `c ]
-"34
-[; ;snake.c: 34:     direction &= 0x03;
+"40
+[; ;snake.c: 40:     direction &= 0x03;
 [e =& _direction -> -> 3 `i `uc ]
-"35
-[; ;snake.c: 35:     switch(direction){
+"41
+[; ;snake.c: 41:     switch(direction){
 [e $U 368  ]
 {
-"36
-[; ;snake.c: 36:         case 0:
+"42
+[; ;snake.c: 42:         case 0:
 [e :U 369 ]
-"37
-[; ;snake.c: 37:             if((headPosition&0x07) == 0){
-[e $ ! == & -> _headPosition `i -> 7 `i -> 0 `i 370  ]
+"43
+[; ;snake.c: 43:             if((headPosition%4) == 0){
+[e $ ! == % -> _headPosition `i -> 4 `i -> 0 `i 370  ]
 {
-"38
-[; ;snake.c: 38:                 incentive = -1;
+"44
+[; ;snake.c: 44:                 incentive = -1;
 [e = _incentive -> -U -> 1 `i `c ]
-"39
-[; ;snake.c: 39:             } else{
+"45
+[; ;snake.c: 45:             } else{
 }
 [e $U 371  ]
 [e :U 370 ]
 {
-"40
-[; ;snake.c: 40:                 headPosition--;
+"46
+[; ;snake.c: 46:                 headPosition--;
 [e -- _headPosition -> -> 1 `i `uc ]
-"41
-[; ;snake.c: 41:             }
+"47
+[; ;snake.c: 47:             }
 }
 [e :U 371 ]
-"42
-[; ;snake.c: 42:             break;
+"48
+[; ;snake.c: 48:             break;
 [e $U 367  ]
-"43
-[; ;snake.c: 43:         case 1:
+"49
+[; ;snake.c: 49:         case 1:
 [e :U 372 ]
-"44
-[; ;snake.c: 44:             if((headPosition&0x07) == 7){
-[e $ ! == & -> _headPosition `i -> 7 `i -> 7 `i 373  ]
+"50
+[; ;snake.c: 50:             if((headPosition%4) == 7){
+[e $ ! == % -> _headPosition `i -> 4 `i -> 7 `i 373  ]
 {
-"45
-[; ;snake.c: 45:                 incentive = -1;
+"51
+[; ;snake.c: 51:                 incentive = -1;
 [e = _incentive -> -U -> 1 `i `c ]
-"46
-[; ;snake.c: 46:             } else{
+"52
+[; ;snake.c: 52:             } else{
 }
 [e $U 374  ]
 [e :U 373 ]
 {
-"47
-[; ;snake.c: 47:                 headPosition++;
+"53
+[; ;snake.c: 53:                 headPosition++;
 [e ++ _headPosition -> -> 1 `i `uc ]
-"48
-[; ;snake.c: 48:             }
+"54
+[; ;snake.c: 54:             }
 }
 [e :U 374 ]
-"49
-[; ;snake.c: 49:             break;
+"55
+[; ;snake.c: 55:             break;
 [e $U 367  ]
-"50
-[; ;snake.c: 50:         case 2:
+"56
+[; ;snake.c: 56:         case 2:
 [e :U 375 ]
-"51
-[; ;snake.c: 51:             if((headPosition>>3) == 0){
-[e $ ! == >> -> _headPosition `i -> 3 `i -> 0 `i 376  ]
+"57
+[; ;snake.c: 57:             if((headPosition/4) == 0){
+[e $ ! == / -> _headPosition `i -> 4 `i -> 0 `i 376  ]
 {
-"52
-[; ;snake.c: 52:                 incentive = -1;
+"58
+[; ;snake.c: 58:                 incentive = -1;
 [e = _incentive -> -U -> 1 `i `c ]
-"53
-[; ;snake.c: 53:             } else{
+"59
+[; ;snake.c: 59:             } else{
 }
 [e $U 377  ]
 [e :U 376 ]
 {
-"54
-[; ;snake.c: 54:                 headPosition -= 8;
+"60
+[; ;snake.c: 60:                 headPosition -= 8;
 [e =- _headPosition -> -> 8 `i `uc ]
-"55
-[; ;snake.c: 55:             }
+"61
+[; ;snake.c: 61:             }
 }
 [e :U 377 ]
-"56
-[; ;snake.c: 56:             break;
+"62
+[; ;snake.c: 62:             break;
 [e $U 367  ]
-"57
-[; ;snake.c: 57:         case 3:
+"63
+[; ;snake.c: 63:         case 3:
 [e :U 378 ]
-"58
-[; ;snake.c: 58:             if((headPosition>>3) == 7){
-[e $ ! == >> -> _headPosition `i -> 3 `i -> 7 `i 379  ]
+"64
+[; ;snake.c: 64:             if((headPosition/4) == 7){
+[e $ ! == / -> _headPosition `i -> 4 `i -> 7 `i 379  ]
 {
-"59
-[; ;snake.c: 59:                 incentive = -1;
+"65
+[; ;snake.c: 65:                 incentive = -1;
 [e = _incentive -> -U -> 1 `i `c ]
-"60
-[; ;snake.c: 60:             } else{
+"66
+[; ;snake.c: 66:             } else{
 }
 [e $U 380  ]
 [e :U 379 ]
 {
-"61
-[; ;snake.c: 61:                 headPosition += 8;
+"67
+[; ;snake.c: 67:                 headPosition += 8;
 [e =+ _headPosition -> -> 8 `i `uc ]
-"62
-[; ;snake.c: 62:             }
+"68
+[; ;snake.c: 68:             }
 }
 [e :U 380 ]
-"63
-[; ;snake.c: 63:             break;
+"69
+[; ;snake.c: 69:             break;
 [e $U 367  ]
-"64
-[; ;snake.c: 64:     }
+"70
+[; ;snake.c: 70:     }
 }
 [e $U 367  ]
 [e :U 368 ]
@@ -716,283 +725,325 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 378
  367 ]
 [e :U 367 ]
-"65
-[; ;snake.c: 65:     if(incentive == -1){
+"71
+[; ;snake.c: 71:     if(incentive == -1){
 [e $ ! == -> _incentive `i -U -> 1 `i 381  ]
 {
-"66
-[; ;snake.c: 66:         snake_initiate();
+"72
+[; ;snake.c: 72:         snake_initiate();
 [e ( _snake_initiate ..  ]
-"67
-[; ;snake.c: 67:     } else if(field[headPosition] > 0){
+"73
+[; ;snake.c: 73:     } else if(field[headPosition] > 0){
 }
 [e $U 382  ]
 [e :U 381 ]
 [e $ ! > -> *U + &U _field * -> _headPosition `ux -> -> # *U &U _field `ui `ux `i -> 0 `i 383  ]
 {
-"68
-[; ;snake.c: 68:         incentive = -1;
+"74
+[; ;snake.c: 74:         incentive = -1;
 [e = _incentive -> -U -> 1 `i `c ]
-"69
-[; ;snake.c: 69:         snake_initiate();
+"75
+[; ;snake.c: 75:         snake_initiate();
 [e ( _snake_initiate ..  ]
-"70
-[; ;snake.c: 70:     } else{
+"76
+[; ;snake.c: 76:     } else{
 }
 [e $U 384  ]
 [e :U 383 ]
 {
-"71
-[; ;snake.c: 71:         if(headPosition == foodPosition){
+"77
+[; ;snake.c: 77:         if(headPosition == foodPosition){
 [e $ ! == -> _headPosition `i -> _foodPosition `i 385  ]
 {
-"72
-[; ;snake.c: 72:             incentive = 1;
+"78
+[; ;snake.c: 78:             remainingMoves = 40;
+[e = _remainingMoves -> -> 40 `i `uc ]
+"79
+[; ;snake.c: 79:             incentive = 1;
 [e = _incentive -> -> 1 `i `c ]
-"73
-[; ;snake.c: 73:             snakeSize++;
+"80
+[; ;snake.c: 80:             snakeSize++;
 [e ++ _snakeSize -> -> 1 `i `uc ]
-"74
-[; ;snake.c: 74:             do{
+"81
+[; ;snake.c: 81:             do{
 [e :U 388 ]
 {
-"75
-[; ;snake.c: 75:                 foodPosition = ((uint8_t)rand())&0x1f;
-[e = _foodPosition -> & -> -> ( _rand ..  `uc `i -> 31 `i `uc ]
-"76
-[; ;snake.c: 76:             }while(field[foodPosition] > 0);
+"82
+[; ;snake.c: 82:                 foodPosition = ((uint8_t)rand())%4*4;
+[e = _foodPosition -> * % -> -> ( _rand ..  `uc `i -> 4 `i -> 4 `i `uc ]
+"83
+[; ;snake.c: 83:             }while(field[foodPosition] > 0);
 }
 [e $ > -> *U + &U _field * -> _foodPosition `ux -> -> # *U &U _field `ui `ux `i -> 0 `i 388  ]
 [e :U 387 ]
-"77
-[; ;snake.c: 77:         }
+"84
+[; ;snake.c: 84:         }
 }
 [e :U 385 ]
-"78
-[; ;snake.c: 78:         field[headPosition] = snakeSize;
+"85
+[; ;snake.c: 85:         field[headPosition] = snakeSize;
 [e = *U + &U _field * -> _headPosition `ux -> -> # *U &U _field `ui `ux _snakeSize ]
-"79
-[; ;snake.c: 79:     }
+"86
+[; ;snake.c: 86:     }
 }
 [e :U 384 ]
 [e :U 382 ]
-"80
-[; ;snake.c: 80:     return incentive;
+"87
+[; ;snake.c: 87:     if(remainingMoves == 0){
+[e $ ! == -> _remainingMoves `i -> 0 `i 389  ]
+{
+"88
+[; ;snake.c: 88:         incentive = -1;
+[e = _incentive -> -U -> 1 `i `c ]
+"89
+[; ;snake.c: 89:         snake_initiate();
+[e ( _snake_initiate ..  ]
+"90
+[; ;snake.c: 90:     }
+}
+[e :U 389 ]
+"91
+[; ;snake.c: 91:     return incentive;
 [e ) _incentive ]
 [e $UE 362  ]
-"81
-[; ;snake.c: 81: }
+"92
+[; ;snake.c: 92: }
 [e :UE 362 ]
 }
-"83
-[; ;snake.c: 83: uint8_t* snake_getField(){
+"94
+[; ;snake.c: 94: uint8_t* snake_getField(){
 [v _snake_getField `(*uc ~T0 @X0 1 ef ]
 {
 [e :U _snake_getField ]
 [f ]
-"84
-[; ;snake.c: 84:     return field;
+"95
+[; ;snake.c: 95:     return field;
 [e ) &U _field ]
-[e $UE 389  ]
-"85
-[; ;snake.c: 85: }
-[e :UE 389 ]
+[e $UE 390  ]
+"96
+[; ;snake.c: 96: }
+[e :UE 390 ]
 }
-"87
-[; ;snake.c: 87: void snake_getSurroundings(uint8_t* surroundings){
+"98
+[; ;snake.c: 98: void snake_getSurroundings(uint8_t* surroundings){
 [v _snake_getSurroundings `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _snake_getSurroundings ]
 [v _surroundings `*uc ~T0 @X0 1 r1 ]
 [f ]
-"88
-[; ;snake.c: 88:     for(uint8_t i = 0; i < 16; i++){
+"99
+[; ;snake.c: 99:     for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 391  ]
-[e $U 392  ]
-[e :U 391 ]
+[e $ < -> _i `i -> 8 `i 392  ]
+[e $U 393  ]
+[e :U 392 ]
 {
-"89
-[; ;snake.c: 89:         surroundings[i] = 0;
+"100
+[; ;snake.c: 100:         surroundings[i] = 0;
 [e = *U + _surroundings * -> _i `ux -> -> # *U _surroundings `ui `ux -> -> 0 `i `uc ]
-"90
-[; ;snake.c: 90:     }
+"101
+[; ;snake.c: 101:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 391  ]
-[e :U 392 ]
+[e $ < -> _i `i -> 8 `i 392  ]
+[e :U 393 ]
 }
-"91
-[; ;snake.c: 91:     if((headPosition&0x07) == 0){
-[e $ ! == & -> _headPosition `i -> 7 `i -> 0 `i 394  ]
-{
-"92
-[; ;snake.c: 92:         surroundings[0] = 1;
-[e = *U + _surroundings * -> -> 0 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"93
-[; ;snake.c: 93:         surroundings[1] = 1;
-[e = *U + _surroundings * -> -> 1 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"94
-[; ;snake.c: 94:         surroundings[2] = 1;
-[e = *U + _surroundings * -> -> 2 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"95
-[; ;snake.c: 95:     } else if((headPosition&0x07) == 7){
-}
-[e $U 395  ]
-[e :U 394 ]
-[e $ ! == & -> _headPosition `i -> 7 `i -> 7 `i 396  ]
-{
-"96
-[; ;snake.c: 96:         surroundings[4] = 1;
-[e = *U + _surroundings * -> -> 4 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"97
-[; ;snake.c: 97:         surroundings[5] = 1;
-[e = *U + _surroundings * -> -> 5 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"98
-[; ;snake.c: 98:         surroundings[6] = 1;
-[e = *U + _surroundings * -> -> 6 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"99
-[; ;snake.c: 99:     }
-}
-[e :U 396 ]
-[e :U 395 ]
-"100
-[; ;snake.c: 100:     if((headPosition>>3) == 0){
-[e $ ! == >> -> _headPosition `i -> 3 `i -> 0 `i 397  ]
-{
-"101
-[; ;snake.c: 101:         surroundings[6] = 1;
-[e = *U + _surroundings * -> -> 6 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
 "102
-[; ;snake.c: 102:         surroundings[7] = 1;
-[e = *U + _surroundings * -> -> 7 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+[; ;snake.c: 102:     uint8_t lh = headPosition%4;
+[v _lh `uc ~T0 @X0 1 a ]
+[e = _lh -> % -> _headPosition `i -> 4 `i `uc ]
 "103
-[; ;snake.c: 103:         surroundings[0] = 1;
-[e = *U + _surroundings * -> -> 0 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+[; ;snake.c: 103:     uint8_t ch = headPosition/4;
+[v _ch `uc ~T0 @X0 1 a ]
+[e = _ch -> / -> _headPosition `i -> 4 `i `uc ]
 "104
-[; ;snake.c: 104:     } else if((headPosition>>3) == 7){
-}
-[e $U 398  ]
-[e :U 397 ]
-[e $ ! == >> -> _headPosition `i -> 3 `i -> 7 `i 399  ]
-{
+[; ;snake.c: 104:     uint8_t lf = foodPosition%4;
+[v _lf `uc ~T0 @X0 1 a ]
+[e = _lf -> % -> _foodPosition `i -> 4 `i `uc ]
 "105
-[; ;snake.c: 105:         surroundings[2] = 1;
-[e = *U + _surroundings * -> -> 2 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+[; ;snake.c: 105:     uint8_t cf = foodPosition/4;
+[v _cf `uc ~T0 @X0 1 a ]
+[e = _cf -> / -> _foodPosition `i -> 4 `i `uc ]
 "106
-[; ;snake.c: 106:         surroundings[3] = 1;
-[e = *U + _surroundings * -> -> 3 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+[; ;snake.c: 106:     if(lh == 0){
+[e $ ! == -> _lh `i -> 0 `i 395  ]
+{
 "107
-[; ;snake.c: 107:         surroundings[4] = 1;
-[e = *U + _surroundings * -> -> 4 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+[; ;snake.c: 107:         surroundings[0] = 1;
+[e = *U + _surroundings * -> -> 0 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
 "108
-[; ;snake.c: 108:     }
+[; ;snake.c: 108:     } else if(lh == 7){
 }
-[e :U 399 ]
-[e :U 398 ]
+[e $U 396  ]
+[e :U 395 ]
+[e $ ! == -> _lh `i -> 7 `i 397  ]
+{
 "109
-[; ;snake.c: 109:     uint8_t p;
-[v _p `uc ~T0 @X0 1 a ]
+[; ;snake.c: 109:         surroundings[1] = 1;
+[e = *U + _surroundings * -> -> 1 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
 "110
-[; ;snake.c: 110:     for(uint8_t i = 0; i < 8; i++){
+[; ;snake.c: 110:     }
+}
+[e :U 397 ]
+[e :U 396 ]
+"111
+[; ;snake.c: 111:     if(ch == 0){
+[e $ ! == -> _ch `i -> 0 `i 398  ]
+{
+"112
+[; ;snake.c: 112:         surroundings[2] = 1;
+[e = *U + _surroundings * -> -> 2 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+"113
+[; ;snake.c: 113:     } else if(ch == 7){
+}
+[e $U 399  ]
+[e :U 398 ]
+[e $ ! == -> _ch `i -> 7 `i 400  ]
+{
+"114
+[; ;snake.c: 114:         surroundings[3] = 1;
+[e = *U + _surroundings * -> -> 3 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+"115
+[; ;snake.c: 115:     }
+}
+[e :U 400 ]
+[e :U 399 ]
+"116
+[; ;snake.c: 116:     uint8_t p;
+[v _p `uc ~T0 @X0 1 a ]
+"117
+[; ;snake.c: 117:     for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 400  ]
-[e $U 401  ]
-[e :U 400 ]
+[e $ < -> _i `i -> 4 `i 401  ]
+[e $U 402  ]
+[e :U 401 ]
 {
-"111
-[; ;snake.c: 111:         p = (headPosition+mapping[i])&0x3f;
-[e = _p -> & + -> _headPosition `i -> *U + &U _mapping * -> _i `ux -> -> # *U &U _mapping `ui `ux `i -> 63 `i `uc ]
-"112
-[; ;snake.c: 112:         if(p==foodPosition){
-[e $ ! == -> _p `i -> _foodPosition `i 403  ]
-{
-"113
-[; ;snake.c: 113:             surroundings[i+8] = 1;
-[e = *U + _surroundings * -> + -> _i `i -> 8 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
-"114
-[; ;snake.c: 114:         }
-}
-[e :U 403 ]
-"115
-[; ;snake.c: 115:         if(field[p] > 0){
+"118
+[; ;snake.c: 118:         p = (headPosition+mapping[i])%4*4;
+[e = _p -> * % + -> _headPosition `i -> *U + &U _mapping * -> _i `ux -> -> # *U &U _mapping `ui `ux `i -> 4 `i -> 4 `i `uc ]
+"119
+[; ;snake.c: 119:         if(field[p] > 0){
 [e $ ! > -> *U + &U _field * -> _p `ux -> -> # *U &U _field `ui `ux `i -> 0 `i 404  ]
 {
-"116
-[; ;snake.c: 116:             surroundings[i] = 1;
+"120
+[; ;snake.c: 120:             surroundings[i] = 1;
 [e = *U + _surroundings * -> _i `ux -> -> # *U _surroundings `ui `ux -> -> 1 `i `uc ]
-"117
-[; ;snake.c: 117:         }
+"121
+[; ;snake.c: 121:         }
 }
 [e :U 404 ]
-"118
-[; ;snake.c: 118:     }
+"122
+[; ;snake.c: 122:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 400  ]
-[e :U 401 ]
+[e $ < -> _i `i -> 4 `i 401  ]
+[e :U 402 ]
 }
-"119
-[; ;snake.c: 119: }
-[e :UE 390 ]
+"123
+[; ;snake.c: 123:     if(lf<lh){
+[e $ ! < -> _lf `i -> _lh `i 405  ]
+{
+"124
+[; ;snake.c: 124:         surroundings[4] = 1;
+[e = *U + _surroundings * -> -> 4 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+"125
+[; ;snake.c: 125:     } else if(lf>lh){
 }
-"121
-[; ;snake.c: 121: uint8_t snake_getHeadPosition(){
+[e $U 406  ]
+[e :U 405 ]
+[e $ ! > -> _lf `i -> _lh `i 407  ]
+{
+"126
+[; ;snake.c: 126:         surroundings[5] = 1;
+[e = *U + _surroundings * -> -> 5 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+"127
+[; ;snake.c: 127:     }
+}
+[e :U 407 ]
+[e :U 406 ]
+"128
+[; ;snake.c: 128:     if(cf<ch){
+[e $ ! < -> _cf `i -> _ch `i 408  ]
+{
+"129
+[; ;snake.c: 129:         surroundings[6] = 1;
+[e = *U + _surroundings * -> -> 6 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+"130
+[; ;snake.c: 130:     } else if(cf>ch){
+}
+[e $U 409  ]
+[e :U 408 ]
+[e $ ! > -> _cf `i -> _ch `i 410  ]
+{
+"131
+[; ;snake.c: 131:         surroundings[7] = 1;
+[e = *U + _surroundings * -> -> 7 `i `x -> -> # *U _surroundings `i `x -> -> 1 `i `uc ]
+"132
+[; ;snake.c: 132:     }
+}
+[e :U 410 ]
+[e :U 409 ]
+"133
+[; ;snake.c: 133: }
+[e :UE 391 ]
+}
+"135
+[; ;snake.c: 135: uint8_t snake_getHeadPosition(){
 [v _snake_getHeadPosition `(uc ~T0 @X0 1 ef ]
 {
 [e :U _snake_getHeadPosition ]
 [f ]
-"122
-[; ;snake.c: 122:     return headPosition;
+"136
+[; ;snake.c: 136:     return headPosition;
 [e ) _headPosition ]
-[e $UE 405  ]
-"123
-[; ;snake.c: 123: }
-[e :UE 405 ]
+[e $UE 411  ]
+"137
+[; ;snake.c: 137: }
+[e :UE 411 ]
 }
-"124
-[; ;snake.c: 124: void snake_setHeadPosition(uint8_t pos){
+"138
+[; ;snake.c: 138: void snake_setHeadPosition(uint8_t pos){
 [v _snake_setHeadPosition `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _snake_setHeadPosition ]
 [v _pos `uc ~T0 @X0 1 r1 ]
 [f ]
-"125
-[; ;snake.c: 125:     headPosition = pos;
+"139
+[; ;snake.c: 139:     headPosition = pos;
 [e = _headPosition _pos ]
-"126
-[; ;snake.c: 126: }
-[e :UE 406 ]
+"140
+[; ;snake.c: 140: }
+[e :UE 412 ]
 }
-"128
-[; ;snake.c: 128: uint8_t snake_getFoodPosition(){
+"142
+[; ;snake.c: 142: uint8_t snake_getFoodPosition(){
 [v _snake_getFoodPosition `(uc ~T0 @X0 1 ef ]
 {
 [e :U _snake_getFoodPosition ]
 [f ]
-"129
-[; ;snake.c: 129:     return foodPosition;
+"143
+[; ;snake.c: 143:     return foodPosition;
 [e ) _foodPosition ]
-[e $UE 407  ]
-"130
-[; ;snake.c: 130: }
-[e :UE 407 ]
+[e $UE 413  ]
+"144
+[; ;snake.c: 144: }
+[e :UE 413 ]
 }
-"131
-[; ;snake.c: 131: void snake_setFoodPosition(uint8_t pos){
+"145
+[; ;snake.c: 145: void snake_setFoodPosition(uint8_t pos){
 [v _snake_setFoodPosition `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _snake_setFoodPosition ]
 [v _pos `uc ~T0 @X0 1 r1 ]
 [f ]
-"132
-[; ;snake.c: 132:     foodPosition = pos;
+"146
+[; ;snake.c: 146:     foodPosition = pos;
 [e = _foodPosition _pos ]
-"133
-[; ;snake.c: 133: }
-[e :UE 408 ]
+"147
+[; ;snake.c: 147: }
+[e :UE 414 ]
 }

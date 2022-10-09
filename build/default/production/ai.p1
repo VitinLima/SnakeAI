@@ -492,17 +492,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6749: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "28 ./ai.h
-[; ;./ai.h: 28:     uint8_t Y0[16];
-[v _Y0 `uc ~T0 @X0 -> 16 `i e ]
+[; ;./ai.h: 28:     uint8_t Y0[8];
+[v _Y0 `uc ~T0 @X0 -> 8 `i e ]
 "29
-[; ;./ai.h: 29:     uint8_t Y1[7];
-[v _Y1 `uc ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 29:     uint8_t Y1[4];
+[v _Y1 `uc ~T0 @X0 -> 4 `i e ]
 "30
 [; ;./ai.h: 30:     uint8_t Y2[4];
 [v _Y2 `uc ~T0 @X0 -> 4 `i e ]
 "31
-[; ;./ai.h: 31:     int8_t Z1[7];
-[v _Z1 `c ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 31:     int8_t Z1[4];
+[v _Z1 `c ~T0 @X0 -> 4 `i e ]
 "32
 [; ;./ai.h: 32:     int8_t Z2[4];
 [v _Z2 `c ~T0 @X0 -> 4 `i e ]
@@ -510,19 +510,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ai.h: 33:     int8_t DY2[4];
 [v _DY2 `c ~T0 @X0 -> 4 `i e ]
 "34
-[; ;./ai.h: 34:     int8_t DY1[7];
-[v _DY1 `c ~T0 @X0 -> 7 `i e ]
-[v F2877 `c ~T0 @X0 -> 7 `i t ]
+[; ;./ai.h: 34:     int8_t DY1[4];
+[v _DY1 `c ~T0 @X0 -> 4 `i e ]
+[v F2877 `c ~T0 @X0 -> 4 `i t ]
 "35
-[; ;./ai.h: 35:     int8_t DW1[16][7];
-[v _DW1 `F2877 ~T0 @X0 -> 16 `i e ]
+[; ;./ai.h: 35:     int8_t DW1[8][4];
+[v _DW1 `F2877 ~T0 @X0 -> 8 `i e ]
 "36
-[; ;./ai.h: 36:     int8_t DB1[7];
-[v _DB1 `c ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 36:     int8_t DB1[4];
+[v _DB1 `c ~T0 @X0 -> 4 `i e ]
 [v F2880 `c ~T0 @X0 -> 4 `i t ]
 "37
-[; ;./ai.h: 37:     int8_t DW2[7][4];
-[v _DW2 `F2880 ~T0 @X0 -> 7 `i e ]
+[; ;./ai.h: 37:     int8_t DW2[4][4];
+[v _DW2 `F2880 ~T0 @X0 -> 4 `i e ]
 "38
 [; ;./ai.h: 38:     int8_t DB2[4];
 [v _DB2 `c ~T0 @X0 -> 4 `i e ]
@@ -576,17 +576,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "6 ai.c
-[; ;ai.c: 6: uint8_t Y0[16];
-[v _Y0 `uc ~T0 @X0 -> 16 `i e ]
+[; ;ai.c: 6: uint8_t Y0[8];
+[v _Y0 `uc ~T0 @X0 -> 8 `i e ]
 "7
-[; ;ai.c: 7: uint8_t Y1[7];
-[v _Y1 `uc ~T0 @X0 -> 7 `i e ]
+[; ;ai.c: 7: uint8_t Y1[4];
+[v _Y1 `uc ~T0 @X0 -> 4 `i e ]
 "8
 [; ;ai.c: 8: uint8_t Y2[4];
 [v _Y2 `uc ~T0 @X0 -> 4 `i e ]
 "9
-[; ;ai.c: 9: int8_t Z1[7];
-[v _Z1 `c ~T0 @X0 -> 7 `i e ]
+[; ;ai.c: 9: int8_t Z1[4];
+[v _Z1 `c ~T0 @X0 -> 4 `i e ]
 "10
 [; ;ai.c: 10: int8_t Z2[4];
 [v _Z2 `c ~T0 @X0 -> 4 `i e ]
@@ -594,19 +594,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 11: int8_t DY2[4];
 [v _DY2 `c ~T0 @X0 -> 4 `i e ]
 "12
-[; ;ai.c: 12: int8_t DY1[7];
-[v _DY1 `c ~T0 @X0 -> 7 `i e ]
-[v F2940 `c ~T0 @X0 -> 7 `i t ]
+[; ;ai.c: 12: int8_t DY1[4];
+[v _DY1 `c ~T0 @X0 -> 4 `i e ]
+[v F2940 `c ~T0 @X0 -> 4 `i t ]
 "13
-[; ;ai.c: 13: int8_t DW1[16][7];
-[v _DW1 `F2940 ~T0 @X0 -> 16 `i e ]
+[; ;ai.c: 13: int8_t DW1[8][4];
+[v _DW1 `F2940 ~T0 @X0 -> 8 `i e ]
 "14
-[; ;ai.c: 14: int8_t DB1[7];
-[v _DB1 `c ~T0 @X0 -> 7 `i e ]
+[; ;ai.c: 14: int8_t DB1[4];
+[v _DB1 `c ~T0 @X0 -> 4 `i e ]
 [v F2943 `c ~T0 @X0 -> 4 `i t ]
 "15
-[; ;ai.c: 15: int8_t DW2[7][4];
-[v _DW2 `F2943 ~T0 @X0 -> 7 `i e ]
+[; ;ai.c: 15: int8_t DW2[4][4];
+[v _DW2 `F2943 ~T0 @X0 -> 4 `i e ]
 "16
 [; ;ai.c: 16: int8_t DB2[4];
 [v _DB2 `c ~T0 @X0 -> 4 `i e ]
@@ -623,8 +623,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `c ~T0 @X0 1 r3 ]
 [f ]
 "21
-[; ;ai.c: 21:     eeprom_write(0 + 16*add1 + add2, (unsigned char)val);
-[e ( _eeprom_write (2 , -> + + -> 0 `i * -> 16 `i -> _add1 `i -> _add2 `i `uc -> _val `uc ]
+[; ;ai.c: 21:     eeprom_write(0 + 8*add1 + add2, (unsigned char)val);
+[e ( _eeprom_write (2 , -> + + -> 0 `i * -> 8 `i -> _add1 `i -> _add2 `i `uc -> _val `uc ]
 "22
 [; ;ai.c: 22: }
 [e :UE 358 ]
@@ -638,8 +638,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `c ~T0 @X0 1 r2 ]
 [f ]
 "24
-[; ;ai.c: 24:     eeprom_write(0 +16*7 + add, (unsigned char)val);
-[e ( _eeprom_write (2 , -> + + -> 0 `i * -> 16 `i -> 7 `i -> _add `i `uc -> _val `uc ]
+[; ;ai.c: 24:     eeprom_write(0 +8*4 + add, (unsigned char)val);
+[e ( _eeprom_write (2 , -> + + -> 0 `i * -> 8 `i -> 4 `i -> _add `i `uc -> _val `uc ]
 "25
 [; ;ai.c: 25: }
 [e :UE 359 ]
@@ -654,8 +654,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `c ~T0 @X0 1 r3 ]
 [f ]
 "27
-[; ;ai.c: 27:     eeprom_write(0 +16*7 +7 + 7*add1 + add2, (unsigned char)val);
-[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 7 `i -> _add1 `i -> _add2 `i `uc -> _val `uc ]
+[; ;ai.c: 27:     eeprom_write(0 +8*4 +4 + 4*add1 + add2, (unsigned char)val);
+[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> _add1 `i -> _add2 `i `uc -> _val `uc ]
 "28
 [; ;ai.c: 28: }
 [e :UE 360 ]
@@ -669,8 +669,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `c ~T0 @X0 1 r2 ]
 [f ]
 "30
-[; ;ai.c: 30:     eeprom_write(0 +16*7 +7 +4*7 + add, (unsigned char)val);
-[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> _add `i `uc -> _val `uc ]
+[; ;ai.c: 30:     eeprom_write(0 +8*4 +4 +4*4 + add, (unsigned char)val);
+[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> _add `i `uc -> _val `uc ]
 "31
 [; ;ai.c: 31: }
 [e :UE 361 ]
@@ -684,8 +684,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _add2 `uc ~T0 @X0 1 r2 ]
 [f ]
 "33
-[; ;ai.c: 33:     return (int8_t)eeprom_read(0 + add1*16 + add2);
-[e ) -> ( _eeprom_read (1 -> + + -> 0 `i * -> _add1 `i -> 16 `i -> _add2 `i `uc `c ]
+[; ;ai.c: 33:     return (int8_t)eeprom_read(0 + add1*8 + add2);
+[e ) -> ( _eeprom_read (1 -> + + -> 0 `i * -> _add1 `i -> 8 `i -> _add2 `i `uc `c ]
 [e $UE 362  ]
 "34
 [; ;ai.c: 34: }
@@ -699,8 +699,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _add `uc ~T0 @X0 1 r1 ]
 [f ]
 "36
-[; ;ai.c: 36:     return (int8_t)eeprom_read(0 +16*7 + add);
-[e ) -> ( _eeprom_read (1 -> + + -> 0 `i * -> 16 `i -> 7 `i -> _add `i `uc `c ]
+[; ;ai.c: 36:     return (int8_t)eeprom_read(0 +8*4 + add);
+[e ) -> ( _eeprom_read (1 -> + + -> 0 `i * -> 8 `i -> 4 `i -> _add `i `uc `c ]
 [e $UE 363  ]
 "37
 [; ;ai.c: 37: }
@@ -715,8 +715,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _add2 `uc ~T0 @X0 1 r2 ]
 [f ]
 "39
-[; ;ai.c: 39:     return (int8_t)eeprom_read(0 +16*7 +7 + add1*7 + add2);
-[e ) -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> _add1 `i -> 7 `i -> _add2 `i `uc `c ]
+[; ;ai.c: 39:     return (int8_t)eeprom_read(0 +8*4 +4 + add1*4 + add2);
+[e ) -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> _add1 `i -> 4 `i -> _add2 `i `uc `c ]
 [e $UE 364  ]
 "40
 [; ;ai.c: 40: }
@@ -730,8 +730,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _add `uc ~T0 @X0 1 r1 ]
 [f ]
 "42
-[; ;ai.c: 42:     return (int8_t)eeprom_read(0 +16*7 +7 +4*7 + add);
-[e ) -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> _add `i `uc `c ]
+[; ;ai.c: 42:     return (int8_t)eeprom_read(0 +8*4 +4 +4*4 + add);
+[e ) -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> _add `i `uc `c ]
 [e $UE 365  ]
 "43
 [; ;ai.c: 43: }
@@ -745,9 +745,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `uc ~T0 @X0 1 r1 ]
 [f ]
 "46
-[; ;ai.c: 46:     unsigned char c = eeprom_read(0 +16*7 +7 +4*7 +4);
+[; ;ai.c: 46:     unsigned char c = eeprom_read(0 +8*4 +4 +4*4 +4);
 [v _c `uc ~T0 @X0 1 a ]
-[e = _c ( _eeprom_read (1 -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i `uc ]
+[e = _c ( _eeprom_read (1 -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i `uc ]
 "47
 [; ;ai.c: 47:     if(val){
 [e $ ! != -> _val `i -> 0 `i 367  ]
@@ -769,8 +769,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 368 ]
 "52
-[; ;ai.c: 52:     eeprom_write(0 +16*7 +7 +4*7 +4, c);
-[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i `uc _c ]
+[; ;ai.c: 52:     eeprom_write(0 +8*4 +4 +4*4 +4, c);
+[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i `uc _c ]
 "53
 [; ;ai.c: 53: }
 [e :UE 366 ]
@@ -782,8 +782,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ai_is_ai_initiated_read ]
 [f ]
 "55
-[; ;ai.c: 55:     return (uint8_t)(eeprom_read(0 +16*7 +7 +4*7 +4)&0x01);
-[e ) -> & -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i `uc `i -> 1 `i `uc ]
+[; ;ai.c: 55:     return (uint8_t)(eeprom_read(0 +8*4 +4 +4*4 +4)&0x01);
+[e ) -> & -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i `uc `i -> 1 `i `uc ]
 [e $UE 369  ]
 "56
 [; ;ai.c: 56: }
@@ -797,9 +797,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `uc ~T0 @X0 1 r1 ]
 [f ]
 "58
-[; ;ai.c: 58:     unsigned char c = eeprom_read(0 +16*7 +7 +4*7 +4);
+[; ;ai.c: 58:     unsigned char c = eeprom_read(0 +8*4 +4 +4*4 +4);
 [v _c `uc ~T0 @X0 1 a ]
-[e = _c ( _eeprom_read (1 -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i `uc ]
+[e = _c ( _eeprom_read (1 -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i `uc ]
 "59
 [; ;ai.c: 59:     if(val){
 [e $ ! != -> _val `i -> 0 `i 371  ]
@@ -821,8 +821,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 372 ]
 "64
-[; ;ai.c: 64:     eeprom_write(0 +16*7 +7 +4*7 +4, c);
-[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i `uc _c ]
+[; ;ai.c: 64:     eeprom_write(0 +8*4 +4 +4*4 +4, c);
+[e ( _eeprom_write (2 , -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i `uc _c ]
 "65
 [; ;ai.c: 65: }
 [e :UE 370 ]
@@ -834,8 +834,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ai_is_ai_trained_read ]
 [f ]
 "67
-[; ;ai.c: 67:     return (uint8_t)(eeprom_read(0 +16*7 +7 +4*7 +4)&0x02);
-[e ) -> & -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i `uc `i -> 2 `i `uc ]
+[; ;ai.c: 67:     return (uint8_t)(eeprom_read(0 +8*4 +4 +4*4 +4)&0x02);
+[e ) -> & -> ( _eeprom_read (1 -> + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i `uc `i -> 2 `i `uc ]
 [e $UE 373  ]
 "68
 [; ;ai.c: 68: }
@@ -849,8 +849,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `c ~T0 @X0 1 r1 ]
 [f ]
 "71
-[; ;ai.c: 71:     eeprom_write(0 +16*7 +7 +4*7 +4 +1, (unsigned char)val);
-[e ( _eeprom_write (2 , -> + + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i -> 1 `i `uc -> _val `uc ]
+[; ;ai.c: 71:     eeprom_write(0 +8*4 +4 +4*4 +4 +1, (unsigned char)val);
+[e ( _eeprom_write (2 , -> + + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i -> 1 `i `uc -> _val `uc ]
 "72
 [; ;ai.c: 72: }
 [e :UE 374 ]
@@ -862,8 +862,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ai_maxScore_read ]
 [f ]
 "74
-[; ;ai.c: 74:     return (uint8_t)eeprom_read(0 +16*7 +7 +4*7 +4 +1);
-[e ) ( _eeprom_read (1 -> + + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i -> 1 `i `uc ]
+[; ;ai.c: 74:     return (uint8_t)eeprom_read(0 +8*4 +4 +4*4 +4 +1);
+[e ) ( _eeprom_read (1 -> + + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i -> 1 `i `uc ]
 [e $UE 375  ]
 "75
 [; ;ai.c: 75: }
@@ -878,8 +878,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _val `c ~T0 @X0 1 r2 ]
 [f ]
 "77
-[; ;ai.c: 77:     eeprom_write(0 +16*7 +7 +4*7 +4 +1 +1, (unsigned char)val);
-[e ( _eeprom_write (2 , -> + + + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i -> 1 `i -> 1 `i `uc -> _val `uc ]
+[; ;ai.c: 77:     eeprom_write(0 +8*4 +4 +4*4 +4 +1 +1, (unsigned char)val);
+[e ( _eeprom_write (2 , -> + + + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i -> 1 `i -> 1 `i `uc -> _val `uc ]
 "78
 [; ;ai.c: 78: }
 [e :UE 376 ]
@@ -892,8 +892,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _add `uc ~T0 @X0 1 r1 ]
 [f ]
 "80
-[; ;ai.c: 80:     return (uint8_t)eeprom_read(0 +16*7 +7 +4*7 +4 +1 +1);
-[e ) ( _eeprom_read (1 -> + + + + + + -> 0 `i * -> 16 `i -> 7 `i -> 7 `i * -> 4 `i -> 7 `i -> 4 `i -> 1 `i -> 1 `i `uc ]
+[; ;ai.c: 80:     return (uint8_t)eeprom_read(0 +8*4 +4 +4*4 +4 +1 +1);
+[e ) ( _eeprom_read (1 -> + + + + + + -> 0 `i * -> 8 `i -> 4 `i -> 4 `i * -> 4 `i -> 4 `i -> 4 `i -> 1 `i -> 1 `i `uc ]
 [e $UE 377  ]
 "81
 [; ;ai.c: 81: }
@@ -906,11 +906,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ai_initiate ]
 [f ]
 "87
-[; ;ai.c: 87:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 87:     for(uint8_t j = 0; j < 4; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 379  ]
+[e $ < -> _j `i -> 4 `i 379  ]
 [e $U 380  ]
 [e :U 379 ]
 {
@@ -918,11 +918,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 88:         biases1_write(j, (int8_t)rand());
 [e ( _biases1_write (2 , _j -> ( _rand ..  `c ]
 "89
-[; ;ai.c: 89:         for(uint8_t i = 0; i < 16; i++){
+[; ;ai.c: 89:         for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 382  ]
+[e $ < -> _i `i -> 8 `i 382  ]
 [e $U 383  ]
 [e :U 382 ]
 {
@@ -933,14 +933,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 91:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 382  ]
+[e $ < -> _i `i -> 8 `i 382  ]
 [e :U 383 ]
 }
 "92
 [; ;ai.c: 92:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 379  ]
+[e $ < -> _j `i -> 4 `i 379  ]
 [e :U 380 ]
 }
 "93
@@ -956,11 +956,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 94:         biases2_write(j, (int8_t)rand());
 [e ( _biases2_write (2 , _j -> ( _rand ..  `c ]
 "95
-[; ;ai.c: 95:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 95:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 388  ]
+[e $ < -> _i `i -> 4 `i 388  ]
 [e $U 389  ]
 [e :U 388 ]
 {
@@ -971,7 +971,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 97:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 388  ]
+[e $ < -> _i `i -> 4 `i 388  ]
 [e :U 389 ]
 }
 "98
@@ -1006,11 +1006,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ai_run ]
 [f ]
 "107
-[; ;ai.c: 107:     for(uint8_t i = 0; i < 16; i++){
+[; ;ai.c: 107:     for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 393  ]
+[e $ < -> _i `i -> 8 `i 393  ]
 [e $U 394  ]
 [e :U 393 ]
 {
@@ -1029,18 +1029,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 111:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 393  ]
+[e $ < -> _i `i -> 8 `i 393  ]
 [e :U 394 ]
 }
 "113
 [; ;ai.c: 113:     int16_t z;
 [v _z `s ~T0 @X0 1 a ]
 "114
-[; ;ai.c: 114:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 114:     for(uint8_t j = 0; j < 4; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 397  ]
+[e $ < -> _j `i -> 4 `i 397  ]
 [e $U 398  ]
 [e :U 397 ]
 {
@@ -1048,11 +1048,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 115:         Z1[j] = biases1_read(j);
 [e = *U + &U _Z1 * -> _j `ux -> -> # *U &U _Z1 `ui `ux ( _biases1_read (1 _j ]
 "116
-[; ;ai.c: 116:         for(uint8_t i = 0; i < 16; i++){
+[; ;ai.c: 116:         for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 400  ]
+[e $ < -> _i `i -> 8 `i 400  ]
 [e $U 401  ]
 [e :U 400 ]
 {
@@ -1072,7 +1072,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 121:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 400  ]
+[e $ < -> _i `i -> 8 `i 400  ]
 [e :U 401 ]
 }
 "122
@@ -1082,7 +1082,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 123:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 397  ]
+[e $ < -> _j `i -> 4 `i 397  ]
 [e :U 398 ]
 }
 "124
@@ -1098,11 +1098,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 125:         Z2[j] = biases2_read(j);
 [e = *U + &U _Z2 * -> _j `ux -> -> # *U &U _Z2 `ui `ux ( _biases2_read (1 _j ]
 "126
-[; ;ai.c: 126:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 126:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 406  ]
+[e $ < -> _i `i -> 4 `i 406  ]
 [e $U 407  ]
 [e :U 406 ]
 {
@@ -1122,7 +1122,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 131:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 406  ]
+[e $ < -> _i `i -> 4 `i 406  ]
 [e :U 407 ]
 }
 "132
@@ -1264,11 +1264,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 420 ]
 "166
-[; ;ai.c: 166:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 166:     for(uint8_t j = 0; j < 4; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 424  ]
+[e $ < -> _j `i -> 4 `i 424  ]
 [e $U 425  ]
 [e :U 424 ]
 {
@@ -1279,29 +1279,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 168:         DB1[j] = 0;
 [e = *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux -> -> 0 `i `c ]
 "169
-[; ;ai.c: 169:         for(uint8_t i = 0; i < 16; i++){
+[; ;ai.c: 169:         for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 427  ]
+[e $ < -> _i `i -> 8 `i 427  ]
 [e $U 428  ]
 [e :U 427 ]
 {
 "170
 [; ;ai.c: 170:             DW1[i][j] = 0;
-[e = *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux -> -> 0 `i `c ]
+[e = *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 4 `i `ui `ux `ui `ux -> -> 0 `i `c ]
 "171
 [; ;ai.c: 171:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 427  ]
+[e $ < -> _i `i -> 8 `i 427  ]
 [e :U 428 ]
 }
 "172
 [; ;ai.c: 172:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 424  ]
+[e $ < -> _j `i -> 4 `i 424  ]
 [e :U 425 ]
 }
 "173
@@ -1320,11 +1320,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 175:         DB2[j] = 0;
 [e = *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux -> -> 0 `i `c ]
 "176
-[; ;ai.c: 176:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 176:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 433  ]
+[e $ < -> _i `i -> 4 `i 433  ]
 [e $U 434  ]
 [e :U 433 ]
 {
@@ -1335,7 +1335,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 178:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 433  ]
+[e $ < -> _i `i -> 4 `i 433  ]
 [e :U 434 ]
 }
 "179
@@ -1370,11 +1370,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 187:         DB2[j] += (int8_t)dz;
 [e =+ *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux -> -> _dz `c `c ]
 "188
-[; ;ai.c: 188:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 188:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 439  ]
+[e $ < -> _i `i -> 4 `i 439  ]
 [e $U 440  ]
 [e :U 439 ]
 {
@@ -1388,7 +1388,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 191:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 439  ]
+[e $ < -> _i `i -> 4 `i 439  ]
 [e :U 440 ]
 }
 "192
@@ -1399,11 +1399,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 437 ]
 }
 "193
-[; ;ai.c: 193:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 193:     for(uint8_t j = 0; j < 4; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 442  ]
+[e $ < -> _j `i -> 4 `i 442  ]
 [e $U 443  ]
 [e :U 442 ]
 {
@@ -1420,29 +1420,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 198:         DB1[j] += (int8_t)dz;
 [e =+ *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux -> -> _dz `c `c ]
 "199
-[; ;ai.c: 199:         for(uint8_t i = 0; i < 16; i++){
+[; ;ai.c: 199:         for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 445  ]
+[e $ < -> _i `i -> 8 `i 445  ]
 [e $U 446  ]
 [e :U 445 ]
 {
 "200
 [; ;ai.c: 200:             DW1[i][j] += (int8_t)(((dz*(int16_t)Y0[i])/127)>>1);
-[e =+ *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux -> -> >> / * -> _dz `i -> -> *U + &U _Y0 * -> _i `ux -> -> # *U &U _Y0 `ui `ux `s `i -> 127 `i -> 1 `i `c `c ]
+[e =+ *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 4 `i `ui `ux `ui `ux -> -> >> / * -> _dz `i -> -> *U + &U _Y0 * -> _i `ux -> -> # *U &U _Y0 `ui `ux `s `i -> 127 `i -> 1 `i `c `c ]
 "201
 [; ;ai.c: 201:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 445  ]
+[e $ < -> _i `i -> 8 `i 445  ]
 [e :U 446 ]
 }
 "202
 [; ;ai.c: 202:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 442  ]
+[e $ < -> _j `i -> 4 `i 442  ]
 [e :U 443 ]
 }
 "204
@@ -1458,11 +1458,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 205:         biases2_write(j, biases2_read(j) - DB2[j]);
 [e ( _biases2_write (2 , _j -> - -> ( _biases2_read (1 _j `i -> *U + &U _DB2 * -> _j `ux -> -> # *U &U _DB2 `ui `ux `i `c ]
 "206
-[; ;ai.c: 206:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 206:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 451  ]
+[e $ < -> _i `i -> 4 `i 451  ]
 [e $U 452  ]
 [e :U 451 ]
 {
@@ -1473,7 +1473,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 208:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 451  ]
+[e $ < -> _i `i -> 4 `i 451  ]
 [e :U 452 ]
 }
 "209
@@ -1484,11 +1484,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 449 ]
 }
 "210
-[; ;ai.c: 210:     for(uint8_t j = 0; j < 7; j++){
+[; ;ai.c: 210:     for(uint8_t j = 0; j < 4; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 7 `i 454  ]
+[e $ < -> _j `i -> 4 `i 454  ]
 [e $U 455  ]
 [e :U 454 ]
 {
@@ -1496,29 +1496,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 211:         biases1_write(j, biases1_read(j) - DB1[j]);
 [e ( _biases1_write (2 , _j -> - -> ( _biases1_read (1 _j `i -> *U + &U _DB1 * -> _j `ux -> -> # *U &U _DB1 `ui `ux `i `c ]
 "212
-[; ;ai.c: 212:         for(uint8_t i = 0; i < 16; i++){
+[; ;ai.c: 212:         for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 457  ]
+[e $ < -> _i `i -> 8 `i 457  ]
 [e $U 458  ]
 [e :U 457 ]
 {
 "213
 [; ;ai.c: 213:             weights1_write(i,j, weights1_read(i,j) - DW1[i][j]);
-[e ( _weights1_write (3 , , _i _j -> - -> ( _weights1_read (2 , _i _j `i -> *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 7 `i `ui `ux `ui `ux `i `c ]
+[e ( _weights1_write (3 , , _i _j -> - -> ( _weights1_read (2 , _i _j `i -> *U + &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _DW1 * -> _i `ux -> * -> # *U &U *U &U _DW1 `ui -> -> 4 `i `ui `ux `ui `ux `i `c ]
 "214
 [; ;ai.c: 214:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 457  ]
+[e $ < -> _i `i -> 8 `i 457  ]
 [e :U 458 ]
 }
 "215
 [; ;ai.c: 215:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 7 `i 454  ]
+[e $ < -> _j `i -> 4 `i 454  ]
 [e :U 455 ]
 }
 "216
@@ -1547,11 +1547,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 221:         EUSART_Write((uint8_t)biases2_read(j));
 [e ( _EUSART_Write (1 -> ( _biases2_read (1 _j `uc ]
 "222
-[; ;ai.c: 222:         for(uint8_t i = 0; i < 7; i++){
+[; ;ai.c: 222:         for(uint8_t i = 0; i < 4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 7 `i 464  ]
+[e $ < -> _i `i -> 4 `i 464  ]
 [e $U 465  ]
 [e :U 464 ]
 {
@@ -1562,7 +1562,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ai.c: 224:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 7 `i 464  ]
+[e $ < -> _i `i -> 4 `i 464  ]
 [e :U 465 ]
 }
 "225

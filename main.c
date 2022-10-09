@@ -90,13 +90,13 @@ void main(void)
     initMAX7219();
     
 //    if(ai_is_ai_trained_read()==0){
-        for(uint16_t i = 0; i < 1000; i++){
-            snake_getSurroundings(ai_getInputField());
-            ai_propagate(snake_move(ai_run()));
-            setLine(0,(uint8_t)(i>>2));
-            setLine(1,(uint8_t)(i&0x03));
-            sendMatrix();
-        }
+//        for(uint16_t i = 0; i < 1000; i++){
+//            snake_getSurroundings(ai_getInputField());
+//            ai_propagate(snake_move(ai_run()));
+//            setLine(0,(uint8_t)(i>>2));
+//            setLine(1,(uint8_t)(i&0x03));
+//            sendMatrix();
+//        }
 //        ai_is_ai_trained_write(1);
 //    }
     

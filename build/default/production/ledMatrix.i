@@ -4644,10 +4644,14 @@ void setColumn(uint8_t c, uint8_t val){
 }
 
 void setLine(uint8_t l, uint8_t val){
-    uint8_t mask = 0x80;
-    for(uint8_t i = 0; i < 8; i++){
-        matrix[l] = (val&mask) | (matrix[l]|(~mask));
-        mask >>= 1;
+    uint8_t mask = 1;
+    for(uint8_t j = 0; j < 8; j++){
+        if(val&mask){
+            ledSet(l,j);
+        } else{
+            ledClear(l,j);
+        }
+        mask <<= 1;
     }
 }
 

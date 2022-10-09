@@ -4574,8 +4574,8 @@ void WDT_Initialize(void);
 # 2 "snake.c" 2
 
 # 1 "./snake.h" 1
-# 19 "./snake.h"
-    uint8_t field[64];
+# 29 "./snake.h"
+    uint8_t field[4*4];
     uint8_t mapping[8];
     uint8_t snakeSize;
     void snake_initiate();
@@ -4620,29 +4620,35 @@ void sendMatrix();
 # 4 "snake.c" 2
 
 
-
-
-
-
-
-uint8_t field[64];
-uint8_t mapping[8] = {55, 63, 7, 8, 9, 1, 57, 56};
+uint8_t field[4*4];
+uint8_t mapping[8] = {
+    4*4 -4 -1,
+    4*4 -1,
+    4 -1,
+    4,
+    4 +1,
+    1,
+    4*4 -4 +1,
+    4*4 -4};
 uint8_t snakeSize;
 uint8_t headPosition;
 uint8_t foodPosition;
+uint8_t remainingMoves;
 
 void snake_initiate(){
-    for(uint8_t i = 0; i < 64; i++){
+    for(uint8_t i = 0; i < 4*4; i++){
         field[i] = 0;
     }
-    headPosition = ((uint8_t)rand())&0x3f;
-    foodPosition = ((uint8_t)rand())&0x3f;
+    headPosition = ((uint8_t)rand())%4*4;
+    foodPosition = ((uint8_t)rand())%4*4;
     snakeSize = 1;
+    remainingMoves = 40;
     field[headPosition] = snakeSize;
 }
 
 int8_t snake_move(uint8_t direction){
-    for(uint8_t i = 0; i < 64; i++){
+    remainingMoves--;
+    for(uint8_t i = 0; i < 4*4; i++){
         if(field[i] > 0){
             field[i]--;
         }
@@ -4651,28 +4657,28 @@ int8_t snake_move(uint8_t direction){
     direction &= 0x03;
     switch(direction){
         case 0:
-            if((headPosition&0x07) == 0){
+            if((headPosition%4) == 0){
                 incentive = -1;
             } else{
                 headPosition--;
             }
             break;
         case 1:
-            if((headPosition&0x07) == 7){
+            if((headPosition%4) == 7){
                 incentive = -1;
             } else{
                 headPosition++;
             }
             break;
         case 2:
-            if((headPosition>>3) == 0){
+            if((headPosition/4) == 0){
                 incentive = -1;
             } else{
                 headPosition -= 8;
             }
             break;
         case 3:
-            if((headPosition>>3) == 7){
+            if((headPosition/4) == 7){
                 incentive = -1;
             } else{
                 headPosition += 8;
@@ -4686,13 +4692,18 @@ int8_t snake_move(uint8_t direction){
         snake_initiate();
     } else{
         if(headPosition == foodPosition){
+            remainingMoves = 40;
             incentive = 1;
             snakeSize++;
             do{
-                foodPosition = ((uint8_t)rand())&0x1f;
+                foodPosition = ((uint8_t)rand())%4*4;
             }while(field[foodPosition] > 0);
         }
         field[headPosition] = snakeSize;
+    }
+    if(remainingMoves == 0){
+        incentive = -1;
+        snake_initiate();
     }
     return incentive;
 }
@@ -4702,36 +4713,39 @@ uint8_t* snake_getField(){
 }
 
 void snake_getSurroundings(uint8_t* surroundings){
-    for(uint8_t i = 0; i < 16; i++){
+    for(uint8_t i = 0; i < 8; i++){
         surroundings[i] = 0;
     }
-    if((headPosition&0x07) == 0){
+    uint8_t lh = headPosition%4;
+    uint8_t ch = headPosition/4;
+    uint8_t lf = foodPosition%4;
+    uint8_t cf = foodPosition/4;
+    if(lh == 0){
         surroundings[0] = 1;
+    } else if(lh == 7){
         surroundings[1] = 1;
-        surroundings[2] = 1;
-    } else if((headPosition&0x07) == 7){
-        surroundings[4] = 1;
-        surroundings[5] = 1;
-        surroundings[6] = 1;
     }
-    if((headPosition>>3) == 0){
-        surroundings[6] = 1;
-        surroundings[7] = 1;
-        surroundings[0] = 1;
-    } else if((headPosition>>3) == 7){
+    if(ch == 0){
         surroundings[2] = 1;
+    } else if(ch == 7){
         surroundings[3] = 1;
-        surroundings[4] = 1;
     }
     uint8_t p;
-    for(uint8_t i = 0; i < 8; i++){
-        p = (headPosition+mapping[i])&0x3f;
-        if(p==foodPosition){
-            surroundings[i+8] = 1;
-        }
+    for(uint8_t i = 0; i < 4; i++){
+        p = (headPosition+mapping[i])%4*4;
         if(field[p] > 0){
             surroundings[i] = 1;
         }
+    }
+    if(lf<lh){
+        surroundings[4] = 1;
+    } else if(lf>lh){
+        surroundings[5] = 1;
+    }
+    if(cf<ch){
+        surroundings[6] = 1;
+    } else if(cf>ch){
+        surroundings[7] = 1;
     }
 }
 

@@ -23,10 +23,6 @@ SPI1_DEFAULT 0
 [v _weights2_read weights2_read `(c  1 e 1 0 ]
 "41
 [v _biases2_read biases2_read `(c  1 e 1 0 ]
-"57
-[v _ai_is_ai_trained_write ai_is_ai_trained_write `(v  1 e 1 0 ]
-"66
-[v _ai_is_ai_trained_read ai_is_ai_trained_read `(uc  1 e 1 0 ]
 "83
 [v _ai_initiate ai_initiate `(v  1 e 1 0 ]
 "102
@@ -37,8 +33,6 @@ SPI1_DEFAULT 0
 [v _ai_propagate ai_propagate `(v  1 e 1 0 ]
 "5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
 "11 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
 [v _rand rand `(i  1 e 2 0 ]
 "10 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
@@ -47,8 +41,6 @@ SPI1_DEFAULT 0
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"4 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeprom.c
@@ -69,7 +61,7 @@ SPI1_DEFAULT 0
 [v _ledClear ledClear `(v  1 e 1 0 ]
 "43
 [v _setLine setLine `(v  1 e 1 0 ]
-"51
+"55
 [v _sendMatrix sendMatrix `(v  1 e 1 0 ]
 "50 D:\WS\GitHub\SnakeAI\main.c
 [v _deactivateElevator deactivateElevator `(v  1 e 1 0 ]
@@ -115,55 +107,55 @@ SPI1_DEFAULT 0
 [v _sigmoid sigmoid `(uc  1 e 1 0 ]
 "12
 [v _de_sigmoid de_sigmoid `(uc  1 e 1 0 ]
-"17 D:\WS\GitHub\SnakeAI\snake.c
+"21 D:\WS\GitHub\SnakeAI\snake.c
 [v _snake_initiate snake_initiate `(v  1 e 1 0 ]
-"27
+"32
 [v _snake_move snake_move `(c  1 e 1 0 ]
-"83
+"94
 [v _snake_getField snake_getField `(*.4uc  1 e 1 0 ]
-"87
+"98
 [v _snake_getSurroundings snake_getSurroundings `(v  1 e 1 0 ]
-"128
+"142
 [v _snake_getFoodPosition snake_getFoodPosition `(uc  1 e 1 0 ]
 "14 D:\WS\GitHub\SnakeAI/ledMatrix.h
 [v _matrix matrix `[8]uc  1 e 8 0 ]
 "6 D:\WS\GitHub\SnakeAI\ai.c
-[v _Y0 Y0 `[16]uc  1 e 16 0 ]
+[v _Y0 Y0 `[8]uc  1 e 8 0 ]
 "7
-[v _Y1 Y1 `[7]uc  1 e 7 0 ]
+[v _Y1 Y1 `[4]uc  1 e 4 0 ]
 "8
 [v _Y2 Y2 `[4]uc  1 e 4 0 ]
 "9
-[v _Z1 Z1 `[7]c  1 e 7 0 ]
+[v _Z1 Z1 `[4]c  1 e 4 0 ]
 "10
 [v _Z2 Z2 `[4]c  1 e 4 0 ]
 "11
 [v _DY2 DY2 `[4]c  1 e 4 0 ]
 "12
-[v _DY1 DY1 `[7]c  1 e 7 0 ]
+[v _DY1 DY1 `[4]c  1 e 4 0 ]
 "13
-[v _DW1 DW1 `[16][7]c  1 e 112 @8448 ]
+[v _DW1 DW1 `[8][4]c  1 e 32 0 ]
 "14
-[v _DB1 DB1 `[7]c  1 e 7 0 ]
+[v _DB1 DB1 `[4]c  1 e 4 0 ]
 "15
-[v _DW2 DW2 `[7][4]c  1 e 28 0 ]
+[v _DW2 DW2 `[4][4]c  1 e 16 0 ]
 "16
 [v _DB2 DB2 `[4]c  1 e 4 0 ]
 "18
 [v _choice choice `uc  1 e 1 0 ]
-[s S969 . 1 `uc 1 C 1 0 :1:0 
+[s S963 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
 `uc 1 nPD 1 0 :1:3 
 `uc 1 nTO 1 0 :1:4 
 ]
 "132 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
-[s S975 . 1 `uc 1 CARRY 1 0 :1:0 
+[s S969 . 1 `uc 1 CARRY 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ZERO 1 0 :1:2 
 ]
-[u S979 . 1 `S969 1 . 1 0 `S975 1 . 1 0 ]
-[v _STATUSbits STATUSbits `VES979  1 e 1 @3 ]
+[u S973 . 1 `S963 1 . 1 0 `S969 1 . 1 0 ]
+[v _STATUSbits STATUSbits `VES973  1 e 1 @3 ]
 [s S22 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -260,7 +252,7 @@ SPI1_DEFAULT 0
 [v _LATAbits LATAbits `VES505  1 e 1 @268 ]
 "2097
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S681 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S666 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -270,8 +262,8 @@ SPI1_DEFAULT 0
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2114
-[u S690 . 1 `S681 1 . 1 0 ]
-[v _LATBbits LATBbits `VES690  1 e 1 @269 ]
+[u S675 . 1 `S666 1 . 1 0 ]
+[v _LATBbits LATBbits `VES675  1 e 1 @269 ]
 "2431
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2780
@@ -399,116 +391,113 @@ SPI1_DEFAULT 0
 [v _sigmoidValues sigmoidValues `DC[16]uc  1 e 16 0 ]
 "6
 [v _de_sigmoidValues de_sigmoidValues `DC[16]uc  1 e 16 0 ]
-"11 D:\WS\GitHub\SnakeAI\snake.c
-[v _field field `[64]uc  1 e 64 0 ]
-"12
+"6 D:\WS\GitHub\SnakeAI\snake.c
+[v _field field `[16]uc  1 e 16 0 ]
+"7
 [v _mapping mapping `[8]uc  1 e 8 0 ]
-"13
+"16
 [v _snakeSize snakeSize `uc  1 e 1 0 ]
-"14
+"17
 [v _headPosition headPosition `uc  1 e 1 0 ]
-"15
+"18
 [v _foodPosition foodPosition `uc  1 e 1 0 ]
+"19
+[v _remainingMoves remainingMoves `uc  1 e 1 0 ]
 "67 D:\WS\GitHub\SnakeAI\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"124
-[v main@j_679 j `uc  1 a 1 53 ]
-"95
-[v main@j j `uc  1 a 1 51 ]
-"123
-[v main@i_678 i `uc  1 a 1 52 ]
-"108
-[v main@i_677 i `i  1 a 2 48 ]
-"132
-[v main@foodPosition_680 foodPosition `uc  1 a 1 47 ]
-"94
-[v main@i i `uc  1 a 1 50 ]
+"126
+[v main@j_664 j `uc  1 a 1 48 ]
+"106
+[v main@j j `uc  1 a 1 46 ]
+"125
+[v main@i_663 i `uc  1 a 1 47 ]
+"134
+[v main@foodPosition_665 foodPosition `uc  1 a 1 42 ]
+"105
+[v main@i_660 i `uc  1 a 1 45 ]
+"93
+[v main@i i `us  1 a 2 43 ]
+"115
+[v main@foodPosition foodPosition `uc  1 a 1 41 ]
 "103
-[v main@foodPosition foodPosition `uc  1 a 1 46 ]
-"92
-[v main@field field `*.4uc  1 a 1 45 ]
-"136
+[v main@field field `*.4uc  1 a 1 40 ]
+"138
 } 0
-"27 D:\WS\GitHub\SnakeAI\snake.c
+"32 D:\WS\GitHub\SnakeAI\snake.c
 [v _snake_move snake_move `(c  1 e 1 0 ]
 {
 [v snake_move@direction direction `uc  1 a 1 wreg ]
-"28
-[v snake_move@i i `uc  1 a 1 10 ]
-"33
-[v snake_move@incentive incentive `c  1 a 1 9 ]
-"27
+"34
+[v snake_move@i i `uc  1 a 1 12 ]
+"39
+[v snake_move@incentive incentive `c  1 a 1 11 ]
+"32
 [v snake_move@direction direction `uc  1 a 1 wreg ]
-[v snake_move@direction direction `uc  1 a 1 8 ]
-"81
+[v snake_move@direction direction `uc  1 a 1 10 ]
+"92
 } 0
-"17
+"21
 [v _snake_initiate snake_initiate `(v  1 e 1 0 ]
 {
-"18
+"22
 [v snake_initiate@i i `uc  1 a 1 5 ]
-"25
+"30
 } 0
-"87
+"98
 [v _snake_getSurroundings snake_getSurroundings `(v  1 e 1 0 ]
 {
 [v snake_getSurroundings@surroundings surroundings `*.4uc  1 a 1 wreg ]
-"110
-[v snake_getSurroundings@i_802 i `uc  1 a 1 3 ]
-"88
-[v snake_getSurroundings@i i `uc  1 a 1 2 ]
-"109
-[v snake_getSurroundings@p p `uc  1 a 1 1 ]
-"87
+"117
+[v snake_getSurroundings@i_796 i `uc  1 a 1 16 ]
+"99
+[v snake_getSurroundings@i i `uc  1 a 1 13 ]
+"103
+[v snake_getSurroundings@ch ch `uc  1 a 1 15 ]
+"102
+[v snake_getSurroundings@lh lh `uc  1 a 1 14 ]
+"105
+[v snake_getSurroundings@cf cf `uc  1 a 1 12 ]
+"104
+[v snake_getSurroundings@lf lf `uc  1 a 1 11 ]
+"116
+[v snake_getSurroundings@p p `uc  1 a 1 10 ]
+"98
 [v snake_getSurroundings@surroundings surroundings `*.4uc  1 a 1 wreg ]
-[v snake_getSurroundings@surroundings surroundings `*.4uc  1 a 1 4 ]
-"119
+[v snake_getSurroundings@surroundings surroundings `*.4uc  1 a 1 17 ]
+"133
 } 0
-"128
+"142
 [v _snake_getFoodPosition snake_getFoodPosition `(uc  1 e 1 0 ]
 {
-"130
+"144
 } 0
-"83
+"94
 [v _snake_getField snake_getField `(*.4uc  1 e 1 0 ]
 {
-"85
+"96
 } 0
 "43 D:\WS\GitHub\SnakeAI\ledMatrix.c
 [v _setLine setLine `(v  1 e 1 0 ]
 {
 [v setLine@l l `uc  1 a 1 wreg ]
 "45
-[v setLine@i i `uc  1 a 1 12 ]
+[v setLine@j j `uc  1 a 1 16 ]
 "44
-[v setLine@mask mask `uc  1 a 1 11 ]
+[v setLine@mask mask `uc  1 a 1 14 ]
 "43
 [v setLine@l l `uc  1 a 1 wreg ]
-[v setLine@val val `uc  1 p 1 8 ]
-[v setLine@l l `uc  1 a 1 10 ]
-"49
-} 0
-"51
-[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
-{
-"62
-[v sendMatrix@j j `uc  1 a 1 6 ]
-"54
-[v sendMatrix@i i `uc  1 a 1 7 ]
+[v setLine@val val `uc  1 p 1 12 ]
+[v setLine@l l `uc  1 a 1 15 ]
 "53
-[v sendMatrix@nb nb `uc  1 a 1 5 ]
-"52
-[v sendMatrix@b b `uc  1 a 1 4 ]
-"72
 } 0
 "31
 [v _ledSet ledSet `(v  1 e 1 0 ]
 {
 [v ledSet@l l `uc  1 a 1 wreg ]
 [v ledSet@l l `uc  1 a 1 wreg ]
-[v ledSet@c c `uc  1 p 1 0 ]
-[v ledSet@l l `uc  1 a 1 3 ]
+[v ledSet@c c `uc  1 p 1 8 ]
+[v ledSet@l l `uc  1 a 1 11 ]
 "33
 } 0
 "35
@@ -519,6 +508,19 @@ SPI1_DEFAULT 0
 [v ledClear@c c `uc  1 p 1 0 ]
 [v ledClear@l l `uc  1 a 1 3 ]
 "37
+} 0
+"55
+[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
+{
+"66
+[v sendMatrix@j j `uc  1 a 1 6 ]
+"58
+[v sendMatrix@i i `uc  1 a 1 7 ]
+"57
+[v sendMatrix@nb nb `uc  1 a 1 5 ]
+"56
+[v sendMatrix@b b `uc  1 a 1 4 ]
+"76
 } 0
 "16
 [v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
@@ -552,13 +554,13 @@ SPI1_DEFAULT 0
 [v _ai_run ai_run `(uc  1 e 1 0 ]
 {
 "126
-[v ai_run@i_921 i `uc  1 a 1 12 ]
+[v ai_run@i_915 i `uc  1 a 1 12 ]
 "116
-[v ai_run@i_917 i `uc  1 a 1 11 ]
+[v ai_run@i_911 i `uc  1 a 1 11 ]
 "136
-[v ai_run@i_923 i `uc  1 a 1 13 ]
+[v ai_run@i_917 i `uc  1 a 1 13 ]
 "124
-[v ai_run@j_919 j `uc  1 a 1 17 ]
+[v ai_run@j_913 j `uc  1 a 1 17 ]
 "114
 [v ai_run@j j `uc  1 a 1 16 ]
 "107
@@ -580,40 +582,40 @@ SPI1_DEFAULT 0
 {
 [v ai_propagate@incentive incentive `c  1 a 1 wreg ]
 "212
-[v ai_propagate@i_941 i `uc  1 a 1 33 ]
+[v ai_propagate@i_935 i `uc  1 a 1 28 ]
 "206
-[v ai_propagate@i_939 i `uc  1 a 1 32 ]
+[v ai_propagate@i_933 i `uc  1 a 1 27 ]
 "199
-[v ai_propagate@i_937 i `uc  1 a 1 30 ]
+[v ai_propagate@i_931 i `uc  1 a 1 25 ]
 "188
-[v ai_propagate@i_935 i `uc  1 a 1 34 ]
+[v ai_propagate@i_929 i `uc  1 a 1 29 ]
 "176
-[v ai_propagate@i_932 i `uc  1 a 1 29 ]
+[v ai_propagate@i_926 i `uc  1 a 1 24 ]
 "169
-[v ai_propagate@i_930 i `uc  1 a 1 28 ]
+[v ai_propagate@i_924 i `uc  1 a 1 23 ]
 "160
-[v ai_propagate@i_928 i `uc  1 a 1 27 ]
+[v ai_propagate@i_922 i `uc  1 a 1 22 ]
 "155
-[v ai_propagate@i i `uc  1 a 1 26 ]
+[v ai_propagate@i i `uc  1 a 1 21 ]
 "210
-[v ai_propagate@j_940 j `uc  1 a 1 39 ]
+[v ai_propagate@j_934 j `uc  1 a 1 34 ]
 "204
-[v ai_propagate@j_938 j `uc  1 a 1 38 ]
+[v ai_propagate@j_932 j `uc  1 a 1 33 ]
 "193
-[v ai_propagate@j_936 j `uc  1 a 1 35 ]
+[v ai_propagate@j_930 j `uc  1 a 1 30 ]
 "182
-[v ai_propagate@j_934 j `uc  1 a 1 37 ]
+[v ai_propagate@j_928 j `uc  1 a 1 32 ]
 "173
-[v ai_propagate@j_931 j `uc  1 a 1 36 ]
+[v ai_propagate@j_925 j `uc  1 a 1 31 ]
 "166
-[v ai_propagate@j j `uc  1 a 1 31 ]
+[v ai_propagate@j j `uc  1 a 1 26 ]
 "153
-[v ai_propagate@S S `[4]uc  1 a 4 21 ]
+[v ai_propagate@S S `[4]uc  1 a 4 16 ]
 "181
-[v ai_propagate@dz dz `s  1 a 2 40 ]
+[v ai_propagate@dz dz `s  1 a 2 35 ]
 "144
 [v ai_propagate@incentive incentive `c  1 a 1 wreg ]
-[v ai_propagate@incentive incentive `c  1 a 1 25 ]
+[v ai_propagate@incentive incentive `c  1 a 1 20 ]
 "216
 } 0
 "38
@@ -622,7 +624,7 @@ SPI1_DEFAULT 0
 [v weights2_read@add1 add1 `uc  1 a 1 wreg ]
 [v weights2_read@add1 add1 `uc  1 a 1 wreg ]
 [v weights2_read@add2 add2 `uc  1 p 1 4 ]
-[v weights2_read@add1 add1 `uc  1 a 1 5 ]
+[v weights2_read@add1 add1 `uc  1 a 1 6 ]
 "40
 } 0
 "32
@@ -658,6 +660,15 @@ SPI1_DEFAULT 0
 [v biases1_read@add add `uc  1 a 1 4 ]
 "37
 } 0
+"6 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+{
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+"9
+[v eeprom_read@addr addr `uc  1 a 1 3 ]
+"19
+} 0
 "15 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
@@ -681,40 +692,15 @@ SPI1_DEFAULT 0
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"57 D:\WS\GitHub\SnakeAI\ai.c
-[v _ai_is_ai_trained_write ai_is_ai_trained_write `(v  1 e 1 0 ]
-{
-[v ai_is_ai_trained_write@val val `uc  1 a 1 wreg ]
-"58
-[v ai_is_ai_trained_write@c c `uc  1 a 1 10 ]
-"57
-[v ai_is_ai_trained_write@val val `uc  1 a 1 wreg ]
-[v ai_is_ai_trained_write@val val `uc  1 a 1 9 ]
-"65
-} 0
-"66
-[v _ai_is_ai_trained_read ai_is_ai_trained_read `(uc  1 e 1 0 ]
-{
-"68
-} 0
-"6 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeread.c
-[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
-{
-[v eeprom_read@addr addr `uc  1 a 1 wreg ]
-[v eeprom_read@addr addr `uc  1 a 1 wreg ]
-"9
-[v eeprom_read@addr addr `uc  1 a 1 3 ]
-"19
-} 0
 "83 D:\WS\GitHub\SnakeAI\ai.c
 [v _ai_initiate ai_initiate `(v  1 e 1 0 ]
 {
 "95
-[v ai_initiate@i_909 i `uc  1 a 1 10 ]
+[v ai_initiate@i_903 i `uc  1 a 1 10 ]
 "89
 [v ai_initiate@i i `uc  1 a 1 9 ]
 "93
-[v ai_initiate@j_907 j `uc  1 a 1 12 ]
+[v ai_initiate@j_901 j `uc  1 a 1 12 ]
 "87
 [v ai_initiate@j j `uc  1 a 1 11 ]
 "100
@@ -726,23 +712,10 @@ SPI1_DEFAULT 0
 [v weights2_write@add1 add1 `uc  1 a 1 wreg ]
 [v weights2_write@add2 add2 `uc  1 p 1 4 ]
 [v weights2_write@val val `c  1 p 1 5 ]
-[v weights2_write@add1 add1 `uc  1 a 1 6 ]
+[v weights2_write@add1 add1 `uc  1 a 1 7 ]
 "28
 } 0
-"4 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
-{
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v ___bmul@product product `uc  1 a 1 2 ]
-"4
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
-"6
-[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
-"51
-} 0
-"20 D:\WS\GitHub\SnakeAI\ai.c
+"20
 [v _weights1_write weights1_write `(v  1 e 1 0 ]
 {
 [v weights1_write@add1 add1 `uc  1 a 1 wreg ]
@@ -790,25 +763,14 @@ SPI1_DEFAULT 0
 {
 [v eeprom_write@addr addr `uc  1 a 1 wreg ]
 [v eeprom_write@addr addr `uc  1 a 1 wreg ]
-[v eeprom_write@value value `uc  1 p 1 4 ]
-[v eeprom_write@addr addr `uc  1 a 1 7 ]
+[v eeprom_write@value value `uc  1 p 1 0 ]
+[v eeprom_write@addr addr `uc  1 a 1 3 ]
 "9
 } 0
 "102 D:\WS\GitHub\SnakeAI\ai.c
 [v _ai_getInputField ai_getInputField `(*.4uc  1 e 1 0 ]
 {
 "104
-} 0
-"5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 6 ]
-[v ___awmod@counter counter `uc  1 a 1 5 ]
-"5
-[v ___awmod@divisor divisor `i  1 p 2 0 ]
-[v ___awmod@dividend dividend `i  1 p 2 2 ]
-"34
 } 0
 "50 D:\WS\GitHub\SnakeAI\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
