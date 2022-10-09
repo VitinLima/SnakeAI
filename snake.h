@@ -12,12 +12,21 @@
 extern "C" {
 #endif
 
+#define BOARD_SIZE 8
+#define BOARD_LENGTH BOARD_SIZE*BOARD_SIZE
+    
 #define NOTHING 0
 #define KILL -1
 #define FOOD 1
-#define MOVES_RECHARGE 40
     
-    uint8_t field[64];
+#define MOVES_RECHARGE 40
+
+#define UP 0
+#define DOWN 1
+#define LEFT 2
+#define RIGHT 3
+    
+    uint8_t field[BOARD_LENGTH];
     uint8_t mapping[8];
     uint8_t snakeSize;
     void snake_initiate();

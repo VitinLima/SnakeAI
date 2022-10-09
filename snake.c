@@ -3,24 +3,27 @@
 #include "snake.h"
 #include "ledMatrix.h"
 
-#define UP 0
-#define DOWN 1
-#define LEFT 2
-#define RIGHT 3
-
-uint8_t field[64];
-uint8_t mapping[8] = {55, 63, 7, 8, 9, 1, 57, 56};
+uint8_t field[BOARD_LENGTH];
+uint8_t mapping[8] = {
+    BOARD_LENGTH-BOARD_SIZE-1,
+    BOARD_LENGTH-1,
+    BOARD_SIZE-1,
+    BOARD_SIZE,
+    BOARD_SIZE+1,
+    1,
+    BOARD_LENGTH-BOARD_SIZE+1,
+    BOARD_LENGTH-BOARD_SIZE};
 uint8_t snakeSize;
 uint8_t headPosition;
 uint8_t foodPosition;
 uint8_t remainingMoves;
 
 void snake_initiate(){
-    for(uint8_t i = 0; i < 64; i++){
+    for(uint8_t i = 0; i < BOARD_LENGTH; i++){
         field[i] = 0;
     }
-    headPosition = ((uint8_t)rand())&0x3f;
-    foodPosition = ((uint8_t)rand())&0x3f;
+    headPosition = ((uint8_t)rand())%BOARD_LENGTH;
+    foodPosition = ((uint8_t)rand())%BOARD_LENGTH;
     snakeSize = 1;
     remainingMoves = MOVES_RECHARGE;
     field[headPosition] = snakeSize;
@@ -28,7 +31,7 @@ void snake_initiate(){
 
 int8_t snake_move(uint8_t direction){
     remainingMoves--;
-    for(uint8_t i = 0; i < 64; i++){
+    for(uint8_t i = 0; i < BOARD_LENGTH; i++){
         if(field[i] > 0){
             field[i]--;
         }
@@ -37,28 +40,28 @@ int8_t snake_move(uint8_t direction){
     direction &= 0x03;
     switch(direction){
         case UP:
-            if((headPosition&0x07) == 0){
+            if((headPosition%BOARD_SIZE) == 0){
                 incentive = KILL;
             } else{
                 headPosition--;
             }
             break;
         case DOWN:
-            if((headPosition&0x07) == 7){
+            if((headPosition%BOARD_SIZE) == 7){
                 incentive = KILL;
             } else{
                 headPosition++;
             }
             break;
         case LEFT:
-            if((headPosition>>3) == 0){
+            if((headPosition/BOARD_SIZE) == 0){
                 incentive = KILL;
             } else{
                 headPosition -= 8;
             }
             break;
         case RIGHT:
-            if((headPosition>>3) == 7){
+            if((headPosition/BOARD_SIZE) == 7){
                 incentive = KILL;
             } else{
                 headPosition += 8;
@@ -76,7 +79,7 @@ int8_t snake_move(uint8_t direction){
             incentive = FOOD;
             snakeSize++;
             do{
-                foodPosition = ((uint8_t)rand())&0x1f;
+                foodPosition = ((uint8_t)rand())%BOARD_LENGTH;
             }while(field[foodPosition] > 0);
         }
         field[headPosition] = snakeSize;
@@ -96,10 +99,10 @@ void snake_getSurroundings(uint8_t* surroundings){
     for(uint8_t i = 0; i < 12; i++){
         surroundings[i] = 0;
     }
-    uint8_t lh = headPosition&0x07;
-    uint8_t ch = headPosition>>3;
-    uint8_t lf = foodPosition&0x07;
-    uint8_t cf = foodPosition>>3;
+    uint8_t lh = headPosition%BOARD_SIZE;
+    uint8_t ch = headPosition/BOARD_SIZE;
+    uint8_t lf = foodPosition%BOARD_SIZE;
+    uint8_t cf = foodPosition/BOARD_SIZE;
     if(lh == 0){
         surroundings[0] = 1;
         surroundings[1] = 1;
@@ -120,7 +123,7 @@ void snake_getSurroundings(uint8_t* surroundings){
     }
     uint8_t p;
     for(uint8_t i = 0; i < 8; i++){
-        p = (headPosition+mapping[i])&0x3f;
+        p = (headPosition+mapping[i])%BOARD_LENGTH;
         if(field[p] > 0){
             surroundings[i] = 1;
         }
