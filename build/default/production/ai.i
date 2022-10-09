@@ -4703,9 +4703,9 @@ uint8_t ai_scores_read(uint8_t add){
 }
 
 void ai_initiate(){
-    if(ai_is_ai_initiated_read()){
-        return;
-    }
+
+
+
     for(uint8_t j = 0; j < 7; j++){
         biases1_write(j, (int8_t)rand());
         for(uint8_t i = 0; i < 16; i++){
@@ -4718,7 +4718,7 @@ void ai_initiate(){
             weights2_write(i,j, (int8_t)rand());
         }
     }
-    ai_is_ai_initiated_write(1);
+
 }
 
 uint8_t* ai_getInputField(){
@@ -4801,25 +4801,25 @@ void ai_propagate(int8_t incentive){
     }
 
     int16_t dz;
-    for(uint8_t k = 0; k < 4; k++){
-        dz = (int16_t)de_sigmoid(Z2[k]);
-        dz *= (int16_t)DY2[k];
+    for(uint8_t j = 0; j < 4; j++){
+        dz = (int16_t)de_sigmoid(Z2[j]);
+        dz *= (int16_t)DY2[j];
         dz /= 255;
 
-        DB2[k] += (int8_t)(dz>>1);
-        for(uint8_t j = 0; j < 7; j++){
-            DY1[j] += (int8_t)(((dz*(int16_t)weights2_read(j, k))/127)>>1);
-            DW2[j][k] += (int8_t)(((dz*(int16_t)Y1[j])/127)>>1);
+        DB2[j] += (int8_t)dz;
+        for(uint8_t i = 0; i < 7; i++){
+            DY1[i] += (int8_t)((dz*(int16_t)weights2_read(i, j))/127);
+            DW2[i][j] += (int8_t)(((dz*(int16_t)Y1[i])/127)>>1);
         }
     }
-    for(uint8_t k = 0; k < 7; k++){
-        dz = (int16_t)de_sigmoid(Z1[k]);
-        dz *= (int16_t)DY1[k];
+    for(uint8_t j = 0; j < 7; j++){
+        dz = (int16_t)de_sigmoid(Z1[j]);
+        dz *= (int16_t)DY1[j];
         dz /= 255;
 
-        DB1[k] += (int8_t)(dz>>1);
-        for(uint8_t j = 0; j < 16; j++){
-            DW1[j][k] += (int8_t)(((dz*(int16_t)Y0[j])/127)>>1);
+        DB1[j] += (int8_t)dz;
+        for(uint8_t i = 0; i < 16; i++){
+            DW1[i][j] += (int8_t)(((dz*(int16_t)Y0[i])/127)>>1);
         }
     }
 
@@ -4833,6 +4833,16 @@ void ai_propagate(int8_t incentive){
         biases1_write(j, biases1_read(j) - DB1[j]);
         for(uint8_t i = 0; i < 16; i++){
             weights1_write(i,j, weights1_read(i,j) - DW1[i][j]);
+        }
+    }
+}
+
+void printAI(){
+    for(uint8_t j = 0; j < 4; j++){
+        EUSART_Write(Y2[j]);
+        EUSART_Write((uint8_t)biases2_read(j));
+        for(uint8_t i = 0; i < 7; i++){
+            EUSART_Write((uint8_t)weights2_read(i,j));
         }
     }
 }

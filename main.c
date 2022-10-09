@@ -108,7 +108,7 @@ void main(void)
         for(int i = 0; i < 1000; i++){
             snake_getSurroundings(ai_getInputField());
             ai_propagate(snake_move(ai_run()));
-            setLine((uint8_t)((i%1000)/4));
+            setLine(0, (uint8_t)((i%1000)/4));
             sendMatrix();
         }
         ai_is_ai_trained_write(1);
