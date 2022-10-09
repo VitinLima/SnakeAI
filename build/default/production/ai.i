@@ -4601,8 +4601,8 @@ void WDT_Initialize(void);
 
 # 1 "./sigmoid.h" 1
 # 11 "./sigmoid.h"
-const uint8_t sigmoidValues[16];
-const uint8_t de_sigmoidValues[16];
+const uint8_t sigmoidValues[16] = {128, 186, 225, 243, 250, 253, 254, 255, 0, 0, 1, 2, 5, 12, 30, 69};
+const uint8_t de_sigmoidValues[16] = {64, 50, 27, 12, 5, 2, 1, 0, 0, 0, 1, 2, 5, 12, 27, 50};
 
 uint8_t sigmoid(int8_t z);
 
@@ -4640,15 +4640,15 @@ void ai_initiate(){
 
 
     for(uint8_t j = 0; j < 4; j++){
-        B1[j] = rand();
+        B1[j] = rand()%0x03;
         for(uint8_t i = 0; i < 8; i++){
-            W1[i][j] = rand();
+            W1[i][j] = rand()%0x03;
         }
     }
     for(uint8_t j = 0; j < 4; j++){
-        B2[j] = rand();
+        B2[j] = rand()%0x03;
         for(uint8_t i = 0; i < 4; i++){
-            W2[i][j] = rand();
+            W2[i][j] = rand()%0x03;
         }
     }
 
@@ -4730,10 +4730,10 @@ void ai_propagate(int8_t incentive){
     for(uint8_t j = 0; j < 4; j++){
         DC_DZ2[j] = ((int)DC_DY2[j]*(int)(de_sigmoid(Z2[j])/2))/127;
         DC_DB2[j] = DC_DZ2[j]/64;
+        EUSART_Write(DC_DZ2[j]);
         for(uint8_t i = 0; i < 4; i++){
             DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y1[i])/127)/64;
             DC_DY1[i] += ((int)DC_DZ2[j]*(int)W2[i][j])/127;
-
         }
     }
     for(uint8_t j = 0; j < 4; j++){
