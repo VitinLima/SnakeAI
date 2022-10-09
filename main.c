@@ -131,19 +131,25 @@ void main(void)
                 }
             }
         }
-        for(uint8_t i = 0; i < 4; i++){
-            if(Y0[i]>0){
-                ledSet(5,i);
-            } else{
-                ledClear(5,i);
-            }
+        if(Y0[0]>0){
+            ledSet(0,6);
+        } else if(Y0[1]>0){
+            ledClear(2,6);
         }
-        for(uint8_t i = 4; i < 8; i++){
-            if(Y0[i]>0){
-                ledSet(5,i-4);
-            } else{
-                ledClear(5,i-4);
-            }
+        if(Y0[2]>0){
+            ledSet(1,5);
+        } else if(Y0[3]>0){
+            ledClear(1,7);
+        }
+        if(Y0[4]>0){
+            ledSet(4,6);
+        } else if(Y0[5]>0){
+            ledClear(6,6);
+        }
+        if(Y0[6]>0){
+            ledSet(5,5);
+        } else if(Y0[7]>0){
+            ledClear(5,7);
         }
         uint8_t foodPosition = snake_getFoodPosition();
         ledSet(foodPosition%BOARD_SIZE, foodPosition/BOARD_SIZE);
