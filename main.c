@@ -138,11 +138,11 @@ void main(void)
                 ledClear(5,i);
             }
         }
-        for(uint8_t i = 5; i < 8; i++){
+        for(uint8_t i = 4; i < 8; i++){
             if(Y0[i]==1){
-                ledSet(5,i);
+                ledSet(5,i-4);
             } else{
-                ledClear(5,i);
+                ledClear(5,i-4);
             }
         }
         uint8_t foodPosition = snake_getFoodPosition();
