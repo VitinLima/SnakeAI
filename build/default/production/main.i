@@ -4607,13 +4607,13 @@ void sendMatrix();
 
 # 1 "./snake.h" 1
 # 29 "./snake.h"
-    uint8_t field[4*4];
+    uint8_t field[(4*4)];
     uint8_t mapping[8];
     uint8_t snakeSize;
     void snake_initiate();
     int8_t snake_move(uint8_t direction);
     uint8_t* snake_getField();
-    void snake_getSurroundings(uint8_t* surroundings);
+    void snake_getSurroundings(int8_t* surroundings);
     uint8_t snake_getHeadPosition();
     void snake_setHeadPosition(uint8_t pos);
     uint8_t snake_getFoodPosition();
@@ -4622,21 +4622,21 @@ void sendMatrix();
 
 # 1 "./ai.h" 1
 # 28 "./ai.h"
-    uint8_t Y0[8];
-    uint8_t Y1[4];
-    uint8_t Y2[4];
+    int8_t Y0[8];
+    int8_t Y1[4];
+    int8_t Y2[4];
     int8_t W1[8][4];
     int8_t B1[4];
     int8_t W2[4][4];
     int8_t B2[4];
     int8_t Z1[4];
     int8_t Z2[4];
-    int8_t DY2[4];
-    int8_t DY1[4];
-    int8_t DW1[8][4];
-    int8_t DB1[4];
-    int8_t DW2[4][4];
-    int8_t DB2[4];
+    int8_t DC_DY2[4];
+    int8_t DZ2_DY1[4];
+    int8_t DZ1_DW1[8][4];
+    int8_t DZ1_DB1[4];
+    int8_t DZ2_DW2[4][4];
+    int8_t DZ2_DB2[4];
 
     uint8_t choice;
 # 65 "./ai.h"
@@ -4693,9 +4693,10 @@ void main(void)
     while (1)
     {
 
-
+        _delay((unsigned long)((100)*(8000000/4000.0)));
         snake_getSurroundings(ai_getInputField());
-        ai_propagate(snake_move(ai_run()));
+        int8_t incentive = snake_move(ai_run());
+        ai_propagate(incentive);
         for(uint8_t i = 0; i < 4; i++){
             for(uint8_t j = 0; j < 4; j++){
                 if(field[i+j*4]>0){
@@ -4704,6 +4705,41 @@ void main(void)
                     ledClear(i,j);
                 }
             }
+        }
+        ledClear(0,6);
+        ledClear(2,6);
+        ledClear(1,5);
+        ledClear(1,7);
+        ledClear(4,6);
+        ledClear(6,6);
+        ledClear(5,5);
+        ledClear(5,7);
+        if(Y0[0]>0){
+            ledSet(0,6);
+        } else if(Y0[1]>0){
+            ledSet(2,6);
+        }
+        if(Y0[2]>0){
+            ledSet(1,5);
+        } else if(Y0[3]>0){
+            ledSet(1,7);
+        }
+        if(Y0[4]>0){
+            ledSet(4,6);
+        } else if(Y0[5]>0){
+            ledSet(6,6);
+        }
+        if(Y0[6]>0){
+            ledSet(5,5);
+        } else if(Y0[7]>0){
+            ledSet(5,7);
+        }
+        ledClear(7,0);
+        ledClear(7,1);
+        if(incentive == -1){
+            ledSet(7,0);
+        } else if(incentive == 1){
+            ledSet(7,1);
         }
         uint8_t foodPosition = snake_getFoodPosition();
         ledSet(foodPosition%4, foodPosition/4);

@@ -194,18 +194,18 @@ void ai_propagate(int8_t incentive){
     
     int dz;
     for(uint8_t j = 0; j < N2; j++){
-        DC_DZ2[j] = ((int)DC_DY2[j]*(int)(de_sigmoid(Z2[j])>>1))/127;
-        DC_DB2[j] = DC_DZ2[j]>>6;
+        DC_DZ2[j] = ((int)DC_DY2[j]*(int)(de_sigmoid(Z2[j])/2))/127;
+        DC_DB2[j] = DC_DZ2[j]/64;
         for(uint8_t i = 0; i < N1; i++){
-            DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y1[i])/127)>>6;
+            DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y1[i])/127)/64;
             DC_DY1[i] += ((int)DC_DZ2[j]*(int)W2[i][j])/127;
         }
     }
     for(uint8_t j = 0; j < N1; j++){
-        DC_DZ1[j] = ((int)DC_DY1[j]*(int)(de_sigmoid(Z1[j])>>1))/127;
-        DC_DB1[j] = DC_DZ1[j]>>6;
+        DC_DZ1[j] = ((int)DC_DY1[j]*(int)(de_sigmoid(Z1[j])/2))/127;
+        DC_DB1[j] = DC_DZ1[j]/64;
         for(uint8_t i = 0; i < N0; i++){
-            DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y0[i])/127)>>6;
+            DC_DW2[i][j] = (((int)DC_DZ2[j]*(int)Y0[i])/127)/64;
         }
     }
     
