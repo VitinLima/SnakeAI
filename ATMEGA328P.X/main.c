@@ -21,11 +21,14 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
-
 #define _XTAL_FREQ 16000000
-#define __delay_us(x) __builtin_avr_delay_cycles((unsigned long)((x)*(_XTAL_FREQ/4000000.0)))
-#define __delay_ms(x) __builtin_avr_delay_cycles((unsigned long)((x)*(_XTAL_FREQ/4000.0)))
+#define __delay_us(x) __builtin_avr_delay_cycles((unsigned long)((x)*(_XTAL_FREQ/1000000.0)))
+#define __delay_ms(x) __builtin_avr_delay_cycles((unsigned long)((x)*(_XTAL_FREQ/1000.0)))
+
+#include "mcc_generated_files/mcc.h"
+#include "snake.h"
+#include "ai.h"
+#include "serialCommunication.h"
 
 /*
     Main application
@@ -36,10 +39,40 @@ int main(void)
     SYSTEM_Initialize();
 
     /* Replace with your application code */
+    snake_initiate();
+    ai_initiate();
+    
+//    if(ai_is_ai_trained_read()==0){
+//        for(uint16_t i = 0; i < 1000; i++){
+//            snake_getSurroundings(ai_getInputField());
+//            ai_propagate(snake_move(ai_run()));
+//            setLine(0,(uint8_t)(i>>2));
+//            setLine(1,(uint8_t)(i&0x03));
+//            sendMatrix();
+//        }
+//        ai_is_ai_trained_write(1);
+//    }
+    
+    uint8_t* field = snake_getField();
+    
+    for(uint8_t i = 0; i < BOARD_LENGTH; i++){
+        send(field[i]);
+    }
+    
+    send(snake_getFoodPosition());
+    
     while (1){
-        __delay_ms(1000);
-        IO_PB5_SetHigh();
-        IO_PB5_SetLow();
+        __delay_ms(500);
+        snake_getSurroundings(ai_getInputField());
+        uint8_t choice = ai_run();
+        int8_t incentive = snake_move(choice);
+        ai_propagate(incentive);
+//        for(uint8_t i = 0; i < BOARD_LENGTH; i++){
+//            send(field[i]);
+//        }
+//        send(snake_getFoodPosition());
+//        ai_printAI();
+        send(0x30u);
     }
 }
 /**

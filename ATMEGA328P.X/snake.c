@@ -1,10 +1,9 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "snake.h"
-#include "ledMatrix.h"
 
 uint8_t field[BOARD_LENGTH];
-uint8_t mapping[8] = {
+uint8_t snake_mapping[8] = {
     BOARD_LENGTH-BOARD_SIZE-1,
     BOARD_LENGTH-1,
     BOARD_SIZE-1,
@@ -116,7 +115,7 @@ void snake_getSurroundings(int8_t* surroundings){
     }
     uint8_t p;
     for(uint8_t i = 0; i < 4; i++){
-        p = (headPosition+mapping[i])%BOARD_LENGTH;
+        p = (headPosition+snake_mapping[i])%BOARD_LENGTH;
         if(field[p] > 0){
             surroundings[i] = 1;
         }

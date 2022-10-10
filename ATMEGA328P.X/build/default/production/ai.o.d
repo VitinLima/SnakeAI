@@ -28,7 +28,8 @@ build/default/production/ai.o.d build/default/production/ai.o: ai.c \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\stdio.h \
  mcc_generated_files/include/../config/clock_config.h \
  mcc_generated_files/include/eeprom.h \
- mcc_generated_files/config/clock_config.h ai.h sigmoid.h
+ mcc_generated_files/config/clock_config.h ai.h sigmoid.h \
+ serialCommunication.h
 
 mcc_generated_files/mcc.h:
 
@@ -95,3 +96,5 @@ mcc_generated_files/config/clock_config.h:
 ai.h:
 
 sigmoid.h:
+
+serialCommunication.h:

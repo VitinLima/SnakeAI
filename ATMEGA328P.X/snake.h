@@ -26,9 +26,10 @@ extern "C" {
 #define LEFT 2
 #define RIGHT 3
     
-    uint8_t field[BOARD_LENGTH];
-    uint8_t mapping[8];
-    uint8_t snakeSize;
+//    uint8_t field[BOARD_LENGTH];
+//    uint8_t snake_mapping[8];
+//    uint8_t snakeSize;
+    
     void snake_initiate();
     int8_t snake_move(uint8_t direction);
     uint8_t* snake_getField();

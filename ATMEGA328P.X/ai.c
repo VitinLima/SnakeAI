@@ -2,6 +2,32 @@
 #include "mcc_generated_files/mcc.h"
 #include "ai.h"
 #include "sigmoid.h"
+#include "serialCommunication.h"
+
+int8_t Y0[N0];
+int8_t Y1[N1];
+int8_t Y2[N2];
+int Z1[N1];
+int Z2[N2];
+int8_t W1[N0][N1];
+int8_t B1[N1];
+int8_t W2[N1][N2];
+int8_t B2[N2];
+
+int8_t DC_DY2[N2];
+
+int DC_DZ2[N2];
+
+int8_t DC_DB2[N2];
+int8_t DC_DW2[N1][N2];
+int8_t DC_DY1[N1];
+
+int DC_DZ1[N1];
+
+int8_t DC_DB1[N1];
+int8_t DC_DW1[N0][N1];
+
+uint8_t choice;
 
 //void weights1_write(uint8_t add1, uint8_t add2, int8_t val){
 //    eeprom_write(ADD_W1 + N0*add1 + add2, (unsigned char)val);
@@ -153,7 +179,7 @@ void ai_propagate(int8_t incentive){
     for(uint8_t j = 0; j < N2; j++){
         DC_DZ2[j] = ((int)DC_DY2[j]*(int)(de_sigmoid(Z2[j])/16))/16;
         DC_DB2[j] = DC_DZ2[j];
-        EUSART_Write(DC_DZ2[j]);
+//        EUSART_Write(DC_DZ2[j]);
         for(uint8_t i = 0; i < N1; i++){
             DC_DW2[i][j] = ((int)DC_DZ2[j]*(int)Y1[i])/16;
             DC_DY1[i] += ((int)DC_DZ2[j]*(int)W2[i][j])/16;
@@ -163,7 +189,7 @@ void ai_propagate(int8_t incentive){
         DC_DZ1[j] = ((int)DC_DY1[j]*(int)(de_sigmoid(Z1[j])/16))/16;
         DC_DB1[j] = DC_DZ1[j];
         for(uint8_t i = 0; i < N0; i++){
-            DC_DW2[i][j] = ((int)DC_DZ2[j]*(int)Y0[i])/16;
+            DC_DW1[i][j] = ((int)DC_DZ1[j]*(int)Y0[i])/16;
         }
     }
     
@@ -181,15 +207,29 @@ void ai_propagate(int8_t incentive){
     }
 }
 
-//void printAI(){
-//    for(uint8_t j = 0; j < N2; j++){
-//        EUSART_Write(Y2[j]);
-//        EUSART_Write((uint8_t)biases2_read(j));
-//        for(uint8_t i = 0; i < N1; i++){
-//            EUSART_Write((uint8_t)weights2_read(i,j));
-//        }
-//    }
-//}
+void ai_printAI(){
+    for(uint8_t j = 0; j < N2; j++){
+        send(Y2[j]);
+        send((uint8_t)(Z2[j]&0xffu));
+        send((uint8_t)(Z2[j]>>8));
+        send((uint8_t)B2[j]);
+        for(uint8_t i = 0; i < N1; i++){
+            send((uint8_t)W2[i][j]);
+        }
+    }
+    for(uint8_t j = 0; j < N1; j++){
+        send(Y1[j]);
+        send((uint8_t)(Z1[j]&0xffu));
+        send((uint8_t)(Z1[j]>>8));
+        send((uint8_t)B1[j]);
+        for(uint8_t i = 0; i < N0; i++){
+            send((uint8_t)W1[i][j]);
+        }
+    }
+    for(uint8_t i = 0; i < N0; i++){
+        send(Y0[i]);
+    }
+}
 
 //void ai_propagate(uint8_t* answer){
 //    
