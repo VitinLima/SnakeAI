@@ -23,6 +23,10 @@
 
 #include "mcc_generated_files/mcc.h"
 
+#define _XTAL_FREQ 16000000
+#define __delay_us(x) __builtin_avr_delay_cycles((unsigned long)((x)*(_XTAL_FREQ/4000000.0)))
+#define __delay_ms(x) __builtin_avr_delay_cycles((unsigned long)((x)*(_XTAL_FREQ/4000.0)))
+
 /*
     Main application
 */
@@ -33,6 +37,9 @@ int main(void)
 
     /* Replace with your application code */
     while (1){
+        __delay_ms(1000);
+        IO_PB5_SetHigh();
+        IO_PB5_SetLow();
     }
 }
 /**

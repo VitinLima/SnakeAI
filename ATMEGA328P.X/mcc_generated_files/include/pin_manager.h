@@ -36,6 +36,18 @@
 #include <avr/io.h>
 #include "port.h"
 
+//get/set IO_PB5 aliases
+#define IO_PB5_SetHigh() do { PORTB |= 0x20; } while(0)
+#define IO_PB5_SetLow() do { PORTB &= ~0x20; } while(0)
+#define IO_PB5_Toggle() do { PINB |= 0x20; } while(0)
+#define IO_PB5_GetValue() (PINB & (0x1 << 5))
+#define IO_PB5_SetDigitalInput() do { DDRB &= ~0x20; } while(0)
+#define IO_PB5_SetDigitalOutput() do { DDRB |= 0x20; } while(0)
+#define IO_PB5_SetPullUp() do { PORTB |= 0x20; } while(0)
+#define IO_PB5_ResetPullUp() do { PORTB &= ~0x20; } while(0)
+#define IO_PB5_SetInverted() do { PORTB_PIN5CTRL  |= PORT_INVEN_bm; } while(0)
+#define IO_PB5_ResetInverted() do { PORTB_PIN5CTRL  &= ~PORT_INVEN_bm; } while(0)
+
 //get/set PD1 aliases
 #define PD1_SetHigh() do { PORTD |= 0x2; } while(0)
 #define PD1_SetLow() do { PORTD &= ~0x2; } while(0)
