@@ -27,7 +27,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "snake.h"
-#include "ai.h"
+#include "ai_short_float.h"
 #include "serialCommunication.h"
 
 /*
@@ -56,23 +56,33 @@ int main(void)
     uint8_t* field = snake_getField();
     
     for(uint8_t i = 0; i < BOARD_LENGTH; i++){
-        send(field[i]);
+        print(field[i]);
     }
     
-    send(snake_getFoodPosition());
+    print(snake_getFoodPosition());
     
     while (1){
-        __delay_ms(500);
+        __delay_ms(100);
         snake_getSurroundings(ai_getInputField());
         uint8_t choice = ai_run();
         int8_t incentive = snake_move(choice);
-        ai_propagate(incentive);
-//        for(uint8_t i = 0; i < BOARD_LENGTH; i++){
-//            send(field[i]);
-//        }
-//        send(snake_getFoodPosition());
-//        ai_printAI();
-        send(0x30u);
+        if(incentive==-1){
+            ai_propagate(incentive);
+
+            startMessage();
+            ai_printAI();
+            for(uint8_t i = 0; i < BOARD_LENGTH; i++){
+                print(field[i]);
+            }
+            print(snake_getFoodPosition());
+            print(snake_getHeadPosition());
+            print(snake_getFoodPosition());
+            endMessage();
+            while(1){
+                
+            }
+            snake_initiate();
+        }
     }
 }
 /**

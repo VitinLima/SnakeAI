@@ -12,8 +12,9 @@
 extern "C" {
 #endif
 
-    void send(uint8_t b);
-
+    void print(uint8_t b);
+    void startMessage();
+    void endMessage();
 
 #ifdef	__cplusplus
 }
