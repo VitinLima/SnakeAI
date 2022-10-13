@@ -45,7 +45,7 @@
 
 #include "ledMatrix.h"
 #include "snake.h"
-#include "ai.h"
+#include "ai_short.h"
 
 void deactivateElevator(){
     LATAbits.LATA3 = 0;

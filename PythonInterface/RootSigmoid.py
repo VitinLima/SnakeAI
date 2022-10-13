@@ -13,13 +13,13 @@ class RootSigmoid(tk.Tk):
         
         self.N0 = N0
         self.N1 = N1
-        self.N2 = N2
+        # self.N2 = N2
 
         self.S1 = [0]*N1
-        self.S2 = [0]*N2
+        # self.S2 = [0]*N2
 
         self.DS1 = [0]*N1
-        self.DS2 = [0]*N2
+        # self.DS2 = [0]*N2
         
         self.title("Sigmoid")
         
@@ -32,14 +32,14 @@ class RootSigmoid(tk.Tk):
         self.lbS1 = tk.Label(master=self.frameSZ, text=f"S1: {self.S1}", foreground="white", background="black", width=40, font=("Arial", 16))
         self.lbS1.pack(side=tk.LEFT, fill=tk.X)
         
-        self.lbS2 = tk.Label(master=self.frameSZ, text=f"S2: {self.S2}", foreground="white", background="black", width=40, font=("Arial", 16))
-        self.lbS2.pack(side=tk.LEFT,fill=tk.X)
+        # self.lbS2 = tk.Label(master=self.frameSZ, text=f"S2: {self.S2}", foreground="white", background="black", width=40, font=("Arial", 16))
+        # self.lbS2.pack(side=tk.LEFT,fill=tk.X)
         
         self.lbDS1 = tk.Label(master=self.frameDSZ, text=f"S1: {self.S1}", foreground="white", background="black", width=40, font=("Arial", 16))
         self.lbDS1.pack(side=tk.LEFT, fill=tk.X)
         
-        self.lbDS2 = tk.Label(master=self.frameDSZ, text=f"S2: {self.S2}", foreground="white", background="black", width=40, font=("Arial", 16))
-        self.lbDS2.pack(side=tk.LEFT,fill=tk.X)
+        # self.lbDS2 = tk.Label(master=self.frameDSZ, text=f"S2: {self.S2}", foreground="white", background="black", width=40, font=("Arial", 16))
+        # self.lbDS2.pack(side=tk.LEFT,fill=tk.X)
         
         self.isAlive = True
         self.protocol("WM_DELETE_WINDOW", self.on_closing)

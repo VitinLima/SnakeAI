@@ -1,10 +1,9 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "snake.h"
-#include "ledMatrix.h"
 
 uint8_t field[BOARD_LENGTH];
-uint8_t mapping[8] = {
+uint8_t snake_mapping[8] = {
     BOARD_LENGTH-BOARD_SIZE-1,
     BOARD_LENGTH-1,
     BOARD_SIZE-1,
@@ -22,7 +21,7 @@ void snake_initiate(){
     for(uint8_t i = 0; i < BOARD_LENGTH; i++){
         field[i] = 0;
     }
-    srand(0);
+//    srand(0);
     headPosition = rand()%BOARD_LENGTH;
     foodPosition = rand()%BOARD_LENGTH;
     snakeSize = 3;
@@ -75,6 +74,7 @@ int8_t snake_move(uint8_t direction){
         incentive = KILL;
         snake_initiate();
     } else{
+        field[headPosition] = snakeSize;
         if(headPosition == foodPosition){
             remainingMoves = MOVES_RECHARGE;
             incentive = FOOD;
@@ -83,7 +83,6 @@ int8_t snake_move(uint8_t direction){
                 foodPosition = rand()%BOARD_LENGTH;
             }while(field[foodPosition] > 0);
         }
-        field[headPosition] = snakeSize;
     }
     if(remainingMoves == 0){
         incentive = KILL;
@@ -116,7 +115,7 @@ void snake_getSurroundings(int8_t* surroundings){
     }
     uint8_t p;
     for(uint8_t i = 0; i < 4; i++){
-        p = (headPosition+mapping[i])%BOARD_LENGTH;
+        p = (headPosition+snake_mapping[i])%BOARD_LENGTH;
         if(field[p] > 0){
             surroundings[i] = 1;
         }
