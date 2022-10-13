@@ -22,13 +22,13 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  mcc_generated_files/include/pin_manager.h \
  mcc_generated_files/include/port.h \
  mcc_generated_files/include/../utils/compiler.h \
+ mcc_generated_files/include/eeprom.h \
  mcc_generated_files/include/cpuint.h \
  mcc_generated_files/include/../utils/atomic.h \
  mcc_generated_files/include/usart0.h \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\stdio.h \
  mcc_generated_files/include/../config/clock_config.h \
- mcc_generated_files/include/eeprom.h \
- mcc_generated_files/config/clock_config.h snake.h ai_short_float.h \
+ mcc_generated_files/config/clock_config.h snake.h ai_short.h \
  serialCommunication.h
 
 mcc_generated_files/mcc.h:
@@ -79,6 +79,8 @@ mcc_generated_files/include/port.h:
 
 mcc_generated_files/include/../utils/compiler.h:
 
+mcc_generated_files/include/eeprom.h:
+
 mcc_generated_files/include/cpuint.h:
 
 mcc_generated_files/include/../utils/atomic.h:
@@ -89,12 +91,10 @@ d:\programdata\microchip\xc8\v2.40\avr\avr\include\stdio.h:
 
 mcc_generated_files/include/../config/clock_config.h:
 
-mcc_generated_files/include/eeprom.h:
-
 mcc_generated_files/config/clock_config.h:
 
 snake.h:
 
-ai_short_float.h:
+ai_short.h:
 
 serialCommunication.h:

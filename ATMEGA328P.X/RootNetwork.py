@@ -14,20 +14,20 @@ class RootNetwork(tk.Tk):
         
         self.N0 = N0
         self.N1 = N1
-        self.N2 = N2
+        # self.N2 = N2
         
         self.Y0 = [0.0]*N0
         self.Y1 = [0.0]*N1
-        self.Y2 = [0.0]*N2
+        # self.Y2 = [0.0]*N2
 
         self.B1 = [0.0]*N1
-        self.B2 = [0.0]*N2
+        # self.B2 = [0.0]*N2
 
         self.W1 = [[0.0]*N1 for row in range(N0)]
-        self.W2 = [[0.0]*N2 for row in range(N1)]
+        # self.W2 = [[0.0]*N2 for row in range(N1)]
 
         self.Z1 = [0.0]*N1
-        self.Z2 = [0.0]*N2
+        # self.Z2 = [0.0]*N2
         
         # self.minsize(16*dx, 14*dy)
         
@@ -52,26 +52,26 @@ class RootNetwork(tk.Tk):
         self.lbY1 = tk.Label(master=self.frameY, text=f"Y1: {self.Y1}", foreground="white", background="black", width=25, font=("Arial", 16))
         self.lbY1.pack(side=tk.LEFT, fill=tk.X)
         
-        self.lbY2 = tk.Label(master=self.frameY, text=f"Y2: {self.Y2}", foreground="white", background="black", width=25, font=("Arial", 16))
-        self.lbY2.pack(side=tk.LEFT, fill=tk.X)
+        # self.lbY2 = tk.Label(master=self.frameY, text=f"Y2: {self.Y2}", foreground="white", background="black", width=25, font=("Arial", 16))
+        # self.lbY2.pack(side=tk.LEFT, fill=tk.X)
         
         self.lbB1 = tk.Label(master=self.frameB, text=f"B1: {self.B1}", foreground="white", background="black", width=40, font=("Arial", 16))
         self.lbB1.pack(side=tk.LEFT, fill=tk.X)
         
-        self.lbB2 = tk.Label(master=self.frameB, text=f"B2: {self.B2}", foreground="white", background="black", width=40, font=("Arial", 16))
-        self.lbB2.pack(side=tk.LEFT,fill=tk.X)
+        # self.lbB2 = tk.Label(master=self.frameB, text=f"B2: {self.B2}", foreground="white", background="black", width=40, font=("Arial", 16))
+        # self.lbB2.pack(side=tk.LEFT,fill=tk.X)
         
         self.lbW1 = tk.Label(master=self.frameW, text=f"W1:\n{self.matrixToString(self.W1)}", foreground="white", background="black", width=40, font=("Arial", 16))
         self.lbW1.pack(side=tk.LEFT,fill=tk.X)
         
-        self.lbW2 = tk.Label(master=self.frameW, text=f"W2:\n{self.matrixToString(self.W2)}", foreground="white", background="black", width=40, font=("Arial", 16))
-        self.lbW2.pack(side=tk.LEFT,fill=tk.X)
+        # self.lbW2 = tk.Label(master=self.frameW, text=f"W2:\n{self.matrixToString(self.W2)}", foreground="white", background="black", width=40, font=("Arial", 16))
+        # self.lbW2.pack(side=tk.LEFT,fill=tk.X)
         
         self.lbZ1 = tk.Label(master=self.frameZ, text=f"Z1: {self.Z1}", foreground="white", background="black", width=40, font=("Arial", 16))
         self.lbZ1.pack(side=tk.LEFT, fill=tk.X)
         
-        self.lbZ2 = tk.Label(master=self.frameZ, text=f"Z2: {self.Z2}", foreground="white", background="black", width=40, font=("Arial", 16))
-        self.lbZ2.pack(side=tk.LEFT, fill=tk.X)
+        # self.lbZ2 = tk.Label(master=self.frameZ, text=f"Z2: {self.Z2}", foreground="white", background="black", width=40, font=("Arial", 16))
+        # self.lbZ2.pack(side=tk.LEFT, fill=tk.X)
         
         self.isAlive = True
         self.protocol("WM_DELETE_WINDOW", self.on_closing)

@@ -27,7 +27,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "snake.h"
-#include "ai_short_float.h"
+#include "ai_short.h"
 #include "serialCommunication.h"
 
 /*

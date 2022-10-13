@@ -36,7 +36,7 @@ def sortDataSize(dataType):
         return 1
     elif dataType=='int8_t':
         return 1
-    elif dataType=='int':
+    elif dataType=='int16_t':
         return 2
     elif dataType=='float':
         return 4
@@ -46,8 +46,8 @@ def convertData(dataRx, dataType):
         return dataRx
     elif dataType=='int8_t':
         if dataRx&0x80:
-            dataRx -= 0x10000
-    elif dataType=='int':
+            dataRx -= 0x100
+    elif dataType=='int16_t':
         if dataRx&0x8000:
             dataRx -= 0x10000
     elif dataType=='float':
@@ -94,6 +94,7 @@ def sortRoots(dn, roots):
             return roots[i]
 
 portCom = 'COM5'
+baudRate = 57600
 
 SF = 0x0F
 EF = 0x0A
@@ -102,7 +103,7 @@ SF_N =  0x1F
 EF_N = 0x1A
 
 
-field_size = 4
+field_size = 8
 field_length = field_size*field_size
 
 N0 = 8
@@ -113,7 +114,7 @@ food = 0
 
 vector_names = ['Y0', 'Y1', 'B1', 'W1', 'Z1', 'DC_DY1', 'DC_DB1', 'DC_DW1', 'DC_DZ1', 'S1', 'S2', 'DS1', 'DS2', 'field', 'food', 'data']
 
-type_names = ['byte', 'uint8_t', 'int8_t', 'int', 'float']
+type_names = ['byte', 'uint8_t', 'int8_t', 'int16_t', 'float']
 
 rootNetwork = RootNetwork.RootNetwork(N0, N1, N2)
 rootDerivatives = RootDerivatives.RootDerivatives(N0, N1, N2)
@@ -140,7 +141,7 @@ def change_state(nextState):
     element_index = 0
     current_string = ''
 
-ser = serial.Serial(portCom, 9600, timeout=0)
+ser = serial.Serial(portCom, baudRate, timeout=0)
 
 try:
     while rootNetwork.isAlive and rootDerivatives.isAlive and rootSigmoid.isAlive and rootField.isAlive:
@@ -183,7 +184,7 @@ try:
                     if state==0:
                         current_string += chr(dataRx)
                         if vector_names.count(current_string)>0:
-                            # print(current_string)
+                            print(current_string)
                             current_array_name = current_string
                             if current_array_name=='food':
                                 pass
@@ -198,7 +199,7 @@ try:
                     elif state==1:
                         current_string += chr(dataRx)
                         if type_names.count(current_string)>0:
-                            # print(current_string)
+                            print(current_string)
                             dataType = current_string
                             dataSize = sortDataSize(dataType)
                             

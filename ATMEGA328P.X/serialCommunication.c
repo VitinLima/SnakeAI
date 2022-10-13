@@ -23,10 +23,9 @@ void print(uint8_t b){
     }
 }
 
-void printString(const char *str){
-    for(uint8_t i = 0; str[i]!='\0'; i++){
-        print((uint8_t)str[i]);
-    }
+void printInteger(int i){
+    print((uint8_t)i);
+    print((uint8_t)(i>>8));
 }
 
 void printFloat(float f){
@@ -37,6 +36,12 @@ void printFloat(float f){
     fb.f = f;
     for(uint8_t i = 0; i < sizeof(fb); i++){
         print((uint8_t)(fb.u>>(8*i)));
+    }
+}
+
+void printString(const char *str){
+    for(uint8_t i = 0; str[i]!='\0'; i++){
+        print((uint8_t)str[i]);
     }
 }
 

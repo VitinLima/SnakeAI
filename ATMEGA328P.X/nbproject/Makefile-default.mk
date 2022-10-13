@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/src/protected_io.S mcc_generated_files/src/cpuint.c mcc_generated_files/src/usart0.c mcc_generated_files/src/eeprom.c mcc_generated_files/src/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c main.c serialCommunication.c sigmoid.c snake.c ai_short_float.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/src/protected_io.S mcc_generated_files/src/cpuint.c mcc_generated_files/src/usart0.c mcc_generated_files/src/eeprom.c mcc_generated_files/src/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c main.c serialCommunication.c sigmoid.c snake.c ai_short.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/src/protected_io.o ${OBJECTDIR}/mcc_generated_files/src/cpuint.o ${OBJECTDIR}/mcc_generated_files/src/usart0.o ${OBJECTDIR}/mcc_generated_files/src/eeprom.o ${OBJECTDIR}/mcc_generated_files/src/pin_manager.o ${OBJECTDIR}/mcc_generated_files/device_config.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/main.o ${OBJECTDIR}/serialCommunication.o ${OBJECTDIR}/sigmoid.o ${OBJECTDIR}/snake.o ${OBJECTDIR}/ai_short_float.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/src/protected_io.o.d ${OBJECTDIR}/mcc_generated_files/src/cpuint.o.d ${OBJECTDIR}/mcc_generated_files/src/usart0.o.d ${OBJECTDIR}/mcc_generated_files/src/eeprom.o.d ${OBJECTDIR}/mcc_generated_files/src/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/device_config.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/serialCommunication.o.d ${OBJECTDIR}/sigmoid.o.d ${OBJECTDIR}/snake.o.d ${OBJECTDIR}/ai_short_float.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/src/protected_io.o ${OBJECTDIR}/mcc_generated_files/src/cpuint.o ${OBJECTDIR}/mcc_generated_files/src/usart0.o ${OBJECTDIR}/mcc_generated_files/src/eeprom.o ${OBJECTDIR}/mcc_generated_files/src/pin_manager.o ${OBJECTDIR}/mcc_generated_files/device_config.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/main.o ${OBJECTDIR}/serialCommunication.o ${OBJECTDIR}/sigmoid.o ${OBJECTDIR}/snake.o ${OBJECTDIR}/ai_short.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/src/protected_io.o.d ${OBJECTDIR}/mcc_generated_files/src/cpuint.o.d ${OBJECTDIR}/mcc_generated_files/src/usart0.o.d ${OBJECTDIR}/mcc_generated_files/src/eeprom.o.d ${OBJECTDIR}/mcc_generated_files/src/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/device_config.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/serialCommunication.o.d ${OBJECTDIR}/sigmoid.o.d ${OBJECTDIR}/snake.o.d ${OBJECTDIR}/ai_short.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/src/protected_io.o ${OBJECTDIR}/mcc_generated_files/src/cpuint.o ${OBJECTDIR}/mcc_generated_files/src/usart0.o ${OBJECTDIR}/mcc_generated_files/src/eeprom.o ${OBJECTDIR}/mcc_generated_files/src/pin_manager.o ${OBJECTDIR}/mcc_generated_files/device_config.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/main.o ${OBJECTDIR}/serialCommunication.o ${OBJECTDIR}/sigmoid.o ${OBJECTDIR}/snake.o ${OBJECTDIR}/ai_short_float.o
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/src/protected_io.o ${OBJECTDIR}/mcc_generated_files/src/cpuint.o ${OBJECTDIR}/mcc_generated_files/src/usart0.o ${OBJECTDIR}/mcc_generated_files/src/eeprom.o ${OBJECTDIR}/mcc_generated_files/src/pin_manager.o ${OBJECTDIR}/mcc_generated_files/device_config.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/main.o ${OBJECTDIR}/serialCommunication.o ${OBJECTDIR}/sigmoid.o ${OBJECTDIR}/snake.o ${OBJECTDIR}/ai_short.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/src/protected_io.S mcc_generated_files/src/cpuint.c mcc_generated_files/src/usart0.c mcc_generated_files/src/eeprom.c mcc_generated_files/src/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c main.c serialCommunication.c sigmoid.c snake.c ai_short_float.c
+SOURCEFILES=mcc_generated_files/src/protected_io.S mcc_generated_files/src/cpuint.c mcc_generated_files/src/usart0.c mcc_generated_files/src/eeprom.c mcc_generated_files/src/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c main.c serialCommunication.c sigmoid.c snake.c ai_short.c
 
 
 
@@ -174,11 +174,11 @@ ${OBJECTDIR}/snake.o: snake.c  .generated_files/flags/default/b1e19cdb3a8b5b018d
 	@${RM} ${OBJECTDIR}/snake.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/snake.o.d" -MT "${OBJECTDIR}/snake.o.d" -MT ${OBJECTDIR}/snake.o -o ${OBJECTDIR}/snake.o snake.c 
 	
-${OBJECTDIR}/ai_short_float.o: ai_short_float.c  .generated_files/flags/default/301ef3e4058c3fd84af08b9657cfeaa67189999d .generated_files/flags/default/87e15c01fb9341355aa8890b9ec64c3de80bcb0f
+${OBJECTDIR}/ai_short.o: ai_short.c  .generated_files/flags/default/ae984dfd457175649915c823078260108f1d4502 .generated_files/flags/default/87e15c01fb9341355aa8890b9ec64c3de80bcb0f
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ai_short_float.o.d 
-	@${RM} ${OBJECTDIR}/ai_short_float.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ai_short_float.o.d" -MT "${OBJECTDIR}/ai_short_float.o.d" -MT ${OBJECTDIR}/ai_short_float.o -o ${OBJECTDIR}/ai_short_float.o ai_short_float.c 
+	@${RM} ${OBJECTDIR}/ai_short.o.d 
+	@${RM} ${OBJECTDIR}/ai_short.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ai_short.o.d" -MT "${OBJECTDIR}/ai_short.o.d" -MT ${OBJECTDIR}/ai_short.o -o ${OBJECTDIR}/ai_short.o ai_short.c 
 	
 else
 ${OBJECTDIR}/mcc_generated_files/src/cpuint.o: mcc_generated_files/src/cpuint.c  .generated_files/flags/default/6e7f0d097cfc11620453cbb81ef5f6fb13fbe40c .generated_files/flags/default/87e15c01fb9341355aa8890b9ec64c3de80bcb0f
@@ -241,11 +241,11 @@ ${OBJECTDIR}/snake.o: snake.c  .generated_files/flags/default/9ebc1b2e83a4bb8680
 	@${RM} ${OBJECTDIR}/snake.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/snake.o.d" -MT "${OBJECTDIR}/snake.o.d" -MT ${OBJECTDIR}/snake.o -o ${OBJECTDIR}/snake.o snake.c 
 	
-${OBJECTDIR}/ai_short_float.o: ai_short_float.c  .generated_files/flags/default/52914cdb53799bc60c8ea7c6cd644854d25dc066 .generated_files/flags/default/87e15c01fb9341355aa8890b9ec64c3de80bcb0f
+${OBJECTDIR}/ai_short.o: ai_short.c  .generated_files/flags/default/43584ac7102d97cbde93b07c41e6669b4d64fc91 .generated_files/flags/default/87e15c01fb9341355aa8890b9ec64c3de80bcb0f
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ai_short_float.o.d 
-	@${RM} ${OBJECTDIR}/ai_short_float.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ai_short_float.o.d" -MT "${OBJECTDIR}/ai_short_float.o.d" -MT ${OBJECTDIR}/ai_short_float.o -o ${OBJECTDIR}/ai_short_float.o ai_short_float.c 
+	@${RM} ${OBJECTDIR}/ai_short.o.d 
+	@${RM} ${OBJECTDIR}/ai_short.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ai_short.o.d" -MT "${OBJECTDIR}/ai_short.o.d" -MT ${OBJECTDIR}/ai_short.o -o ${OBJECTDIR}/ai_short.o ai_short.c 
 	
 endif
 

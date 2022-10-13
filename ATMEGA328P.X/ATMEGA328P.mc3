@@ -2192,7 +2192,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="USART0" name="BaudRate"/>
-         <value>9600</value>
+         <value>57600</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="USART0" name="CLK_PER"/>
@@ -2204,7 +2204,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="USART0" name="ErrorPer"/>
-         <value>-0.157%</value>
+         <value>-2.124%</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="USART0" name="InterruptDriven"/>
@@ -2452,7 +2452,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="USART0" registerAlias="UBRR"/>
-         <value>103</value>
+         <value>16</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="USART0" registerAlias="UCSRA"/>
@@ -2689,24 +2689,24 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\include\pin_manager.h</file>
-         <hash>f7228849a4ffbc39a000d86548c276f7b785b39d6b21326a245222c2969c96dc</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\src\protected_io.S</file>
          <hash>69d7d2c54bccf38027e4950b66dadc2d9c0be7a2523ffbe4648ec79e87f33522</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\include\pin_manager.h</file>
+         <hash>f7228849a4ffbc39a000d86548c276f7b785b39d6b21326a245222c2969c96dc</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\utils\compiler.h</file>
          <hash>3f2d7b47b12f2ecbd4c3971644ea7ecd10d2562fc8605a4495bd597eb0f59750</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\src\pin_manager.c</file>
-         <hash>50db415c910bbd694da9c554e20fe665a6d73d97e953b69b13c03df08364c99d</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\utils\atomic.h</file>
          <hash>80e018fe02cd0c54394bb9a54dcf927d346410567dc6dded62bea9b49e322acf</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\src\pin_manager.c</file>
+         <hash>50db415c910bbd694da9c554e20fe665a6d73d97e953b69b13c03df08364c99d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\src\cpuint.c</file>
@@ -2733,16 +2733,16 @@
          <hash>02efe91f6b4b8b31e5d6141c604f6f918f641f26433ffc12de9de3106df36a2e</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>8cc702529daa26b53ed94f66f9517e61dc34869dcadd7dff6e54becbcfe6f557</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\include\port.h</file>
          <hash>95a790da1f12bd53a3c4b79b0f2aa8d859de5885870ac772cdbe72561c3007db</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>92a8f84911124e9a139a3f198c008652b1860effc1d535eb74aa7cd02fa3da8e</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\src\usart0.c</file>
-         <hash>5ce13a389205bfa5c80c116b91853d82a836a82c4ef0a2c570c8cdc298642ee2</hash>
+         <hash>a38499664660a5cd0d0480baba92aa0b8d52b3317192839cc13ad5c032bda30e</hash>
       </entry>
       <entry>
          <file>main.c</file>

@@ -38,7 +38,7 @@ void USART0_Initialize()
 {
 
     //
-    UBRR0 = 0x67;
+    UBRR0 = 0x10;
 	
     //RXC disabled; TXC disabled; UDRE disabled; FE disabled; DOR disabled; UPE disabled; U2X disabled; MPCM disabled; 
     
