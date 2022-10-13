@@ -30,7 +30,7 @@ void snake_initiate(){
 }
 
 int8_t snake_move(uint8_t direction){
-//    remainingMoves--;
+    remainingMoves--;
     for(uint8_t i = 0; i < BOARD_LENGTH; i++){
         if(field[i] > 0){
             field[i]--;
@@ -69,24 +69,24 @@ int8_t snake_move(uint8_t direction){
             break;
     }
     if(incentive == KILL){
-//        snake_initiate();
+        snake_initiate();
     } else if(field[headPosition] > 0){
         incentive = KILL;
-//        snake_initiate();
+        snake_initiate();
     } else{
         field[headPosition] = snakeSize;
-//        if(headPosition == foodPosition){
-//            remainingMoves = MOVES_RECHARGE;
-//            incentive = FOOD;
-//            snakeSize++;
-//            do{
-//                foodPosition = rand()%BOARD_LENGTH;
-//            }while(field[foodPosition] > 0);
-//        }
+        if(headPosition == foodPosition){
+            remainingMoves = MOVES_RECHARGE;
+            incentive = FOOD;
+            snakeSize++;
+            do{
+                foodPosition = rand()%BOARD_LENGTH;
+            }while(field[foodPosition] > 0);
+        }
     }
     if(remainingMoves == 0){
         incentive = KILL;
-//        snake_initiate();
+        snake_initiate();
     }
     return incentive;
 }

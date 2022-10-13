@@ -8,9 +8,9 @@
 #ifndef SIGMOID_H
 #define	SIGMOID_H
 
-uint8_t sigmoid(int8_t z);
+uint8_t sigmoid(int z);
 
-uint8_t de_sigmoid(int8_t z);
+uint8_t de_sigmoid(int z);
 
 #endif	/* SIGMOID_H */
 

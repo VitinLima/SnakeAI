@@ -5,7 +5,7 @@
 const uint8_t sigmoidValues[16] = {128, 186, 225, 243, 250, 253, 254, 255, 16, 16, 16, 16, 16, 16, 30, 69};
 const uint8_t de_sigmoidValues[16] = {64, 50, 27, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 27, 50};
 
-uint8_t sigmoid(int8_t z){
+uint8_t sigmoid(int z){
     z /= 16;
     if(z < -8){
         return 16;
@@ -19,7 +19,7 @@ uint8_t sigmoid(int8_t z){
     return sigmoidValues[(uint8_t)z];
 }
 
-uint8_t de_sigmoid(int8_t z){
+uint8_t de_sigmoid(int z){
     z /= 16;
     if(z < -8){
         return 16u;

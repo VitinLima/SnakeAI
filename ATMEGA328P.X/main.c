@@ -55,34 +55,38 @@ int main(void)
     
     uint8_t* field = snake_getField();
     
-    for(uint8_t i = 0; i < BOARD_LENGTH; i++){
-        print(field[i]);
-    }
-    
-    print(snake_getFoodPosition());
+//    for(uint8_t i = 0; i < BOARD_LENGTH; i++){
+//        print(field[i]);
+//    }
+//    
+//    print(snake_getFoodPosition());
     
     while (1){
         __delay_ms(100);
         snake_getSurroundings(ai_getInputField());
         uint8_t choice = ai_run();
         int8_t incentive = snake_move(choice);
+        ai_propagate(incentive);
+        startMessage();
         if(incentive==-1){
-            ai_propagate(incentive);
-
-            startMessage();
             ai_printAI();
-            for(uint8_t i = 0; i < BOARD_LENGTH; i++){
-                print(field[i]);
-            }
-            print(snake_getFoodPosition());
-            print(snake_getHeadPosition());
-            print(snake_getFoodPosition());
-            endMessage();
-            while(1){
-                
-            }
-            snake_initiate();
+//            printString("data");
+//            printString("uint8_t");
+//            print(snake_getHeadPosition());
+//            printString("data");
+//            printString("uint8_t");
+//            print(snake_getFoodPosition());
+//            snake_initiate();
         }
+        printString("field");
+        printString("uint8_t");
+        for(uint8_t i = 0; i < BOARD_LENGTH; i++){
+            print(field[i]);
+        }
+        printString("food");
+        printString("uint8_t");
+        print(snake_getFoodPosition());
+        endMessage();
     }
 }
 /**

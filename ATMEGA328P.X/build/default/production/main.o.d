@@ -28,7 +28,7 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\stdio.h \
  mcc_generated_files/include/../config/clock_config.h \
  mcc_generated_files/include/eeprom.h \
- mcc_generated_files/config/clock_config.h snake.h ai.h \
+ mcc_generated_files/config/clock_config.h snake.h ai_short_float.h \
  serialCommunication.h
 
 mcc_generated_files/mcc.h:
@@ -95,6 +95,6 @@ mcc_generated_files/config/clock_config.h:
 
 snake.h:
 
-ai.h:
+ai_short_float.h:
 
 serialCommunication.h:

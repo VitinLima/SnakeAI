@@ -36,7 +36,6 @@
       <itemPath>serialCommunication.h</itemPath>
       <itemPath>sigmoid.h</itemPath>
       <itemPath>snake.h</itemPath>
-      <itemPath>ai.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -59,7 +58,6 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>ai.c</itemPath>
       <itemPath>serialCommunication.c</itemPath>
       <itemPath>sigmoid.c</itemPath>
       <itemPath>snake.c</itemPath>
@@ -70,6 +68,8 @@
       <itemPath>Makefile</itemPath>
       <itemPath>ATMEGA328P.mc3</itemPath>
     </logicalFolder>
+    <itemPath>ai_short_float.c</itemPath>
+    <itemPath>ai_short_float.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>

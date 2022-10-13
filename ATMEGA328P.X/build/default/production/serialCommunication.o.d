@@ -29,7 +29,7 @@ build/default/production/serialCommunication.o.d \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\stdio.h \
  mcc_generated_files/include/../config/clock_config.h \
  mcc_generated_files/include/eeprom.h \
- mcc_generated_files/config/clock_config.h
+ mcc_generated_files/config/clock_config.h serialCommunication.h
 
 mcc_generated_files/mcc.h:
 
@@ -92,3 +92,5 @@ mcc_generated_files/include/../config/clock_config.h:
 mcc_generated_files/include/eeprom.h:
 
 mcc_generated_files/config/clock_config.h:
+
+serialCommunication.h:

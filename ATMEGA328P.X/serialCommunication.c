@@ -1,5 +1,6 @@
 
 #include "mcc_generated_files/mcc.h"
+#include "serialCommunication.h"
     
 #define SF 0x0Fu
 #define EF 0x0Au
@@ -19,6 +20,23 @@ void print(uint8_t b){
         USART0_Write(SC);
     } else{
         USART0_Write(b);
+    }
+}
+
+void printString(const char *str){
+    for(uint8_t i = 0; str[i]!='\0'; i++){
+        print((uint8_t)str[i]);
+    }
+}
+
+void printFloat(float f){
+    union {
+        float f;
+        uint32_t u;
+    } fb;
+    fb.f = f;
+    for(uint8_t i = 0; i < sizeof(fb); i++){
+        print((uint8_t)(fb.u>>(8*i)));
     }
 }
 

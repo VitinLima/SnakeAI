@@ -13,6 +13,8 @@ extern "C" {
 #endif
 
     void print(uint8_t b);
+    void printString(const char *str);
+    void printFloat(float f);
     void startMessage();
     void endMessage();
 

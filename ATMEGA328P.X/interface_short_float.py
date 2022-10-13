@@ -15,8 +15,11 @@ Created on Mon Oct 10 19:34:38 2022
 import struct
 import serial
 import time
-import tkinter as tk
 import sys
+import RootNetwork
+import RootDerivatives
+import RootSigmoid
+import RootField
 
 def floatToBits(f):
     s = struct.pack('>f', f)
@@ -25,6 +28,70 @@ def floatToBits(f):
 def bitsToFloat(b):
     s = struct.pack('>l', b)
     return struct.unpack('>f', s)[0]
+
+def sortDataSize(dataType):
+    if dataType=='byte':
+        return 1
+    elif dataType=='uint8_t':
+        return 1
+    elif dataType=='int8_t':
+        return 1
+    elif dataType=='int':
+        return 2
+    elif dataType=='float':
+        return 4
+
+def convertData(dataRx, dataType):
+    if dataType=='byte' or dataType=='uint8_t':
+        return dataRx
+    elif dataType=='int8_t':
+        if dataRx&0x80:
+            dataRx -= 0x10000
+    elif dataType=='int':
+        if dataRx&0x8000:
+            dataRx -= 0x10000
+    elif dataType=='float':
+        if dataRx&0x80000000:
+            p = (dataRx&0xff000000)
+            dataRx &= 0x00ffffff
+            p = (p^0xffffffff)+1
+            dataRx |= p
+            dataRx = bitsToFloat(-dataRx)
+        else:
+            dataRx = bitsToFloat(dataRx)
+        dataRx = round(dataRx,2)
+    return dataRx
+
+def getVectorSize(v):
+    if v.__class__!=list:
+        return 1
+    s = [getVectorSize(v[i]) for i in range(len(v))]
+    return sum(s)
+
+def insertElement(v, dataRx, element_index):
+    if getVectorSize(v)==len(v):
+        v[element_index] = dataRx
+        return v
+    
+    for i in range(len(v)):
+        if v[i].__class__==list:
+            if element_index<getVectorSize(v[i]):
+                v[i] = insertElement(v[i], dataRx, element_index)
+                return v
+            else:
+                element_index-=getVectorSize(v[i])
+        else:
+            if element_index==0:
+                v[i] = dataRx
+                return v
+            else:
+                element_index-=1
+    return v
+
+def sortRoots(dn, roots):
+    for i in range(len(roots)):
+        if roots[i].owns(dn):
+            return roots[i]
 
 portCom = 'COM5'
 
@@ -42,255 +109,36 @@ N0 = 8
 N1 = 4
 N2 = 4
 
-Y0 = [0]*N0
-Y1 = [0]*N1
-Y2 = [0]*N2
+food = 0
 
-B1 = [0]*N1
-B2 = [0]*N2
+vector_names = ['Y0', 'Y1', 'B1', 'W1', 'Z1', 'DC_DY1', 'DC_DB1', 'DC_DW1', 'DC_DZ1', 'S1', 'S2', 'DS1', 'DS2', 'field', 'food', 'data']
 
-W1 = [[0]*N1 for row in range(N0)]
-W2 = [[0]*N2 for row in range(N1)]
+type_names = ['byte', 'uint8_t', 'int8_t', 'int', 'float']
 
-Z1 = [0]*N1
-Z2 = [0]*N2
+rootNetwork = RootNetwork.RootNetwork(N0, N1, N2)
+rootDerivatives = RootDerivatives.RootDerivatives(N0, N1, N2)
+rootSigmoid = RootSigmoid.RootSigmoid(N0, N1, N2)
+rootField = RootField.RootField(field_size)
 
-DC_DZ1 = [0]*N1
-DC_DZ2 = [0]*N2
-
-DC_DY1 = [0]*N1
-DC_DY2 = [0]*N2
-
-DC_DB1 = [0]*N1
-DC_DB2 = [0]*N2
-
-DC_DW1 = [[0]*N1 for row in range(N0)]
-DC_DW2 = [[0]*N2 for row in range(N1)]
-
-SZ1 = [0]*N1
-SZ2 = [0]*N2
-
-DSZ1 = [0]*N1
-DSZ2 = [0]*N2
-
-field = [[0]*field_size for row in range(field_size)]
-
-
-def callBackFunc1():
-    try:
-        ser.write(b"\x00")
-    except ser.SerialTimeoutException:
-        print('error')
-
-def callBackFunc2():
-    try:
-        ser.write(b"\x01")
-    except ser.SerialTimeoutException:
-        print('error')
-
-def callBackFunc3():
-    try:
-        ser.write(b"\x02")
-    except ser.SerialTimeoutException:
-        print('error')
-
-def callBackFunc4():
-    try:
-        ser.write(b"\x03")
-    except ser.SerialTimeoutException:
-        print('error')  
-
-
-class RootNetwork(tk.Tk):
-    def __init__(self):
-        tk.Tk.__init__(self)
-        self.title("Network")
-        
-        # self.minsize(16*dx, 14*dy)
-        
-        self.networkFrame = tk.Frame(master=self, bg="white")
-        self.networkFrame.pack(side=tk.LEFT,fill=tk.X)
-        
-        self.frameY = tk.Frame(master=self.networkFrame, bg="white")
-        self.frameY.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameB = tk.Frame(master=self.networkFrame, bg="green")
-        self.frameB.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameW = tk.Frame(master=self.networkFrame, bg="green")
-        self.frameW.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameZ = tk.Frame(master=self.networkFrame, bg="green")
-        self.frameZ.pack(side=tk.TOP,fill=tk.X)
-        
-        self.lbY0 = tk.Label(master=self.frameY, text=f"Y0: {Y0}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbY0.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbY1 = tk.Label(master=self.frameY, text=f"Y1: {Y1}", foreground="white", background="blue", width=25, font=("Arial", 16))
-        self.lbY1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbY2 = tk.Label(master=self.frameY, text=f"Y2: {Y2}", foreground="white", background="blue", width=25, font=("Arial", 16))
-        self.lbY2.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbB1 = tk.Label(master=self.frameB, text=f"B1: {B1}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbB1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbB2 = tk.Label(master=self.frameB, text=f"B2: {B2}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbB2.pack(side=tk.LEFT,fill=tk.X)
-        
-        s = "\n".join([" ".join([str(n) for n in W1[i]]) for i in range(N0)])
-        self.lbW1 = tk.Label(master=self.frameW, text=f"W1:\n{s}", foreground="white", background="cyan", width=40, font=("Arial", 16))
-        self.lbW1.pack(side=tk.LEFT,fill=tk.X)
-        
-        s = "\n".join([" ".join([str(n) for n in W2[i]]) for i in range(N1)])
-        self.lbW2 = tk.Label(master=self.frameW, text=f"W2:\n{s}", foreground="white", background="cyan", width=40, font=("Arial", 16))
-        self.lbW2.pack(side=tk.LEFT,fill=tk.X)
-        
-        self.lbZ1 = tk.Label(master=self.frameZ, text=f"Z1: {Z1}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbZ1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbZ2 = tk.Label(master=self.frameZ, text=f"Z2: {Z2}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbZ2.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.isAlive = True
-        self.protocol("WM_DELETE_WINDOW", self.on_closing)
-        
-    def on_closing(self):
-        self.isAlive = False
-        self.destroy()
-        
-class RootDerivatives(tk.Tk):
-    def __init__(self):
-        tk.Tk.__init__(self)
-        self.title("Derivatives")
-        
-        self.derivativesFrame = tk.Frame(master=self, bg="white")
-        self.derivativesFrame.pack(side=tk.RIGHT,fill=tk.X)
-        
-        self.frameDC_DZ = tk.Frame(master=self.derivativesFrame, bg="green")
-        self.frameDC_DZ.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameDC_DY = tk.Frame(master=self.derivativesFrame, bg="green")
-        self.frameDC_DY.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameDC_DB = tk.Frame(master=self.derivativesFrame, bg="green")
-        self.frameDC_DB.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameDC_DW = tk.Frame(master=self.derivativesFrame, bg="green")
-        self.frameDC_DW.pack(side=tk.TOP,fill=tk.X)
-        
-        self.lbDC_DZ1 = tk.Label(master=self.frameDC_DZ, text=f"DC_DZ1: {DC_DZ1}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbDC_DZ1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbDC_DZ2 = tk.Label(master=self.frameDC_DZ, text=f"DC_DZ2: {DC_DZ2}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbDC_DZ2.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbDC_DY1 = tk.Label(master=self.frameDC_DY, text=f"DC_DY1: {DC_DY1}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbDC_DY1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbDC_DY2 = tk.Label(master=self.frameDC_DY, text=f"DC_DY2: {DC_DY2}", foreground="white", background="blue", width=40, font=("Arial", 16))
-        self.lbDC_DY2.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbDC_DB1 = tk.Label(master=self.frameDC_DB, text=f"DC_DB1: {DC_DB1}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbDC_DB1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbDC_DB2 = tk.Label(master=self.frameDC_DB, text=f"DC_DB2: {DC_DB2}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbDC_DB2.pack(side=tk.LEFT,fill=tk.X)
-        
-        s = "\n".join([" ".join([str(n) for n in DC_DW1[i]]) for i in range(N0)])
-        self.lbDC_DW1 = tk.Label(master=self.frameDC_DW, text=f"DC_DW1:\n{s}", foreground="white", background="cyan", width=40, font=("Arial", 16))
-        self.lbDC_DW1.pack(side=tk.LEFT,fill=tk.X)
-        
-        s = "\n".join([" ".join([str(n) for n in DC_DW2[i]]) for i in range(N1)])
-        self.lbDC_DW2 = tk.Label(master=self.frameDC_DW, text=f"DC_DW2:\n{s}", foreground="white", background="cyan", width=40, font=("Arial", 16))
-        self.lbDC_DW2.pack(side=tk.LEFT,fill=tk.X)
-        
-        self.isAlive = True
-        self.protocol("WM_DELETE_WINDOW", self.on_closing)
-        
-    def on_closing(self):
-        self.isAlive = False
-        self.destroy()
-        
-class RootSigmoid(tk.Tk):
-    def __init__(self):
-        tk.Tk.__init__(self)
-        self.title("Sigmoid")
-        
-        self.frameSZ = tk.Frame(master=self, bg="white")
-        self.frameSZ.pack(side=tk.TOP,fill=tk.X)
-        
-        self.frameDSZ = tk.Frame(master=self, bg="green")
-        self.frameDSZ.pack(side=tk.TOP,fill=tk.X)
-        
-        self.lbSZ1 = tk.Label(master=self.frameSZ, text=f"SZ1: {SZ1}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbSZ1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbSZ2 = tk.Label(master=self.frameSZ, text=f"SZ2: {SZ2}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbSZ2.pack(side=tk.LEFT,fill=tk.X)
-        
-        self.lbDSZ1 = tk.Label(master=self.frameDSZ, text=f"SZ1: {SZ1}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbDSZ1.pack(side=tk.LEFT, fill=tk.X)
-        
-        self.lbDSZ2 = tk.Label(master=self.frameDSZ, text=f"SZ2: {SZ2}", foreground="white", background="green", width=40, font=("Arial", 16))
-        self.lbDSZ2.pack(side=tk.LEFT,fill=tk.X)
-        
-        self.isAlive = True
-        self.protocol("WM_DELETE_WINDOW", self.on_closing)
-        
-    def on_closing(self):
-        self.isAlive = False
-        self.destroy()
-        
-class RootField(tk.Tk):
-    def __init__(self):
-        tk.Tk.__init__(self)
-        self.title("Field")
-        
-        # self.frameField = tk.Frame(master=self, bg="green")
-        # self.frameField.pack(side=tk.TOP,fill=tk.X)
-        
-        s = "\n".join([" ".join([str(n) for n in field[i]]) for i in range(field_size)])
-        self.lbField = tk.Label(master=self, text=f"Field:\n{s}", foreground="white", background="black", width=30, font=("Arial", 16))
-        self.lbField.pack(side=tk.LEFT,fill=tk.X)
-        
-        self.isAlive = True
-        self.protocol("WM_DELETE_WINDOW", self.on_closing)
-        
-    def on_closing(self):
-        self.isAlive = False
-        self.destroy()
-
-# B1 = tk.Button(frameB, text ="1", command = callBackFunc1)
-# B1.place(x=70, y=30)
-# B2 = tk.Button(frameB, text ="2", command = callBackFunc2)
-# B2.place(x=95, y=30)
-# B3 = tk.Button(frameB, text ="3", command = callBackFunc3)
-# B3.place(x=120, y=30)
-# B4 = tk.Button(frameB, text ="4", command = callBackFunc4)
-# B4.place(x=145, y=30)
-
-rootNetwork = RootNetwork()
-rootDerivatives = RootDerivatives()
-rootSigmoid = RootSigmoid()
-rootField = RootField()
 receiving = 0;
-status=0
+state=0
 scf = 0
-i = 0
-j = 0
-k = 0
 dataRx = 0
 dataSize = 1
-dataType = "byte"
+dataType = 'byte'
 
-def next_state():
-    global status, dataRx, i, j, k
-    status+=1
+element_index = 0
+vector_index = 0
+current_array_name = ''
+current_array_size = 0
+current_string = ''
+
+def change_state(nextState):
+    global state, dataRx, i, j, k, element_index, current_string
+    state=nextState
     dataRx = 0
-    i = 0
-    j = 0
-    k = 0
+    element_index = 0
+    current_string = ''
 
 ser = serial.Serial(portCom, 9600, timeout=0)
 
@@ -302,7 +150,7 @@ try:
             
             if byteRx == SF:
                 receiving = 1
-                status = 0
+                state = 0
                 i = 0
                 j = 0
                 k = 0
@@ -321,173 +169,70 @@ try:
                 scf = 1
                 continue
             
-            if receiving == 1:
+            if receiving == 0:
+                print(hex(byteRx))
+            else:
+                # print(hex(byteRx))
                 dataRx|=byteRx<<(k*8)
                 k+=1
                 if k==dataSize:
+                    # print(hex(dataRx))
+                    k=0
+                    dataRx = convertData(dataRx, dataType)
                     
-                    if (dataRx&(0x80<<((dataSize-1)*8))):
-                        dataRx -= 0x80<<((dataSize-1)*8)
-                    if status == 0:
-                        Y0[i] = dataRx
-                        i += 1
-                        if i == N0:
-                            rootNetwork.lbY0["text"] = f"Y0: {Y0}"
-                            next_state()
-                    elif status == 1:
-                        Y1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootNetwork.lbY1["text"] = f"Y1: {Y1}"
-                            next_state()
-                    elif status == 2:
-                        Y2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootNetwork.lbY2["text"] = f"Y2: {Y2}"
-                            next_state()
-                    elif status == 3:
-                        B1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootNetwork.lbB1["text"] = f"B1: {B1}"
-                            next_state()
-                    elif status == 4:
-                        B2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootNetwork.lbB2["text"] = f"B2: {B2}"
-                            next_state()
-                    elif status == 5:
-                        W1[i][j] = dataRx
-                        j += 1
-                        if j==N1:
-                            j = 0
-                            i += 1
-                        if i == N0:
-                            s = "\n".join([" ".join([str(n) for n in W1[i]]) for i in range(N0)])
-                            rootNetwork.lbW1["text"] = f"W1:\n{s}"
-                            next_state()
-                    elif status == 6:
-                        W2[i][j] = dataRx
-                        j += 1
-                        if j==N2:
-                            j = 0
-                            i += 1
-                        if i == N1:
-                            s = "\n".join([" ".join([str(n) for n in W2[i]]) for i in range(N1)])
-                            rootNetwork.lbW2["text"] = f"W2:\n{s}"
-                            next_state()
-                    elif status == 7:
-                        Z1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootNetwork.lbZ1["text"] = f"Z1: {Z1}"
-                            next_state()
-                    elif status == 8:
-                        Z2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootNetwork.lbZ2["text"] = f"Z2: {Z2}"
-                            next_state()
-                    elif status == 9:
-                        DC_DZ1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootDerivatives.lbDC_DZ1["text"] = f"DC_DZ1: {DC_DZ1}"
-                            next_state()
-                    elif status == 10:
-                        DC_DZ2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootDerivatives.lbDC_DZ2["text"] = f"DC_DZ2: {DC_DZ2}"
-                            next_state()
-                    elif status == 11:
-                        DC_DY1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootDerivatives.lbDC_DY1["text"] = f"DC_DY1: {DC_DY1}"
-                            next_state()
-                    elif status == 12:
-                        DC_DY2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootDerivatives.lbDC_DY2["text"] = f"DC_DY2: {DC_DY2}"
-                            next_state()
-                    elif status == 13:
-                        DC_DB1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootDerivatives.lbDC_DB1["text"] = f"DC_DB1: {DC_DB1}"
-                            next_state()
-                    elif status == 14:
-                        DC_DB2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootDerivatives.lbDC_DB2["text"] = f"DC_DB2: {DC_DB2}"
-                            next_state()
-                    elif status == 15:
-                        DC_DW1[i][j] = dataRx
-                        j += 1
-                        if j==N1:
-                            j = 0
-                            i += 1
-                        if i == N0:
-                            s = "\n".join([" ".join([str(n) for n in DC_DW1[i]]) for i in range(N0)])
-                            rootDerivatives.lbDC_DW1["text"] = f"DC_DW1:\n{s}"
-                            next_state()
-                    elif status == 16:
-                        DC_DW2[i][j] = dataRx
-                        j += 1
-                        if j==N2:
-                            j = 0
-                            i += 1
-                        if i == N1:
-                            s = "\n".join([" ".join([str(n) for n in DC_DW2[i]]) for i in range(N1)])
-                            rootDerivatives.lbDC_DW2["text"] = f"DC_DW2:\n{s}"
-                            next_state()
-                    elif status == 17:
-                        SZ1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootSigmoid.lbSZ1["text"] = f"SZ1: {SZ1}"
-                            next_state()
-                    elif status == 18:
-                        SZ2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootSigmoid.lbSZ2["text"] = f"SZ2: {SZ2}"
-                            next_state()
-                    elif status == 19:
-                        DSZ1[i] = dataRx
-                        i += 1
-                        if i == N1:
-                            rootSigmoid.lbDSZ1["text"] = f"DSZ1: {DSZ1}"
-                            next_state()
-                    elif status == 20:
-                        DSZ2[i] = dataRx
-                        i += 1
-                        if i == N2:
-                            rootSigmoid.lbDSZ2["text"] = f"DSZ2: {DSZ2}"
-                            next_state()
-                    elif status == 21:
-                        if dataRx > 0:
-                            field[j][i] = 1
-                        else:
-                            field[j][i] = 0
-                        j += 1
-                        if j==field_size:
-                            j = 0
-                            i += 1
-                        if i == field_size:
-                            next_state()
-                    elif status == 22:
-                        # field[dataRx%field_size][round(dataRx/field_size)] = 1
-                        s = "\n".join([" ".join([str(n) for n in field[i]]) for i in range(field_size)])
-                        rootField.lbField["text"] = f"Field:\n{s}"
-                        next_state()
-                    else:
+                    if state==0:
+                        current_string += chr(dataRx)
+                        if vector_names.count(current_string)>0:
+                            # print(current_string)
+                            current_array_name = current_string
+                            if current_array_name=='food':
+                                pass
+                            elif current_array_name=='data':
+                                pass
+                            else:
+                                current_root = sortRoots(current_array_name, [rootNetwork, rootDerivatives, rootSigmoid, rootField])
+                                current_array_size = getVectorSize(current_root.getArray(current_array_name))
+                                element_index=0
+                            
+                            change_state(1)
+                    elif state==1:
+                        current_string += chr(dataRx)
+                        if type_names.count(current_string)>0:
+                            # print(current_string)
+                            dataType = current_string
+                            dataSize = sortDataSize(dataType)
+                            
+                            if current_array_name=='data':
+                                change_state(3)
+                            elif current_array_name=='food':
+                                change_state(4)
+                            else:
+                                change_state(2)
+                    elif state==2:
+                        current_root.setArray(current_array_name, insertElement(current_root.getArray(current_array_name), dataRx, element_index))
+                        element_index+=1
+                        if element_index==current_array_size:
+                            current_root.updateLabel(current_array_name)
+                            # print(current_root.getArray(current_array_name))
+                            
+                            dataType = 'byte'
+                            dataSize = sortDataSize(dataType)
+                            change_state(0)
+                    elif state==3:
                         print(dataRx)
+                        
+                        dataType = 'byte'
+                        dataSize = sortDataSize(dataType)
+                        change_state(0)
+                    elif state==4:
+                        rootField.setArray('field', insertElement(rootField.getArray('field'), -1, dataRx))
+                        rootField.updateLabel('field')
+                        # print(rootField.getArray('field'))
+                        
+                        dataType = 'byte'
+                        dataSize = sortDataSize(dataType)
+                        change_state(0)
+                    dataRx = 0
         rootNetwork.update_idletasks()
         rootNetwork.update()
         rootDerivatives.update_idletasks()

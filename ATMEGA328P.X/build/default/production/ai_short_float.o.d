@@ -1,4 +1,5 @@
-build/default/production/ai.o.d build/default/production/ai.o: ai.c \
+build/default/production/ai_short_float.o.d \
+ build/default/production/ai_short_float.o: ai_short_float.c \
  mcc_generated_files/mcc.h mcc_generated_files/utils/compiler.h \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\avr\io.h \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\avr\sfr_defs.h \
@@ -28,7 +29,7 @@ build/default/production/ai.o.d build/default/production/ai.o: ai.c \
  d:\programdata\microchip\xc8\v2.40\avr\avr\include\stdio.h \
  mcc_generated_files/include/../config/clock_config.h \
  mcc_generated_files/include/eeprom.h \
- mcc_generated_files/config/clock_config.h ai.h sigmoid.h \
+ mcc_generated_files/config/clock_config.h ai_short_float.h sigmoid.h \
  serialCommunication.h
 
 mcc_generated_files/mcc.h:
@@ -93,7 +94,7 @@ mcc_generated_files/include/eeprom.h:
 
 mcc_generated_files/config/clock_config.h:
 
-ai.h:
+ai_short_float.h:
 
 sigmoid.h:
 
