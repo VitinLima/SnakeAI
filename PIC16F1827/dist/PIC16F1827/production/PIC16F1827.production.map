@@ -6,10 +6,10 @@ Linker command line:
   --edf=D:\ProgramData\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/PIC16F1827/production\PIC16F1827.production.sym \
   --cmf=dist/PIC16F1827/production\PIC16F1827.production.cmf -z -Q16F1827 \
-  -oC:\Users\160047~1\AppData\Local\Temp\xcAsdu8.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\160047~1\AppData\Local\Temp\xcAseg8.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
   -Mdist/PIC16F1827/production/PIC16F1827.production.map \
-  --md=C:\Users\160047~1\AppData\Local\Temp\xcAsdu8.dat -E1 \
+  --md=C:\Users\160047~1\AppData\Local\Temp\xcAseg8.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFhx2 -ASTRCODE=00h-0FFFh \
   -ASTRING=00h-0FFhx16 -ACONST=00h-0FFhx16 -AENTRY=00h-0FFhx16 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -32,7 +32,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\160047~1\AppData\Local\Temp\xcAsdu8.o \
+  C:\Users\160047~1\AppData\Local\Temp\xcAseg8.o \
   dist/PIC16F1827/production\PIC16F1827.production.o 
 
 Object code version is 3.11
@@ -42,7 +42,7 @@ Machine type is 16F1827
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\160047~1\AppData\Local\Temp\xcAsdu8.o
+C:\Users\160047~1\AppData\Local\Temp\xcAseg8.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
@@ -872,14 +872,14 @@ _ai_initiate                                   text24       0009F
 _ai_printAI                                    text17       00613
 _ai_propagate                                  text14       004CE
 _ai_run                                        text13       0023A
-_choice                                        bssBANK0     0003C
+_choice                                        bssBANK0     00040
 _de_sigmoid                                    text23       00F75
 _de_sigmoidValues                              stringtext1  00800
 _deactivateElevator                            text12       00E6F
 _eusartRxLastError                             bssBANK0     00041
 _field                                         bssBANK3     001A0
-_foodPosition                                  bssBANK0     0003E
-_headPosition                                  bssBANK0     0003F
+_foodPosition                                  bssBANK0     0003D
+_headPosition                                  bssBANK0     0003E
 _initMAX7219                                   text9        000DA
 _ledClear                                      text8        00E8C
 _ledSet                                        text7        00E9E
@@ -889,12 +889,12 @@ _print                                         text21       00037
 _printInteger                                  text20       00E50
 _printString                                   text19       00F23
 _rand                                          text25       0006A
-_remainingMoves                                bssBANK0     0003D
+_remainingMoves                                bssBANK0     0003C
 _seed                                          bssBANK0     00042
 _sendMatrix                                    text6        00FA3
 _sigmoid                                       text18       00FD1
 _sigmoidValues                                 stringtext2  00810
-_snakeSize                                     bssBANK0     00040
+_snakeSize                                     bssBANK0     0003F
 _snake_getField                                text5        00E15
 _snake_getFoodPosition                         text4        00E17
 _snake_getSurroundings                         text3        00178
@@ -906,29 +906,29 @@ _txMAX7219                                     text10       00EC8
 ai_initiate@i                                  cstackBANK0  00051
 ai_initiate@j                                  cstackBANK0  00052
 ai_printAI@i                                   cstackBANK0  0004A
-ai_printAI@i_866                               cstackBANK0  0004E
-ai_printAI@i_870                               cstackBANK0  00050
-ai_printAI@i_882                               cstackBANK0  00054
-ai_printAI@i_886                               cstackBANK0  00056
+ai_printAI@i_837                               cstackBANK0  0004E
+ai_printAI@i_841                               cstackBANK0  00050
+ai_printAI@i_853                               cstackBANK0  00054
+ai_printAI@i_857                               cstackBANK0  00056
 ai_printAI@j                                   cstackBANK0  0004B
-ai_printAI@j_859                               cstackBANK0  0004C
-ai_printAI@j_863                               cstackBANK0  0004D
-ai_printAI@j_867                               cstackBANK0  0004F
-ai_printAI@j_873                               cstackBANK0  00051
-ai_printAI@j_876                               cstackBANK0  00052
-ai_printAI@j_879                               cstackBANK0  00053
-ai_printAI@j_883                               cstackBANK0  00055
+ai_printAI@j_830                               cstackBANK0  0004C
+ai_printAI@j_834                               cstackBANK0  0004D
+ai_printAI@j_838                               cstackBANK0  0004F
+ai_printAI@j_844                               cstackBANK0  00051
+ai_printAI@j_847                               cstackBANK0  00052
+ai_printAI@j_850                               cstackBANK0  00053
+ai_printAI@j_854                               cstackBANK0  00055
 ai_propagate@i                                 cstackBANK0  00056
-ai_propagate@i_843                             cstackBANK0  00057
-ai_propagate@i_846                             cstackBANK0  00058
-ai_propagate@i_848                             cstackBANK0  00059
+ai_propagate@i_814                             cstackBANK0  00057
+ai_propagate@i_817                             cstackBANK0  00058
+ai_propagate@i_819                             cstackBANK0  00059
 ai_propagate@incentive                         cstackBANK0  00055
 ai_propagate@j                                 cstackBANK0  0005A
-ai_propagate@j_845                             cstackBANK0  0005C
-ai_propagate@j_847                             cstackBANK0  0005B
+ai_propagate@j_816                             cstackBANK0  0005C
+ai_propagate@j_818                             cstackBANK0  0005B
 ai_run@i                                       cstackBANK0  00054
-ai_run@i_838                                   cstackBANK0  00055
-ai_run@i_839                                   cstackBANK0  00056
+ai_run@i_809                                   cstackBANK0  00055
+ai_run@i_810                                   cstackBANK0  00056
 ai_run@j                                       cstackBANK0  00057
 btemp                                          (abs)        0007E
 clear_ram0                                     clrtext      00E35
@@ -967,7 +967,7 @@ sigmoid@z                                      cstackCOMMON 00070
 snake_getSurroundings@cf                       cstackBANK0  00052
 snake_getSurroundings@ch                       cstackBANK0  00055
 snake_getSurroundings@i                        cstackBANK0  00053
-snake_getSurroundings@i_776                    cstackBANK0  00056
+snake_getSurroundings@i_886                    cstackBANK0  00056
 snake_getSurroundings@lf                       cstackBANK0  00051
 snake_getSurroundings@lh                       cstackBANK0  00054
 snake_getSurroundings@p                        cstackBANK0  00050

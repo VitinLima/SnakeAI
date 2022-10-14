@@ -14,6 +14,8 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../CommonLibraries</sourceRootElem>
+                <sourceRootElem>../PIC16F1827</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

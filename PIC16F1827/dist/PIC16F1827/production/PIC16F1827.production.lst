@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Thu Oct 13 21:50:40 2022
+                                                                                               Fri Oct 14 02:20:04 2022
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	16F1827
@@ -2289,15 +2289,15 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2275     0034                     	ds	4
   2276     0038                     _B1:
   2277     0038                     	ds	4
-  2278     003C                     _choice:
+  2278     003C                     _remainingMoves:
   2279     003C                     	ds	1
-  2280     003D                     _remainingMoves:
+  2280     003D                     _foodPosition:
   2281     003D                     	ds	1
-  2282     003E                     _foodPosition:
+  2282     003E                     _headPosition:
   2283     003E                     	ds	1
-  2284     003F                     _headPosition:
+  2284     003F                     _snakeSize:
   2285     003F                     	ds	1
-  2286     0040                     _snakeSize:
+  2286     0040                     _choice:
   2287     0040                     	ds	1
   2288     0041                     _eusartRxLastError:
   2289     0041                     	ds	1
@@ -2661,14 +2661,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2647                           
   2648                           ; 1 bytes @ 0x1
   2649     004B                     	ds	1
-  2650     004C                     ai_printAI@j_859:
+  2650     004C                     ai_printAI@j_830:
   2651     004C                     ___awdiv@quotient:	
   2652                           ; 1 bytes @ 0x2
   2653                           
   2654                           
   2655                           ; 2 bytes @ 0x2
   2656     004C                     	ds	1
-  2657     004D                     ai_printAI@j_863:
+  2657     004D                     ai_printAI@j_834:
   2658                           
   2659                           ; 1 bytes @ 0x3
   2660     004D                     	ds	1
@@ -2691,122 +2691,122 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2677     004E                     ledSet@c:	
   2678                           ; 1 bytes @ 0x4
   2679                           
-  2680     004E                     ai_printAI@i_866:	
+  2680     004E                     ai_printAI@i_837:	
   2681                           ; 1 bytes @ 0x4
   2682                           
   2683                           
   2684                           ; 1 bytes @ 0x4
   2685     004E                     	ds	1
   2686     004F                     ??_ledSet:
-  2687     004F                     snake_initiate@i:	
+  2687     004F                     ai_printAI@j_838:	
   2688                           ; 1 bytes @ 0x5
   2689                           
-  2690     004F                     ai_printAI@j_867:	
+  2690     004F                     snake_initiate@i:	
   2691                           ; 1 bytes @ 0x5
   2692                           
   2693                           
   2694                           ; 1 bytes @ 0x5
   2695     004F                     	ds	1
   2696     0050                     ??_snake_move:
-  2697     0050                     snake_getSurroundings@p:	
+  2697     0050                     ai_printAI@i_841:	
   2698                           ; 1 bytes @ 0x6
   2699                           
-  2700     0050                     ai_printAI@i_870:	
+  2700     0050                     snake_getSurroundings@p:	
   2701                           ; 1 bytes @ 0x6
   2702                           
   2703                           
   2704                           ; 1 bytes @ 0x6
   2705     0050                     	ds	1
   2706     0051                     ledSet@l:
-  2707     0051                     snake_getSurroundings@lf:	
+  2707     0051                     ai_initiate@i:	
   2708                           ; 1 bytes @ 0x7
   2709                           
-  2710     0051                     ai_initiate@i:	
+  2710     0051                     ai_printAI@j_844:	
   2711                           ; 1 bytes @ 0x7
   2712                           
-  2713     0051                     ai_printAI@j_873:	
+  2713     0051                     snake_getSurroundings@lf:	
   2714                           ; 1 bytes @ 0x7
   2715                           
   2716                           
   2717                           ; 1 bytes @ 0x7
   2718     0051                     	ds	1
-  2719     0052                     snake_move@direction:
-  2720     0052                     snake_getSurroundings@cf:	
+  2719     0052                     ai_initiate@j:
+  2720     0052                     ai_printAI@j_847:	
   2721                           ; 1 bytes @ 0x8
   2722                           
-  2723     0052                     ai_initiate@j:	
+  2723     0052                     snake_move@direction:	
   2724                           ; 1 bytes @ 0x8
   2725                           
-  2726     0052                     ai_printAI@j_876:	
+  2726     0052                     snake_getSurroundings@cf:	
   2727                           ; 1 bytes @ 0x8
   2728                           
   2729                           
   2730                           ; 1 bytes @ 0x8
   2731     0052                     	ds	1
-  2732     0053                     snake_move@incentive:
-  2733     0053                     snake_getSurroundings@i:	
+  2732     0053                     ai_printAI@j_850:
+  2733     0053                     snake_move@incentive:	
   2734                           ; 1 bytes @ 0x9
   2735                           
-  2736     0053                     ai_printAI@j_879:	
+  2736     0053                     snake_getSurroundings@i:	
   2737                           ; 1 bytes @ 0x9
   2738                           
   2739                           
   2740                           ; 1 bytes @ 0x9
   2741     0053                     	ds	1
-  2742     0054                     snake_move@i:
-  2743     0054                     snake_getSurroundings@lh:	
+  2742     0054                     ai_run@i:
+  2743     0054                     ai_printAI@i_853:	
   2744                           ; 1 bytes @ 0xA
   2745                           
-  2746     0054                     ai_run@i:	
+  2746     0054                     snake_move@i:	
   2747                           ; 1 bytes @ 0xA
   2748                           
-  2749     0054                     ai_printAI@i_882:	
+  2749     0054                     snake_getSurroundings@lh:	
   2750                           ; 1 bytes @ 0xA
   2751                           
   2752                           
   2753                           ; 1 bytes @ 0xA
   2754     0054                     	ds	1
-  2755     0055                     snake_getSurroundings@ch:
-  2756     0055                     ai_run@i_838:	
+  2755     0055                     ai_run@i_809:
+  2756     0055                     ai_propagate@incentive:	
   2757                           ; 1 bytes @ 0xB
   2758                           
-  2759     0055                     ai_propagate@incentive:	
+  2759     0055                     ai_printAI@j_854:	
   2760                           ; 1 bytes @ 0xB
   2761                           
-  2762     0055                     ai_printAI@j_883:	
+  2762     0055                     snake_getSurroundings@ch:	
   2763                           ; 1 bytes @ 0xB
   2764                           
   2765                           
   2766                           ; 1 bytes @ 0xB
   2767     0055                     	ds	1
-  2768     0056                     snake_getSurroundings@i_776:
-  2769     0056                     ai_run@i_839:	
+  2768     0056                     ai_run@i_810:
+  2769     0056                     ai_propagate@i:	
   2770                           ; 1 bytes @ 0xC
   2771                           
-  2772     0056                     ai_propagate@i:	
+  2772     0056                     ai_printAI@i_857:	
   2773                           ; 1 bytes @ 0xC
   2774                           
-  2775     0056                     ai_printAI@i_886:	
+  2775     0056                     snake_getSurroundings@i_886:	
   2776                           ; 1 bytes @ 0xC
   2777                           
   2778                           
   2779                           ; 1 bytes @ 0xC
   2780     0056                     	ds	1
-  2781     0057                     snake_getSurroundings@surroundings:
-  2782     0057                     ai_run@j:	
+  2781     0057                     ai_run@j:
+  2782     0057                     ai_propagate@i_814:	
   2783                           ; 1 bytes @ 0xD
   2784                           
-  2785     0057                     ai_propagate@i_843:	
+  2785     0057                     snake_getSurroundings@surroundings:	
   2786                           ; 1 bytes @ 0xD
   2787                           
   2788                           
   2789                           ; 1 bytes @ 0xD
   2790     0057                     	ds	1
-  2791     0058                     ai_propagate@i_846:
+  2791     0058                     ai_propagate@i_817:
   2792                           
   2793                           ; 1 bytes @ 0xE
   2794     0058                     	ds	1
-  2795     0059                     ai_propagate@i_848:
+  2795     0059                     ai_propagate@i_819:
   2796                           
   2797                           ; 1 bytes @ 0xF
   2798     0059                     	ds	1
@@ -2814,11 +2814,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2800                           
   2801                           ; 1 bytes @ 0x10
   2802     005A                     	ds	1
-  2803     005B                     ai_propagate@j_847:
+  2803     005B                     ai_propagate@j_818:
   2804                           
   2805                           ; 1 bytes @ 0x11
   2806     005B                     	ds	1
-  2807     005C                     ai_propagate@j_845:
+  2807     005C                     ai_propagate@j_816:
   2808                           
   2809                           ; 1 bytes @ 0x12
   2810     005C                     	ds	1
@@ -3283,7 +3283,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3268                           
   3269                           ;snake.c: 33:     remainingMoves--;
   3270     030F  3001               	movlw	1
-  3271     0310  02BD               	subwf	_remainingMoves,f
+  3271     0310  02BC               	subwf	_remainingMoves,f
   3272     0311                     l2838:
   3273                           
   3274                           ;snake.c: 34:     for(uint8_t i = 0; i < (8*8); i++){
@@ -3346,7 +3346,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3331     0333                     l2856:
   3332                           
   3333                           ;snake.c: 43:             if((headPosition%8) == 0){
-  3334     0333  083F               	movf	_headPosition,w
+  3334     0333  083E               	movf	_headPosition,w
   3335     0334  3907               	andlw	7
   3336     0335  1D03               	btfss	3,2
   3337     0336  2B38               	goto	u1911
@@ -3367,13 +3367,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3352                           
   3353                           ;snake.c: 46:                 headPosition--;
   3354     033D  3001               	movlw	1
-  3355     033E  02BF               	subwf	_headPosition,f
+  3355     033E  02BE               	subwf	_headPosition,f
   3356     033F  2B9A               	goto	l2884
   3357     0340                     l2862:
   3358                           
   3359                           ;snake.c: 50:             if((headPosition%8) == (8 -1)){
   3360     0340  3007               	movlw	7
-  3361     0341  053F               	andwf	_headPosition,w
+  3361     0341  053E               	andwf	_headPosition,w
   3362     0342  00D0               	movwf	??_snake_move
   3363     0343  3007               	movlw	7
   3364     0344  0650               	xorwf	??_snake_move,w
@@ -3390,7 +3390,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3375     034A  3001               	movlw	1
   3376     034B  00D0               	movwf	??_snake_move
   3377     034C  0850               	movf	??_snake_move,w
-  3378     034D  07BF               	addwf	_headPosition,f
+  3378     034D  07BE               	addwf	_headPosition,f
   3379     034E  2B9A               	goto	l2884
   3380     034F                     l2868:
   3381                           
@@ -3399,7 +3399,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3384     0350  00F9               	movwf	___awdiv@divisor
   3385     0351  3000               	movlw	0
   3386     0352  00FA               	movwf	___awdiv@divisor+1
-  3387     0353  083F               	movf	_headPosition,w
+  3387     0353  083E               	movf	_headPosition,w
   3388     0354  00D0               	movwf	??_snake_move
   3389     0355  01D1               	clrf	??_snake_move+1
   3390     0356  0850               	movf	??_snake_move,w
@@ -3421,7 +3421,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3406                           ;snake.c: 60:                 headPosition -= 8;
   3407     0364  3008               	movlw	8
   3408     0365  0020               	movlb	0	; select bank0
-  3409     0366  02BF               	subwf	_headPosition,f
+  3409     0366  02BE               	subwf	_headPosition,f
   3410     0367  2B9A               	goto	l2884
   3411     0368                     l2874:
   3412                           
@@ -3430,7 +3430,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3415     0369  00F9               	movwf	___awdiv@divisor
   3416     036A  3000               	movlw	0
   3417     036B  00FA               	movwf	___awdiv@divisor+1
-  3418     036C  083F               	movf	_headPosition,w
+  3418     036C  083E               	movf	_headPosition,w
   3419     036D  00D0               	movwf	??_snake_move
   3420     036E  01D1               	clrf	??_snake_move+1
   3421     036F  0850               	movf	??_snake_move,w
@@ -3455,7 +3455,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3440     037F  0020               	movlb	0	; select bank0
   3441     0380  00D0               	movwf	??_snake_move
   3442     0381  0850               	movf	??_snake_move,w
-  3443     0382  07BF               	addwf	_headPosition,f
+  3443     0382  07BE               	addwf	_headPosition,f
   3444     0383  2B9A               	goto	l2884
   3445     0384                     l2882:
   3446     0384  0852               	movf	snake_move@direction,w
@@ -3519,7 +3519,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3503                           ;snake.c: 73:     } else if(field[headPosition] > 0){
   3504     03A2  2BD6               	goto	l2908
   3505     03A3                     l2888:
-  3506     03A3  083F               	movf	_headPosition,w
+  3506     03A3  083E               	movf	_headPosition,w
   3507     03A4  3EA0               	addlw	(low (_field| (0+256)))& (0+255)
   3508     03A5  0086               	movwf	6
   3509     03A6  3001               	movlw	1	; select bank3/4
@@ -3540,18 +3540,18 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3524     03B0                     l2894:
   3525                           
   3526                           ;snake.c: 77:         field[headPosition] = snakeSize;
-  3527     03B0  083F               	movf	_headPosition,w
+  3527     03B0  083E               	movf	_headPosition,w
   3528     03B1  3EA0               	addlw	(low (_field| (0+256)))& (0+255)
   3529     03B2  0086               	movwf	6
   3530     03B3  3001               	movlw	1	; select bank3/4
   3531     03B4  0087               	movwf	7
-  3532     03B5  0840               	movf	_snakeSize,w
+  3532     03B5  083F               	movf	_snakeSize,w
   3533     03B6  0081               	movwf	1
   3534     03B7                     l2896:
   3535                           
   3536                           ;snake.c: 78:         if(headPosition == foodPosition){
-  3537     03B7  083F               	movf	_headPosition,w
-  3538     03B8  063E               	xorwf	_foodPosition,w
+  3537     03B7  083E               	movf	_headPosition,w
+  3538     03B8  063D               	xorwf	_foodPosition,w
   3539     03B9  1D03               	skipz
   3540     03BA  2BBC               	goto	u1971
   3541     03BB  2BBD               	goto	u1970
@@ -3562,7 +3562,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3546                           
   3547                           ;snake.c: 79:             remainingMoves = 40;
   3548     03BD  3028               	movlw	40
-  3549     03BE  00BD               	movwf	_remainingMoves
+  3549     03BE  00BC               	movwf	_remainingMoves
   3550     03BF                     l2900:
   3551                           
   3552                           ;snake.c: 80:             incentive = 1;
@@ -3574,7 +3574,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3558     03C1  3001               	movlw	1
   3559     03C2  00D0               	movwf	??_snake_move
   3560     03C3  0850               	movf	??_snake_move,w
-  3561     03C4  07C0               	addwf	_snakeSize,f
+  3561     03C4  07BF               	addwf	_snakeSize,f
   3562     03C5                     l2904:
   3563                           
   3564                           ;snake.c: 83:                 foodPosition = rand()%(8*8);
@@ -3582,11 +3582,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3566     03C8  087C               	movf	?_rand,w
   3567     03C9  393F               	andlw	63
   3568     03CA  0020               	movlb	0	; select bank0
-  3569     03CB  00BE               	movwf	_foodPosition
+  3569     03CB  00BD               	movwf	_foodPosition
   3570     03CC                     l2906:
   3571                           
   3572                           ;snake.c: 84:             }while(field[foodPosition] > 0);
-  3573     03CC  083E               	movf	_foodPosition,w
+  3573     03CC  083D               	movf	_foodPosition,w
   3574     03CD  3EA0               	addlw	(low (_field| (0+256)))& (0+255)
   3575     03CE  0086               	movwf	6
   3576     03CF  3001               	movlw	1	; select bank3/4
@@ -3602,7 +3602,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3586                           
   3587                           ;snake.c: 87:     if(remainingMoves == 0){
   3588     03D6  0020               	movlb	0	; select bank0
-  3589     03D7  083D               	movf	_remainingMoves,w
+  3589     03D7  083C               	movf	_remainingMoves,w
   3590     03D8  1D03               	btfss	3,2
   3591     03D9  2BDB               	goto	u1991
   3592     03DA  2BDC               	goto	u1990
@@ -3623,7 +3623,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3607                           ;snake.c: 91:     return incentive;
   3608     03E1  0020               	movlb	0	; select bank0
   3609     03E2  0853               	movf	snake_move@incentive,w
-  3610     03E3                     l413:
+  3610     03E3                     l567:
   3611     03E3  0008               	return
   3612     03E4                     __end_of_snake_move:
   3613                           
@@ -3703,35 +3703,35 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3687     0F5E  087C               	movf	?_rand,w
   3688     0F5F  393F               	andlw	63
   3689     0F60  0020               	movlb	0	; select bank0
-  3690     0F61  00BF               	movwf	_headPosition
+  3690     0F61  00BE               	movwf	_headPosition
   3691                           
   3692                           ;snake.c: 26:     foodPosition = rand()%(8*8);
   3693     0F62  3180  206A  318F   	fcall	_rand
   3694     0F65  087C               	movf	?_rand,w
   3695     0F66  393F               	andlw	63
   3696     0F67  0020               	movlb	0	; select bank0
-  3697     0F68  00BE               	movwf	_foodPosition
+  3697     0F68  00BD               	movwf	_foodPosition
   3698     0F69                     l2512:
   3699                           
   3700                           ;snake.c: 27:     snakeSize = 3;
   3701     0F69  3003               	movlw	3
-  3702     0F6A  00C0               	movwf	_snakeSize
+  3702     0F6A  00BF               	movwf	_snakeSize
   3703     0F6B                     l2514:
   3704                           
   3705                           ;snake.c: 28:     remainingMoves = 40;
   3706     0F6B  3028               	movlw	40
-  3707     0F6C  00BD               	movwf	_remainingMoves
+  3707     0F6C  00BC               	movwf	_remainingMoves
   3708     0F6D                     l2516:
   3709                           
   3710                           ;snake.c: 29:     field[headPosition] = snakeSize;
-  3711     0F6D  083F               	movf	_headPosition,w
+  3711     0F6D  083E               	movf	_headPosition,w
   3712     0F6E  3EA0               	addlw	(low (_field| (0+256)))& (0+255)
   3713     0F6F  0086               	movwf	6
   3714     0F70  3001               	movlw	1	; select bank3/4
   3715     0F71  0087               	movwf	7
-  3716     0F72  0840               	movf	_snakeSize,w
+  3716     0F72  083F               	movf	_snakeSize,w
   3717     0F73  0081               	movwf	1
-  3718     0F74                     l385:
+  3718     0F74                     l539:
   3719     0F74  0008               	return
   3720     0F75                     __end_of_snake_initiate:
   3721                           
@@ -3819,7 +3819,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3802     018C                     l2724:
   3803                           
   3804                           ;snake.c: 102:     uint8_t lh = headPosition%8;
-  3805     018C  083F               	movf	_headPosition,w
+  3805     018C  083E               	movf	_headPosition,w
   3806     018D  3907               	andlw	7
   3807     018E  00D4               	movwf	snake_getSurroundings@lh
   3808     018F                     l2726:
@@ -3829,7 +3829,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3812     0190  00F9               	movwf	___awdiv@divisor
   3813     0191  3000               	movlw	0
   3814     0192  00FA               	movwf	___awdiv@divisor+1
-  3815     0193  083F               	movf	_headPosition,w
+  3815     0193  083E               	movf	_headPosition,w
   3816     0194  00CE               	movwf	??_snake_getSurroundings
   3817     0195  01CF               	clrf	??_snake_getSurroundings+1
   3818     0196  084E               	movf	??_snake_getSurroundings,w
@@ -3843,7 +3843,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3826     01A0                     l2728:
   3827                           
   3828                           ;snake.c: 104:     uint8_t lf = foodPosition%8;
-  3829     01A0  083E               	movf	_foodPosition,w
+  3829     01A0  083D               	movf	_foodPosition,w
   3830     01A1  3907               	andlw	7
   3831     01A2  00D1               	movwf	snake_getSurroundings@lf
   3832                           
@@ -3852,7 +3852,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3835     01A4  00F9               	movwf	___awdiv@divisor
   3836     01A5  3000               	movlw	0
   3837     01A6  00FA               	movwf	___awdiv@divisor+1
-  3838     01A7  083E               	movf	_foodPosition,w
+  3838     01A7  083D               	movf	_foodPosition,w
   3839     01A8  00CE               	movwf	??_snake_getSurroundings
   3840     01A9  01CF               	clrf	??_snake_getSurroundings+1
   3841     01AA  084E               	movf	??_snake_getSurroundings,w
@@ -3944,16 +3944,16 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3927     01E2                     l2746:
   3928                           
   3929                           ;snake.c: 116:     uint8_t p;;snake.c: 117:     for(uint8_t i = 0; i < 4; i++){
-  3930     01E2  01D6               	clrf	snake_getSurroundings@i_776
+  3930     01E2  01D6               	clrf	snake_getSurroundings@i_886
   3931     01E3                     l2752:
   3932                           
   3933                           ;snake.c: 118:         p = (headPosition+snake_mapping[i])%(8*8);
-  3934     01E3  0856               	movf	snake_getSurroundings@i_776,w
+  3934     01E3  0856               	movf	snake_getSurroundings@i_886,w
   3935     01E4  3ED0               	addlw	(low (_snake_mapping| 0))& (0+255)
   3936     01E5  0086               	movwf	6
   3937     01E6  0187               	clrf	7
   3938     01E7  0801               	movf	1,w
-  3939     01E8  073F               	addwf	_headPosition,w
+  3939     01E8  073E               	addwf	_headPosition,w
   3940     01E9  393F               	andlw	63
   3941     01EA  00D0               	movwf	snake_getSurroundings@p
   3942                           
@@ -3973,7 +3973,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3956     01F5                     l2754:
   3957                           
   3958                           ;snake.c: 120:             surroundings[i] = 1;
-  3959     01F5  0856               	movf	snake_getSurroundings@i_776,w
+  3959     01F5  0856               	movf	snake_getSurroundings@i_886,w
   3960     01F6  0757               	addwf	snake_getSurroundings@surroundings,w
   3961     01F7  00CE               	movwf	??_snake_getSurroundings
   3962     01F8  084E               	movf	??_snake_getSurroundings,w
@@ -3987,10 +3987,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3970     01FD  3001               	movlw	1
   3971     01FE  00CE               	movwf	??_snake_getSurroundings
   3972     01FF  084E               	movf	??_snake_getSurroundings,w
-  3973     0200  07D6               	addwf	snake_getSurroundings@i_776,f
+  3973     0200  07D6               	addwf	snake_getSurroundings@i_886,f
   3974     0201                     l2758:
   3975     0201  3004               	movlw	4
-  3976     0202  0256               	subwf	snake_getSurroundings@i_776,w
+  3976     0202  0256               	subwf	snake_getSurroundings@i_886,w
   3977     0203  1C03               	skipc
   3978     0204  2A06               	goto	u1761
   3979     0205  2A07               	goto	u1760
@@ -4060,7 +4060,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4043     022B  0A81               	incf	1,f
   4044                           
   4045                           ;snake.c: 130:     } else if(cf>ch){
-  4046     022C  2A39               	goto	l436
+  4046     022C  2A39               	goto	l590
   4047     022D                     l2772:
   4048     022D  0852               	movf	snake_getSurroundings@cf,w
   4049     022E  0255               	subwf	snake_getSurroundings@ch,w
@@ -4068,7 +4068,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4051     0230  2A32               	goto	u1801
   4052     0231  2A33               	goto	u1800
   4053     0232                     u1801:
-  4054     0232  2A39               	goto	l436
+  4054     0232  2A39               	goto	l590
   4055     0233                     u1800:
   4056     0233                     l2774:
   4057                           
@@ -4079,7 +4079,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4062     0236  0187               	clrf	7
   4063     0237  0181               	clrf	1
   4064     0238  0A81               	incf	1,f
-  4065     0239                     l436:
+  4065     0239                     l590:
   4066     0239  0008               	return
   4067     023A                     __end_of_snake_getSurroundings:
   4068                           
@@ -4124,8 +4124,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4107                           
   4108                           ;snake.c: 143:     return foodPosition;
   4109     0E17  0020               	movlb	0	; select bank0
-  4110     0E18  083E               	movf	_foodPosition,w
-  4111     0E19                     l445:
+  4110     0E18  083D               	movf	_foodPosition,w
+  4111     0E19                     l599:
   4112     0E19  0008               	return
   4113     0E1A                     __end_of_snake_getFoodPosition:
   4114                           
@@ -4170,7 +4170,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4153                           
   4154                           ;snake.c: 95:     return field;
   4155     0E15  30A0               	movlw	(low (_field| (0+256)))& (0+255)
-  4156     0E16                     l416:
+  4156     0E16                     l570:
   4157     0E16  0008               	return
   4158     0E17                     __end_of_snake_getField:
   4159                           
@@ -4880,11 +4880,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4861     0269                     l2798:
   4862                           
   4863                           ;ai_short.c: 46:         for(uint8_t i = 0; i < 8; i++){
-  4864     0269  01D5               	clrf	ai_run@i_838
+  4864     0269  01D5               	clrf	ai_run@i_809
   4865     026A                     l2804:
   4866                           
   4867                           ;ai_short.c: 47:             Z1[j] += (Y0[i]*W1[i][j])>>4;
-  4868     026A  0855               	movf	ai_run@i_838,w
+  4868     026A  0855               	movf	ai_run@i_809,w
   4869     026B  3EC8               	addlw	(low (_Y0| 0))& (0+255)
   4870     026C  0086               	movwf	6
   4871     026D  0187               	clrf	7
@@ -4893,7 +4893,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4874     0270  01F4               	clrf	___wmul@multiplier+1
   4875     0271  1BF3               	btfsc	___wmul@multiplier,7
   4876     0272  03F4               	decf	___wmul@multiplier+1,f
-  4877     0273  0855               	movf	ai_run@i_838,w
+  4877     0273  0855               	movf	ai_run@i_809,w
   4878     0274  00CE               	movwf	??_ai_run
   4879     0275  3002               	movlw	2
   4880     0276                     u1835:
@@ -4944,10 +4944,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   4925     02A0  3001               	movlw	1
   4926     02A1  00CE               	movwf	??_ai_run
   4927     02A2  084E               	movf	??_ai_run,w
-  4928     02A3  07D5               	addwf	ai_run@i_838,f
+  4928     02A3  07D5               	addwf	ai_run@i_809,f
   4929     02A4                     l2808:
   4930     02A4  3008               	movlw	8
-  4931     02A5  0255               	subwf	ai_run@i_838,w
+  4931     02A5  0255               	subwf	ai_run@i_809,w
   4932     02A6  1C03               	skipc
   4933     02A7  2AA9               	goto	u1851
   4934     02A8  2AAA               	goto	u1850
@@ -5026,23 +5026,23 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5007     02EA                     l2816:
   5008                           
   5009                           ;ai_short.c: 52:     choice = 0;
-  5010     02EA  01BC               	clrf	_choice
+  5010     02EA  01C0               	clrf	_choice
   5011     02EB                     l2818:
   5012                           
   5013                           ;ai_short.c: 53:     for(uint8_t i = 1; i < 4; i++){
-  5014     02EB  01D6               	clrf	ai_run@i_839
-  5015     02EC  0AD6               	incf	ai_run@i_839,f
+  5014     02EB  01D6               	clrf	ai_run@i_810
+  5015     02EC  0AD6               	incf	ai_run@i_810,f
   5016     02ED                     l2824:
   5017                           
   5018                           ;ai_short.c: 54:         if(Y1[i]>Y1[choice]){
-  5019     02ED  083C               	movf	_choice,w
+  5019     02ED  0840               	movf	_choice,w
   5020     02EE  3E46               	addlw	(low (_Y1| 0))& (0+255)
   5021     02EF  0086               	movwf	6
   5022     02F0  0187               	clrf	7
   5023     02F1  0801               	movf	1,w
   5024     02F2  3A80               	xorlw	128
   5025     02F3  00CE               	movwf	??_ai_run
-  5026     02F4  0856               	movf	ai_run@i_839,w
+  5026     02F4  0856               	movf	ai_run@i_810,w
   5027     02F5  3E46               	addlw	(low (_Y1| 0))& (0+255)
   5028     02F6  0086               	movwf	6
   5029     02F7  0187               	clrf	7
@@ -5058,18 +5058,18 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5039     02FF                     l2826:
   5040                           
   5041                           ;ai_short.c: 55:             choice = i;
-  5042     02FF  0856               	movf	ai_run@i_839,w
-  5043     0300  00BC               	movwf	_choice
+  5042     02FF  0856               	movf	ai_run@i_810,w
+  5043     0300  00C0               	movwf	_choice
   5044     0301                     l2828:
   5045                           
   5046                           ;ai_short.c: 57:     }
   5047     0301  3001               	movlw	1
   5048     0302  00CE               	movwf	??_ai_run
   5049     0303  084E               	movf	??_ai_run,w
-  5050     0304  07D6               	addwf	ai_run@i_839,f
+  5050     0304  07D6               	addwf	ai_run@i_810,f
   5051     0305                     l2830:
   5052     0305  3004               	movlw	4
-  5053     0306  0256               	subwf	ai_run@i_839,w
+  5053     0306  0256               	subwf	ai_run@i_810,w
   5054     0307  1C03               	skipc
   5055     0308  2B0A               	goto	u1881
   5056     0309  2B0B               	goto	u1880
@@ -5079,8 +5079,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5060     030B                     l2832:
   5061                           
   5062                           ;ai_short.c: 58:     return choice;
-  5063     030B  083C               	movf	_choice,w
-  5064     030C                     l536:
+  5063     030B  0840               	movf	_choice,w
+  5064     030C                     l454:
   5065     030C  0008               	return
   5066     030D                     __end_of_ai_run:
   5067                           
@@ -5144,7 +5144,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5125     04D4                     u2001:
   5126     04D4  2CD6               	goto	l2926
   5127     04D5                     u2000:
-  5128     04D5  2E12               	goto	l540
+  5128     04D5  2E12               	goto	l458
   5129     04D6                     l2926:
   5130                           
   5131                           ;ai_short.c: 66:     if(incentive == -1){
@@ -5201,7 +5201,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5182     04F2                     l2944:
   5183                           
   5184                           ;ai_short.c: 74:         S[choice] = 0;
-  5185     04F2  083C               	movf	_choice,w
+  5185     04F2  0840               	movf	_choice,w
   5186     04F3  3E28               	addlw	(low (_S| 0))& (0+255)
   5187     04F4  0086               	movwf	6
   5188     04F5  0187               	clrf	7
@@ -5212,11 +5212,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5193     04F8                     l2946:
   5194                           
   5195                           ;ai_short.c: 76:         for(uint8_t i = 0; i < 4; i++){
-  5196     04F8  01D7               	clrf	ai_propagate@i_843
+  5196     04F8  01D7               	clrf	ai_propagate@i_814
   5197     04F9                     l2952:
   5198                           
   5199                           ;ai_short.c: 77:             S[i] = 0;
-  5200     04F9  0857               	movf	ai_propagate@i_843,w
+  5200     04F9  0857               	movf	ai_propagate@i_814,w
   5201     04FA  3E28               	addlw	(low (_S| 0))& (0+255)
   5202     04FB  0086               	movwf	6
   5203     04FC  0187               	clrf	7
@@ -5227,10 +5227,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5208     04FE  3001               	movlw	1
   5209     04FF  00CE               	movwf	??_ai_propagate
   5210     0500  084E               	movf	??_ai_propagate,w
-  5211     0501  07D7               	addwf	ai_propagate@i_843,f
+  5211     0501  07D7               	addwf	ai_propagate@i_814,f
   5212     0502                     l2956:
   5213     0502  3004               	movlw	4
-  5214     0503  0257               	subwf	ai_propagate@i_843,w
+  5214     0503  0257               	subwf	ai_propagate@i_814,w
   5215     0504  1C03               	skipc
   5216     0505  2D07               	goto	u2041
   5217     0506  2D08               	goto	u2040
@@ -5240,7 +5240,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5221     0508                     l2958:
   5222                           
   5223                           ;ai_short.c: 79:         S[choice] = 1<<4;
-  5224     0508  083C               	movf	_choice,w
+  5224     0508  0840               	movf	_choice,w
   5225     0509  3E28               	addlw	(low (_S| 0))& (0+255)
   5226     050A  0086               	movwf	6
   5227     050B  0187               	clrf	7
@@ -5292,12 +5292,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5273     052D                     l2972:
   5274                           
   5275                           ;ai_short.c: 87:     for(uint8_t j = 0; j < 4; j++){
-  5276     052D  01DC               	clrf	ai_propagate@j_845
+  5276     052D  01DC               	clrf	ai_propagate@j_816
   5277     052E                     l2978:
   5278                           
   5279                           ;ai_short.c: 88:         DC_DZ1[j] = ((int)DC_DY1[j]*((int)de_sigmoid(Z1[j]>>4)<<4)/255)
       +                          >>4;
-  5280     052E  085C               	movf	ai_propagate@j_845,w
+  5280     052E  085C               	movf	ai_propagate@j_816,w
   5281     052F  3E30               	addlw	(low (_DC_DZ1| 0))& (0+255)
   5282     0530  0086               	movwf	6
   5283     0531  0187               	clrf	7
@@ -5305,7 +5305,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5285     0533  00F9               	movwf	___awdiv@divisor
   5286     0534  3000               	movlw	0
   5287     0535  00FA               	movwf	___awdiv@divisor+1
-  5288     0536  085C               	movf	ai_propagate@j_845,w
+  5288     0536  085C               	movf	ai_propagate@j_816,w
   5289     0537  3E34               	addlw	(low (_DC_DY1| 0))& (0+255)
   5290     0538  0084               	movwf	4
   5291     0539  0185               	clrf	5
@@ -5314,7 +5314,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5294     053C  01F4               	clrf	___wmul@multiplier+1
   5295     053D  1BF3               	btfsc	___wmul@multiplier,7
   5296     053E  03F4               	decf	___wmul@multiplier+1,f
-  5297     053F  355C               	lslf	ai_propagate@j_845,w
+  5297     053F  355C               	lslf	ai_propagate@j_816,w
   5298     0540  3E20               	addlw	(low (_Z1| 0))& (0+255)
   5299     0541  0084               	movwf	4
   5300     0542  0185               	clrf	5
@@ -5376,11 +5376,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5356     057F                     l2980:
   5357                           
   5358                           ;ai_short.c: 89:         DC_DB1[j] = DC_DZ1[j];
-  5359     057F  085C               	movf	ai_propagate@j_845,w
+  5359     057F  085C               	movf	ai_propagate@j_816,w
   5360     0580  3E2C               	addlw	(low (_DC_DB1| 0))& (0+255)
   5361     0581  0086               	movwf	6
   5362     0582  0187               	clrf	7
-  5363     0583  085C               	movf	ai_propagate@j_845,w
+  5363     0583  085C               	movf	ai_propagate@j_816,w
   5364     0584  3E30               	addlw	(low (_DC_DZ1| 0))& (0+255)
   5365     0585  0084               	movwf	4
   5366     0586  0185               	clrf	5
@@ -5389,11 +5389,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5369     0589                     l2982:
   5370                           
   5371                           ;ai_short.c: 90:         for(uint8_t i = 0; i < 8; i++){
-  5372     0589  01D8               	clrf	ai_propagate@i_846
+  5372     0589  01D8               	clrf	ai_propagate@i_817
   5373     058A                     l2988:
   5374                           
   5375                           ;ai_short.c: 91:             DC_DW1[i][j] = (DC_DZ1[j]*Y0[i])>>4;
-  5376     058A  0858               	movf	ai_propagate@i_846,w
+  5376     058A  0858               	movf	ai_propagate@i_817,w
   5377     058B  00CE               	movwf	??_ai_propagate
   5378     058C  3002               	movlw	2
   5379     058D                     u2075:
@@ -5403,14 +5403,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5383     0590  3020               	movlw	(low (_DC_DW1| (0+256)))& (0+255)
   5384     0591  074E               	addwf	??_ai_propagate,w
   5385     0592  00CF               	movwf	??_ai_propagate+1
-  5386     0593  085C               	movf	ai_propagate@j_845,w
+  5386     0593  085C               	movf	ai_propagate@j_816,w
   5387     0594  074F               	addwf	??_ai_propagate+1,w
   5388     0595  00D0               	movwf	??_ai_propagate+2
   5389     0596  0850               	movf	??_ai_propagate+2,w
   5390     0597  0086               	movwf	6
   5391     0598  3001               	movlw	1	; select bank2/3
   5392     0599  0087               	movwf	7
-  5393     059A  085C               	movf	ai_propagate@j_845,w
+  5393     059A  085C               	movf	ai_propagate@j_816,w
   5394     059B  3E30               	addlw	(low (_DC_DZ1| 0))& (0+255)
   5395     059C  0084               	movwf	4
   5396     059D  0185               	clrf	5
@@ -5419,7 +5419,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5399     05A0  01F4               	clrf	___wmul@multiplier+1
   5400     05A1  1BF3               	btfsc	___wmul@multiplier,7
   5401     05A2  03F4               	decf	___wmul@multiplier+1,f
-  5402     05A3  0858               	movf	ai_propagate@i_846,w
+  5402     05A3  0858               	movf	ai_propagate@i_817,w
   5403     05A4  3EC8               	addlw	(low (_Y0| 0))& (0+255)
   5404     05A5  0084               	movwf	4
   5405     05A6  0185               	clrf	5
@@ -5450,10 +5450,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5430     05BD  3001               	movlw	1
   5431     05BE  00CE               	movwf	??_ai_propagate
   5432     05BF  084E               	movf	??_ai_propagate,w
-  5433     05C0  07D8               	addwf	ai_propagate@i_846,f
+  5433     05C0  07D8               	addwf	ai_propagate@i_817,f
   5434     05C1                     l2992:
   5435     05C1  3008               	movlw	8
-  5436     05C2  0258               	subwf	ai_propagate@i_846,w
+  5436     05C2  0258               	subwf	ai_propagate@i_817,w
   5437     05C3  1C03               	skipc
   5438     05C4  2DC6               	goto	u2091
   5439     05C5  2DC7               	goto	u2090
@@ -5466,10 +5466,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5446     05C7  3001               	movlw	1
   5447     05C8  00CE               	movwf	??_ai_propagate
   5448     05C9  084E               	movf	??_ai_propagate,w
-  5449     05CA  07DC               	addwf	ai_propagate@j_845,f
+  5449     05CA  07DC               	addwf	ai_propagate@j_816,f
   5450     05CB                     l2996:
   5451     05CB  3004               	movlw	4
-  5452     05CC  025C               	subwf	ai_propagate@j_845,w
+  5452     05CC  025C               	subwf	ai_propagate@j_816,w
   5453     05CD  1C03               	skipc
   5454     05CE  2DD0               	goto	u2101
   5455     05CF  2DD1               	goto	u2100
@@ -5479,15 +5479,15 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5459     05D1                     l2998:
   5460                           
   5461                           ;ai_short.c: 95:     for(uint8_t j = 0; j < 4; j++){
-  5462     05D1  01DB               	clrf	ai_propagate@j_847
+  5462     05D1  01DB               	clrf	ai_propagate@j_818
   5463     05D2                     l3004:
   5464                           
   5465                           ;ai_short.c: 96:         B1[j] -= DC_DB1[j];
-  5466     05D2  085B               	movf	ai_propagate@j_847,w
+  5466     05D2  085B               	movf	ai_propagate@j_818,w
   5467     05D3  3E2C               	addlw	(low (_DC_DB1| 0))& (0+255)
   5468     05D4  0086               	movwf	6
   5469     05D5  0187               	clrf	7
-  5470     05D6  085B               	movf	ai_propagate@j_847,w
+  5470     05D6  085B               	movf	ai_propagate@j_818,w
   5471     05D7  3E38               	addlw	(low (_B1| 0))& (0+255)
   5472     05D8  0084               	movwf	4
   5473     05D9  0185               	clrf	5
@@ -5496,11 +5496,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5476     05DC                     l3006:
   5477                           
   5478                           ;ai_short.c: 97:         for(uint8_t i = 0; i < 8; i++){
-  5479     05DC  01D9               	clrf	ai_propagate@i_848
+  5479     05DC  01D9               	clrf	ai_propagate@i_819
   5480     05DD                     l3012:
   5481                           
   5482                           ;ai_short.c: 98:             W1[i][j] -= DC_DW1[i][j];
-  5483     05DD  0859               	movf	ai_propagate@i_848,w
+  5483     05DD  0859               	movf	ai_propagate@i_819,w
   5484     05DE  00CE               	movwf	??_ai_propagate
   5485     05DF  3002               	movlw	2
   5486     05E0                     u2115:
@@ -5510,14 +5510,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5490     05E3  3020               	movlw	(low (_DC_DW1| (0+256)))& (0+255)
   5491     05E4  074E               	addwf	??_ai_propagate,w
   5492     05E5  00CF               	movwf	??_ai_propagate+1
-  5493     05E6  085B               	movf	ai_propagate@j_847,w
+  5493     05E6  085B               	movf	ai_propagate@j_818,w
   5494     05E7  074F               	addwf	??_ai_propagate+1,w
   5495     05E8  00D0               	movwf	??_ai_propagate+2
   5496     05E9  0850               	movf	??_ai_propagate+2,w
   5497     05EA  0086               	movwf	6
   5498     05EB  3001               	movlw	1	; select bank2/3
   5499     05EC  0087               	movwf	7
-  5500     05ED  0859               	movf	ai_propagate@i_848,w
+  5500     05ED  0859               	movf	ai_propagate@i_819,w
   5501     05EE  00D1               	movwf	??_ai_propagate+3
   5502     05EF  3002               	movlw	2
   5503     05F0                     u2125:
@@ -5527,7 +5527,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5507     05F3  30A0               	movlw	(low (_W1| 0))& (0+255)
   5508     05F4  0751               	addwf	??_ai_propagate+3,w
   5509     05F5  00D2               	movwf	??_ai_propagate+4
-  5510     05F6  085B               	movf	ai_propagate@j_847,w
+  5510     05F6  085B               	movf	ai_propagate@j_818,w
   5511     05F7  0752               	addwf	??_ai_propagate+4,w
   5512     05F8  00D3               	movwf	??_ai_propagate+5
   5513     05F9  0853               	movf	??_ai_propagate+5,w
@@ -5541,10 +5541,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5521     05FE  3001               	movlw	1
   5522     05FF  00CE               	movwf	??_ai_propagate
   5523     0600  084E               	movf	??_ai_propagate,w
-  5524     0601  07D9               	addwf	ai_propagate@i_848,f
+  5524     0601  07D9               	addwf	ai_propagate@i_819,f
   5525     0602                     l3016:
   5526     0602  3008               	movlw	8
-  5527     0603  0259               	subwf	ai_propagate@i_848,w
+  5527     0603  0259               	subwf	ai_propagate@i_819,w
   5528     0604  1C03               	skipc
   5529     0605  2E07               	goto	u2131
   5530     0606  2E08               	goto	u2130
@@ -5557,17 +5557,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5537     0608  3001               	movlw	1
   5538     0609  00CE               	movwf	??_ai_propagate
   5539     060A  084E               	movf	??_ai_propagate,w
-  5540     060B  07DB               	addwf	ai_propagate@j_847,f
+  5540     060B  07DB               	addwf	ai_propagate@j_818,f
   5541     060C                     l3020:
   5542     060C  3004               	movlw	4
-  5543     060D  025B               	subwf	ai_propagate@j_847,w
+  5543     060D  025B               	subwf	ai_propagate@j_818,w
   5544     060E  1C03               	skipc
   5545     060F  2E11               	goto	u2141
   5546     0610  2E12               	goto	u2140
   5547     0611                     u2141:
   5548     0611  2DD2               	goto	l3004
   5549     0612                     u2140:
-  5550     0612                     l540:
+  5550     0612                     l458:
   5551     0612  0008               	return
   5552     0613                     __end_of_ai_propagate:
   5553                           
@@ -5688,10 +5688,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5668 ;;		Nothing
   5669 ;; This function is called by:
   5670 ;;		_main
-  5671 ;;		_snake_move
-  5672 ;;		_snake_getSurroundings
-  5673 ;;		_ai_run
-  5674 ;;		_ai_propagate
+  5671 ;;		_ai_run
+  5672 ;;		_ai_propagate
+  5673 ;;		_snake_move
+  5674 ;;		_snake_getSurroundings
   5675 ;; This function uses a non-reentrant model
   5676 ;;
   5677                           
@@ -6004,11 +6004,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   5984                           
   5985                           ;ai_short.c: 116:     for(uint8_t j = 0; j < 4; j++){
   5986     0667  0020               	movlb	0	; select bank0
-  5987     0668  01CC               	clrf	ai_printAI@j_859
+  5987     0668  01CC               	clrf	ai_printAI@j_830
   5988     0669                     l3058:
   5989                           
   5990                           ;ai_short.c: 117:         printInteger(Z1[j]);
-  5991     0669  354C               	lslf	ai_printAI@j_859,w
+  5991     0669  354C               	lslf	ai_printAI@j_830,w
   5992     066A  3E20               	addlw	(low (_Z1| 0))& (0+255)
   5993     066B  0086               	movwf	6
   5994     066C  0187               	clrf	7
@@ -6024,10 +6024,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6004     0675  00F8               	movwf	??_ai_printAI
   6005     0676  0878               	movf	??_ai_printAI,w
   6006     0677  0020               	movlb	0	; select bank0
-  6007     0678  07CC               	addwf	ai_printAI@j_859,f
+  6007     0678  07CC               	addwf	ai_printAI@j_830,f
   6008     0679                     l3062:
   6009     0679  3004               	movlw	4
-  6010     067A  024C               	subwf	ai_printAI@j_859,w
+  6010     067A  024C               	subwf	ai_printAI@j_830,w
   6011     067B  1C03               	skipc
   6012     067C  2E7E               	goto	u2171
   6013     067D  2E7F               	goto	u2170
@@ -6053,11 +6053,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6033                           
   6034                           ;ai_short.c: 121:     for(uint8_t j = 0; j < 4; j++){
   6035     068D  0020               	movlb	0	; select bank0
-  6036     068E  01CD               	clrf	ai_printAI@j_863
+  6036     068E  01CD               	clrf	ai_printAI@j_834
   6037     068F                     l3072:
   6038                           
   6039                           ;ai_short.c: 122:         print((uint8_t)B1[j]);
-  6040     068F  084D               	movf	ai_printAI@j_863,w
+  6040     068F  084D               	movf	ai_printAI@j_834,w
   6041     0690  3E38               	addlw	(low (_B1| 0))& (0+255)
   6042     0691  0086               	movwf	6
   6043     0692  0187               	clrf	7
@@ -6070,10 +6070,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6050     0698  00F8               	movwf	??_ai_printAI
   6051     0699  0878               	movf	??_ai_printAI,w
   6052     069A  0020               	movlb	0	; select bank0
-  6053     069B  07CD               	addwf	ai_printAI@j_863,f
+  6053     069B  07CD               	addwf	ai_printAI@j_834,f
   6054     069C                     l3076:
   6055     069C  3004               	movlw	4
-  6056     069D  024D               	subwf	ai_printAI@j_863,w
+  6056     069D  024D               	subwf	ai_printAI@j_834,w
   6057     069E  1C03               	skipc
   6058     069F  2EA1               	goto	u2181
   6059     06A0  2EA2               	goto	u2180
@@ -6099,15 +6099,15 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6079                           
   6080                           ;ai_short.c: 126:     for(uint8_t i = 0; i < 8; i++){
   6081     06B0  0020               	movlb	0	; select bank0
-  6082     06B1  01CE               	clrf	ai_printAI@i_866
+  6082     06B1  01CE               	clrf	ai_printAI@i_837
   6083     06B2                     l3086:
   6084                           
   6085                           ;ai_short.c: 127:         for(uint8_t j = 0; j < 4; j++){
-  6086     06B2  01CF               	clrf	ai_printAI@j_867
+  6086     06B2  01CF               	clrf	ai_printAI@j_838
   6087     06B3                     l3092:
   6088                           
   6089                           ;ai_short.c: 128:             print((uint8_t)W1[i][j]);
-  6090     06B3  084E               	movf	ai_printAI@i_866,w
+  6090     06B3  084E               	movf	ai_printAI@i_837,w
   6091     06B4  00F8               	movwf	??_ai_printAI
   6092     06B5  3002               	movlw	2
   6093     06B6                     u2195:
@@ -6117,7 +6117,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6097     06B9  30A0               	movlw	(low (_W1| 0))& (0+255)
   6098     06BA  0778               	addwf	??_ai_printAI,w
   6099     06BB  00F9               	movwf	??_ai_printAI+1
-  6100     06BC  084F               	movf	ai_printAI@j_867,w
+  6100     06BC  084F               	movf	ai_printAI@j_838,w
   6101     06BD  0779               	addwf	??_ai_printAI+1,w
   6102     06BE  00FA               	movwf	??_ai_printAI+2
   6103     06BF  087A               	movf	??_ai_printAI+2,w
@@ -6132,10 +6132,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6112     06C7  00F8               	movwf	??_ai_printAI
   6113     06C8  0878               	movf	??_ai_printAI,w
   6114     06C9  0020               	movlb	0	; select bank0
-  6115     06CA  07CF               	addwf	ai_printAI@j_867,f
+  6115     06CA  07CF               	addwf	ai_printAI@j_838,f
   6116     06CB                     l3096:
   6117     06CB  3004               	movlw	4
-  6118     06CC  024F               	subwf	ai_printAI@j_867,w
+  6118     06CC  024F               	subwf	ai_printAI@j_838,w
   6119     06CD  1C03               	skipc
   6120     06CE  2ED0               	goto	u2201
   6121     06CF  2ED1               	goto	u2200
@@ -6148,10 +6148,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6128     06D1  3001               	movlw	1
   6129     06D2  00F8               	movwf	??_ai_printAI
   6130     06D3  0878               	movf	??_ai_printAI,w
-  6131     06D4  07CE               	addwf	ai_printAI@i_866,f
+  6131     06D4  07CE               	addwf	ai_printAI@i_837,f
   6132     06D5                     l3100:
   6133     06D5  3008               	movlw	8
-  6134     06D6  024E               	subwf	ai_printAI@i_866,w
+  6134     06D6  024E               	subwf	ai_printAI@i_837,w
   6135     06D7  1C03               	skipc
   6136     06D8  2EDA               	goto	u2211
   6137     06D9  2EDB               	goto	u2210
@@ -6177,11 +6177,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6157                           
   6158                           ;ai_short.c: 133:     for(uint8_t i = 0; i < 4; i++){
   6159     06E9  0020               	movlb	0	; select bank0
-  6160     06EA  01D0               	clrf	ai_printAI@i_870
+  6160     06EA  01D0               	clrf	ai_printAI@i_841
   6161     06EB                     l3110:
   6162                           
   6163                           ;ai_short.c: 134:         print(sigmoid((int)Z1[i]));
-  6164     06EB  3550               	lslf	ai_printAI@i_870,w
+  6164     06EB  3550               	lslf	ai_printAI@i_841,w
   6165     06EC  3E20               	addlw	(low (_Z1| 0))& (0+255)
   6166     06ED  0086               	movwf	6
   6167     06EE  0187               	clrf	7
@@ -6198,10 +6198,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6178     06FA  00F8               	movwf	??_ai_printAI
   6179     06FB  0878               	movf	??_ai_printAI,w
   6180     06FC  0020               	movlb	0	; select bank0
-  6181     06FD  07D0               	addwf	ai_printAI@i_870,f
+  6181     06FD  07D0               	addwf	ai_printAI@i_841,f
   6182     06FE                     l3114:
   6183     06FE  3004               	movlw	4
-  6184     06FF  0250               	subwf	ai_printAI@i_870,w
+  6184     06FF  0250               	subwf	ai_printAI@i_841,w
   6185     0700  1C03               	skipc
   6186     0701  2F03               	goto	u2221
   6187     0702  2F04               	goto	u2220
@@ -6227,11 +6227,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6207                           
   6208                           ;ai_short.c: 139:     for(uint8_t j = 0; j < 4; j++){
   6209     0712  0020               	movlb	0	; select bank0
-  6210     0713  01D1               	clrf	ai_printAI@j_873
+  6210     0713  01D1               	clrf	ai_printAI@j_844
   6211     0714                     l3124:
   6212                           
   6213                           ;ai_short.c: 140:         print((uint8_t)DC_DY1[j]);
-  6214     0714  0851               	movf	ai_printAI@j_873,w
+  6214     0714  0851               	movf	ai_printAI@j_844,w
   6215     0715  3E34               	addlw	(low (_DC_DY1| 0))& (0+255)
   6216     0716  0086               	movwf	6
   6217     0717  0187               	clrf	7
@@ -6244,10 +6244,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6224     071D  00F8               	movwf	??_ai_printAI
   6225     071E  0878               	movf	??_ai_printAI,w
   6226     071F  0020               	movlb	0	; select bank0
-  6227     0720  07D1               	addwf	ai_printAI@j_873,f
+  6227     0720  07D1               	addwf	ai_printAI@j_844,f
   6228     0721                     l3128:
   6229     0721  3004               	movlw	4
-  6230     0722  0251               	subwf	ai_printAI@j_873,w
+  6230     0722  0251               	subwf	ai_printAI@j_844,w
   6231     0723  1C03               	skipc
   6232     0724  2F26               	goto	u2231
   6233     0725  2F27               	goto	u2230
@@ -6273,11 +6273,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6253                           
   6254                           ;ai_short.c: 144:     for(uint8_t j = 0; j < 4; j++){
   6255     0735  0020               	movlb	0	; select bank0
-  6256     0736  01D2               	clrf	ai_printAI@j_876
+  6256     0736  01D2               	clrf	ai_printAI@j_847
   6257     0737                     l3138:
   6258                           
   6259                           ;ai_short.c: 145:         print((uint8_t)DC_DZ1[j]);
-  6260     0737  0852               	movf	ai_printAI@j_876,w
+  6260     0737  0852               	movf	ai_printAI@j_847,w
   6261     0738  3E30               	addlw	(low (_DC_DZ1| 0))& (0+255)
   6262     0739  0086               	movwf	6
   6263     073A  0187               	clrf	7
@@ -6290,10 +6290,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6270     0740  00F8               	movwf	??_ai_printAI
   6271     0741  0878               	movf	??_ai_printAI,w
   6272     0742  0020               	movlb	0	; select bank0
-  6273     0743  07D2               	addwf	ai_printAI@j_876,f
+  6273     0743  07D2               	addwf	ai_printAI@j_847,f
   6274     0744                     l3142:
   6275     0744  3004               	movlw	4
-  6276     0745  0252               	subwf	ai_printAI@j_876,w
+  6276     0745  0252               	subwf	ai_printAI@j_847,w
   6277     0746  1C03               	skipc
   6278     0747  2F49               	goto	u2241
   6279     0748  2F4A               	goto	u2240
@@ -6319,11 +6319,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6299                           
   6300                           ;ai_short.c: 149:     for(uint8_t j = 0; j < 4; j++){
   6301     0758  0020               	movlb	0	; select bank0
-  6302     0759  01D3               	clrf	ai_printAI@j_879
+  6302     0759  01D3               	clrf	ai_printAI@j_850
   6303     075A                     l3152:
   6304                           
   6305                           ;ai_short.c: 150:         print((uint8_t)DC_DB1[j]);
-  6306     075A  0853               	movf	ai_printAI@j_879,w
+  6306     075A  0853               	movf	ai_printAI@j_850,w
   6307     075B  3E2C               	addlw	(low (_DC_DB1| 0))& (0+255)
   6308     075C  0086               	movwf	6
   6309     075D  0187               	clrf	7
@@ -6336,10 +6336,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6316     0763  00F8               	movwf	??_ai_printAI
   6317     0764  0878               	movf	??_ai_printAI,w
   6318     0765  0020               	movlb	0	; select bank0
-  6319     0766  07D3               	addwf	ai_printAI@j_879,f
+  6319     0766  07D3               	addwf	ai_printAI@j_850,f
   6320     0767                     l3156:
   6321     0767  3004               	movlw	4
-  6322     0768  0253               	subwf	ai_printAI@j_879,w
+  6322     0768  0253               	subwf	ai_printAI@j_850,w
   6323     0769  1C03               	skipc
   6324     076A  2F6C               	goto	u2251
   6325     076B  2F6D               	goto	u2250
@@ -6365,15 +6365,15 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6345                           
   6346                           ;ai_short.c: 154:     for(uint8_t i = 0; i < 8; i++){
   6347     077B  0020               	movlb	0	; select bank0
-  6348     077C  01D4               	clrf	ai_printAI@i_882
+  6348     077C  01D4               	clrf	ai_printAI@i_853
   6349     077D                     l3166:
   6350                           
   6351                           ;ai_short.c: 155:         for(uint8_t j = 0; j < 4; j++){
-  6352     077D  01D5               	clrf	ai_printAI@j_883
+  6352     077D  01D5               	clrf	ai_printAI@j_854
   6353     077E                     l3172:
   6354                           
   6355                           ;ai_short.c: 156:             print((uint8_t)DC_DW1[i][j]);
-  6356     077E  0854               	movf	ai_printAI@i_882,w
+  6356     077E  0854               	movf	ai_printAI@i_853,w
   6357     077F  00F8               	movwf	??_ai_printAI
   6358     0780  3002               	movlw	2
   6359     0781                     u2265:
@@ -6383,7 +6383,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6363     0784  3020               	movlw	(low (_DC_DW1| (0+256)))& (0+255)
   6364     0785  0778               	addwf	??_ai_printAI,w
   6365     0786  00F9               	movwf	??_ai_printAI+1
-  6366     0787  0855               	movf	ai_printAI@j_883,w
+  6366     0787  0855               	movf	ai_printAI@j_854,w
   6367     0788  0779               	addwf	??_ai_printAI+1,w
   6368     0789  00FA               	movwf	??_ai_printAI+2
   6369     078A  087A               	movf	??_ai_printAI+2,w
@@ -6399,10 +6399,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6379     0793  00F8               	movwf	??_ai_printAI
   6380     0794  0878               	movf	??_ai_printAI,w
   6381     0795  0020               	movlb	0	; select bank0
-  6382     0796  07D5               	addwf	ai_printAI@j_883,f
+  6382     0796  07D5               	addwf	ai_printAI@j_854,f
   6383     0797                     l3176:
   6384     0797  3004               	movlw	4
-  6385     0798  0255               	subwf	ai_printAI@j_883,w
+  6385     0798  0255               	subwf	ai_printAI@j_854,w
   6386     0799  1C03               	skipc
   6387     079A  2F9C               	goto	u2271
   6388     079B  2F9D               	goto	u2270
@@ -6415,10 +6415,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6395     079D  3001               	movlw	1
   6396     079E  00F8               	movwf	??_ai_printAI
   6397     079F  0878               	movf	??_ai_printAI,w
-  6398     07A0  07D4               	addwf	ai_printAI@i_882,f
+  6398     07A0  07D4               	addwf	ai_printAI@i_853,f
   6399     07A1                     l3180:
   6400     07A1  3008               	movlw	8
-  6401     07A2  0254               	subwf	ai_printAI@i_882,w
+  6401     07A2  0254               	subwf	ai_printAI@i_853,w
   6402     07A3  1C03               	skipc
   6403     07A4  2FA6               	goto	u2281
   6404     07A5  2FA7               	goto	u2280
@@ -6444,11 +6444,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6424                           
   6425                           ;ai_short.c: 161:     for(uint8_t i = 0; i < 4; i++){
   6426     07B5  0020               	movlb	0	; select bank0
-  6427     07B6  01D6               	clrf	ai_printAI@i_886
+  6427     07B6  01D6               	clrf	ai_printAI@i_857
   6428     07B7                     l3190:
   6429                           
   6430                           ;ai_short.c: 162:         print(de_sigmoid((int)Z1[i]));
-  6431     07B7  3556               	lslf	ai_printAI@i_886,w
+  6431     07B7  3556               	lslf	ai_printAI@i_857,w
   6432     07B8  3E20               	addlw	(low (_Z1| 0))& (0+255)
   6433     07B9  0086               	movwf	6
   6434     07BA  0187               	clrf	7
@@ -6465,17 +6465,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6445     07C6  00F8               	movwf	??_ai_printAI
   6446     07C7  0878               	movf	??_ai_printAI,w
   6447     07C8  0020               	movlb	0	; select bank0
-  6448     07C9  07D6               	addwf	ai_printAI@i_886,f
+  6448     07C9  07D6               	addwf	ai_printAI@i_857,f
   6449     07CA                     l3194:
   6450     07CA  3004               	movlw	4
-  6451     07CB  0256               	subwf	ai_printAI@i_886,w
+  6451     07CB  0256               	subwf	ai_printAI@i_857,w
   6452     07CC  1C03               	skipc
   6453     07CD  2FCF               	goto	u2291
   6454     07CE  2FD0               	goto	u2290
   6455     07CF                     u2291:
   6456     07CF  2FB7               	goto	l3190
   6457     07D0                     u2290:
-  6458     07D0                     l586:
+  6458     07D0                     l504:
   6459     07D0  0008               	return
   6460     07D1                     __end_of_ai_printAI:
   6461                           
@@ -6540,7 +6540,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6520                           
   6521                           ;sigmoid.c: 10:         return 16;
   6522     0FDE  3010               	movlw	16
-  6523     0FDF  2FFF               	goto	l594
+  6523     0FDF  2FFF               	goto	l512
   6524     0FE0                     l2540:
   6525                           
   6526                           ;sigmoid.c: 12:     if(z > 7){
@@ -6558,14 +6558,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6538     0FEA  2FEC               	goto	u1441
   6539     0FEB  2FED               	goto	u1440
   6540     0FEC                     u1441:
-  6541     0FEC  2FEF               	goto	l595
+  6541     0FEC  2FEF               	goto	l513
   6542     0FED                     u1440:
   6543     0FED                     l2542:
   6544                           
   6545                           ;sigmoid.c: 13:         return 255;
   6546     0FED  30FF               	movlw	255
-  6547     0FEE  2FFF               	goto	l594
-  6548     0FEF                     l595:	
+  6547     0FEE  2FFF               	goto	l512
+  6548     0FEF                     l513:	
   6549                           ;sigmoid.c: 14:     }
   6550                           
   6551                           
@@ -6594,7 +6594,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6574     0FFC  3E01               	addlw	1
   6575     0FFD  0085               	movwf	5
   6576     0FFE  0800               	movf	0,w	;code access
-  6577     0FFF                     l594:
+  6577     0FFF                     l512:
   6578     0FFF  0008               	return
   6579     1000                     __end_of_sigmoid:
   6580                           
@@ -6689,7 +6689,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6669     0F47                     u1421:
   6670     0F47  2F25               	goto	l2528
   6671     0F48                     u1420:
-  6672     0F48                     l473:
+  6672     0F48                     l391:
   6673     0F48  0008               	return
   6674     0F49                     __end_of_printString:
   6675                           
@@ -6740,7 +6740,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6720                           ;serialCommunication.c: 28:     print((uint8_t)(i>>8));
   6721     0E54  0873               	movf	printInteger@i+1,w
   6722     0E55  3180  2037  318E   	fcall	_print
-  6723     0E58                     l462:
+  6723     0E58                     l380:
   6724     0E58  0008               	return
   6725     0E59                     __end_of_printInteger:
   6726                           
@@ -6787,18 +6787,18 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6767                           ; Regs used in _print: [wreg+status,2+status,0+pclath+cstack]
   6768                           ;print@b stored from wreg
   6769     0037  00F1               	movwf	print@b
-  6770     0038                     l2442:
+  6770     0038                     l2436:
   6771                           
   6772                           ;serialCommunication.c: 12:     if(b == 0x0Fu){
   6773     0038  300F               	movlw	15
   6774     0039  0671               	xorwf	print@b,w
   6775     003A  1D03               	btfss	3,2
-  6776     003B  283D               	goto	u1361
-  6777     003C  283E               	goto	u1360
-  6778     003D                     u1361:
-  6779     003D  2847               	goto	l2446
-  6780     003E                     u1360:
-  6781     003E                     l2444:
+  6776     003B  283D               	goto	u1351
+  6777     003C  283E               	goto	u1350
+  6778     003D                     u1351:
+  6779     003D  2847               	goto	l2440
+  6780     003E                     u1350:
+  6781     003E                     l2438:
   6782                           
   6783                           ;serialCommunication.c: 13:         EUSART_Write(0xF1u);
   6784     003E  30F1               	movlw	241
@@ -6809,17 +6809,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6789     0043  318E  2659  3180   	fcall	_EUSART_Write
   6790                           
   6791                           ;serialCommunication.c: 15:     } else if(b == 0x0Au){
-  6792     0046  2869               	goto	l459
-  6793     0047                     l2446:
+  6792     0046  2869               	goto	l377
+  6793     0047                     l2440:
   6794     0047  300A               	movlw	10
   6795     0048  0671               	xorwf	print@b,w
   6796     0049  1D03               	btfss	3,2
-  6797     004A  284C               	goto	u1371
-  6798     004B  284D               	goto	u1370
-  6799     004C                     u1371:
-  6800     004C  2856               	goto	l2450
-  6801     004D                     u1370:
-  6802     004D                     l2448:
+  6797     004A  284C               	goto	u1361
+  6798     004B  284D               	goto	u1360
+  6799     004C                     u1361:
+  6800     004C  2856               	goto	l2444
+  6801     004D                     u1360:
+  6802     004D                     l2442:
   6803                           
   6804                           ;serialCommunication.c: 16:         EUSART_Write(0xF1u);
   6805     004D  30F1               	movlw	241
@@ -6830,17 +6830,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6810     0052  318E  2659  3180   	fcall	_EUSART_Write
   6811                           
   6812                           ;serialCommunication.c: 18:     } else if(b == 0xF1u){
-  6813     0055  2869               	goto	l459
-  6814     0056                     l2450:
+  6813     0055  2869               	goto	l377
+  6814     0056                     l2444:
   6815     0056  30F1               	movlw	241
   6816     0057  0671               	xorwf	print@b,w
   6817     0058  1D03               	btfss	3,2
-  6818     0059  285B               	goto	u1381
-  6819     005A  285C               	goto	u1380
-  6820     005B                     u1381:
-  6821     005B  2865               	goto	l2454
-  6822     005C                     u1380:
-  6823     005C                     l2452:
+  6818     0059  285B               	goto	u1371
+  6819     005A  285C               	goto	u1370
+  6820     005B                     u1371:
+  6821     005B  2865               	goto	l2448
+  6822     005C                     u1370:
+  6823     005C                     l2446:
   6824                           
   6825                           ;serialCommunication.c: 19:         EUSART_Write(0xF1u);
   6826     005C  30F1               	movlw	241
@@ -6851,13 +6851,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6831     0061  318E  2659  3180   	fcall	_EUSART_Write
   6832                           
   6833                           ;serialCommunication.c: 21:     } else{
-  6834     0064  2869               	goto	l459
-  6835     0065                     l2454:
+  6834     0064  2869               	goto	l377
+  6835     0065                     l2448:
   6836                           
   6837                           ;serialCommunication.c: 22:         EUSART_Write(b);
   6838     0065  0871               	movf	print@b,w
   6839     0066  318E  2659  3180   	fcall	_EUSART_Write
-  6840     0069                     l459:
+  6840     0069                     l377:
   6841     0069  0008               	return
   6842     006A                     __end_of_print:
   6843                           
@@ -6986,7 +6986,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6966                           
   6967                           ;sigmoid.c: 23:         return 16u;
   6968     0F82  3010               	movlw	16
-  6969     0F83  2FA2               	goto	l600
+  6969     0F83  2FA2               	goto	l518
   6970     0F84                     l2558:
   6971                           
   6972                           ;sigmoid.c: 25:     if(z > 7){
@@ -7004,10 +7004,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   6984     0F8E  2F90               	goto	u1471
   6985     0F8F  2F91               	goto	u1470
   6986     0F90                     u1471:
-  6987     0F90  2F92               	goto	l601
+  6987     0F90  2F92               	goto	l519
   6988     0F91                     u1470:
   6989     0F91  2F82               	goto	l2554
-  6990     0F92                     l601:	
+  6990     0F92                     l519:	
   6991                           ;sigmoid.c: 27:     }
   6992                           
   6993                           
@@ -7036,7 +7036,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7016     0F9F  3E01               	addlw	1
   7017     0FA0  0085               	movwf	5
   7018     0FA1  0800               	movf	0,w	;code access
-  7019     0FA2                     l600:
+  7019     0FA2                     l518:
   7020     0FA2  0008               	return
   7021     0FA3                     __end_of_de_sigmoid:
   7022                           
@@ -7158,7 +7158,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7138     00D8                     u1651:
   7139     00D8  28A1               	goto	l2638
   7140     00D9                     u1650:
-  7141     00D9                     l520:
+  7141     00D9                     l438:
   7142     00D9  0008               	return
   7143     00DA                     __end_of_ai_initiate:
   7144                           
@@ -7190,16 +7190,16 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7170 ;; This function calls:
   7171 ;;		___lmul
   7172 ;; This function is called by:
-  7173 ;;		_snake_initiate
-  7174 ;;		_snake_move
-  7175 ;;		_ai_initiate
+  7173 ;;		_ai_initiate
+  7174 ;;		_snake_initiate
+  7175 ;;		_snake_move
   7176 ;; This function uses a non-reentrant model
   7177 ;;
   7178                           
   7179     006A                     _rand:	
   7180                           ;psect for function _rand
   7181                           
-  7182     006A                     l2436:	
+  7182     006A                     l2450:	
   7183                           ;incstack = 0
   7184                           ; Regs used in _rand: [wreg+status,2+status,0+pclath+cstack]
   7185                           
@@ -7234,7 +7234,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7214     0088  3000               	movlw	0
   7215     0089  3D73               	addwfc	?___lmul+3,w
   7216     008A  00C5               	movwf	_seed+3
-  7217     008B                     l2438:
+  7217     008B                     l2452:
   7218     008B  0842               	movf	_seed,w
   7219     008C  00CA               	movwf	??_rand
   7220     008D  0843               	movf	_seed+1,w
@@ -7244,14 +7244,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7224     0091  0845               	movf	_seed+3,w
   7225     0092  00CD               	movwf	??_rand+3
   7226     0093  3011               	movlw	17
-  7227     0094                     u1355:
+  7227     0094                     u1385:
   7228     0094  36CD               	lsrf	??_rand+3,f
   7229     0095  0CCC               	rrf	??_rand+2,f
   7230     0096  0CCB               	rrf	??_rand+1,f
   7231     0097  0CCA               	rrf	??_rand,f
-  7232     0098                     u1350:
+  7232     0098                     u1380:
   7233     0098  0B89               	decfsz	9,f
-  7234     0099  2894               	goto	u1355
+  7234     0099  2894               	goto	u1385
   7235     009A  084B               	movf	??_rand+1,w
   7236     009B  00FD               	movwf	?_rand+1
   7237     009C  084A               	movf	??_rand,w
@@ -7405,7 +7405,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7385                           
   7386                           ;ai_short.c: 34:     return Y0;
   7387     0E13  30C8               	movlw	(low (_Y0| 0))& (0+255)
-  7388     0E14                     l523:
+  7388     0E14                     l441:
   7389     0E14  0008               	return
   7390     0E15                     __end_of_ai_getInputField:
   7391                           
@@ -8065,6 +8065,9 @@ Auto Spaces:
 
 Pointer List with Targets:
 
+    snake_getSurroundings@surroundings	PTR char  size(1) Largest target is 8
+		 -> Y0(BANK1[8]), 
+
     printString@str	PTR const unsigned char  size(2) Largest target is 8
 		 -> STR_22(CODE[8]), STR_21(CODE[4]), STR_20(CODE[7]), STR_19(CODE[7]), 
 		 -> STR_18(CODE[7]), STR_17(CODE[7]), STR_16(CODE[7]), STR_15(CODE[7]), 
@@ -8072,9 +8075,6 @@ Pointer List with Targets:
 		 -> STR_10(CODE[7]), STR_9(CODE[3]), STR_8(CODE[7]), STR_7(CODE[3]), 
 		 -> STR_6(CODE[8]), STR_5(CODE[3]), STR_4(CODE[7]), STR_3(CODE[3]), 
 		 -> STR_2(CODE[7]), STR_1(CODE[3]), 
-
-    snake_getSurroundings@surroundings	PTR char  size(1) Largest target is 8
-		 -> Y0(BANK1[8]), 
 
     sp__ai_getInputField	PTR char  size(1) Largest target is 8
 		 -> Y0(BANK1[8]), 
@@ -8468,7 +8468,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Thu Oct 13 21:50:40 2022
+Symbol Table                                                                                   Fri Oct 14 02:20:04 2022
 
                            SPI1_WriteByte@byte 0070                                              _S 0028  
                          __end_of_ai_propagate 0613                                             _B1 0038  
@@ -8480,23 +8480,23 @@ Symbol Table                                                                    
                                           l135 0E34                                            l224 0E22  
                                           l138 0E28                                            l251 0E47  
                                           l163 0EC7                                            l340 0EE1  
-                                          l413 03E3                                            l254 0E1D  
-                                          l334 0ECF                                            l343 0117  
-                                          l248 0E8B                                            l520 00D9  
-                                          l600 0FA2                                            l336 0ED4  
-                                          l416 0E16                                            l601 0F92  
-                                          l337 0ED9                                            l346 0EAF  
-                                          l187 0E6E                                            l523 0E14  
-                                          l339 0EDE                                            l540 0612  
-                                          l436 0239                                            l349 0E9D  
-                                          l445 0E19                                            l462 0E58  
-                                          l366 0FD0                                            l536 030C  
-                                          l473 0F48                                            l297 0E7B  
-                                          l385 0F74                                            l459 0069  
+                                          l254 0E1D                                            l334 0ECF  
+                                          l343 0117                                            l248 0E8B  
+                                          l512 0FFF                                            l504 07D0  
+                                          l336 0ED4                                            l441 0E14  
+                                          l513 0FEF                                            l337 0ED9  
+                                          l346 0EAF                                            l187 0E6E  
+                                          l339 0EDE                                            l380 0E58  
+                                          l349 0E9D                                            l438 00D9  
+                                          l518 0FA2                                            l454 030C  
+                                          l366 0FD0                                            l519 0F92  
+                                          l391 0F48                                            l377 0069  
+                                          l297 0E7B                                            l458 0612  
+                                          l570 0E16                                            l539 0F74  
+                                          l590 0239                                            l567 03E3  
                                           l752 0EEC                                            l905 0177  
-                                          l594 0FFF                                            l586 07D0  
-                                          l754 0F00                                            l595 0FEF  
-                                          l766 0036                 ?_EUSART_SetFramingErrorHandler 0070  
+                                          l754 0F00                                            l766 0036  
+                                          l599 0E19                 ?_EUSART_SetFramingErrorHandler 0070  
                                           wreg 0009                                   ?_initMAX7219 0070  
                                          l1216 009E                                           l3100 06D5  
                                          l3020 060C                                           l3012 05DD  
@@ -8522,39 +8522,39 @@ Symbol Table                                                                    
                                          l3046 064E                                           l3038 0644  
                                          l2510 0F5B                                           l3214 03ED  
                                          l2432 0E23                                           l2424 002E  
-                                         l2416 000C                                           l3160 077B  
-                                         l3152 075A                                           l3144 074A  
-                                         l3128 0721                                           l3080 06B0  
-                                         l3072 068F                                           l3064 067F  
-                                         l3048 0653                                           l2600 0134  
-                                         l2520 0ECB                                           l2512 0F69  
-                                         l2504 0F4B                                           l3240 0422  
-                                         l3232 03FA                                           l3216 03F0  
-                                         l3208 03E4                                           l2418 0010  
-                                         l2450 0056                                           l2442 0038  
-                                         l2530 0F34                                           l3154 0762  
-                                         l3146 0758                                           l3138 0737  
-                                         l3074 0697                                           l3066 068D  
-                                         l3058 0669                                           l2610 014A  
-                                         l2602 013A                                           l2434 0E1F  
-                                         l2522 0ED5                                           l2514 0F6B  
-                                         l2506 0F51                                           l3250 044D  
-                                         l3242 0428                                           l3234 0410  
-                                         l3226 03F9                                           l3218 03F3  
-                                         l2428 0E29                                           l2460 0F0B  
-                                         l2436 006A                                           l2452 005C  
-                                         l2444 003E                                           l2524 0E50  
-                                         l2532 0F38                                           l2540 0FE0  
-                                         l3180 07A1                                           l3172 077E  
-                                         l3156 0767                                           l3092 06B3  
-                                         l3076 069C                                           l2612 0159  
-                                         l2604 013D                                           l2620 0169  
-                                         l2700 0FB9                                           l2516 0F6D  
-                                         l2508 0F55                                           l3260 046E  
-                                         l3252 0450                                           l3244 042C  
-                                         l3236 0417                                           l2462 0F12  
-                                         l2470 0EB3                                           l2438 008B  
-                                         l2454 0065                                           l2446 0047  
+                                         l2416 000C                                           l2440 0047  
+                                         l3160 077B                                           l3152 075A  
+                                         l3144 074A                                           l3128 0721  
+                                         l3080 06B0                                           l3072 068F  
+                                         l3064 067F                                           l3048 0653  
+                                         l2600 0134                                           l2520 0ECB  
+                                         l2512 0F69                                           l2504 0F4B  
+                                         l3240 0422                                           l3232 03FA  
+                                         l3216 03F0                                           l3208 03E4  
+                                         l2418 0010                                           l2450 006A  
+                                         l2442 004D                                           l2530 0F34  
+                                         l3154 0762                                           l3146 0758  
+                                         l3138 0737                                           l3074 0697  
+                                         l3066 068D                                           l3058 0669  
+                                         l2610 014A                                           l2602 013A  
+                                         l2434 0E1F                                           l2522 0ED5  
+                                         l2514 0F6B                                           l2506 0F51  
+                                         l3250 044D                                           l3242 0428  
+                                         l3234 0410                                           l3226 03F9  
+                                         l3218 03F3                                           l2428 0E29  
+                                         l2460 0F0B                                           l2452 008B  
+                                         l2444 0056                                           l2436 0038  
+                                         l2524 0E50                                           l2532 0F38  
+                                         l2540 0FE0                                           l3180 07A1  
+                                         l3172 077E                                           l3156 0767  
+                                         l3092 06B3                                           l3076 069C  
+                                         l2612 0159                                           l2604 013D  
+                                         l2620 0169                                           l2700 0FB9  
+                                         l2516 0F6D                                           l2508 0F55  
+                                         l3260 046E                                           l3252 0450  
+                                         l3244 042C                                           l3236 0417  
+                                         l2462 0F12                                           l2470 0EB3  
+                                         l2446 005C                                           l2438 003E  
                                          l2526 0F23                                           l2542 0FED  
                                          l2534 0FD1                                           l3190 07B7  
                                          l3182 07A7                                           l3174 0792  
@@ -8569,7 +8569,7 @@ Symbol Table                                                                    
                                          l2456 0F01                                           l2480 0EC2  
                                          l2472 0EB6                                           l2640 00AC  
                                          l2632 009F                                           l2552 0F75  
-                                         l2448 004D                                           l2528 0F25  
+                                         l2448 0065                                           l2528 0F25  
                                          l2536 0FDE                                           l3192 07C5  
                                          l3184 07B5                                           l3176 0797  
                                          l3096 06CB                                           l2624 0173  
@@ -8694,44 +8694,44 @@ Symbol Table                                                                    
                                          u1325 0019                                           u1421 0F47  
                                          u2221 0703                                           u2141 0611  
                                          u2125 05F0                                           _LATA 010C  
-                                         u1350 0098                                           u1430 0FDE  
+                                         u1350 003E                                           u1430 0FDE  
                                          u2230 0727                                           u2150 0636  
                                          _LATB 010D                                           u1335 0020  
-                                         u1431 0FDD                                           u2231 0726  
-                                         u2151 0635                                           u1360 003E  
-                                         u1440 0FED                                           u2240 074A  
-                                         u2160 0659                                           u1520 0EFC  
-                                         u1361 003D                                           u1441 0FEC  
-                                         u2241 0749                                           u2161 0658  
-                                         u1521 0EFB                                           u1505 0EED  
-                                         u2065 0578                                           u1370 004D  
-                                         u1450 0FF3                                           u2250 076D  
-                                         u2170 067F                                           u1610 0169  
-                                         u1530 011E                                           u2090 05C7  
-                                         u2330 0410                                           u1355 0094  
-                                         u1371 004C                                           u1451 0FF2  
+                                         u1351 003D                                           u1431 0FDD  
+                                         u2231 0726                                           u2151 0635  
+                                         u1360 004D                                           u1440 0FED  
+                                         u2240 074A                                           u2160 0659  
+                                         u1520 0EFC                                           u1361 004C  
+                                         u1441 0FEC                                           u2241 0749  
+                                         u2161 0658                                           u1521 0EFB  
+                                         u1505 0EED                                           u2065 0578  
+                                         u1370 005C                                           u1450 0FF3  
+                                         u2250 076D                                           u2170 067F  
+                                         u1610 0169                                           u1530 011E  
+                                         u2090 05C7                                           u2330 0410  
+                                         u1371 005B                                           u1451 0FF2  
                                          u1435 0FDA                                           u2251 076C  
                                          u2171 067E                                           u1611 0168  
                                          u1531 011D                                           u1515 0EF2  
                                          u2091 05C6                                           u2075 058D  
-                                         u2331 040F                                           u1460 0F82  
-                                         u1380 005C                                           u2180 06A2  
+                                         u2331 040F                                           u1380 0098  
+                                         u1460 0F82                                           u2180 06A2  
                                          u1620 016E                                           u1540 0129  
                                          u1700 018C                                           u2340 0428  
-                                         u1461 0F81                                           u1381 005B  
-                                         u1445 0FE9                                           u2181 06A1  
-                                         u1621 016D                                           u1605 015F  
-                                         u1541 0128                                           u2085 05B6  
-                                         u1701 018B                                           u2341 0427  
-                                         u2325 03FD                                           u1470 0F91  
-                                         u2270 079D                                           u1550 013A  
-                                         u1710 01B9                                           u1390 0F5B  
-                                         u2350 0432                                           u1471 0F90  
-                                         u2271 079C                                           u1551 0139  
-                                         u1711 01B8                                           u1391 0F5A  
-                                         u2351 0431                                           u1640 00CF  
-                                         u1480 0F96                                           u2280 07A7  
-                                         u1800 0233                                           u1720 01C5  
+                                         u1461 0F81                                           u1445 0FE9  
+                                         u2181 06A1                                           u1621 016D  
+                                         u1605 015F                                           u1541 0128  
+                                         u2085 05B6                                           u1701 018B  
+                                         u2341 0427                                           u2325 03FD  
+                                         u1470 0F91                                           u2270 079D  
+                                         u1550 013A                                           u1710 01B9  
+                                         u1390 0F5B                                           u2350 0432  
+                                         u1471 0F90                                           u2271 079C  
+                                         u1551 0139                                           u1711 01B8  
+                                         u1391 0F5A                                           u2351 0431  
+                                         u1640 00CF                                           u1480 0F96  
+                                         u2280 07A7                                           u1800 0233  
+                                         u1720 01C5                                           u1385 0094  
                                          u1641 00CE                                           u1481 0F95  
                                          u1465 0F7E                                           u2281 07A6  
                                          u2265 0781                                           u1801 0232  
@@ -8803,7 +8803,7 @@ Symbol Table                                                                    
                                         _print 0037                                          main@i 0065  
                                         main@j 0066                                __end_of_sigmoid 1000  
                                         status 0003                                          wtemp0 007E  
-                              __initialization 07D1                                 _remainingMoves 003D  
+                              __initialization 07D1                                 _remainingMoves 003C  
                                  __end_of_main 04CE                                   __end_of_rand 009F  
                                ??_EUSART_Write 0070                                         ??_main 005D  
                                        ??_rand 004A                         __end_of_WDT_Initialize 0E1E  
@@ -8821,7 +8821,7 @@ Symbol Table                                                                    
                            ??_ai_getInputField 0070                               __end_of_ledClear 0E9E  
             snake_getSurroundings@surroundings 0057                                         ___lmul 0004  
                                        ___wmul 0EE2                                      ??___awdiv 007D  
-                                       _ai_run 023A                                         _choice 003C  
+                                       _ai_run 023A                                         _choice 0040  
                                        _ledSet 0E9E                               _de_sigmoidValues 0800  
                                        _matrix 00C0                               ___awdiv@quotient 004C  
                                printString@str 0072                                ?_WDT_Initialize 0070  
@@ -8836,7 +8836,7 @@ Symbol Table                                                                    
                         __end_of_sigmoidValues 0820                ??_EUSART_SetOverrunErrorHandler 0072  
                               snake_initiate@i 004F                      __end_of_SYSTEM_Initialize 0E8C  
                           snake_move@direction 0052                                     _ai_printAI 0613  
-                                      ??_print 0071                                   _headPosition 003F  
+                                      ??_print 0071                                   _headPosition 003E  
                                    __pbssBANK0 0020                                     __pbssBANK1 00A0  
                                    __pbssBANK2 0120                                     __pbssBANK3 01A0  
                         ai_propagate@incentive 0055                           __end_of_EUSART_Write 0E63  
@@ -8878,7 +8878,7 @@ Symbol Table                                                                    
                                     _TRISBbits 008D                         ?_snake_getSurroundings 0070  
                     __end_of_EUSART_Initialize 0F23                                     main@choice 0060  
                               _SPI1_Initialize 0E63                                      _TXSTAbits 019E  
-                                 _foodPosition 003E                                 _snake_getField 0E15  
+                                 _foodPosition 003D                                 _snake_getField 0E15  
                                  ai_initiate@i 0051                                   ai_initiate@j 0052  
                                ??_printInteger 0074                                 __end_of___lmul 0037  
                    _EUSART_DefaultErrorHandler 0000                                 __end_of___wmul 0F01  
@@ -8908,7 +8908,7 @@ Symbol Table                                                                    
                                     clear_ram0 0E35                              _eusartRxLastError 0041  
                                      _PIR1bits 0011                ??_EUSART_SetFramingErrorHandler 0072  
                                     ledClear@c 0070                                      ledClear@l 0073  
-                                    _snakeSize 0040                                       _SSP1CON1 0215  
+                                    _snakeSize 003F                                       _SSP1CON1 0215  
                                      _SSP1CON2 0216              _EUSART_DefaultOverrunErrorHandler 0000  
                                      _SSP1STAT 0214                                  txMAX7219@dat0 0071  
                            __end_of_ai_printAI 07D1                                      main@i_651 0067  
@@ -8918,20 +8918,20 @@ Symbol Table                                                                    
                                    ?_txMAX7219 0071                                  _sigmoidValues 0810  
                              ?_SPI1_Initialize 0070                                  ?_ai_propagate 0070  
                             ___lmul@multiplier 0070                                  _snake_mapping 00D0  
-                                ??_printString 0074                                ai_printAI@i_870 0050  
-                              ai_printAI@i_882 0054                                ai_printAI@i_866 004E  
-                              ai_printAI@i_886 0056                                ai_printAI@j_863 004D  
-                              ai_printAI@j_873 0051                                ai_printAI@j_883 0055  
-                              ai_printAI@j_867 004F                                ai_printAI@j_859 004C  
-                              ai_printAI@j_876 0052                                ai_printAI@j_879 0053  
-                                   _EECON1bits 0195                                    ai_run@i_838 0055  
-                                  ai_run@i_839 0056                                    ai_printAI@i 004A  
+                                ??_printString 0074                                ai_printAI@i_841 0050  
+                              ai_printAI@i_853 0054                                ai_printAI@i_837 004E  
+                              ai_printAI@i_857 0056                                ai_printAI@j_830 004C  
+                              ai_printAI@j_850 0053                                ai_printAI@j_834 004D  
+                              ai_printAI@j_844 0051                                ai_printAI@j_854 0055  
+                              ai_printAI@j_838 004F                                ai_printAI@j_847 0052  
+                                   _EECON1bits 0195                                    ai_run@i_810 0056  
+                                  ai_run@i_809 0055                                    ai_printAI@i 004A  
                                   ai_printAI@j 004B                        ??_OSCILLATOR_Initialize 0070  
                           _EUSART_ErrorHandler 0069                         ?_snake_getFoodPosition 0070  
                        snake_getSurroundings@i 0053                         snake_getSurroundings@p 0050  
-                            ai_propagate@i_843 0057                              ai_propagate@i_846 0058  
-                            ai_propagate@i_848 0059                              ai_propagate@j_845 005C  
-                            ai_propagate@j_847 005B                                    de_sigmoid@z 0070  
+                            ai_propagate@i_814 0057                              ai_propagate@i_817 0058  
+                            ai_propagate@i_819 0059                              ai_propagate@j_816 005C  
+                            ai_propagate@j_818 005B                                    de_sigmoid@z 0070  
                                      _ledClear 0E8C                                 ??_ai_propagate 004E  
                                      __ptext10 0EC8                                       __ptext11 0E1E  
                                      __ptext20 0E50                                       __ptext12 0E6F  
@@ -8957,7 +8957,7 @@ EUSART_SetOverrunErrorHandler@interruptHandler 0070                             
                      __end_of_ai_getInputField 0E15                               ??_snake_getField 0070  
                            __end_of_snake_move 03E4                        ?_PIN_MANAGER_Initialize 0070  
                __end_of_EUSART_SetErrorHandler 0E29                                       sigmoid@z 0070  
-                             ??_snake_initiate 004E                     snake_getSurroundings@i_776 0056  
+                             ??_snake_initiate 004E                     snake_getSurroundings@i_886 0056  
 EUSART_SetFramingErrorHandler@interruptHandler 0070                                   _printInteger 0E50  
                                 __pstringtext1 0800                                  __pstringtext2 0810  
                                 __pstringtext3 084C                                  __pstringtext4 0820  

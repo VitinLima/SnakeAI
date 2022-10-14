@@ -9,7 +9,7 @@ d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\
 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
                               D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o (exit)
 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
-                              build/default/production/snake.o (rand)
+                              build/default/production/ai_short.o (rand)
 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
                               d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o) (_Exit)
 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
@@ -85,6 +85,9 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/default/production/serialCommunication.o
  .text.printFloat
                 0x0000000000000000       0x42 build/default/production/serialCommunication.o
+ .text          0x0000000000000000        0x0 build/default/production/ai_short.o
+ .data          0x0000000000000000        0x0 build/default/production/ai_short.o
+ .bss           0x0000000000000000        0x0 build/default/production/ai_short.o
  .text          0x0000000000000000        0x0 build/default/production/sigmoid.o
  .data          0x0000000000000000        0x0 build/default/production/sigmoid.o
  .bss           0x0000000000000000        0x0 build/default/production/sigmoid.o
@@ -97,9 +100,6 @@ Discarded input sections
                 0x0000000000000000        0x6 build/default/production/snake.o
  .text.snake_setFoodPosition
                 0x0000000000000000        0x6 build/default/production/snake.o
- .text          0x0000000000000000        0x0 build/default/production/ai_short.o
- .data          0x0000000000000000        0x0 build/default/production/ai_short.o
- .bss           0x0000000000000000        0x0 build/default/production/ai_short.o
  .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
  .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
  .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
@@ -251,9 +251,9 @@ LOAD build/default/production/mcc_generated_files/device_config.o
 LOAD build/default/production/mcc_generated_files/mcc.o
 LOAD build/default/production/main.o
 LOAD build/default/production/serialCommunication.o
+LOAD build/default/production/ai_short.o
 LOAD build/default/production/sigmoid.o
 LOAD build/default/production/snake.o
-LOAD build/default/production/ai_short.o
 START GROUP
 LOAD d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -518,9 +518,9 @@ END GROUP
  .comment       0x000000000000002f       0x30 build/default/production/mcc_generated_files/mcc.o
  .comment       0x000000000000002f       0x30 build/default/production/main.o
  .comment       0x000000000000002f       0x30 build/default/production/serialCommunication.o
+ .comment       0x000000000000002f       0x30 build/default/production/ai_short.o
  .comment       0x000000000000002f       0x30 build/default/production/sigmoid.o
  .comment       0x000000000000002f       0x30 build/default/production/snake.o
- .comment       0x000000000000002f       0x30 build/default/production/ai_short.o
  .comment       0x000000000000002f       0x30 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
  .comment       0x000000000000002f       0x30 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
  .comment       0x000000000000002f       0x30 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
@@ -583,11 +583,11 @@ END GROUP
  .debug_aranges
                 0x0000000000000150       0x48 build/default/production/serialCommunication.o
  .debug_aranges
-                0x0000000000000198       0x28 build/default/production/sigmoid.o
+                0x0000000000000198       0x40 build/default/production/ai_short.o
  .debug_aranges
-                0x00000000000001c0       0x58 build/default/production/snake.o
+                0x00000000000001d8       0x28 build/default/production/sigmoid.o
  .debug_aranges
-                0x0000000000000218       0x40 build/default/production/ai_short.o
+                0x0000000000000200       0x58 build/default/production/snake.o
 
 .debug_pubnames
  *(.debug_pubnames)
@@ -603,9 +603,9 @@ END GROUP
  .debug_info    0x00000000000013f3      0x35f build/default/production/mcc_generated_files/mcc.o
  .debug_info    0x0000000000001752      0x4b4 build/default/production/main.o
  .debug_info    0x0000000000001c06      0x48c build/default/production/serialCommunication.o
- .debug_info    0x0000000000002092      0x2e1 build/default/production/sigmoid.o
- .debug_info    0x0000000000002373      0x59a build/default/production/snake.o
- .debug_info    0x000000000000290d      0xa64 build/default/production/ai_short.o
+ .debug_info    0x0000000000002092      0xa64 build/default/production/ai_short.o
+ .debug_info    0x0000000000002af6      0x2e1 build/default/production/sigmoid.o
+ .debug_info    0x0000000000002dd7      0x59a build/default/production/snake.o
 
 .debug_abbrev   0x0000000000000000      0xcfe
  *(.debug_abbrev)
@@ -618,9 +618,9 @@ END GROUP
  .debug_abbrev  0x0000000000000787       0xc5 build/default/production/mcc_generated_files/mcc.o
  .debug_abbrev  0x000000000000084c       0xc7 build/default/production/main.o
  .debug_abbrev  0x0000000000000913      0x101 build/default/production/serialCommunication.o
- .debug_abbrev  0x0000000000000a14       0x6f build/default/production/sigmoid.o
- .debug_abbrev  0x0000000000000a83      0x12b build/default/production/snake.o
- .debug_abbrev  0x0000000000000bae      0x150 build/default/production/ai_short.o
+ .debug_abbrev  0x0000000000000a14      0x150 build/default/production/ai_short.o
+ .debug_abbrev  0x0000000000000b64       0x6f build/default/production/sigmoid.o
+ .debug_abbrev  0x0000000000000bd3      0x12b build/default/production/snake.o
 
 .debug_line     0x0000000000000000     0x11ed
  *(.debug_line .debug_line.* .debug_line_end)
@@ -633,9 +633,9 @@ END GROUP
  .debug_line    0x00000000000005d9      0x163 build/default/production/mcc_generated_files/mcc.o
  .debug_line    0x000000000000073c      0x14f build/default/production/main.o
  .debug_line    0x000000000000088b      0x19b build/default/production/serialCommunication.o
- .debug_line    0x0000000000000a26       0xdf build/default/production/sigmoid.o
- .debug_line    0x0000000000000b05      0x2f4 build/default/production/snake.o
- .debug_line    0x0000000000000df9      0x3f4 build/default/production/ai_short.o
+ .debug_line    0x0000000000000a26      0x3f4 build/default/production/ai_short.o
+ .debug_line    0x0000000000000e1a       0xdf build/default/production/sigmoid.o
+ .debug_line    0x0000000000000ef9      0x2f4 build/default/production/snake.o
 
 .debug_frame    0x0000000000000000      0x4e4
  *(.debug_frame)
@@ -646,9 +646,9 @@ END GROUP
  .debug_frame   0x0000000000000150       0x60 build/default/production/mcc_generated_files/mcc.o
  .debug_frame   0x00000000000001b0       0x24 build/default/production/main.o
  .debug_frame   0x00000000000001d4       0xb0 build/default/production/serialCommunication.o
- .debug_frame   0x0000000000000284       0x34 build/default/production/sigmoid.o
- .debug_frame   0x00000000000002b8       0xa8 build/default/production/snake.o
- .debug_frame   0x0000000000000360      0x184 build/default/production/ai_short.o
+ .debug_frame   0x0000000000000284      0x184 build/default/production/ai_short.o
+ .debug_frame   0x0000000000000408       0x34 build/default/production/sigmoid.o
+ .debug_frame   0x000000000000043c       0xa8 build/default/production/snake.o
 
 .debug_str      0x0000000000000000      0x346
  *(.debug_str)
@@ -661,17 +661,17 @@ END GROUP
  .debug_str     0x0000000000000208       0x4d build/default/production/mcc_generated_files/mcc.o
  .debug_str     0x0000000000000255       0xc0 build/default/production/main.o
  .debug_str     0x0000000000000315        0xd build/default/production/serialCommunication.o
- .debug_str     0x0000000000000322        0x0 build/default/production/sigmoid.o
- .debug_str     0x0000000000000322        0x0 build/default/production/snake.o
  .debug_str     0x0000000000000322       0x24 build/default/production/ai_short.o
+ .debug_str     0x0000000000000346        0x0 build/default/production/sigmoid.o
+ .debug_str     0x0000000000000346        0x0 build/default/production/snake.o
 
 .debug_loc      0x0000000000000000      0xb5a
  *(.debug_loc)
  .debug_loc     0x0000000000000000       0x76 build/default/production/main.o
  .debug_loc     0x0000000000000076      0x18d build/default/production/serialCommunication.o
- .debug_loc     0x0000000000000203       0xa9 build/default/production/sigmoid.o
- .debug_loc     0x00000000000002ac      0x2f0 build/default/production/snake.o
- .debug_loc     0x000000000000059c      0x5be build/default/production/ai_short.o
+ .debug_loc     0x0000000000000203      0x5be build/default/production/ai_short.o
+ .debug_loc     0x00000000000007c1       0xa9 build/default/production/sigmoid.o
+ .debug_loc     0x000000000000086a      0x2f0 build/default/production/snake.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -700,9 +700,9 @@ END GROUP
  .debug_ranges  0x00000000000000a0       0x28 build/default/production/mcc_generated_files/mcc.o
  .debug_ranges  0x00000000000000c8       0x10 build/default/production/main.o
  .debug_ranges  0x00000000000000d8       0x38 build/default/production/serialCommunication.o
- .debug_ranges  0x0000000000000110       0x18 build/default/production/sigmoid.o
- .debug_ranges  0x0000000000000128       0x60 build/default/production/snake.o
- .debug_ranges  0x0000000000000188       0x30 build/default/production/ai_short.o
+ .debug_ranges  0x0000000000000110       0x30 build/default/production/ai_short.o
+ .debug_ranges  0x0000000000000140       0x18 build/default/production/sigmoid.o
+ .debug_ranges  0x0000000000000158       0x60 build/default/production/snake.o
 
 .debug_macro
  *(.debug_macro)
@@ -715,36 +715,9 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
 
-.bss.remainingMoves
-                0x00000000008001b4        0x1
- .bss.remainingMoves
-                0x00000000008001b4        0x1 build/default/production/snake.o
-                0x00000000008001b4                remainingMoves
-
-.bss.foodPosition
-                0x00000000008001b5        0x1
- .bss.foodPosition
-                0x00000000008001b5        0x1 build/default/production/snake.o
-                0x00000000008001b5                foodPosition
-
-.bss.headPosition
-                0x00000000008001b6        0x1
- .bss.headPosition
-                0x00000000008001b6        0x1 build/default/production/snake.o
-                0x00000000008001b6                headPosition
-
-.bss.snakeSize  0x00000000008001b7        0x1
- .bss.snakeSize
-                0x00000000008001b7        0x1 build/default/production/snake.o
-                0x00000000008001b7                snakeSize
-
-.bss.field      0x0000000000800100       0x40
- .bss.field     0x0000000000800100       0x40 build/default/production/snake.o
-                0x0000000000800100                field
-
-.bss.choice     0x00000000008001b8        0x1
- .bss.choice    0x00000000008001b8        0x1 build/default/production/ai_short.o
-                0x00000000008001b8                choice
+.bss.choice     0x00000000008001b4        0x1
+ .bss.choice    0x00000000008001b4        0x1 build/default/production/ai_short.o
+                0x00000000008001b4                choice
 
 .bss.S          0x0000000000800198        0x4
  .bss.S         0x0000000000800198        0x4 build/default/production/ai_short.o
@@ -774,17 +747,44 @@ LOAD data_init
  .bss.B1        0x00000000008001a8        0x4 build/default/production/ai_short.o
                 0x00000000008001a8                B1
 
-.bss.Z1         0x0000000000800188        0x8
- .bss.Z1        0x0000000000800188        0x8 build/default/production/ai_short.o
-                0x0000000000800188                Z1
+.bss.Z1         0x0000000000800180        0x8
+ .bss.Z1        0x0000000000800180        0x8 build/default/production/ai_short.o
+                0x0000000000800180                Z1
 
 .bss.Y1         0x00000000008001ac        0x4
  .bss.Y1        0x00000000008001ac        0x4 build/default/production/ai_short.o
                 0x00000000008001ac                Y1
 
-.bss.Y0         0x0000000000800190        0x8
- .bss.Y0        0x0000000000800190        0x8 build/default/production/ai_short.o
-                0x0000000000800190                Y0
+.bss.Y0         0x0000000000800188        0x8
+ .bss.Y0        0x0000000000800188        0x8 build/default/production/ai_short.o
+                0x0000000000800188                Y0
+
+.bss.remainingMoves
+                0x00000000008001b5        0x1
+ .bss.remainingMoves
+                0x00000000008001b5        0x1 build/default/production/snake.o
+                0x00000000008001b5                remainingMoves
+
+.bss.foodPosition
+                0x00000000008001b6        0x1
+ .bss.foodPosition
+                0x00000000008001b6        0x1 build/default/production/snake.o
+                0x00000000008001b6                foodPosition
+
+.bss.headPosition
+                0x00000000008001b7        0x1
+ .bss.headPosition
+                0x00000000008001b7        0x1 build/default/production/snake.o
+                0x00000000008001b7                headPosition
+
+.bss.snakeSize  0x00000000008001b8        0x1
+ .bss.snakeSize
+                0x00000000008001b8        0x1 build/default/production/snake.o
+                0x00000000008001b8                snakeSize
+
+.bss.field      0x0000000000800100       0x40
+ .bss.field     0x0000000000800100       0x40 build/default/production/snake.o
+                0x0000000000800100                field
 
 .bss.seed       0x00000000008001b0        0x4
  .bss.seed      0x00000000008001b0        0x4 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
@@ -978,23 +978,23 @@ LOAD data_init
                 0x0000000000000ca8        0x8 build/default/production/serialCommunication.o
                 0x0000000000000ca8                endMessage
 
-.text.snake_getField
+.text.ai_getInputField
                 0x0000000000000cb0        0x6
+ .text.ai_getInputField
+                0x0000000000000cb0        0x6 build/default/production/ai_short.o
+                0x0000000000000cb0                ai_getInputField
+
+.text.snake_getField
+                0x0000000000000cb6        0x6
  .text.snake_getField
-                0x0000000000000cb0        0x6 build/default/production/snake.o
-                0x0000000000000cb0                snake_getField
+                0x0000000000000cb6        0x6 build/default/production/snake.o
+                0x0000000000000cb6                snake_getField
 
 .text.snake_getFoodPosition
-                0x0000000000000cb6        0x6
- .text.snake_getFoodPosition
-                0x0000000000000cb6        0x6 build/default/production/snake.o
-                0x0000000000000cb6                snake_getFoodPosition
-
-.text.ai_getInputField
                 0x0000000000000cbc        0x6
- .text.ai_getInputField
-                0x0000000000000cbc        0x6 build/default/production/ai_short.o
-                0x0000000000000cbc                ai_getInputField
+ .text.snake_getFoodPosition
+                0x0000000000000cbc        0x6 build/default/production/snake.o
+                0x0000000000000cbc                snake_getFoodPosition
 
 .text           0x0000000000000cc2        0x4
  .text          0x0000000000000cc2        0x4 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
@@ -1047,7 +1047,7 @@ LOAD data_init
                 0x0000000000000cce                __simulator_exit
 
 .data.snake_mapping
-                0x0000000000800180        0x8 load address 0x0000000000000cd0
+                0x0000000000800190        0x8 load address 0x0000000000000cd0
  .data.snake_mapping
-                0x0000000000800180        0x8 build/default/production/snake.o
-                0x0000000000800180                snake_mapping
+                0x0000000000800190        0x8 build/default/production/snake.o
+                0x0000000000800190                snake_mapping

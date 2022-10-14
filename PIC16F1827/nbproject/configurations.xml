@@ -15,8 +15,8 @@
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
       </logicalFolder>
       <itemPath>ledMatrix.h</itemPath>
-      <itemPath>snake.h</itemPath>
       <itemPath>serialCommunication.h</itemPath>
+      <itemPath>snake.h</itemPath>
       <itemPath>sigmoid.h</itemPath>
       <itemPath>ai_short.h</itemPath>
     </logicalFolder>
@@ -39,10 +39,10 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>ledMatrix.c</itemPath>
-      <itemPath>snake.c</itemPath>
       <itemPath>serialCommunication.c</itemPath>
       <itemPath>ai_short.c</itemPath>
       <itemPath>sigmoid.c</itemPath>
+      <itemPath>snake.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -53,6 +53,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>../CommonLibraries</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
