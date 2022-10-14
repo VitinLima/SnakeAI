@@ -46,7 +46,7 @@ uint8_t ai_run(){
         for(uint8_t i = 0; i < N0; i++){
             Z1[j] += (Y0[i]*W1[i][j])>>PRECISION;
         }
-        Y1[j] = ((int)sigmoid(Z1[j])<<PRECISION)/255;
+        Y1[j] = ((int)sigmoid(Z1[j]>>PRECISION)<<PRECISION)/255;
     }
     
     choice = 0;
@@ -85,7 +85,7 @@ void ai_propagate(int8_t incentive){
     }
     
     for(uint8_t j = 0; j < N1; j++){
-        DC_DZ1[j] = ((int)DC_DY1[j]*((int)de_sigmoid(Z1[j])<<PRECISION)/255)>>PRECISION;
+        DC_DZ1[j] = ((int)DC_DY1[j]*((int)de_sigmoid(Z1[j]>>PRECISION)<<PRECISION)/255)>>PRECISION;
         DC_DB1[j] = DC_DZ1[j];
         for(uint8_t i = 0; i < N0; i++){
             DC_DW1[i][j] = (DC_DZ1[j]*Y0[i])>>PRECISION;

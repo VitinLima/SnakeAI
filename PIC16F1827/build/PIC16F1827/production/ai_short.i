@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart.c"
+# 1 "ai_short.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart.c" 2
-# 50 "mcc_generated_files/eusart.c"
-# 1 "mcc_generated_files/eusart.h" 1
-# 54 "mcc_generated_files/eusart.h"
+# 1 "ai_short.c" 2
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4331,11 +4331,210 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/eusart.h" 2
+# 49 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 159 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 171 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
 
 # 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/eusart.h" 2
-# 75 "mcc_generated_files/eusart.h"
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\conio.h" 1 3
+
+
+
+
+
+
+# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 3
+# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 7 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\conio.h" 2 3
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/spi1.h" 1
+# 59 "./mcc_generated_files/spi1.h"
+typedef enum {
+    SPI1_DEFAULT
+} spi1_modes_t;
+
+void SPI1_Initialize(void);
+_Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration);
+void SPI1_Close(void);
+uint8_t SPI1_ExchangeByte(uint8_t data);
+void SPI1_ExchangeBlock(void *block, size_t blockSize);
+void SPI1_WriteBlock(void *block, size_t blockSize);
+void SPI1_ReadBlock(void *block, size_t blockSize);
+void SPI1_WriteByte(uint8_t byte);
+uint8_t SPI1_ReadByte(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/memory.h" 1
+# 99 "./mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint16_t flashAddr);
+# 128 "./mcc_generated_files/memory.h"
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+# 164 "./mcc_generated_files/memory.h"
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+# 189 "./mcc_generated_files/memory.h"
+void FLASH_EraseBlock(uint16_t startAddr);
+# 220 "./mcc_generated_files/memory.h"
+void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
+# 246 "./mcc_generated_files/memory.h"
+uint8_t DATAEE_ReadByte(uint8_t bAdd);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart.h" 1
+# 75 "./mcc_generated_files/eusart.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -4345,142 +4544,218 @@ typedef union {
     };
     uint8_t status;
 }eusart_status_t;
-# 110 "mcc_generated_files/eusart.h"
+# 110 "./mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 158 "mcc_generated_files/eusart.h"
+# 158 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 206 "mcc_generated_files/eusart.h"
+# 206 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 253 "mcc_generated_files/eusart.h"
+# 253 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 301 "mcc_generated_files/eusart.h"
+# 301 "./mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 321 "mcc_generated_files/eusart.h"
+# 321 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 341 "mcc_generated_files/eusart.h"
+# 341 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 361 "mcc_generated_files/eusart.h"
+# 361 "./mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 379 "mcc_generated_files/eusart.h"
+# 379 "./mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 397 "mcc_generated_files/eusart.h"
+# 397 "./mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 50 "mcc_generated_files/eusart.c" 2
+# 57 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 85 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 97 "./mcc_generated_files/mcc.h"
+void WDT_Initialize(void);
+# 2 "ai_short.c" 2
+
+# 1 "./ai_short.h" 1
+# 48 "./ai_short.h"
+    void ai_initiate();
+    int8_t* ai_getInputField();
+    uint8_t ai_run();
+    void ai_propagate(int8_t incentive);
+
+    void ai_printAI();
+# 3 "ai_short.c" 2
+
+# 1 "./sigmoid.h" 1
+# 11 "./sigmoid.h"
+uint8_t sigmoid(int z);
+
+uint8_t de_sigmoid(int z);
+# 4 "ai_short.c" 2
+
+# 1 "./serialCommunication.h" 1
+# 15 "./serialCommunication.h"
+    void print(uint8_t b);
+    void printInteger(int i);
+    void printFloat(float f);
+    void printString(const char *str);
+    void startMessage();
+    void endMessage();
+# 5 "ai_short.c" 2
 
 
-volatile eusart_status_t eusartRxLastError;
 
 
+int8_t Y0[8];
+int8_t Y1[4];
+int Z1[4];
+int8_t B1[4];
+int8_t W1[8][4];
 
+int8_t DC_DY1[4];
+int8_t DC_DZ1[4];
+int8_t DC_DB1[4];
+int8_t DC_DW1[8][4];
 
+int8_t S[4];
 
-void (*EUSART_FramingErrorHandler)(void);
-void (*EUSART_OverrunErrorHandler)(void);
-void (*EUSART_ErrorHandler)(void);
+uint8_t choice;
 
-void EUSART_DefaultFramingErrorHandler(void);
-void EUSART_DefaultOverrunErrorHandler(void);
-void EUSART_DefaultErrorHandler(void);
-
-void EUSART_Initialize(void)
-{
-
-
-
-    BAUDCON = 0x08;
-
-
-    RCSTA = 0x90;
-
-
-    TXSTA = 0x24;
-
-
-    SPBRGL = 0x22;
-
-
-    SPBRGH = 0x00;
-
-
-    EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
-    EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
-    EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
-
-    eusartRxLastError.status = 0;
-
+void ai_initiate(){
+    for(uint8_t j = 0; j < 4; j++){
+        B1[j] = (rand()%32)-16;
+        for(uint8_t i = 0; i < 8; i++){
+            W1[i][j] = (rand()%32)-16;
+        }
+    }
 }
 
-_Bool EUSART_is_tx_ready(void)
-{
-    return (_Bool)(PIR1bits.TXIF && TXSTAbits.TXEN);
+int8_t* ai_getInputField(){
+    return Y0;
 }
 
-_Bool EUSART_is_rx_ready(void)
-{
-    return (_Bool)(PIR1bits.RCIF);
-}
-
-_Bool EUSART_is_tx_done(void)
-{
-    return TXSTAbits.TRMT;
-}
-
-eusart_status_t EUSART_get_last_status(void){
-    return eusartRxLastError;
-}
-
-uint8_t EUSART_Read(void)
-{
-    while(!PIR1bits.RCIF)
-    {
+uint8_t ai_run(){
+    for(uint8_t i = 0; i < 8; i++){
+        if(Y0[i]>0){
+            Y0[i] = 1<<4;
+        }
     }
 
-    eusartRxLastError.status = 0;
-
-    if(1 == RCSTAbits.OERR)
-    {
-
-
-        RCSTAbits.CREN = 0;
-        RCSTAbits.CREN = 1;
+    for(uint8_t j = 0; j < 4; j++){
+        Z1[j] = B1[j];
+        for(uint8_t i = 0; i < 8; i++){
+            Z1[j] += (Y0[i]*W1[i][j])>>4;
+        }
+        Y1[j] = (int8_t)(((int)sigmoid(Z1[j]>>4)<<4)/255);
     }
 
-    return RCREG;
+    choice = 0;
+    for(uint8_t i = 1; i < 4; i++){
+        if(Y1[i]>Y1[choice]){
+            choice = i;
+        }
+    }
+    return choice;
 }
 
-void EUSART_Write(uint8_t txData)
-{
-    while(0 == PIR1bits.TXIF)
-    {
+void ai_propagate(int8_t incentive){
+    if(incentive == 0){
+        return;
     }
 
-    TXREG = txData;
+    if(incentive == -1){
+        incentive = 0;
+    }
+
+    if(incentive == 0){
+        for(uint8_t i = 0; i < 4; i++){
+            S[i] = 1<<4;
+        }
+        S[choice] = 0;
+    } else{
+        for(uint8_t i = 0; i < 4; i++){
+            S[i] = 0;
+        }
+        S[choice] = 1<<4;
+    }
+
+
+    for(uint8_t j = 0; j < 4; j++){
+        DC_DY1[j] = 2*(Y1[j]-S[j]);
+    }
+
+    for(uint8_t j = 0; j < 4; j++){
+        DC_DZ1[j] = ((int)DC_DY1[j]*((int)de_sigmoid(Z1[j]>>4)<<4)/255)>>4;
+        DC_DB1[j] = DC_DZ1[j];
+        for(uint8_t i = 0; i < 8; i++){
+            DC_DW1[i][j] = (DC_DZ1[j]*Y0[i])>>4;
+        }
+    }
+
+    for(uint8_t j = 0; j < 4; j++){
+        B1[j] -= DC_DB1[j];
+        for(uint8_t i = 0; i < 8; i++){
+            W1[i][j] -= DC_DW1[i][j];
+        }
+    }
 }
 
+void ai_printAI(){
+    printString("Y0");
+    printString("int8_t");
+    for(uint8_t i = 0; i < 8; i++){
+        print((uint8_t)Y0[i]);
+    }
+    printString("Y1");
+    printString("int8_t");
+    for(uint8_t j = 0; j < 4; j++){
+        print((uint8_t)Y1[j]);
+    }
+    printString("Z1");
+    printString("int16_t");
+    for(uint8_t j = 0; j < 4; j++){
+        printInteger(Z1[j]);
+    }
+    printString("B1");
+    printString("int8_t");
+    for(uint8_t j = 0; j < 4; j++){
+        print((uint8_t)B1[j]);
+    }
+    printString("W1");
+    printString("int8_t");
+    for(uint8_t i = 0; i < 8; i++){
+        for(uint8_t j = 0; j < 4; j++){
+            print((uint8_t)W1[i][j]);
+        }
+    }
+    printString("S1");
+    printString("uint8_t");
+    for(uint8_t i = 0; i < 4; i++){
+        print(sigmoid((int)Z1[i]));
+    }
 
-
-
-void EUSART_DefaultFramingErrorHandler(void){}
-
-void EUSART_DefaultOverrunErrorHandler(void){
-
-
-    RCSTAbits.CREN = 0;
-    RCSTAbits.CREN = 1;
-
-}
-
-void EUSART_DefaultErrorHandler(void){
-}
-
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
-    EUSART_FramingErrorHandler = interruptHandler;
-}
-
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-    EUSART_OverrunErrorHandler = interruptHandler;
-}
-
-void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
-    EUSART_ErrorHandler = interruptHandler;
+    printString("DC_DY1");
+    printString("int8_t");
+    for(uint8_t j = 0; j < 4; j++){
+        print((uint8_t)DC_DY1[j]);
+    }
+    printString("DC_DZ1");
+    printString("int8_t");
+    for(uint8_t j = 0; j < 4; j++){
+        print((uint8_t)DC_DZ1[j]);
+    }
+    printString("DC_DB1");
+    printString("int8_t");
+    for(uint8_t j = 0; j < 4; j++){
+        print((uint8_t)DC_DB1[j]);
+    }
+    printString("DC_DW1");
+    printString("int8_t");
+    for(uint8_t i = 0; i < 8; i++){
+        for(uint8_t j = 0; j < 4; j++){
+            print((uint8_t)DC_DW1[i][j]);
+        }
+    }
+    printString("DS1");
+    printString("uint8_t");
+    for(uint8_t i = 0; i < 4; i++){
+        print(de_sigmoid((int)Z1[i]));
+    }
 }

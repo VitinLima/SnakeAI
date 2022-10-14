@@ -10,16 +10,16 @@
 
 void print(uint8_t b){
     if(b == SF){
-        USART0_Write(SC);
-        USART0_Write(SF_N);
+        EUSART_Write(SC);
+        EUSART_Write(SF_N);
     } else if(b == EF){
-        USART0_Write(SC);
-        USART0_Write(EF_N);
+        EUSART_Write(SC);
+        EUSART_Write(EF_N);
     } else if(b == SC){
-        USART0_Write(SC);
-        USART0_Write(SC);
+        EUSART_Write(SC);
+        EUSART_Write(SC);
     } else{
-        USART0_Write(b);
+        EUSART_Write(b);
     }
 }
 
@@ -46,9 +46,9 @@ void printString(const char *str){
 }
 
 void startMessage(){
-    USART0_Write(SF);
+    EUSART_Write(SF);
 }
 
 void endMessage(){
-    USART0_Write(EF);
+    EUSART_Write(EF);
 }

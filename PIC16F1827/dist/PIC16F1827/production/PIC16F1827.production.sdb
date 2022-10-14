@@ -1,0 +1,715 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1827 ]
+[d frameptr 6 ]
+"72 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/spi1.c
+[e E355 . `uc
+SPI1_DEFAULT 0
+]
+"24 D:\WS\GitHub\SnakeAI\PIC16F1827\ai_short.c
+[v _ai_initiate ai_initiate `(v  1 e 1 0 ]
+"33
+[v _ai_getInputField ai_getInputField `(*.4c  1 e 1 0 ]
+"37
+[v _ai_run ai_run `(uc  1 e 1 0 ]
+"61
+[v _ai_propagate ai_propagate `(v  1 e 1 0 ]
+"103
+[v _ai_printAI ai_printAI `(v  1 e 1 0 ]
+"5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"11 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+"10 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"5 D:\WS\GitHub\SnakeAI\PIC16F1827\ledMatrix.c
+[v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
+"16
+[v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
+"31
+[v _ledSet ledSet `(v  1 e 1 0 ]
+"35
+[v _ledClear ledClear `(v  1 e 1 0 ]
+"55
+[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
+"50 D:\WS\GitHub\SnakeAI\PIC16F1827\main.c
+[v _deactivateElevator deactivateElevator `(v  1 e 1 0 ]
+"67
+[v _main main `(v  1 e 1 0 ]
+"66 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"144
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"146
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"154
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"157
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"161
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"165
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"50 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"60
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"58 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/memory.c
+[v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
+"95
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+"156
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+"55 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"62 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+"92
+[v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
+"131
+[v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
+"11 D:\WS\GitHub\SnakeAI\PIC16F1827\serialCommunication.c
+[v _print print `(v  1 e 1 0 ]
+"26
+[v _printInteger printInteger `(v  1 e 1 0 ]
+"42
+[v _printString printString `(v  1 e 1 0 ]
+"8 D:\WS\GitHub\SnakeAI\PIC16F1827\sigmoid.c
+[v _sigmoid sigmoid `(uc  1 e 1 0 ]
+"21
+[v _de_sigmoid de_sigmoid `(uc  1 e 1 0 ]
+"20 D:\WS\GitHub\SnakeAI\PIC16F1827\snake.c
+[v _snake_initiate snake_initiate `(v  1 e 1 0 ]
+"32
+[v _snake_move snake_move `(c  1 e 1 0 ]
+"94
+[v _snake_getField snake_getField `(*.5uc  1 e 1 0 ]
+"98
+[v _snake_getSurroundings snake_getSurroundings `(v  1 e 1 0 ]
+"142
+[v _snake_getFoodPosition snake_getFoodPosition `(uc  1 e 1 0 ]
+"14 D:\WS\GitHub\SnakeAI\PIC16F1827/ledMatrix.h
+[v _matrix matrix `[8]uc  1 e 8 0 ]
+"9 D:\WS\GitHub\SnakeAI\PIC16F1827\ai_short.c
+[v _Y0 Y0 `[8]c  1 e 8 0 ]
+"10
+[v _Y1 Y1 `[4]c  1 e 4 0 ]
+"11
+[v _Z1 Z1 `[4]i  1 e 8 0 ]
+"12
+[v _B1 B1 `[4]c  1 e 4 0 ]
+"13
+[v _W1 W1 `[8][4]c  1 e 32 0 ]
+"15
+[v _DC_DY1 DC_DY1 `[4]c  1 e 4 0 ]
+"16
+[v _DC_DZ1 DC_DZ1 `[4]c  1 e 4 0 ]
+"17
+[v _DC_DB1 DC_DB1 `[4]c  1 e 4 0 ]
+"18
+[v _DC_DW1 DC_DW1 `[8][4]c  1 e 32 0 ]
+"20
+[v _S S `[4]c  1 e 4 0 ]
+"22
+[v _choice choice `uc  1 e 1 0 ]
+[s S22 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"375 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[s S31 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
+[s S186 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"571
+[u S195 . 1 `S186 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES195  1 e 1 @17 ]
+"1153
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S517 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1170
+[u S526 . 1 `S517 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES526  1 e 1 @140 ]
+"1215
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S369 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1232
+[u S378 . 1 `S369 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES378  1 e 1 @141 ]
+[s S317 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1479
+[s S326 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S331 . 1 `S317 1 . 1 0 `S326 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES331  1 e 1 @149 ]
+"1590
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1649
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1707
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2040
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S496 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"2057
+[u S505 . 1 `S496 1 . 1 0 ]
+[v _LATAbits LATAbits `VES505  1 e 1 @268 ]
+"2097
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S654 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2114
+[u S663 . 1 `S654 1 . 1 0 ]
+[v _LATBbits LATBbits `VES663  1 e 1 @269 ]
+"2431
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2780
+[v _APFCON0 APFCON0 `VEuc  1 e 1 @285 ]
+"2842
+[v _APFCON1 APFCON1 `VEuc  1 e 1 @286 ]
+"2862
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2914
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2986
+[v _EEADRL EEADRL `VEuc  1 e 1 @401 ]
+"3006
+[v _EEADRH EEADRH `VEuc  1 e 1 @402 ]
+"3033
+[v _EEDATL EEDATL `VEuc  1 e 1 @403 ]
+"3071
+[v _EEDATH EEDATH `VEuc  1 e 1 @404 ]
+[s S56 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"3108
+[u S65 . 1 `S56 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES65  1 e 1 @405 ]
+"3153
+[v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
+"3173
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"3193
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"3229
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"3279
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"3312
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S228 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3329
+[u S237 . 1 `S228 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES237  1 e 1 @413 ]
+"3374
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S207 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3391
+[u S216 . 1 `S207 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES216  1 e 1 @414 ]
+"3436
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"3488
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3517
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"3587
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"3625
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"3701
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+"3823
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S390 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3852
+[s S399 . 1 `uc 1 SSPM 1 0 :4:0 
+]
+[u S401 . 1 `S390 1 . 1 0 `S399 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES401  1 e 1 @533 ]
+"4027
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
+"4 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+[v _seed seed `ul  1 s 4 seed ]
+[s S140 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"52 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/eusart.c
+[u S145 . 1 `S140 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES145  1 e 1 0 ]
+"58
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+[s S361 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"58 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/spi1.c
+[v _spi1_configuration spi1_configuration `DC[1]S361  1 s 4 spi1_configuration ]
+"5 D:\WS\GitHub\SnakeAI\PIC16F1827\sigmoid.c
+[v _sigmoidValues sigmoidValues `DC[16]uc  1 e 16 0 ]
+"6
+[v _de_sigmoidValues de_sigmoidValues `DC[16]uc  1 e 16 0 ]
+"5 D:\WS\GitHub\SnakeAI\PIC16F1827\snake.c
+[v _field field `[64]uc  1 e 64 0 ]
+"6
+[v _snake_mapping snake_mapping `[8]uc  1 e 8 0 ]
+"15
+[v _snakeSize snakeSize `uc  1 e 1 0 ]
+"16
+[v _headPosition headPosition `uc  1 e 1 0 ]
+"17
+[v _foodPosition foodPosition `uc  1 e 1 0 ]
+"18
+[v _remainingMoves remainingMoves `uc  1 e 1 0 ]
+"67 D:\WS\GitHub\SnakeAI\PIC16F1827\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"128
+[v main@j_652 j `uc  1 a 1 30 ]
+"106
+[v main@j j `uc  1 a 1 28 ]
+"127
+[v main@i_651 i `uc  1 a 1 29 ]
+"136
+[v main@foodPosition_653 foodPosition `uc  1 a 1 26 ]
+"125
+[v main@incentive incentive `c  1 a 1 23 ]
+"124
+[v main@choice choice `uc  1 a 1 22 ]
+"105
+[v main@i i `uc  1 a 1 27 ]
+"115
+[v main@foodPosition foodPosition `uc  1 a 1 25 ]
+"103
+[v main@field field `*.5uc  1 a 1 24 ]
+"141
+} 0
+"32 D:\WS\GitHub\SnakeAI\PIC16F1827\snake.c
+[v _snake_move snake_move `(c  1 e 1 0 ]
+{
+[v snake_move@direction direction `uc  1 a 1 wreg ]
+"34
+[v snake_move@i i `uc  1 a 1 10 ]
+"39
+[v snake_move@incentive incentive `c  1 a 1 9 ]
+"32
+[v snake_move@direction direction `uc  1 a 1 wreg ]
+[v snake_move@direction direction `uc  1 a 1 8 ]
+"92
+} 0
+"20
+[v _snake_initiate snake_initiate `(v  1 e 1 0 ]
+{
+"21
+[v snake_initiate@i i `uc  1 a 1 5 ]
+"30
+} 0
+"98
+[v _snake_getSurroundings snake_getSurroundings `(v  1 e 1 0 ]
+{
+[v snake_getSurroundings@surroundings surroundings `*.4c  1 a 1 wreg ]
+"117
+[v snake_getSurroundings@i_776 i `uc  1 a 1 12 ]
+"99
+[v snake_getSurroundings@i i `uc  1 a 1 9 ]
+"103
+[v snake_getSurroundings@ch ch `uc  1 a 1 11 ]
+"102
+[v snake_getSurroundings@lh lh `uc  1 a 1 10 ]
+"105
+[v snake_getSurroundings@cf cf `uc  1 a 1 8 ]
+"104
+[v snake_getSurroundings@lf lf `uc  1 a 1 7 ]
+"116
+[v snake_getSurroundings@p p `uc  1 a 1 6 ]
+"98
+[v snake_getSurroundings@surroundings surroundings `*.4c  1 a 1 wreg ]
+[v snake_getSurroundings@surroundings surroundings `*.4c  1 a 1 13 ]
+"133
+} 0
+"142
+[v _snake_getFoodPosition snake_getFoodPosition `(uc  1 e 1 0 ]
+{
+"144
+} 0
+"94
+[v _snake_getField snake_getField `(*.5uc  1 e 1 0 ]
+{
+"96
+} 0
+"55 D:\WS\GitHub\SnakeAI\PIC16F1827\ledMatrix.c
+[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
+{
+"66
+[v sendMatrix@j j `uc  1 a 1 6 ]
+"58
+[v sendMatrix@i i `uc  1 a 1 7 ]
+"57
+[v sendMatrix@nb nb `uc  1 a 1 5 ]
+"56
+[v sendMatrix@b b `uc  1 a 1 4 ]
+"76
+} 0
+"31
+[v _ledSet ledSet `(v  1 e 1 0 ]
+{
+[v ledSet@l l `uc  1 a 1 wreg ]
+[v ledSet@l l `uc  1 a 1 wreg ]
+[v ledSet@c c `uc  1 p 1 4 ]
+[v ledSet@l l `uc  1 a 1 7 ]
+"33
+} 0
+"35
+[v _ledClear ledClear `(v  1 e 1 0 ]
+{
+[v ledClear@l l `uc  1 a 1 wreg ]
+[v ledClear@l l `uc  1 a 1 wreg ]
+[v ledClear@c c `uc  1 p 1 0 ]
+[v ledClear@l l `uc  1 a 1 3 ]
+"37
+} 0
+"16
+[v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
+{
+"29
+} 0
+"5
+[v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
+{
+[v txMAX7219@addr0 addr0 `uc  1 a 1 wreg ]
+[v txMAX7219@addr0 addr0 `uc  1 a 1 wreg ]
+[v txMAX7219@dat0 dat0 `uc  1 p 1 1 ]
+[v txMAX7219@addr0 addr0 `uc  1 a 1 2 ]
+"14
+} 0
+"131 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/spi1.c
+[v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
+{
+[v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+[v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+"133
+[v SPI1_WriteByte@byte byte `uc  1 a 1 0 ]
+"134
+} 0
+"50 D:\WS\GitHub\SnakeAI\PIC16F1827\main.c
+[v _deactivateElevator deactivateElevator `(v  1 e 1 0 ]
+{
+"62
+} 0
+"37 D:\WS\GitHub\SnakeAI\PIC16F1827\ai_short.c
+[v _ai_run ai_run `(uc  1 e 1 0 ]
+{
+"46
+[v ai_run@i_838 i `uc  1 a 1 11 ]
+"53
+[v ai_run@i_839 i `uc  1 a 1 12 ]
+"44
+[v ai_run@j j `uc  1 a 1 13 ]
+"38
+[v ai_run@i i `uc  1 a 1 10 ]
+"59
+} 0
+"61
+[v _ai_propagate ai_propagate `(v  1 e 1 0 ]
+{
+[v ai_propagate@incentive incentive `c  1 a 1 wreg ]
+"97
+[v ai_propagate@i_848 i `uc  1 a 1 15 ]
+"90
+[v ai_propagate@i_846 i `uc  1 a 1 14 ]
+"76
+[v ai_propagate@i_843 i `uc  1 a 1 13 ]
+"71
+[v ai_propagate@i i `uc  1 a 1 12 ]
+"95
+[v ai_propagate@j_847 j `uc  1 a 1 17 ]
+"87
+[v ai_propagate@j_845 j `uc  1 a 1 18 ]
+"83
+[v ai_propagate@j j `uc  1 a 1 16 ]
+"61
+[v ai_propagate@incentive incentive `c  1 a 1 wreg ]
+[v ai_propagate@incentive incentive `c  1 a 1 11 ]
+"101
+} 0
+"15 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 7 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 3 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 5 ]
+"53
+} 0
+"5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 9 ]
+[v ___awdiv@dividend dividend `i  1 p 2 11 ]
+"41
+} 0
+"103 D:\WS\GitHub\SnakeAI\PIC16F1827\ai_short.c
+[v _ai_printAI ai_printAI `(v  1 e 1 0 ]
+{
+"155
+[v ai_printAI@j_883 j `uc  1 a 1 11 ]
+"127
+[v ai_printAI@j_867 j `uc  1 a 1 5 ]
+"161
+[v ai_printAI@i_886 i `uc  1 a 1 12 ]
+"154
+[v ai_printAI@i_882 i `uc  1 a 1 10 ]
+"149
+[v ai_printAI@j_879 j `uc  1 a 1 9 ]
+"144
+[v ai_printAI@j_876 j `uc  1 a 1 8 ]
+"139
+[v ai_printAI@j_873 j `uc  1 a 1 7 ]
+"133
+[v ai_printAI@i_870 i `uc  1 a 1 6 ]
+"126
+[v ai_printAI@i_866 i `uc  1 a 1 4 ]
+"121
+[v ai_printAI@j_863 j `uc  1 a 1 3 ]
+"116
+[v ai_printAI@j_859 j `uc  1 a 1 2 ]
+"111
+[v ai_printAI@j j `uc  1 a 1 1 ]
+"106
+[v ai_printAI@i i `uc  1 a 1 0 ]
+"164
+} 0
+"8 D:\WS\GitHub\SnakeAI\PIC16F1827\sigmoid.c
+[v _sigmoid sigmoid `(uc  1 e 1 0 ]
+{
+[v sigmoid@z z `i  1 p 2 0 ]
+"19
+} 0
+"42 D:\WS\GitHub\SnakeAI\PIC16F1827\serialCommunication.c
+[v _printString printString `(v  1 e 1 0 ]
+{
+"43
+[v printString@i i `uc  1 a 1 7 ]
+"42
+[v printString@str str `*.25DCuc  1 p 2 2 ]
+"46
+} 0
+"26
+[v _printInteger printInteger `(v  1 e 1 0 ]
+{
+[v printInteger@i i `i  1 p 2 2 ]
+"29
+} 0
+"11
+[v _print print `(v  1 e 1 0 ]
+{
+[v print@b b `uc  1 a 1 wreg ]
+[v print@b b `uc  1 a 1 wreg ]
+[v print@b b `uc  1 a 1 1 ]
+"24
+} 0
+"132 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/eusart.c
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"21 D:\WS\GitHub\SnakeAI\PIC16F1827\sigmoid.c
+[v _de_sigmoid de_sigmoid `(uc  1 e 1 0 ]
+{
+[v de_sigmoid@z z `i  1 p 2 0 ]
+"32
+} 0
+"24 D:\WS\GitHub\SnakeAI\PIC16F1827\ai_short.c
+[v _ai_initiate ai_initiate `(v  1 e 1 0 ]
+{
+"27
+[v ai_initiate@i i `uc  1 a 1 7 ]
+"25
+[v ai_initiate@j j `uc  1 a 1 8 ]
+"31
+} 0
+"11 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+{
+"15
+} 0
+"15 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"33 D:\WS\GitHub\SnakeAI\PIC16F1827\ai_short.c
+[v _ai_getInputField ai_getInputField `(*.4c  1 e 1 0 ]
+{
+"35
+} 0
+"50 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"74
+} 0
+"62 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+{
+"70
+} 0
+"55 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"60 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"68
+} 0
+"66 D:\WS\GitHub\SnakeAI\PIC16F1827\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"161
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"163
+} 0
+"157
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"159
+} 0
+"165
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"167
+} 0

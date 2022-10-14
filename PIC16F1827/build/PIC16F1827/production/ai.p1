@@ -2,11 +2,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 D:\ProgramData\Microchip\xc8\v2.40\pic\include\c99\stdlib.h
 [; ;D:\ProgramData\Microchip\xc8\v2.40\pic\include\c99\stdlib.h: 39: int rand (void);
 [v _rand `(i ~T0 @X0 0 ef ]
-"14 ./sigmoid.h
-[; ;./sigmoid.h: 14: uint8_t sigmoid(int z);
+"11 ./sigmoid.h
+[; ;./sigmoid.h: 11: uint8_t sigmoid(int z);
 [v _sigmoid `(uc ~T0 @X0 0 ef1`i ]
-"16
-[; ;./sigmoid.h: 16: uint8_t de_sigmoid(int z);
+"13
+[; ;./sigmoid.h: 13: uint8_t de_sigmoid(int z);
 [v _de_sigmoid `(uc ~T0 @X0 0 ef1`i ]
 "341 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 341: void EUSART_Write(uint8_t txData);
@@ -543,52 +543,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;./ai.h: 51:     uint8_t choice;
 [v _choice `uc ~T0 @X0 1 e ]
-"11 ./sigmoid.h
-[; ;./sigmoid.h: 11: const uint8_t sigmoidValues[16] = {128, 186, 225, 243, 250, 253, 254, 255, 16, 16, 16, 16, 16, 16, 30, 69};
-[v _sigmoidValues `Cuc ~T0 @X0 -> 16 `i e ]
-[i _sigmoidValues
-:U ..
--> -> 128 `i `uc
--> -> 186 `i `uc
--> -> 225 `i `uc
--> -> 243 `i `uc
--> -> 250 `i `uc
--> -> 253 `i `uc
--> -> 254 `i `uc
--> -> 255 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 30 `i `uc
--> -> 69 `i `uc
-..
-]
-"12
-[; ;./sigmoid.h: 12: const uint8_t de_sigmoidValues[16] = {64, 50, 27, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 27, 50};
-[v _de_sigmoidValues `Cuc ~T0 @X0 -> 16 `i e ]
-[i _de_sigmoidValues
-:U ..
--> -> 64 `i `uc
--> -> 50 `i `uc
--> -> 27 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
--> -> 27 `i `uc
--> -> 50 `i `uc
-..
-]
 "69 ai.c
 [; ;ai.c: 69: void ai_initiate(){
 [v _ai_initiate `(v ~T0 @X0 1 ef ]

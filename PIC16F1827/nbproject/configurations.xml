@@ -15,10 +15,10 @@
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
       </logicalFolder>
       <itemPath>ledMatrix.h</itemPath>
-      <itemPath>ai.h</itemPath>
-      <itemPath>ai_short.h</itemPath>
-      <itemPath>sigmoid.h</itemPath>
       <itemPath>snake.h</itemPath>
+      <itemPath>serialCommunication.h</itemPath>
+      <itemPath>sigmoid.h</itemPath>
+      <itemPath>ai_short.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -39,10 +39,10 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>ledMatrix.c</itemPath>
-      <itemPath>ai.c</itemPath>
+      <itemPath>snake.c</itemPath>
+      <itemPath>serialCommunication.c</itemPath>
       <itemPath>ai_short.c</itemPath>
       <itemPath>sigmoid.c</itemPath>
-      <itemPath>snake.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -50,8 +50,6 @@
       <itemPath>Makefile</itemPath>
       <itemPath>SnakeAI.mc3</itemPath>
     </logicalFolder>
-    <itemPath>serialCommunication.c</itemPath>
-    <itemPath>serialCommunication.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>

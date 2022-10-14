@@ -46,7 +46,7 @@ uint8_t ai_run(){
         for(uint8_t i = 0; i < N0; i++){
             Z1[j] += (Y0[i]*W1[i][j])>>PRECISION;
         }
-        Y1[j] = ((int)sigmoid(Z1[j]>>PRECISION)<<PRECISION)/255;
+        Y1[j] = (int8_t)(((int)sigmoid(Z1[j]>>PRECISION)<<PRECISION)/255);
     }
     
     choice = 0;

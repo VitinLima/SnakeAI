@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart.c"
+# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart.c" 2
-# 50 "mcc_generated_files/eusart.c"
-# 1 "mcc_generated_files/eusart.h" 1
-# 54 "mcc_generated_files/eusart.h"
+# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 # 1 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4331,156 +4328,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/eusart.h" 2
-
-# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/eusart.h" 2
-# 75 "mcc_generated_files/eusart.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart_status_t;
-# 110 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 158 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 206 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 253 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 301 "mcc_generated_files/eusart.h"
-eusart_status_t EUSART_get_last_status(void);
-# 321 "mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 341 "mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 361 "mcc_generated_files/eusart.h"
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 379 "mcc_generated_files/eusart.h"
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 397 "mcc_generated_files/eusart.h"
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 50 "mcc_generated_files/eusart.c" 2
-
-
-volatile eusart_status_t eusartRxLastError;
+# 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 
 
 
 
-
-void (*EUSART_FramingErrorHandler)(void);
-void (*EUSART_OverrunErrorHandler)(void);
-void (*EUSART_ErrorHandler)(void);
-
-void EUSART_DefaultFramingErrorHandler(void);
-void EUSART_DefaultOverrunErrorHandler(void);
-void EUSART_DefaultErrorHandler(void);
-
-void EUSART_Initialize(void)
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
+ volatile unsigned char *cp = to;
 
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
 
+  EECON1 &= 0x7F;
 
-    BAUDCON = 0x08;
-
-
-    RCSTA = 0x90;
-
-
-    TXSTA = 0x24;
-
-
-    SPBRGL = 0x22;
-
-
-    SPBRGH = 0x00;
-
-
-    EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
-    EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
-    EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
-
-    eusartRxLastError.status = 0;
-
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\pic\\__eeprom.c"
 }
 
-_Bool EUSART_is_tx_ready(void)
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
-    return (_Bool)(PIR1bits.TXIF && TXSTAbits.TXEN);
+ const unsigned char *ptr =from;
+
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
+
+ EECON1 &= 0x7F;
+
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\sources\\c99\\pic\\__eeprom.c"
 }
 
-_Bool EUSART_is_rx_ready(void)
+unsigned char
+__eetoc(__eeprom void *addr)
 {
-    return (_Bool)(PIR1bits.RCIF);
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
 
-_Bool EUSART_is_tx_done(void)
+unsigned int
+__eetoi(__eeprom void *addr)
 {
-    return TXSTAbits.TRMT;
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
 
-eusart_status_t EUSART_get_last_status(void){
-    return eusartRxLastError;
-}
-
-uint8_t EUSART_Read(void)
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
 {
-    while(!PIR1bits.RCIF)
-    {
-    }
-
-    eusartRxLastError.status = 0;
-
-    if(1 == RCSTAbits.OERR)
-    {
-
-
-        RCSTAbits.CREN = 0;
-        RCSTAbits.CREN = 1;
-    }
-
-    return RCREG;
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
 }
+#pragma warning pop
 
-void EUSART_Write(uint8_t txData)
+unsigned long
+__eetol(__eeprom void *addr)
 {
-    while(0 == PIR1bits.TXIF)
-    {
-    }
-
-    TXREG = txData;
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
 
-
-
-void EUSART_DefaultFramingErrorHandler(void){}
-
-void EUSART_DefaultOverrunErrorHandler(void){
-
-
-    RCSTAbits.CREN = 0;
-    RCSTAbits.CREN = 1;
-
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
 }
 
-void EUSART_DefaultErrorHandler(void){
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
 }
 
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
-    EUSART_FramingErrorHandler = interruptHandler;
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }
 
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-    EUSART_OverrunErrorHandler = interruptHandler;
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
 }
 
-void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
-    EUSART_ErrorHandler = interruptHandler;
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

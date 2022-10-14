@@ -4574,10 +4574,7 @@ void WDT_Initialize(void);
 # 2 "snake.c" 2
 
 # 1 "./snake.h" 1
-# 29 "./snake.h"
-    uint8_t field[(4*4)];
-    uint8_t mapping[8];
-    uint8_t snakeSize;
+# 33 "./snake.h"
     void snake_initiate();
     int8_t snake_move(uint8_t direction);
     uint8_t* snake_getField();
@@ -4588,60 +4585,29 @@ void WDT_Initialize(void);
     void snake_setFoodPosition(uint8_t pos);
 # 3 "snake.c" 2
 
-# 1 "./ledMatrix.h" 1
-# 14 "./ledMatrix.h"
-uint8_t matrix[8];
 
-
-
-
-
-
-void txMAX7219(uint8_t addr0, uint8_t dat0);
-
-
-
-
-void initMAX7219();
-
-
-
-
-
-
-void ledSet(uint8_t l, uint8_t c);
-void ledClear(uint8_t l, uint8_t c);
-void setColumn(uint8_t c, uint8_t val);
-void setLine(uint8_t l, uint8_t val);
-
-
-
-void sendMatrix();
-# 4 "snake.c" 2
-
-
-uint8_t field[(4*4)];
-uint8_t mapping[8] = {
-    (4*4)-4 -1,
-    (4*4)-1,
-    4 -1,
-    4,
-    4 +1,
+uint8_t field[(8*8)];
+uint8_t snake_mapping[8] = {
+    (8*8)-8 -1,
+    (8*8)-1,
+    8 -1,
+    8,
+    8 +1,
     1,
-    (4*4)-4 +1,
-    (4*4)-4};
+    (8*8)-8 +1,
+    (8*8)-8};
 uint8_t snakeSize;
 uint8_t headPosition;
 uint8_t foodPosition;
 uint8_t remainingMoves;
 
 void snake_initiate(){
-    for(uint8_t i = 0; i < (4*4); i++){
+    for(uint8_t i = 0; i < (8*8); i++){
         field[i] = 0;
     }
-    srand(0);
-    headPosition = rand()%(4*4);
-    foodPosition = rand()%(4*4);
+
+    headPosition = rand()%(8*8);
+    foodPosition = rand()%(8*8);
     snakeSize = 3;
     remainingMoves = 40;
     field[headPosition] = snakeSize;
@@ -4649,7 +4615,7 @@ void snake_initiate(){
 
 int8_t snake_move(uint8_t direction){
     remainingMoves--;
-    for(uint8_t i = 0; i < (4*4); i++){
+    for(uint8_t i = 0; i < (8*8); i++){
         if(field[i] > 0){
             field[i]--;
         }
@@ -4658,31 +4624,31 @@ int8_t snake_move(uint8_t direction){
     direction &= 0x03;
     switch(direction){
         case 0:
-            if((headPosition%4) == 0){
+            if((headPosition%8) == 0){
                 incentive = -1;
             } else{
                 headPosition--;
             }
             break;
         case 1:
-            if((headPosition%4) == (4 -1)){
+            if((headPosition%8) == (8 -1)){
                 incentive = -1;
             } else{
                 headPosition++;
             }
             break;
         case 2:
-            if((headPosition/4) == 0){
+            if((headPosition/8) == 0){
                 incentive = -1;
             } else{
-                headPosition -= 4;
+                headPosition -= 8;
             }
             break;
         case 3:
-            if((headPosition/4) == (4 -1)){
+            if((headPosition/8) == (8 -1)){
                 incentive = -1;
             } else{
-                headPosition += 4;
+                headPosition += 8;
             }
             break;
     }
@@ -4692,15 +4658,15 @@ int8_t snake_move(uint8_t direction){
         incentive = -1;
         snake_initiate();
     } else{
+        field[headPosition] = snakeSize;
         if(headPosition == foodPosition){
             remainingMoves = 40;
             incentive = 1;
             snakeSize++;
             do{
-                foodPosition = rand()%(4*4);
+                foodPosition = rand()%(8*8);
             }while(field[foodPosition] > 0);
         }
-        field[headPosition] = snakeSize;
     }
     if(remainingMoves == 0){
         incentive = -1;
@@ -4717,23 +4683,23 @@ void snake_getSurroundings(int8_t* surroundings){
     for(uint8_t i = 0; i < 8; i++){
         surroundings[i] = 0;
     }
-    uint8_t lh = headPosition%4;
-    uint8_t ch = headPosition/4;
-    uint8_t lf = foodPosition%4;
-    uint8_t cf = foodPosition/4;
+    uint8_t lh = headPosition%8;
+    uint8_t ch = headPosition/8;
+    uint8_t lf = foodPosition%8;
+    uint8_t cf = foodPosition/8;
     if(lh == 0){
         surroundings[0] = 1;
-    } else if(lh == (4 -1)){
+    } else if(lh == (8 -1)){
         surroundings[1] = 1;
     }
     if(ch == 0){
         surroundings[2] = 1;
-    } else if(ch == (4 -1)){
+    } else if(ch == (8 -1)){
         surroundings[3] = 1;
     }
     uint8_t p;
     for(uint8_t i = 0; i < 4; i++){
-        p = (headPosition+mapping[i])%(4*4);
+        p = (headPosition+snake_mapping[i])%(8*8);
         if(field[p] > 0){
             surroundings[i] = 1;
         }

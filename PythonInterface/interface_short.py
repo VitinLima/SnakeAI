@@ -184,7 +184,7 @@ try:
                     if state==0:
                         current_string += chr(dataRx)
                         if vector_names.count(current_string)>0:
-                            print(current_string)
+                            # print(current_string)
                             current_array_name = current_string
                             if current_array_name=='food':
                                 pass
@@ -199,7 +199,7 @@ try:
                     elif state==1:
                         current_string += chr(dataRx)
                         if type_names.count(current_string)>0:
-                            print(current_string)
+                            # print(current_string)
                             dataType = current_string
                             dataSize = sortDataSize(dataType)
                             
