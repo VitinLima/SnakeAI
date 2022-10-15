@@ -10,6 +10,36 @@
         <itemPath>lib/sigmoid.h</itemPath>
         <itemPath>lib/snake.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="MCC Generated Files"
+                     displayName="MCC Generated Files"
+                     projectFiles="true">
+        <logicalFolder name="config" displayName="config" projectFiles="true">
+          <itemPath>mcc_generated_files/config/clock_config.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="include" displayName="include" projectFiles="true">
+          <itemPath>mcc_generated_files/include/protected_io.h</itemPath>
+          <itemPath>mcc_generated_files/include/rstctrl.h</itemPath>
+          <itemPath>mcc_generated_files/include/eeprom.h</itemPath>
+          <itemPath>mcc_generated_files/include/cpuint.h</itemPath>
+          <itemPath>mcc_generated_files/include/pin_manager.h</itemPath>
+          <itemPath>mcc_generated_files/include/port.h</itemPath>
+          <itemPath>mcc_generated_files/include/usart0.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="utils" displayName="utils" projectFiles="true">
+          <logicalFolder name="assembler" displayName="assembler" projectFiles="true">
+            <itemPath>mcc_generated_files/utils/assembler/iar.h</itemPath>
+            <itemPath>mcc_generated_files/utils/assembler/gas.h</itemPath>
+          </logicalFolder>
+          <itemPath>mcc_generated_files/utils/utils_assert.h</itemPath>
+          <itemPath>mcc_generated_files/utils/atomic.h</itemPath>
+          <itemPath>mcc_generated_files/utils/compiler.h</itemPath>
+          <itemPath>mcc_generated_files/utils/interrupt_avr8.h</itemPath>
+          <itemPath>mcc_generated_files/utils/utils.h</itemPath>
+          <itemPath>mcc_generated_files/utils/assembler.h</itemPath>
+        </logicalFolder>
+        <itemPath>mcc_generated_files/mcc.h</itemPath>
+      </logicalFolder>
+      <itemPath>serialCommunication.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,15 +54,28 @@
         <itemPath>lib/sigmoid.c</itemPath>
         <itemPath>lib/snake.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="MCC Generated Files"
+                     displayName="MCC Generated Files"
+                     projectFiles="true">
+        <logicalFolder name="src" displayName="src" projectFiles="true">
+          <itemPath>mcc_generated_files/src/protected_io.S</itemPath>
+          <itemPath>mcc_generated_files/src/cpuint.c</itemPath>
+          <itemPath>mcc_generated_files/src/usart0.c</itemPath>
+          <itemPath>mcc_generated_files/src/pin_manager.c</itemPath>
+          <itemPath>mcc_generated_files/src/eeprom.c</itemPath>
+        </logicalFolder>
+        <itemPath>mcc_generated_files/mcc.c</itemPath>
+        <itemPath>mcc_generated_files/device_config.c</itemPath>
+      </logicalFolder>
+      <itemPath>serialCommunication.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>test.mc3</itemPath>
     </logicalFolder>
-    <itemPath>serialCommunication.c</itemPath>
-    <itemPath>serialCommunication.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
@@ -420,8 +463,6 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
-      <item path="main.c" ex="true" overriding="false">
-      </item>
     </conf>
   </confs>
 </configurationDescriptor>

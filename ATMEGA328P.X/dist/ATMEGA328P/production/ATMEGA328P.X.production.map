@@ -1,0 +1,1053 @@
+Archive member included to satisfy reference by file (symbol)
+
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+                              build/ATMEGA328P/production/ai_short.o (__divmodhi4)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+                              build/ATMEGA328P/production/mcc_generated_files/device_config.o (__do_copy_data)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+                              d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o) (__udivmodhi4)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                              D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o (exit)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+                              build/ATMEGA328P/production/ai_short.o (rand)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+                              d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o) (_Exit)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+                              d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o) (__mulsi3)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+                              d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o) (_exit)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+                              d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o) (__muluhisi3)
+d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+                              d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o) (__umulhisi3)
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .bss           0x0000000000000000        0x0 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .text.protected_write_io
+                0x0000000000000000        0x8 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .debug_line    0x0000000000000000       0x66 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .debug_info    0x0000000000000000       0x6f build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .debug_abbrev  0x0000000000000000       0x14 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .debug_aranges
+                0x0000000000000000       0x20 build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_Enable
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_EnableRx
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_EnableTx
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_Disable
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_GetData
+                0x0000000000000000        0x6 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_IsTxReady
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_IsRxReady
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_IsTxBusy
+                0x0000000000000000       0x10 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_IsTxDone
+                0x0000000000000000        0xc build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text.USART0_Read
+                0x0000000000000000       0x10 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .text.PORT_Initialize
+                0x0000000000000000        0x2 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .text.WDT_Initialize
+                0x0000000000000000        0x8 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/main.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/main.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/main.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/serialCommunication.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/serialCommunication.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/serialCommunication.o
+ .text.printFloat
+                0x0000000000000000       0x42 build/ATMEGA328P/production/serialCommunication.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/ai_short.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/ai_short.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/ai_short.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/sigmoid.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/sigmoid.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/sigmoid.o
+ .text          0x0000000000000000        0x0 build/ATMEGA328P/production/snake.o
+ .data          0x0000000000000000        0x0 build/ATMEGA328P/production/snake.o
+ .bss           0x0000000000000000        0x0 build/ATMEGA328P/production/snake.o
+ .text.snake_getHeadPosition
+                0x0000000000000000        0x6 build/ATMEGA328P/production/snake.o
+ .text.snake_setHeadPosition
+                0x0000000000000000        0x6 build/ATMEGA328P/production/snake.o
+ .text.snake_setFoodPosition
+                0x0000000000000000        0x6 build/ATMEGA328P/production/snake.o
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .stack.descriptors
+                0x0000000000000000       0x19 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .stack.descriptors
+                0x0000000000000000       0x1a d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+ .text.srand    0x0000000000000000       0x14 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .stack.descriptors
+                0x0000000000000000       0x16 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .stack.descriptors
+                0x0000000000000000       0x13 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .stack.descriptors
+                0x0000000000000000       0x19 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .data          0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .bss           0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .stack.descriptors
+                0x0000000000000000       0x19 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000008000 xr
+data             0x0000000000800100 0x0000000000000800 rw !x
+eeprom           0x0000000000810000 0x0000000000000400 rw !x
+fuse             0x0000000000820000 0x0000000000000003 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000001                __MPLAB_BUILD = 0x1
+LOAD build/ATMEGA328P/production/mcc_generated_files/src/protected_io.o
+LOAD build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+LOAD build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+LOAD build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+LOAD build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+LOAD build/ATMEGA328P/production/mcc_generated_files/device_config.o
+LOAD build/ATMEGA328P/production/mcc_generated_files/mcc.o
+LOAD build/ATMEGA328P/production/main.o
+LOAD build/ATMEGA328P/production/serialCommunication.o
+LOAD build/ATMEGA328P/production/ai_short.o
+LOAD build/ATMEGA328P/production/sigmoid.o
+LOAD build/ATMEGA328P/production/snake.o
+START GROUP
+LOAD d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
+END GROUP
+START GROUP
+LOAD d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a
+LOAD d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
+LOAD d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a
+LOAD D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const\libatmega328p.a
+END GROUP
+                0x0000000000000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x0000000000800100]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+                [0x0000000000008000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                [0x0000000000000800]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                [0x0000000000000400]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x0000000000000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x0000000000000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x0000000000000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x0000000000000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000       0xce
+ *(.vectors)
+ .vectors       0x0000000000000000       0x68 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000000                __vector_default
+                0x0000000000000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.dinit)
+ .dinit         0x0000000000000068       0x11 data_init
+                0x000000000000007a                . = ALIGN (0x2)
+ *fill*         0x0000000000000079        0x1 
+                0x000000000000007a                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000000000007a        0x0 linker stubs
+ *(.trampolines*)
+                0x000000000000007a                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+                0x000000000000007a                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000000000007a                __ctors_start = .
+ *(.ctors)
+                0x000000000000007a                __ctors_end = .
+                0x000000000000007a                __dtors_start = .
+ *(.dtors)
+                0x000000000000007a                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000000000007a        0x0 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x000000000000007a                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000000000007a        0xc D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0000000000000086       0x3c d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+                0x0000000000000086                __do_copy_data
+                0x00000000000000b4                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000000000000c2        0x8 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ *(.init9)
+                0x00000000000000ca                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000000000000ca        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+                0x00000000000000ca                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000000000000ca        0x4 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000000000000ce                _etext = .
+
+.data           0x0000000000800100        0x0 load address 0x00000000000000ce
+                [!provide]                        PROVIDE (__data_start, .)
+ *(.gnu.linkonce.d*)
+ *(.gnu.linkonce.r*)
+                0x0000000000800100                . = ALIGN (0x2)
+                0x0000000000800100                _edata = .
+                [!provide]                        PROVIDE (__data_end, .)
+
+.bss            0x0000000000800100        0x0
+                [!provide]                        PROVIDE (__bss_start, .)
+ *(COMMON)
+                [!provide]                        PROVIDE (__bss_end, .)
+                0x00000000000000ce                __data_load_start = LOADADDR (.data)
+                0x00000000000000ce                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0000000000800100        0x0
+                [!provide]                        PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                        PROVIDE (__noinit_end, .)
+                0x0000000000800100                _end = .
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse           0x0000000000820000        0x3
+ *(.fuse)
+ .fuse          0x0000000000820000        0x3 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+                0x0000000000820000                __fuse
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x2f
+ *(.comment)
+ .comment       0x0000000000000000       0x2f build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+                                         0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/main.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/serialCommunication.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/ai_short.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/sigmoid.o
+ .comment       0x000000000000002f       0x30 build/ATMEGA328P/production/snake.o
+ .comment       0x000000000000002f       0x30 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+ .comment       0x000000000000002f       0x30 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+ .comment       0x000000000000002f       0x30 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+
+.stack.descriptors.hdr
+                0x0000000000000000       0x54
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+ .stack.descriptors.hdr
+                0x000000000000000e        0xe d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+ .stack.descriptors.hdr
+                0x000000000000001c        0xe d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .stack.descriptors.hdr
+                0x000000000000002a        0xe d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .stack.descriptors.hdr
+                0x0000000000000038        0xe d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .stack.descriptors.hdr
+                0x0000000000000046        0xe d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x258
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_aranges
+                0x0000000000000020       0x78 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_aranges
+                0x0000000000000098       0x20 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_aranges
+                0x00000000000000b8       0x28 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_aranges
+                0x00000000000000e0       0x18 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .debug_aranges
+                0x00000000000000f8       0x38 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_aranges
+                0x0000000000000130       0x20 build/ATMEGA328P/production/main.o
+ .debug_aranges
+                0x0000000000000150       0x48 build/ATMEGA328P/production/serialCommunication.o
+ .debug_aranges
+                0x0000000000000198       0x40 build/ATMEGA328P/production/ai_short.o
+ .debug_aranges
+                0x00000000000001d8       0x28 build/ATMEGA328P/production/sigmoid.o
+ .debug_aranges
+                0x0000000000000200       0x58 build/ATMEGA328P/production/snake.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x36f5
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x5f4 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .debug_info    0x00000000000005f4      0x271 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_info    0x0000000000000865      0x414 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_info    0x0000000000000c79      0x282 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_info    0x0000000000000efb      0x289 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_info    0x0000000000001184      0x26f build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .debug_info    0x00000000000013f3      0x35f build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_info    0x0000000000001752      0x53f build/ATMEGA328P/production/main.o
+ .debug_info    0x0000000000001c91      0x48c build/ATMEGA328P/production/serialCommunication.o
+ .debug_info    0x000000000000211d      0xd5d build/ATMEGA328P/production/ai_short.o
+ .debug_info    0x0000000000002e7a      0x2e1 build/ATMEGA328P/production/sigmoid.o
+ .debug_info    0x000000000000315b      0x59a build/ATMEGA328P/production/snake.o
+
+.debug_abbrev   0x0000000000000000      0xcfe
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x5a2 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .debug_abbrev  0x00000000000005a2       0x46 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_abbrev  0x00000000000005e8       0xa6 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_abbrev  0x000000000000068e       0x48 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_abbrev  0x00000000000006d6       0x5c build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_abbrev  0x0000000000000732       0x55 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .debug_abbrev  0x0000000000000787       0xc5 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_abbrev  0x000000000000084c       0xc7 build/ATMEGA328P/production/main.o
+ .debug_abbrev  0x0000000000000913      0x101 build/ATMEGA328P/production/serialCommunication.o
+ .debug_abbrev  0x0000000000000a14      0x150 build/ATMEGA328P/production/ai_short.o
+ .debug_abbrev  0x0000000000000b64       0x6f build/ATMEGA328P/production/sigmoid.o
+ .debug_abbrev  0x0000000000000bd3      0x12b build/ATMEGA328P/production/snake.o
+
+.debug_line     0x0000000000000000     0x12d7
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x137 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .debug_line    0x0000000000000137       0xa6 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_line    0x00000000000001dd      0x1ef build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_line    0x00000000000003cc       0xac build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_line    0x0000000000000478       0xdf build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_line    0x0000000000000557       0x82 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .debug_line    0x00000000000005d9      0x163 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_line    0x000000000000073c      0x173 build/ATMEGA328P/production/main.o
+ .debug_line    0x00000000000008af      0x19b build/ATMEGA328P/production/serialCommunication.o
+ .debug_line    0x0000000000000a4a      0x4ba build/ATMEGA328P/production/ai_short.o
+ .debug_line    0x0000000000000f04       0xdf build/ATMEGA328P/production/sigmoid.o
+ .debug_line    0x0000000000000fe3      0x2f4 build/ATMEGA328P/production/snake.o
+
+.debug_frame    0x0000000000000000      0x4e4
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x24 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_frame   0x0000000000000024       0xd4 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_frame   0x00000000000000f8       0x24 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_frame   0x000000000000011c       0x34 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_frame   0x0000000000000150       0x60 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_frame   0x00000000000001b0       0x24 build/ATMEGA328P/production/main.o
+ .debug_frame   0x00000000000001d4       0xb0 build/ATMEGA328P/production/serialCommunication.o
+ .debug_frame   0x0000000000000284      0x184 build/ATMEGA328P/production/ai_short.o
+ .debug_frame   0x0000000000000408       0x34 build/ATMEGA328P/production/sigmoid.o
+ .debug_frame   0x000000000000043c       0xa8 build/ATMEGA328P/production/snake.o
+
+.debug_str      0x0000000000000000      0x346
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x208 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .debug_str     0x0000000000000208        0x0 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_str     0x0000000000000208        0x0 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_str     0x0000000000000208        0x0 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_str     0x0000000000000208        0x0 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_str     0x0000000000000208        0x0 build/ATMEGA328P/production/mcc_generated_files/device_config.o
+ .debug_str     0x0000000000000208       0x4d build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_str     0x0000000000000255       0xc0 build/ATMEGA328P/production/main.o
+ .debug_str     0x0000000000000315        0xd build/ATMEGA328P/production/serialCommunication.o
+ .debug_str     0x0000000000000322       0x24 build/ATMEGA328P/production/ai_short.o
+ .debug_str     0x0000000000000346        0x0 build/ATMEGA328P/production/sigmoid.o
+ .debug_str     0x0000000000000346        0x0 build/ATMEGA328P/production/snake.o
+
+.debug_loc      0x0000000000000000      0xb5a
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x76 build/ATMEGA328P/production/main.o
+ .debug_loc     0x0000000000000076      0x18d build/ATMEGA328P/production/serialCommunication.o
+ .debug_loc     0x0000000000000203      0x5be build/ATMEGA328P/production/ai_short.o
+ .debug_loc     0x00000000000007c1       0xa9 build/ATMEGA328P/production/sigmoid.o
+ .debug_loc     0x000000000000086a      0x2f0 build/ATMEGA328P/production/snake.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000      0x1b8
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x10 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+ .debug_ranges  0x0000000000000010       0x68 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+ .debug_ranges  0x0000000000000078       0x10 build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+ .debug_ranges  0x0000000000000088       0x18 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+ .debug_ranges  0x00000000000000a0       0x28 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+ .debug_ranges  0x00000000000000c8       0x10 build/ATMEGA328P/production/main.o
+ .debug_ranges  0x00000000000000d8       0x38 build/ATMEGA328P/production/serialCommunication.o
+ .debug_ranges  0x0000000000000110       0x30 build/ATMEGA328P/production/ai_short.o
+ .debug_ranges  0x0000000000000140       0x18 build/ATMEGA328P/production/sigmoid.o
+ .debug_ranges  0x0000000000000158       0x60 build/ATMEGA328P/production/snake.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(dist/ATMEGA328P/production/ATMEGA328P.X.production.elf elf32-avr)
+LOAD linker stubs
+LOAD data_init
+
+.note.gnu.avr.deviceinfo
+                0x0000000000000000       0x40
+ .note.gnu.avr.deviceinfo
+                0x0000000000000000       0x40 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+
+.bss.choice     0x00000000008001b4        0x1
+ .bss.choice    0x00000000008001b4        0x1 build/ATMEGA328P/production/ai_short.o
+                0x00000000008001b4                choice
+
+.bss.S          0x0000000000800198        0x4
+ .bss.S         0x0000000000800198        0x4 build/ATMEGA328P/production/ai_short.o
+                0x0000000000800198                S
+
+.bss.DC_DW1     0x0000000000800140       0x20
+ .bss.DC_DW1    0x0000000000800140       0x20 build/ATMEGA328P/production/ai_short.o
+                0x0000000000800140                DC_DW1
+
+.bss.DC_DB1     0x000000000080019c        0x4
+ .bss.DC_DB1    0x000000000080019c        0x4 build/ATMEGA328P/production/ai_short.o
+                0x000000000080019c                DC_DB1
+
+.bss.DC_DZ1     0x00000000008001a0        0x4
+ .bss.DC_DZ1    0x00000000008001a0        0x4 build/ATMEGA328P/production/ai_short.o
+                0x00000000008001a0                DC_DZ1
+
+.bss.DC_DY1     0x00000000008001a4        0x4
+ .bss.DC_DY1    0x00000000008001a4        0x4 build/ATMEGA328P/production/ai_short.o
+                0x00000000008001a4                DC_DY1
+
+.bss.W1         0x0000000000800160       0x20
+ .bss.W1        0x0000000000800160       0x20 build/ATMEGA328P/production/ai_short.o
+                0x0000000000800160                W1
+
+.bss.B1         0x00000000008001a8        0x4
+ .bss.B1        0x00000000008001a8        0x4 build/ATMEGA328P/production/ai_short.o
+                0x00000000008001a8                B1
+
+.bss.Z1         0x0000000000800180        0x8
+ .bss.Z1        0x0000000000800180        0x8 build/ATMEGA328P/production/ai_short.o
+                0x0000000000800180                Z1
+
+.bss.Y1         0x00000000008001ac        0x4
+ .bss.Y1        0x00000000008001ac        0x4 build/ATMEGA328P/production/ai_short.o
+                0x00000000008001ac                Y1
+
+.bss.Y0         0x0000000000800188        0x8
+ .bss.Y0        0x0000000000800188        0x8 build/ATMEGA328P/production/ai_short.o
+                0x0000000000800188                Y0
+
+.bss.remainingMoves
+                0x00000000008001b5        0x1
+ .bss.remainingMoves
+                0x00000000008001b5        0x1 build/ATMEGA328P/production/snake.o
+                0x00000000008001b5                remainingMoves
+
+.bss.foodPosition
+                0x00000000008001b6        0x1
+ .bss.foodPosition
+                0x00000000008001b6        0x1 build/ATMEGA328P/production/snake.o
+                0x00000000008001b6                foodPosition
+
+.bss.headPosition
+                0x00000000008001b7        0x1
+ .bss.headPosition
+                0x00000000008001b7        0x1 build/ATMEGA328P/production/snake.o
+                0x00000000008001b7                headPosition
+
+.bss.snakeSize  0x00000000008001b8        0x1
+ .bss.snakeSize
+                0x00000000008001b8        0x1 build/ATMEGA328P/production/snake.o
+                0x00000000008001b8                snakeSize
+
+.bss.field      0x0000000000800100       0x40
+ .bss.field     0x0000000000800100       0x40 build/ATMEGA328P/production/snake.o
+                0x0000000000800100                field
+
+.bss.seed       0x00000000008001b0        0x4
+ .bss.seed      0x00000000008001b0        0x4 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+
+.progmemx.data  0x00000000000000ce       0x4e
+ .progmemx.data
+                0x00000000000000ce       0x4e build/ATMEGA328P/production/ai_short.o
+
+.progmemx.data  0x000000000000011c       0x18
+ .progmemx.data
+                0x000000000000011c       0x18 build/ATMEGA328P/production/main.o
+
+.progmemx.data.de_sigmoidValues
+                0x0000000000000134       0x10
+ .progmemx.data.de_sigmoidValues
+                0x0000000000000134       0x10 build/ATMEGA328P/production/sigmoid.o
+                0x0000000000000134                de_sigmoidValues
+
+.progmemx.data.sigmoidValues
+                0x0000000000000144       0x10
+ .progmemx.data.sigmoidValues
+                0x0000000000000144       0x10 build/ATMEGA328P/production/sigmoid.o
+                0x0000000000000144                sigmoidValues
+
+.text.ai_printAI
+                0x0000000000000154      0x344
+ .text.ai_printAI
+                0x0000000000000154      0x344 build/ATMEGA328P/production/ai_short.o
+                0x0000000000000154                ai_printAI
+
+.text.ai_propagate
+                0x0000000000000498      0x1f8
+ .text.ai_propagate
+                0x0000000000000498      0x1f8 build/ATMEGA328P/production/ai_short.o
+                0x0000000000000498                ai_propagate
+
+.text.ai_run    0x0000000000000690      0x13a
+ .text.ai_run   0x0000000000000690      0x13a build/ATMEGA328P/production/ai_short.o
+                0x0000000000000690                ai_run
+
+.text.snake_move
+                0x00000000000007ca      0x100
+ .text.snake_move
+                0x00000000000007ca      0x100 build/ATMEGA328P/production/snake.o
+                0x00000000000007ca                snake_move
+
+.text.snake_getSurroundings
+                0x00000000000008ca       0xca
+ .text.snake_getSurroundings
+                0x00000000000008ca       0xca build/ATMEGA328P/production/snake.o
+                0x00000000000008ca                snake_getSurroundings
+
+.text.main      0x0000000000000994       0xbc
+ .text.main     0x0000000000000994       0xbc build/ATMEGA328P/production/main.o
+                0x0000000000000994                main
+
+.text.ai_initiate
+                0x0000000000000a50       0x98
+ .text.ai_initiate
+                0x0000000000000a50       0x98 build/ATMEGA328P/production/ai_short.o
+                0x0000000000000a50                ai_initiate
+
+.text.snake_initiate
+                0x0000000000000ae8       0x5a
+ .text.snake_initiate
+                0x0000000000000ae8       0x5a build/ATMEGA328P/production/snake.o
+                0x0000000000000ae8                snake_initiate
+
+.text.printString
+                0x0000000000000b42       0x40
+ .text.printString
+                0x0000000000000b42       0x40 build/ATMEGA328P/production/serialCommunication.o
+                0x0000000000000b42                printString
+
+.text.rand      0x0000000000000b82       0x3e
+ .text.rand     0x0000000000000b82       0x3e d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(rand.o)
+                0x0000000000000b82                rand
+
+.text.print     0x0000000000000bc0       0x3a
+ .text.print    0x0000000000000bc0       0x3a build/ATMEGA328P/production/serialCommunication.o
+                0x0000000000000bc0                print
+
+.text.sigmoid   0x0000000000000bfa       0x34
+ .text.sigmoid  0x0000000000000bfa       0x34 build/ATMEGA328P/production/sigmoid.o
+                0x0000000000000bfa                sigmoid
+
+.text.de_sigmoid
+                0x0000000000000c2e       0x2e
+ .text.de_sigmoid
+                0x0000000000000c2e       0x2e build/ATMEGA328P/production/sigmoid.o
+                0x0000000000000c2e                de_sigmoid
+
+.text.libgcc.div
+                0x0000000000000c5c       0x28
+ .text.libgcc.div
+                0x0000000000000c5c       0x28 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+                0x0000000000000c5c                _div
+                0x0000000000000c5c                __divmodhi4
+
+.text.libgcc.div
+                0x0000000000000c84       0x28
+ .text.libgcc.div
+                0x0000000000000c84       0x28 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+                0x0000000000000c84                __udivmodhi4
+
+.text.__vector_6
+                0x0000000000000cac       0x20
+ .text.__vector_6
+                0x0000000000000cac       0x20 build/ATMEGA328P/production/mcc_generated_files/mcc.o
+                0x0000000000000cac                __vector_6
+
+.text.libgcc.mul
+                0x0000000000000ccc       0x20
+ .text.libgcc.mul
+                0x0000000000000ccc       0x20 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+                0x0000000000000ccc                __mulsi3
+
+.text.USART0_Initialize
+                0x0000000000000cec       0x1e
+ .text.USART0_Initialize
+                0x0000000000000cec       0x1e build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+                0x0000000000000cec                USART0_Initialize
+
+.text.libgcc.mul
+                0x0000000000000d0a       0x1e
+ .text.libgcc.mul
+                0x0000000000000d0a       0x1e d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+                0x0000000000000d0a                __umulhisi3
+
+.text.SYSTEM_Initialize
+                0x0000000000000d28       0x1a
+ .text.SYSTEM_Initialize
+                0x0000000000000d28       0x1a build/ATMEGA328P/production/mcc_generated_files/mcc.o
+                0x0000000000000d28                SYSTEM_Initialize
+
+.text.PIN_MANAGER_Initialize
+                0x0000000000000d42       0x18
+ .text.PIN_MANAGER_Initialize
+                0x0000000000000d42       0x18 build/ATMEGA328P/production/mcc_generated_files/src/pin_manager.o
+                0x0000000000000d42                PIN_MANAGER_Initialize
+
+.text.exit      0x0000000000000d5a       0x16
+ .text.exit     0x0000000000000d5a       0x16 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x0000000000000d5a                exit
+
+.text.libgcc.mul
+                0x0000000000000d70       0x16
+ .text.libgcc.mul
+                0x0000000000000d70       0x16 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+                0x0000000000000d70                __muluhisi3
+
+.text.printInteger
+                0x0000000000000d86       0x12
+ .text.printInteger
+                0x0000000000000d86       0x12 build/ATMEGA328P/production/serialCommunication.o
+                0x0000000000000d86                printInteger
+
+.text.USART0_Write
+                0x0000000000000d98       0x10
+ .text.USART0_Write
+                0x0000000000000d98       0x10 build/ATMEGA328P/production/mcc_generated_files/src/usart0.o
+                0x0000000000000d98                USART0_Write
+
+.text.EEPROM_Initialize
+                0x0000000000000da8        0xc
+ .text.EEPROM_Initialize
+                0x0000000000000da8        0xc build/ATMEGA328P/production/mcc_generated_files/src/eeprom.o
+                0x0000000000000da8                EEPROM_Initialize
+
+.text.CPU_Initialize
+                0x0000000000000db4        0xc
+ .text.CPU_Initialize
+                0x0000000000000db4        0xc build/ATMEGA328P/production/mcc_generated_files/mcc.o
+                0x0000000000000db4                CPU_Initialize
+
+.text.CPUINT_Initialize
+                0x0000000000000dc0        0x8
+ .text.CPUINT_Initialize
+                0x0000000000000dc0        0x8 build/ATMEGA328P/production/mcc_generated_files/src/cpuint.o
+                0x0000000000000dc0                CPUINT_Initialize
+
+.text.startMessage
+                0x0000000000000dc8        0x8
+ .text.startMessage
+                0x0000000000000dc8        0x8 build/ATMEGA328P/production/serialCommunication.o
+                0x0000000000000dc8                startMessage
+
+.text.endMessage
+                0x0000000000000dd0        0x8
+ .text.endMessage
+                0x0000000000000dd0        0x8 build/ATMEGA328P/production/serialCommunication.o
+                0x0000000000000dd0                endMessage
+
+.text.ai_getInputField
+                0x0000000000000dd8        0x6
+ .text.ai_getInputField
+                0x0000000000000dd8        0x6 build/ATMEGA328P/production/ai_short.o
+                0x0000000000000dd8                ai_getInputField
+
+.text.snake_getField
+                0x0000000000000dde        0x6
+ .text.snake_getField
+                0x0000000000000dde        0x6 build/ATMEGA328P/production/snake.o
+                0x0000000000000dde                snake_getField
+
+.text.snake_getFoodPosition
+                0x0000000000000de4        0x6
+ .text.snake_getFoodPosition
+                0x0000000000000de4        0x6 build/ATMEGA328P/production/snake.o
+                0x0000000000000de4                snake_getFoodPosition
+
+.text           0x0000000000000dea        0x4
+ .text          0x0000000000000dea        0x4 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/ATmega_DFP/2.4.131/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000dea                __vector_22
+                0x0000000000000dea                __vector_1
+                0x0000000000000dea                __vector_24
+                0x0000000000000dea                __vector_12
+                0x0000000000000dea                __bad_interrupt
+                0x0000000000000dea                __vector_3
+                0x0000000000000dea                __vector_23
+                0x0000000000000dea                __vector_25
+                0x0000000000000dea                __vector_11
+                0x0000000000000dea                __vector_13
+                0x0000000000000dea                __vector_17
+                0x0000000000000dea                __vector_19
+                0x0000000000000dea                __vector_7
+                0x0000000000000dea                __vector_5
+                0x0000000000000dea                __vector_4
+                0x0000000000000dea                __vector_9
+                0x0000000000000dea                __vector_2
+                0x0000000000000dea                __vector_21
+                0x0000000000000dea                __vector_15
+                0x0000000000000dea                __vector_8
+                0x0000000000000dea                __vector_14
+                0x0000000000000dea                __vector_10
+                0x0000000000000dea                __vector_16
+                0x0000000000000dea                __vector_18
+                0x0000000000000dea                __vector_20
+
+.text._Exit     0x0000000000000dee        0x4
+ .text._Exit    0x0000000000000dee        0x4 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(_Exit.o)
+                0x0000000000000dee                _Exit
+
+.text.__dummy_fini
+                0x0000000000000df2        0x2
+ .text.__dummy_fini
+                0x0000000000000df2        0x2 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x0000000000000df2                _fini
+
+.text.__dummy_funcs_on_exit
+                0x0000000000000df4        0x2
+ .text.__dummy_funcs_on_exit
+                0x0000000000000df4        0x2 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x0000000000000df4                __funcs_on_exit
+
+.text.__dummy_simulator_exit
+                0x0000000000000df6        0x2
+ .text.__dummy_simulator_exit
+                0x0000000000000df6        0x2 d:/programdata/microchip/xc8/v2.40/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(exit.o)
+                0x0000000000000df6                __simulator_exit
+
+.data.snake_mapping
+                0x0000000000800190        0x8 load address 0x0000000000000df8
+ .data.snake_mapping
+                0x0000000000800190        0x8 build/ATMEGA328P/production/snake.o
+                0x0000000000800190                snake_mapping

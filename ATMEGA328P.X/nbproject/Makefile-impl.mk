@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=ATMEGA328P.X
 
 # Active Configuration
-DEFAULTCONF=default
+DEFAULTCONF=ATMEGA328P
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=default 
+ALLCONFS=ATMEGA328P PIC16F1827 
 
 
 # build
@@ -45,13 +45,15 @@ ALLCONFS=default
 
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=ATMEGA328P clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=PIC16F1827 clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=ATMEGA328P build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=PIC16F1827 build
 
 
 

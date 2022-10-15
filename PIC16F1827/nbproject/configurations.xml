@@ -18,7 +18,6 @@
       <itemPath>serialCommunication.h</itemPath>
       <itemPath>snake.h</itemPath>
       <itemPath>sigmoid.h</itemPath>
-      <itemPath>D:/WS/GitHub/SnakeAI/lib/ai_short.c</itemPath>
       <itemPath>D:/WS/GitHub/SnakeAI/lib/ai_short.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -43,6 +42,7 @@
       <itemPath>serialCommunication.c</itemPath>
       <itemPath>sigmoid.c</itemPath>
       <itemPath>snake.c</itemPath>
+      <itemPath>D:/WS/GitHub/SnakeAI/lib/ai_short.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
