@@ -18,7 +18,8 @@
       <itemPath>serialCommunication.h</itemPath>
       <itemPath>snake.h</itemPath>
       <itemPath>sigmoid.h</itemPath>
-      <itemPath>ai_short.h</itemPath>
+      <itemPath>D:/WS/GitHub/SnakeAI/lib/ai_short.c</itemPath>
+      <itemPath>D:/WS/GitHub/SnakeAI/lib/ai_short.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -40,7 +41,6 @@
       <itemPath>main.c</itemPath>
       <itemPath>ledMatrix.c</itemPath>
       <itemPath>serialCommunication.c</itemPath>
-      <itemPath>ai_short.c</itemPath>
       <itemPath>sigmoid.c</itemPath>
       <itemPath>snake.c</itemPath>
     </logicalFolder>
@@ -54,6 +54,7 @@
   <sourceRootList>
     <Elem>.</Elem>
     <Elem>../CommonLibraries</Elem>
+    <Elem>D:/WS/GitHub/SnakeAI/lib</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

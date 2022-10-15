@@ -15,6 +15,7 @@
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
                 <sourceRootElem>../CommonLibraries</sourceRootElem>
+                <sourceRootElem>D:/WS/GitHub/SnakeAI/lib</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
