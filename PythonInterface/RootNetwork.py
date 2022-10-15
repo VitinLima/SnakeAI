@@ -14,7 +14,7 @@ class RootNetwork(tk.Tk):
         
         self.N0 = N0
         self.N1 = N1
-        # self.N2 = N2
+        self.N2 = N2
         
         self.Y0 = [0.0]*N0
         self.Y1 = [0.0]*N1
@@ -113,9 +113,9 @@ class RootNetwork(tk.Tk):
         elif an=='B2':
             self.B2=val
         elif an=='W1':
-            self.W1=val
+            self.W1=[[val[self.N0*column + row] for column in range(self.N1)] for row in range(self.N0)]
         elif an=='W2':
-            self.W2=val
+            self.W2=[[val[self.N1*column + row] for column in range(self.N2)] for row in range(self.N1)]
     
     def getArray(self, an):
         if an=='Y0':

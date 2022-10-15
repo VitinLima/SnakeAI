@@ -29,11 +29,16 @@ class RootField(tk.Tk):
     def owns(self, an):
         if an=='field':
             return True
+        elif an=='food':
+            return True
         return False
     
     def setArray(self, an, val):
         if an=='field':
-            self.field=val
+            self.field=[[val[self.field_size*column + row] for column in range(self.field_size)] for row in range(self.field_size)]
+        elif an=='food':
+            val = val[0]
+            self.field[val%self.field_size][int(val/self.field_size)]=-1
     
     def getArray(self, an):
         if an=='field':
@@ -41,6 +46,8 @@ class RootField(tk.Tk):
     
     def updateLabel(self, an):
         if an=='field':
+            self.lbField["text"] = f"Field:\n{self.matrixToString(self.field)}"
+        elif an=='food':
             self.lbField["text"] = f"Field:\n{self.matrixToString(self.field)}"
         
     def matrixToString(self, M):

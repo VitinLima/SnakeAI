@@ -13,7 +13,7 @@ class RootDerivatives(tk.Tk):
         
         self.N0 = N0
         self.N1 = N1
-        # self.N2 = N2
+        self.N2 = N2
 
         self.DC_DZ1 = [0.0]*N1
         # self.DC_DZ2 = [0.0]*N2
@@ -104,9 +104,9 @@ class RootDerivatives(tk.Tk):
         elif an=='DC_DB2':
             self.DC_DB2=val
         elif an=='DC_DW1':
-            self.DC_DW1=val
+            self.DC_DW1=[[val[self.N0*column + row] for column in range(self.N1)] for row in range(self.N0)]
         elif an=='DC_DW2':
-            self.DC_DW2=val
+            self.DC_DW2=[[val[self.N1*column + row] for column in range(self.N2)] for row in range(self.N1)]
     
     def getArray(self, an):
         if an=='DC_DY1':

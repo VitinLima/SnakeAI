@@ -114,32 +114,40 @@ food = 0
 
 vector_names = ['Y0', 'Y1', 'B1', 'W1', 'Z1', 'DC_DY1', 'DC_DB1', 'DC_DW1', 'DC_DZ1', 'S1', 'S2', 'DS1', 'DS2', 'field', 'food', 'data']
 
-type_names = ['byte', 'uint8_t', 'int8_t', 'int16_t', 'float']
+supported_data_types = ['byte', 'uint8_t', 'int8_t', 'int16_t', 'float']
 
 rootNetwork = RootNetwork.RootNetwork(N0, N1, N2)
 rootDerivatives = RootDerivatives.RootDerivatives(N0, N1, N2)
 rootSigmoid = RootSigmoid.RootSigmoid(N0, N1, N2)
 rootField = RootField.RootField(field_size)
+roots = [rootNetwork, rootDerivatives, rootSigmoid, rootField]
 
 receiving = 0;
-state=0
 scf = 0
-dataRx = 0
-dataSize = 1
-dataType = 'byte'
 
-element_index = 0
-vector_index = 0
-current_array_name = ''
-current_array_size = 0
-current_string = ''
+state=0
+m2_state=0
+
+dataRx = 0
+dataRx_size = 1
+dataRx_counter = 0
+dataRx_type = ''
+
+arrayRx = []
+arrayRx_size = 0
+arrayRx_counter = 0
+
+array_name = ''
+
 
 def change_state(nextState):
-    global state, dataRx, i, j, k, element_index, current_string
+    global state, dataRx, dataRx_type, arrayRx, arrayRx_size, arrayRx_counter
     state=nextState
-    dataRx = 0
-    element_index = 0
-    current_string = ''
+    if state==0:
+        dataRx_type=''
+    elif state==2:
+        arrayRx = [[] for i in range(arrayRx_size)]
+        arrayRx_counter = 0
 
 ser = serial.Serial(portCom, baudRate, timeout=0)
 
@@ -151,10 +159,7 @@ try:
             
             if byteRx == SF:
                 receiving = 1
-                state = 0
-                i = 0
-                j = 0
-                k = 0
+                change_state(0)
                 continue
             elif byteRx == EF:
                 receiving = 0
@@ -173,67 +178,98 @@ try:
             if receiving == 0:
                 print(hex(byteRx))
             else:
-                # print(hex(byteRx))
-                dataRx|=byteRx<<(k*8)
-                k+=1
-                if k==dataSize:
-                    # print(hex(dataRx))
-                    k=0
-                    dataRx = convertData(dataRx, dataType)
-                    
-                    if state==0:
-                        current_string += chr(dataRx)
-                        if vector_names.count(current_string)>0:
-                            # print(current_string)
-                            current_array_name = current_string
-                            if current_array_name=='food':
-                                pass
-                            elif current_array_name=='data':
-                                pass
-                            else:
-                                current_root = sortRoots(current_array_name, [rootNetwork, rootDerivatives, rootSigmoid, rootField])
-                                current_array_size = getVectorSize(current_root.getArray(current_array_name))
-                                element_index=0
-                            
-                            change_state(1)
-                    elif state==1:
-                        current_string += chr(dataRx)
-                        if type_names.count(current_string)>0:
-                            # print(current_string)
-                            dataType = current_string
-                            dataSize = sortDataSize(dataType)
-                            
-                            if current_array_name=='data':
-                                change_state(3)
-                            elif current_array_name=='food':
-                                change_state(4)
-                            else:
-                                change_state(2)
-                    elif state==2:
-                        current_root.setArray(current_array_name, insertElement(current_root.getArray(current_array_name), dataRx, element_index))
-                        element_index+=1
-                        if element_index==current_array_size:
-                            current_root.updateLabel(current_array_name)
-                            # print(current_root.getArray(current_array_name))
-                            
-                            dataType = 'byte'
-                            dataSize = sortDataSize(dataType)
+                if state==0:
+                    dataRx_type += chr(byteRx)
+                    if supported_data_types.count(dataRx_type)>0:
+                        dataRx_size = sortDataSize(dataRx_type)
+                        # print(dataRx_type)
+                        # print(dataRx_size)
+                        change_state(1)
+                
+                elif state==1:
+                    arrayRx_size=byteRx
+                    # print(arrayRx_size)
+                    change_state(2)
+                
+                elif state==2:
+                    # print(hex(byteRx))
+                    dataRx|=byteRx<<(dataRx_counter*8)
+                    dataRx_counter+=1
+                    if dataRx_counter==dataRx_size:
+                        # print(hex(dataRx))
+                        dataRx_counter=0
+                        dataRx = convertData(dataRx, dataRx_type)
+                        arrayRx[arrayRx_counter]=dataRx
+                        arrayRx_counter+=1
+                        if arrayRx_counter==arrayRx_size:
+                            if m2_state==0:
+                                array_name=''.join([chr(i) for i in arrayRx])
+                                m2_state=1
+                                # print(array_name)
+                            elif m2_state==1:
+                                # print(arrayRx)
+                                if array_name=='data':
+                                    print(arrayRx)
+                                else:
+                                    current_root = sortRoots(array_name, roots)
+                                    current_root.setArray(array_name, arrayRx)
+                                    current_root.updateLabel(array_name)
+                                m2_state=0
                             change_state(0)
-                    elif state==3:
-                        print(dataRx)
                         
-                        dataType = 'byte'
-                        dataSize = sortDataSize(dataType)
-                        change_state(0)
-                    elif state==4:
-                        rootField.setArray('field', insertElement(rootField.getArray('field'), -1, dataRx))
-                        rootField.updateLabel('field')
-                        # print(rootField.getArray('field'))
-                        
-                        dataType = 'byte'
-                        dataSize = sortDataSize(dataType)
-                        change_state(0)
-                    dataRx = 0
+                        # if state==0:
+                        #     dataRx_type += chr(dataRx)
+                        #     if vector_names.count(current_string)>0:
+                        #         # print(current_string)
+                        #         current_array_name = current_string
+                        #         if current_array_name=='food':
+                        #             pass
+                        #         elif current_array_name=='data':
+                        #             pass
+                        #         else:
+                        #             current_root = sortRoots(current_array_name, )
+                        #             current_array_size = getVectorSize(current_root.getArray(current_array_name))
+                        #             element_index=0
+                                
+                        #         change_state(1)
+                        # elif state==1:
+                        #     current_string += chr(dataRx)
+                        #     if type_names.count(current_string)>0:
+                        #         # print(current_string)
+                        #         dataType = current_string
+                        #         dataSize = sortDataSize(dataType)
+                                
+                        #         if current_array_name=='data':
+                        #             change_state(3)
+                        #         elif current_array_name=='food':
+                        #             change_state(4)
+                        #         else:
+                        #             change_state(2)
+                        # elif state==2:
+                        #     current_root.setArray(current_array_name, insertElement(current_root.getArray(current_array_name), dataRx, element_index))
+                        #     element_index+=1
+                        #     if element_index==current_array_size:
+                        #         current_root.updateLabel(current_array_name)
+                        #         # print(current_root.getArray(current_array_name))
+                                
+                        #         dataType = 'byte'
+                        #         dataSize = sortDataSize(dataType)
+                        #         change_state(0)
+                        # elif state==3:
+                        #     print(dataRx)
+                            
+                        #     dataType = 'byte'
+                        #     dataSize = sortDataSize(dataType)
+                        #     change_state(0)
+                        # elif state==4:
+                        #     rootField.setArray('field', insertElement(rootField.getArray('field'), -1, dataRx))
+                        #     rootField.updateLabel('field')
+                        #     # print(rootField.getArray('field'))
+                            
+                        #     dataType = 'byte'
+                        #     dataSize = sortDataSize(dataType)
+                        #     change_state(0)
+                        dataRx = 0
         rootNetwork.update_idletasks()
         rootNetwork.update()
         rootDerivatives.update_idletasks()

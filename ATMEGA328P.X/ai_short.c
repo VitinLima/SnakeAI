@@ -101,63 +101,105 @@ void ai_propagate(int8_t incentive){
 }
 
 void ai_printAI(){
+    printString("byte");
+    print(0x02u);
     printString("Y0");
     printString("int8_t");
+    print(N0);
     for(uint8_t i = 0; i < N0; i++){
         print((uint8_t)Y0[i]);
     }
+    
+    printString("byte");
+    print(0x02u);
     printString("Y1");
     printString("int8_t");
+    print(N1);
     for(uint8_t j = 0; j < N1; j++){
         print((uint8_t)Y1[j]);
     }
+    
+    printString("byte");
+    print(0x02u);
     printString("Z1");
     printString("int16_t");
+    print(N1);
     for(uint8_t j = 0; j < N1; j++){
         printInteger(Z1[j]);
     }
+    
+    printString("byte");
+    print(0x02u);
     printString("B1");
     printString("int8_t");
+    print(N1);
     for(uint8_t j = 0; j < N1; j++){
         print((uint8_t)B1[j]);
     }
+    
+    printString("byte");
+    print(0x02u);
     printString("W1");
     printString("int8_t");
+    print(N0*N1);
     for(uint8_t i = 0; i < N0; i++){
         for(uint8_t j = 0; j < N1; j++){
             print((uint8_t)W1[i][j]);
         }
     }
+    
+    printString("byte");
+    print(0x02u);
     printString("S1");
     printString("uint8_t");
+    print(N1);
     for(uint8_t i = 0; i < N1; i++){
         print(sigmoid((int)Z1[i]));
     }
     
+    printString("byte");
+    print(0x06u);
     printString("DC_DY1");
     printString("int8_t");
+    print(N1);
     for(uint8_t j = 0; j < N1; j++){
         print((uint8_t)DC_DY1[j]);
     }
+    
+    printString("byte");
+    print(0x06u);
     printString("DC_DZ1");
     printString("int8_t");
+    print(N1);
     for(uint8_t j = 0; j < N1; j++){
         print((uint8_t)DC_DZ1[j]);
     }
+    
+    printString("byte");
+    print(0x06u);
     printString("DC_DB1");
     printString("int8_t");
+    print(N1);
     for(uint8_t j = 0; j < N1; j++){
         print((uint8_t)DC_DB1[j]);
     }
+    
+    printString("byte");
+    print(0x06u);
     printString("DC_DW1");
     printString("int8_t");
+    print(N0*N1);
     for(uint8_t i = 0; i < N0; i++){
         for(uint8_t j = 0; j < N1; j++){
             print((uint8_t)DC_DW1[i][j]);
         }
     }
+    
+    printString("byte");
+    print(0x03u);
     printString("DS1");
     printString("uint8_t");
+    print(N1);
     for(uint8_t i = 0; i < N1; i++){
         print(de_sigmoid((int)Z1[i]));
     }

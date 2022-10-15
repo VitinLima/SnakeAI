@@ -78,13 +78,19 @@ int main(void)
 //            print(snake_getFoodPosition());
 //            snake_initiate();
         }
+        printString("byte");
+        print(0x05u);
         printString("field");
         printString("uint8_t");
+        print(BOARD_LENGTH);
         for(uint8_t i = 0; i < BOARD_LENGTH; i++){
             print(field[i]);
         }
+        printString("byte");
+        print(0x04u);
         printString("food");
         printString("uint8_t");
+        print(0x01u);
         print(snake_getFoodPosition());
         endMessage();
     }
