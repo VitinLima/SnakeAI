@@ -40,6 +40,9 @@ class NeuralGroup:
     
     def addNeuron(self, neuron):
         self.neurons.append(neuron)
+    
+    def kill(self):
+        pass
 
 class Neuron:
     def __init__(self, bias=0, connections=[]):
@@ -66,6 +69,9 @@ class Neuron:
         self.bias -= dc_dz
         for i in range(len(self.connections)):
             self.connection[i].learn(dc_dz)
+    
+    def kill(self):
+        pass
 
 class Connection:
     def __init__(self, owner, connected, weight=0):
@@ -79,3 +85,6 @@ class Connection:
     def learn(self, dc_dz):
         self.weight -= dc_dz*self.neuron.requestExcitement()
         self.neuron.learn(dc_dz*self.weight)
+    
+    def kill(self):
+        pass

@@ -7,11 +7,7 @@ Created on Sat Oct 15 02:06:49 2022
 
 import tkinter as tk
 from tkinter import ttk
-from NeuralNetworkCanvas import NeuralNetworkCanvas
-from DrawableNeuralGroup import DrawableNeuralGroup
-from DrawableNeuron import DrawableNeuron
-from DrawableConnection import DrawableConnection
-from OptionsPanel import OptionsPanel
+from NeuralNetworkCanvas import NeuralNetworkCanvas,DrawableNeuralGroup,DrawableNeuron,DrawableConnection,OptionsPanel
 
 class App(tk.Tk):
     def __init__(self):
@@ -69,7 +65,6 @@ if __name__=="__main__":
         
         canvas = NeuralNetworkCanvas(master=frame, width=500, height=200, bg='black', borderwidth=0)
         canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        # canvas.grid(row=0,column=0)
         
         optPanel = OptionsPanel(canvas=canvas, master=frame, bg='black', borderwidth=0)
         optPanel.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
@@ -84,9 +79,23 @@ if __name__=="__main__":
         canvas.addNeuron(n3)
         canvas.addNeuron(n4)
         
-        canvas.neurons[0].addConnection(DrawableConnection(n1,n2,width=3))
-        canvas.neurons[1].addConnection(DrawableConnection(n2,n3,width=3))
-        canvas.neurons[3].addConnection(DrawableConnection(n4,n1,width=3))
+        canvas.neurons[0].addConnection(DrawableConnection(n1,n2))
+        canvas.neurons[1].addConnection(DrawableConnection(n2,n3))
+        canvas.neurons[3].addConnection(DrawableConnection(n4,n1))
+        
+        neuralGroup1 = DrawableNeuralGroup(x=250,y=100)
+        neuralGroup1.addNeuron(DrawableNeuron())
+        neuralGroup1.addNeuron(DrawableNeuron())
+        neuralGroup1.addConnection(n1)
+        
+        neuralGroup2 = DrawableNeuralGroup(x=350,y=50)
+        neuralGroup2.addNeuron(DrawableNeuron())
+        neuralGroup2.addNeuron(DrawableNeuron())
+        neuralGroup2.addNeuron(DrawableNeuron())
+        neuralGroup2.addConnection(neuralGroup1)
+        
+        canvas.addNeuralGroup(neuralGroup1)
+        canvas.addNeuralGroup(neuralGroup2)
         
         canvas.draw()
         
