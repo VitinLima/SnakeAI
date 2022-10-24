@@ -1,0 +1,102 @@
+import serial
+import time
+import tkinter as tk
+import sys
+
+portCom = 'COM5'
+
+
+def callBackFunc1():
+    try:
+        ser.write(b"\x00")
+    except ser.SerialTimeoutException:
+        print('error')
+
+def callBackFunc2():
+    try:
+        ser.write(b"\x01")
+    except ser.SerialTimeoutException:
+        print('error')
+
+def callBackFunc3():
+    try:
+        ser.write(b"\x02")
+    except ser.SerialTimeoutException:
+        print('error')
+
+def callBackFunc4():
+    try:
+        ser.write(b"\x03")
+    except ser.SerialTimeoutException:
+        print('error')         
+
+ser = serial.Serial(portCom, 19200, timeout=0)
+window = tk.Tk()    
+window.title("Elevador")
+
+window.minsize(240, 220)
+
+frame1 = tk.Frame(master=window, height=160, bg="white")
+frame1.pack(fill=tk.X)
+
+frame2 = tk.Frame(master=window, height=80,  bg="green")
+frame2.pack(fill=tk.X)
+
+lbAndar = tk.Label(master=frame1, text="Andar: 0", foreground="white", background="blue", width=20, font=("Arial", 16))
+lbAndar.place(x=0, y=0)
+
+lbPosition = tk.Label(master=frame1, text="Posição: 0 mm", foreground="white", background="blue", width=20, font=("Arial", 16))
+lbPosition.place(x=0, y=40)
+
+lbSpeed = tk.Label(master=frame1, text="Velocidade: 0 mm/s", foreground="white", background="blue", width=20, font=("Arial", 16))
+lbSpeed.place(x=0, y=80)
+
+lbTemp = tk.Label(master=frame1, text="Temperatura: 0 °C", foreground="white", background="blue", width=20, font=("Arial", 16))
+lbTemp.place(x=0, y=120)
+
+label1 = tk.Label(master=frame2, text="Andar destino", foreground="white", background="green", width=20, font=("Arial", 16))
+label1.place(x=0, y=0)
+B1 = tk.Button(frame2, text ="1", command = callBackFunc1)
+B1.place(x=70, y=30)
+B2 = tk.Button(frame2, text ="2", command = callBackFunc2)
+B2.place(x=95, y=30)
+B3 = tk.Button(frame2, text ="3", command = callBackFunc3)
+B3.place(x=120, y=30)
+B4 = tk.Button(frame2, text ="4", command = callBackFunc4)
+B4.place(x=145, y=30)
+
+
+status=0
+
+while 1:
+    try:
+        while ser.inWaiting() > 0:
+            aa=ser.read(1)
+            byteRx=aa[0]
+            init = byteRx & 128
+            if init==128:
+                andar = (byteRx & 3) +1
+                lbAndar["text"] = f"Andar: {andar}"
+                status=1
+            else:
+                if status==1:
+                    position=(byteRx & 127)*2
+                    lbPosition["text"] = f"Posição: {position} mm"
+                    status=2
+                elif status==2:
+                    speed=(byteRx & 127)/4
+                    lbSpeed["text"] = f"Velocidade: {round(speed,1)} mm/s"
+                    status=3
+                elif status==3:
+                    temp=(byteRx & 127)/2
+                    lbTemp["text"] = f"Tmotor: {temp} °C"
+                    status=4
+                    
+        window.update_idletasks()
+        window.update()
+    except:
+        print("exit")
+        sys.exit()
+
+##window.mainloop()
+
